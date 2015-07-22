@@ -1,0 +1,82 @@
+@media #{$desktop} {
+	#video-full{
+		.container-video-bg{
+			width: 100%;
+			height: 450px;
+			background: image-url("frontend/Cartelera_Galeria.jpg") no-repeat;
+
+			.btn-play{
+				
+				i{
+				  bottom: 0;
+				  cursor: pointer;
+				  display: inline-block;
+				  font-size: 100px;
+				  height: 100px;
+				  left: 50%;
+				  color: #fff;
+				  position: relative;
+				  right: 0;
+				  top: 40%;
+				  width: 100px;
+				}
+			}
+		}
+	}
+}
+
+@media #{$phone} {
+	#video-full{
+		.container-video-bg{
+			width: 100%;
+			height: 200px;
+			background: image-url("frontend/Cartelera_Galeria.jpg") no-repeat;
+			background-size: cover;
+
+			.btn-play{
+				
+				i{
+				  bottom: 0;
+				  cursor: pointer;
+				  display: inline-block;
+				  font-size: 60px;
+				  height: 100px;
+				  left: 45%;
+				  color: #fff;
+				  position: relative;
+				  right: 0;
+				  top: 35%;
+				  width: 100px;
+				}
+			}
+		}
+	}
+}
+
+@media #{$phone-landscape} {
+	#video-full{
+		.container-video-bg{
+			width: 100%;
+			height: 200px;
+			background: image-url("frontend/Cartelera_Galeria.jpg") no-repeat;
+			background-size: cover;
+
+			.btn-play{
+				
+				i{
+				  bottom: 0;
+				  cursor: pointer;
+				  display: inline-block;
+				  font-size: 70px;
+				  height: 100px;
+				  left: 47%;
+				  color: #fff;
+				  position: relative;
+				  right: 0;
+				  top: 35%;
+				  width: 100px;
+				}
+			}
+		}
+	}
+}

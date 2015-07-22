@@ -7,7 +7,7 @@ $phone: "(max-width: 767px) and (orientation : portrait)";
 $phone-landscape: "(max-width: 767px) and (orientation : landscape)";
 
 //fuentes
-$font-type: 'Roboto', sans-serif;
+$font-type: 'Lato', sans-serif;
 
 //colores
 $red-color: #F44336;
@@ -16,6 +16,10 @@ $red-color: #F44336;
 img {
   @extend .img-responsive;
   margin: 0 auto;
+  }
+
+  #size-modal{
+    width: 100%;
   }
 
 // override for the 'Home' navigation link
@@ -53,3 +57,30 @@ img {
   @extend .btn-primary;
   @extend .btn-xs;
 }
+
+/*
+.container-video{
+  i{
+    position: fixed;
+    font-size: 30px;
+    color: #fff;
+    z-index: 1000000;
+    left: 50px;
+    top: 20px;
+    opacity: 0;
+    text-decoration: none;
+    
+
+
+  }
+  #myvideo-bg{
+    left: 0;
+    position: fixed;
+    width: 100%;
+    background: black;
+    z-index: -10000;
+    opacity: 0;
+  }
+
+}
+*/

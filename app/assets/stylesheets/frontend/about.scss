@@ -1,27 +1,33 @@
-#about{
-	.container-about{
-		.text-left{
-			margin-top: 17%;
-			margin-bottom: 12%;
-			p{
-				line-height: 8px;
-				text-align: center;
+@media #{$desktop} {
+	#about{
+		.container-about{
+			.text-left{
+				margin-top: 15%;
+				margin-bottom: 12%;
+				p{
+					font-size: 22px;
+					font-family: $font-type;
+					line-height: 16px;
+					text-align: center;
+				}
 			}
-		}
-		#negrita{
-			font-weight: bold;
-			
-		}
+			#negrita{
+				font-weight: bold;
+				
+			}
 
-		.text-right{
-			margin-top: 8%;
-			margin-bottom: 8%;
-			padding: 0 120px 0 120px;
+			.text-right{
+				margin-top: 8%;
+				margin-bottom: 8%;
+				padding: 0 120px 0 120px;
 
-			p{
-				line-height: 16px;
-				text-align: justify;
+				p{
+					font-size: 15px;
+					font-family: $font-type;
+					line-height: 16px;
+					text-align: left;
 
+				}
 			}
 		}
 	}
@@ -33,12 +39,31 @@
 			.text-left{
 				margin-top: 17%;
 				margin-bottom: 12%;
+
+				p{
+					font-size: 20px;
+					font-family: $font-type;
+					line-height: 12px;
+					text-align: center;
+				}
+			}
+
+			#negrita{
+				font-weight: bold;
+				
 			}
 
 			.text-right{
 				margin-top: 8%;
 				margin-bottom: 8%;
 				padding: 0 40px 0 40px;
+
+				p{
+					font-size: 16px;
+					font-family: $font-type;
+					line-height: 18px;
+					text-align: center;
+				}
 			}
 		}
 	}
@@ -50,12 +75,31 @@
 			.text-left{
 				margin-top: 10%;
 				margin-bottom: 10%;
+
+				p{
+					font-size: 20px;
+					font-family: $font-type;
+					line-height: 12px;
+					text-align: center;
+				}
+			}
+
+			#negrita{
+				font-weight: bold;
+				
 			}
 
 			.text-right{
 				margin-top: 0px;
 				margin-bottom: 8%;
 				padding: 0 40px 0 40px;
+
+				p{
+					text-align: justify;
+					font-size: 16px;
+					font-family: $font-type;
+					line-height: 16px;
+				}
 			}
 		}
 	}

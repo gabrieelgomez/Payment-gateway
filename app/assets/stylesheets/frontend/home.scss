@@ -1,103 +1,209 @@
-#home{
-	height: 100%;
+@media #{$desktop} {
+	#home{
+		height: 100%;
 
-	.container-video{
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		overflow: hidden;
-		z-index: -100;
-
-		video {
+		.container-video{
 			position: absolute;
 			top: 0;
+			right: 0;
+			bottom: 0;
 			left: 0;
-			min-width: 100%;
-			min-height: 100%;
-			background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
-			background-size: cover;
-		}
-	}
+			overflow: hidden;
+			z-index: -100;
 
-
-	.container-text{
-		padding-top: 10%;
-		text-align: center;
-
-		h3{
-			border-top: 2px solid #fff;
-			border-bottom: 2px solid #fff;
-			padding-top: 10px;
-			padding-bottom: 10px;
-			margin: 0 35%;
-			color: #FFF;
-			font-weight: bold;
-		}
-	}
-
-	.container-social{
-		padding-top: 28%;
-
-
-		.red{
-			width: 51px;
-			height: 51px;
-			background-position: center;
-			display: inline-block;
+			video {
+				position: absolute;
+				top: 0;
+				left: 0;
+				min-width: 100%;
+				min-height: 100%;
+				background: image-url("frontend/ImagenCartelera.jpg") no-repeat;
+				background-size: cover;
+			}
 		}
 
-		.social1{
-			background: image-url("frontend/RedesSociales_Carteleras_Twitter.png") no-repeat;
+
+		.container-text{
+			padding-top: 10%;
+			text-align: center;
+
+			h3{
+				border-top: 2px solid #fff;
+				border-bottom: 2px solid #fff;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				margin: 0 35%;
+				color: #FFF;
+				font-weight: bold;
+			}
 		}
 
-		.social2{
-			background: image-url("frontend/RedesSociales_Cartelera_facebook.png") no-repeat;
-		}
+		.container-social{
+			padding-top: 28%;
 
-		.social3{
-			background: image-url("frontend/RedesSociales_Carteleras-Instagram.png") no-repeat;
-		}
 
-		.social4{
-			background: image-url("frontend/RedesSociales_Carteleras-Youtube.png") no-repeat;
+			.red{
+				width: 51px;
+				height: 51px;
+				background-position: center;
+				display: inline-block;
+			}
+
+			.social1{
+				background: image-url("frontend/RedesSociales_Carteleras_Twitter.png") no-repeat;
+			}
+
+			.social2{
+				background: image-url("frontend/RedesSociales_Cartelera_facebook.png") no-repeat;
+			}
+
+			.social3{
+				background: image-url("frontend/RedesSociales_Carteleras-Instagram.png") no-repeat;
+			}
+
+			.social4{
+				background: image-url("frontend/RedesSociales_Carteleras-Youtube.png") no-repeat;
+			}
 		}
 	}
 }
 
 @media #{$phone} {
 	#home{
+		height: 100%;
+
+		.container-video{
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			overflow: hidden;
+			z-index: -100;
+
+			video {
+				position: absolute;
+				top: 0;
+				left: 0;
+				min-width: 100%;
+				min-height: 100%;
+				background: image-url("frontend/ImagenCartelera.jpg") no-repeat;
+				background-size: cover;
+			}
+		}
+
+
 		.container-text{
-			padding-top: 30%;
+			padding-top: 25%;
+			text-align: center;
 
 			h3{
+				border-top: 2px solid #fff;
+				border-bottom: 2px solid #fff;
 				padding-top: 10px;
 				padding-bottom: 10px;
-				margin: 0 18%;
+				margin: 0 20%;
+				color: #FFF;
+				font-weight: bold;
 			}
 		}
 
 		.container-social{
-			padding-top: 70%;
+			padding-top: 78%;
+
+
+			.red{
+				width: 51px;
+				height: 51px;
+				background-position: center;
+				display: inline-block;
+			}
+
+			.social1{
+				background: image-url("frontend/RedesSociales_Carteleras_Twitter.png") no-repeat;
+			}
+
+			.social2{
+				background: image-url("frontend/RedesSociales_Cartelera_facebook.png") no-repeat;
+			}
+
+			.social3{
+				background: image-url("frontend/RedesSociales_Carteleras-Instagram.png") no-repeat;
+			}
+
+			.social4{
+				background: image-url("frontend/RedesSociales_Carteleras-Youtube.png") no-repeat;
+			}
 		}
 	}
 }
 
 @media #{$phone-landscape} {
 	#home{
+		height: 100%;
+
+		.container-video{
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			overflow: hidden;
+			z-index: -100;
+
+			video {
+				position: absolute;
+				top: 0;
+				left: 0;
+				min-width: 100%;
+				min-height: 100%;
+				background: image-url("frontend/ImagenCartelera.jpg") no-repeat;
+				background-size: cover;
+			}
+		}
+
+
 		.container-text{
 			padding-top: 10%;
+			text-align: center;
 
 			h3{
+				border-top: 2px solid #fff;
+				border-bottom: 2px solid #fff;
 				padding-top: 10px;
 				padding-bottom: 10px;
 				margin: 0 18%;
+				color: #FFF;
+				font-weight: bold;
 			}
 		}
 
 		.container-social{
 			padding-top: 15%;
+
+
+			.red{
+				width: 51px;
+				height: 51px;
+				background-position: center;
+				display: inline-block;
+			}
+
+			.social1{
+				background: image-url("frontend/RedesSociales_Carteleras_Twitter.png") no-repeat;
+			}
+
+			.social2{
+				background: image-url("frontend/RedesSociales_Cartelera_facebook.png") no-repeat;
+			}
+
+			.social3{
+				background: image-url("frontend/RedesSociales_Carteleras-Instagram.png") no-repeat;
+			}
+
+			.social4{
+				background: image-url("frontend/RedesSociales_Carteleras-Youtube.png") no-repeat;
+			}
 		}
 	}
 }

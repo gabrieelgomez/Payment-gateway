@@ -11,7 +11,6 @@ html, body, main{
 	height: 100%;
 	.front-container{
 		height: 100%;
-		background:#ee6e73;	
 		.front-logo-horizontal{
 			display: flex;
 			justify-content: center;
@@ -20,36 +19,6 @@ html, body, main{
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
-				@media #{$phone} {
-					.front-logo{
-						width: 300px;
-					}
-				}
-				@media #{$phone-landscape} {
-					.front-logo{
-						width: 300px;
-					}
-				}
-				.front-social{
-					margin-top: 30px;
-					a, a:hover{						
-						color: white;
-						font-size: 30px;
-					}
-				}
-			}
-			.front-footer{
-				padding: 15px;
-				color: white;
-				font-size: 18px;
-				width: 100%;
-				.brand-logo{
-					font-family: 'Patua One', cursive;
-					position: relative;
-					left: 10px;
-					font-size: 20px;
-					color: #ffffff
-				}
 			}
 		}
 	}

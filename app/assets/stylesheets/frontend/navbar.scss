@@ -1,20 +1,141 @@
 #front-navbar{ 
-	margin-bottom: 0px;
 	font-weight: bold;
 	font-size: 14px;
-	background-color: #F44336;
-	margin-bottom: 0px;
+	background-color: #1C1C1C;
 	border-radius: 0px;
 	border: none;
 	box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.17);
-	a{
-		color:white;
+
+
+/*el siguiente id centra los iconos*/
+	#center{
+		margin: 0em 30%;
 	}
-	.brand-logo{
-		font-family: 'Patua One', cursive;
-		position: relative;
-		left: 10px;
-		font-size: 30px;
-		color: #ffffff
+
+	.navbar-nav{
+		li{
+			a{
+				border-left: 1px solid grey;
+				border-right: 1px solid grey;
+			}
+		}
+
+		li:hover{
+			background-color: #66BAA3;
+
+			.icon1{
+				background: image-url("frontend/NavBar/NavBar_Iconos_Home_Hover.png") no-repeat;
+			}
+
+			.icon2{
+				background: image-url("frontend/NavBar/NavBar_Iconos_QuienEs_Hover.png") no-repeat;
+			}
+
+			.icon3{
+				background: image-url("frontend/NavBar/NavBar_Iconos_Conferencias_Hover.png") no-repeat;
+			}
+
+			.icon4{
+				background: image-url("frontend/NavBar/NavBar_Iconos_Clientes_Hover.png") no-repeat;
+			}
+
+			.icon5{
+				background: image-url("frontend/NavBar/NavBar_Iconos_Blog_Hover.png") no-repeat;
+			}
+
+			.icon6{
+				background: image-url("frontend/NavBar/NavBar_Iconos_Galeria_Hover.png") no-repeat;
+			}
+
+			.icon7{
+				background: image-url("frontend/NavBar/NavBar_Iconos_Contacto_Hover.png") no-repeat;
+			}
+
+		}
+	}
+	
+/*Mas adelante reduzco estas clases a un padre y sus hijos*/
+	.icon1{
+		width: 31px;
+		height: 31px;
+		background: image-url("frontend/NavBar/NavBar_Iconos_Home.png") no-repeat;
+		background-position: center;
+	}
+
+
+	.icon2{
+		width: 31px;
+		height: 31px;
+		background: image-url("frontend/NavBar/NavBar_Iconos_QuienEs.png") no-repeat;
+		background-position: center;
+	}
+
+	.icon3{
+		width: 31px;
+		height: 31px;
+		background: image-url("frontend/NavBar/NavBar_Iconos_Conferencias.png") no-repeat;
+		background-position: center center;
+	}
+
+	.icon4{
+		width: 31px;
+		height: 31px;
+		background: image-url("frontend/NavBar/NavBar_Iconos_Clientes.png") no-repeat;
+		background-position: center center;
+	}
+
+	.icon5{
+		width: 31px;
+		height: 31px;
+		background: image-url("frontend/NavBar/NavBar_Iconos_Blog.png") no-repeat;
+		background-position: center center;
+	}
+
+	.icon6{
+		width: 31px;
+		height: 31px;
+		background: image-url("frontend/NavBar/NavBar_Iconos_Galeria.png") no-repeat;
+		background-position: center center;
+	}
+
+	.icon7{
+		width: 31px;
+		height: 31px;
+		background: image-url("frontend/NavBar/NavBar_Iconos_Contacto.png") no-repeat;
+		background-position: center center;
+	}
+
+}
+
+@media #{$phone} {
+	#front-navbar{ 
+		#center{
+			margin: 0px;
+		}
+		.navbar-nav{
+			li{
+				display: inline-block;
+				a{
+					border: 0px
+				}
+			}
+		}	
 	}
 }
+
+@media #{$phone-landscape} {
+	#front-navbar{ 
+		#center{
+			margin: 0px;
+		}
+		.navbar-nav{
+			li{
+				display: inline-block;
+				a{
+					border: 0px
+				}
+			}
+		}	
+	}
+}
+

@@ -1,0 +1,851 @@
+@media #{$desktop} {
+	#ventajas{
+
+		.container-cuadro-text{
+			padding: 50px 29.5%;
+
+
+			.text-border{
+				border: 2px solid #00A19A;
+				padding: 20px;
+				z-index: 1000;
+				position: relative;
+				background: #fff;
+
+
+				p{
+					text-align: center;
+					font-family: $font-type;
+				}
+			}
+		}
+
+		.panel-title{
+			width: 100%;
+			height: 50px;
+			background: #00A19A;
+			position: relative;
+			z-index: 2;
+
+			p{
+				font-family: $font-type;
+				padding: 15px 0 15px 0;
+				font-size: 16px;
+				color: #fff;
+
+			}
+		}
+
+		.body-curriculun{
+			background: #DADADA;
+			padding-left: 25%;
+			padding-right: 25%;
+			padding-bottom: 50px;
+
+			.bar{
+				width: 5px;
+				height: 1180px;
+				background: #00A19A;
+				position: absolute;
+				left: 49.5%;
+				z-index: 1;
+			}
+			.panelone{
+				position: relative;
+				padding-top: 70px;
+				z-index: 200;
+				
+				.title{
+					height: 40px;
+					background: #00A19A;
+
+					.icon{
+						background: #67BCA2;
+						width: 60px;
+						height: 60px;
+						border-radius: 50%;
+						position: relative;
+						left: 45%;
+						top: -25px;
+
+						img{
+							padding-top: 10px;
+
+						}
+					}
+				}		
+				.body{
+					background: #fff;
+					padding: 15px 30px;
+
+					p{
+						font-family: $font-type;
+						text-align: center;
+					}
+				}
+			}
+
+			.paneltwo{
+				position: relative;
+				padding-top: 50px;
+				z-index: 200;
+				
+				.title{
+					height: 40px;
+					background: #00A19A;
+
+					.icon{
+						background: #67BCA2;
+						width: 60px;
+						height: 60px;
+						border-radius: 50%;
+						position: relative;
+						left: 45%;
+						top: -25px;
+
+						img{
+							padding-top: 10px;
+						}
+					}
+				}		
+				.body{
+					background: #fff;
+					padding: 15px 30px;
+
+
+					p{
+						text-align: center;
+						font-family: $font-type;
+					}
+				}
+			}
+
+			.panelthree{
+				position: relative;
+				padding-top: 50px;
+				z-index: 200;
+				
+				.title{
+					height: 40px;
+					background: #00A19A;
+
+					.icon{
+						background: #67BCA2;
+						width: 60px;
+						height: 60px;
+						border-radius: 50%;
+						position: relative;
+						left: 45%;
+						top: -25px;
+
+						img{
+							padding-top: 10px;
+						}
+					}
+				}		
+				.body{
+					padding: 15px 30px;
+					background: #fff;
+
+					p{
+						text-align: center;
+						font-family: $font-type;
+					}
+				}
+			}
+
+			.panelfour{
+				padding-top: 50px;
+				position: relative;
+				z-index: 200;
+
+				.title{
+					height: 40px;
+					background: #00A19A;
+
+					.icon{
+						background: #67BCA2;
+						width: 60px;
+						height: 60px;
+						border-radius: 50%;
+						position: relative;
+						left: 45%;
+						top: -25px;
+
+						img{
+							padding-top: 10px;
+						}
+					}
+				}		
+				.body{
+					background: #fff;
+					padding: 15px 30px;
+
+					p{
+						text-align: center;
+						font-family: $font-type;
+					}
+				}
+			}
+
+			.panelfive{
+				padding-top: 50px;
+				position: relative;
+				z-index: 200;
+				
+				.title{
+					height: 40px;
+					background: #00A19A;
+
+					.icon{
+						background: #67BCA2;
+						width: 60px;
+						height: 60px;
+						border-radius: 50%;
+						position: relative;
+						left: 45%;
+						top: -25px;
+
+						img{
+							padding-top: 10px;
+						}
+					}
+				}		
+				.body{
+					background: #fff;
+					padding: 15px 30px;
+
+					p{
+						text-align:center;
+						font-family: $font-type;
+					}
+				}
+			}
+
+			.panelsix{
+				padding-top: 50px;
+				position: relative;
+				z-index: 200;
+
+				.title{
+					height: 40px;
+					background: #00A19A;
+
+					.icon{
+						background: #67BCA2;
+						width: 60px;
+						height: 60px;
+						border-radius: 50%;
+						position: relative;
+						left: 45%;
+						top: -25px;
+
+						img{
+							padding-top: 10px;
+						}
+					}
+				}		
+				.body{
+					padding: 15px 30px;
+					background: #fff;
+
+					p{
+						text-align: center;
+						font-family: $font-type;
+					}
+				}
+			}
+		}
+
+		.banner{
+			width: 100%;
+			height: 250px;
+			background: image-url("frontend/Banner_Historia.jpg") no-repeat;
+			background-size: 100% 100%;
+
+			.text-banner{
+				position: relative;
+				top: 125px;
+
+				p{
+					color: #00A19A;
+					line-height: 12px;
+					font-size: 20px;
+					font-family: $font-type;				
+				}
+
+				#bold{
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}
+
+@media #{$phone} {
+	#ventajas{
+
+		.container-cuadro-text{
+			padding: 50px 25px;
+
+
+			.text-border{
+				border: 2px solid #00A19A;
+				padding: 20px;
+				z-index: 1000;
+				position: relative;
+				background: #fff;
+
+
+				p{
+					text-align: center;
+					font-family: $font-type;
+				}
+			}
+		}
+
+		.panel-title{
+			width: 100%;
+			height: 50px;
+			background: #00A19A;
+			position: relative;
+			z-index: 2;
+
+			p{
+				font-family: $font-type;
+				padding: 15px 0 15px 0;
+				font-size: 16px;
+				color: #fff;
+
+			}
+		}
+
+		.body-curriculun{
+			background: #DADADA;
+			padding-left: 5%;
+			padding-right: 5%;
+			padding-bottom: 50px;
+
+			.bar{
+				width: 5px;
+				height: 1580px;
+				background: #00A19A;
+				position: absolute;
+				left: 49.5%;
+				z-index: 1;
+			}
+			.panelone{
+				position: relative;
+				padding-top: 70px;
+				z-index: 200;
+				
+				.title{
+					height: 40px;
+					background: #00A19A;
+
+					.icon{
+						background: #67BCA2;
+						width: 60px;
+						height: 60px;
+						border-radius: 50%;
+						position: relative;
+						left: 42%;
+						top: -25px;
+
+						img{
+							padding-top: 10px;
+
+						}
+					}
+				}		
+				.body{
+					background: #fff;
+					padding: 15px 30px;
+
+					p{
+						font-family: $font-type;
+						text-align: center;
+					}
+				}
+			}
+
+			.paneltwo{
+				position: relative;
+				padding-top: 50px;
+				z-index: 200;
+				
+				.title{
+					height: 40px;
+					background: #00A19A;
+
+					.icon{
+						background: #67BCA2;
+						width: 60px;
+						height: 60px;
+						border-radius: 50%;
+						position: relative;
+						left: 42%;
+						top: -25px;
+
+						img{
+							padding-top: 10px;
+						}
+					}
+				}		
+				.body{
+					background: #fff;
+					padding: 15px 30px;
+
+
+					p{
+						text-align: center;
+						font-family: $font-type;
+					}
+				}
+			}
+
+			.panelthree{
+				position: relative;
+				padding-top: 50px;
+				z-index: 200;
+				
+				.title{
+					height: 40px;
+					background: #00A19A;
+
+					.icon{
+						background: #67BCA2;
+						width: 60px;
+						height: 60px;
+						border-radius: 50%;
+						position: relative;
+						left: 42%;
+						top: -25px;
+
+						img{
+							padding-top: 10px;
+						}
+					}
+				}		
+				.body{
+					padding: 15px 30px;
+					background: #fff;
+
+					p{
+						text-align: center;
+						font-family: $font-type;
+					}
+				}
+			}
+
+			.panelfour{
+				padding-top: 50px;
+				position: relative;
+				z-index: 200;
+
+				.title{
+					height: 40px;
+					background: #00A19A;
+
+					.icon{
+						background: #67BCA2;
+						width: 60px;
+						height: 60px;
+						border-radius: 50%;
+						position: relative;
+						left: 42%;
+						top: -25px;
+
+						img{
+							padding-top: 10px;
+						}
+					}
+				}		
+				.body{
+					background: #fff;
+					padding: 15px 30px;
+
+					p{
+						text-align: center;
+						font-family: $font-type;
+					}
+				}
+			}
+
+			.panelfive{
+				padding-top: 50px;
+				position: relative;
+				z-index: 200;
+				
+				.title{
+					height: 40px;
+					background: #00A19A;
+
+					.icon{
+						background: #67BCA2;
+						width: 60px;
+						height: 60px;
+						border-radius: 50%;
+						position: relative;
+						left: 42%;
+						top: -25px;
+
+						img{
+							padding-top: 10px;
+						}
+					}
+				}		
+				.body{
+					background: #fff;
+					padding: 15px 30px;
+
+					p{
+						text-align:center;
+						font-family: $font-type;
+					}
+				}
+			}
+
+			.panelsix{
+				padding-top: 50px;
+				position: relative;
+				z-index: 200;
+
+				.title{
+					height: 40px;
+					background: #00A19A;
+
+					.icon{
+						background: #67BCA2;
+						width: 60px;
+						height: 60px;
+						border-radius: 50%;
+						position: relative;
+						left: 42%;
+						top: -25px;
+
+						img{
+							padding-top: 10px;
+						}
+					}
+				}		
+				.body{
+					padding: 15px 30px;
+					background: #fff;
+
+					p{
+						text-align: center;
+						font-family: $font-type;
+					}
+				}
+			}
+		}
+
+		.banner{
+			width: 100%;
+			height: 150px;
+			background: image-url("frontend/Banner_Historia.jpg") no-repeat;
+			background-size: 130% 100%;
+
+			.text-banner{
+				position: relative;
+				top: 75px;
+
+				p{
+					color: #00A19A;
+					line-height: 6px;
+					font-size: 14px;
+					font-family: $font-type;				
+				}
+
+				#bold{
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}
+
+@media #{$phone-landscape} {
+	#ventajas{
+
+		.container-cuadro-text{
+			padding: 50px 25px;
+
+
+			.text-border{
+				border: 2px solid #00A19A;
+				padding: 20px;
+				z-index: 1000;
+				position: relative;
+				background: #fff;
+
+
+				p{
+					text-align: center;
+					font-family: $font-type;
+				}
+			}
+		}
+
+		.panel-title{
+			width: 100%;
+			height: 50px;
+			background: #00A19A;
+			position: relative;
+			z-index: 2;
+
+			p{
+				font-family: $font-type;
+				padding: 15px 0 15px 0;
+				font-size: 16px;
+				color: #fff;
+
+			}
+		}
+
+		.body-curriculun{
+			background: #DADADA;
+			padding-left: 5%;
+			padding-right: 5%;
+			padding-bottom: 50px;
+
+			.bar{
+				width: 5px;
+				height: 1180px;
+				background: #00A19A;
+				position: absolute;
+				left: 49.5%;
+				z-index: 1;
+			}
+			.panelone{
+				position: relative;
+				padding-top: 70px;
+				z-index: 200;
+				
+				.title{
+					height: 40px;
+					background: #00A19A;
+
+					.icon{
+						background: #67BCA2;
+						width: 60px;
+						height: 60px;
+						border-radius: 50%;
+						position: relative;
+						left: 45%;
+						top: -25px;
+
+						img{
+							padding-top: 10px;
+
+						}
+					}
+				}		
+				.body{
+					background: #fff;
+					padding: 15px 30px;
+
+					p{
+						font-family: $font-type;
+						text-align: center;
+					}
+				}
+			}
+
+			.paneltwo{
+				position: relative;
+				padding-top: 50px;
+				z-index: 200;
+				
+				.title{
+					height: 40px;
+					background: #00A19A;
+
+					.icon{
+						background: #67BCA2;
+						width: 60px;
+						height: 60px;
+						border-radius: 50%;
+						position: relative;
+						left: 45%;
+						top: -25px;
+
+						img{
+							padding-top: 10px;
+						}
+					}
+				}		
+				.body{
+					background: #fff;
+					padding: 15px 30px;
+
+
+					p{
+						text-align: center;
+						font-family: $font-type;
+					}
+				}
+			}
+
+			.panelthree{
+				position: relative;
+				padding-top: 50px;
+				z-index: 200;
+				
+				.title{
+					height: 40px;
+					background: #00A19A;
+
+					.icon{
+						background: #67BCA2;
+						width: 60px;
+						height: 60px;
+						border-radius: 50%;
+						position: relative;
+						left: 45%;
+						top: -25px;
+
+						img{
+							padding-top: 10px;
+						}
+					}
+				}		
+				.body{
+					padding: 15px 30px;
+					background: #fff;
+
+					p{
+						text-align: center;
+						font-family: $font-type;
+					}
+				}
+			}
+
+			.panelfour{
+				padding-top: 50px;
+				position: relative;
+				z-index: 200;
+
+				.title{
+					height: 40px;
+					background: #00A19A;
+
+					.icon{
+						background: #67BCA2;
+						width: 60px;
+						height: 60px;
+						border-radius: 50%;
+						position: relative;
+						left: 45%;
+						top: -25px;
+
+						img{
+							padding-top: 10px;
+						}
+					}
+				}		
+				.body{
+					background: #fff;
+					padding: 15px 30px;
+
+					p{
+						text-align: center;
+						font-family: $font-type;
+					}
+				}
+			}
+
+			.panelfive{
+				padding-top: 50px;
+				position: relative;
+				z-index: 200;
+				
+				.title{
+					height: 40px;
+					background: #00A19A;
+
+					.icon{
+						background: #67BCA2;
+						width: 60px;
+						height: 60px;
+						border-radius: 50%;
+						position: relative;
+						left: 45%;
+						top: -25px;
+
+						img{
+							padding-top: 10px;
+						}
+					}
+				}		
+				.body{
+					background: #fff;
+					padding: 15px 30px;
+
+					p{
+						text-align:center;
+						font-family: $font-type;
+					}
+				}
+			}
+
+			.panelsix{
+				padding-top: 50px;
+				position: relative;
+				z-index: 200;
+
+				.title{
+					height: 40px;
+					background: #00A19A;
+
+					.icon{
+						background: #67BCA2;
+						width: 60px;
+						height: 60px;
+						border-radius: 50%;
+						position: relative;
+						left: 45%;
+						top: -25px;
+
+						img{
+							padding-top: 10px;
+						}
+					}
+				}		
+				.body{
+					padding: 15px 30px;
+					background: #fff;
+
+					p{
+						text-align: center;
+						font-family: $font-type;
+					}
+				}
+			}
+		}
+
+		.banner{
+			width: 100%;
+			height: 200px;
+			background: image-url("frontend/Banner_Historia.jpg") no-repeat;
+			background-size: 100% 100%;
+
+			.text-banner{
+				position: relative;
+				top: 100px;
+
+				p{
+					color: #00A19A;
+					line-height: 12px;
+					font-size: 20px;
+					font-family: $font-type;				
+				}
+
+				#bold{
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}

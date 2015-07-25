@@ -5,17 +5,30 @@
 /		%source{:src => "//demosthenes.info/assets/videos/polina.webm", :type => "video/webm"}
 /		%source{:src => "//demosthenes.info/assets/videos/polina.mp4", :type => "video/mp4"}
 		
-.front
+#front
 	.front-container
 
-		#home
+		#home{style:"padding-top: 80px;"}
 			= render 'home'
-		#about
+		
+		#about{style:"padding-top: 80px;"}
 			= render 'about'
-		#video-full
+
+		#video-full{style:"padding-top: 60px;"}
 			= render 'video'
-		#ventajas
-			= render 'ventajas'	
+
+		#ventajas{style:"padding-top: 12px;"}
+			= render 'ventajas'
+
+		#conferences{style:"padding-top: 80px;"}
+			= render 'conferences'
+
+		#customers
+			= render 'customers'
+		#contacs
+			= render 'contacts'
+		#footer
+			= render 'footer'
 
 :javascript
 	$( "#boton-play").click(function() {

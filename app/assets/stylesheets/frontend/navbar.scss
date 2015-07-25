@@ -8,8 +8,8 @@
 
 
 /*el siguiente id centra los iconos*/
-	#center{
-		margin: 0em 30%;
+	.center{
+		margin: 0em 29%;
 	}
 
 	.navbar-nav{
@@ -109,6 +109,7 @@
 
 @media #{$phone} {
 	#front-navbar{ 
+		margin: 0px !important;
 		#center{
 			margin: 0px;
 		}
@@ -124,7 +125,8 @@
 }
 
 @media #{$phone-landscape} {
-	#front-navbar{ 
+	#front-navbar{
+		margin: 0px !important;
 		#center{
 			margin: 0px;
 		}

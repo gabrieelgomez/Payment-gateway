@@ -1,0 +1,357 @@
+@media #{$desktop} {
+	#customers{
+		.container-customers{
+			position: relative;
+			background: #DBDADF;
+			width: 100%;
+			padding: 100px 120px 80px 280px;
+
+
+			.container-clientes{
+				position: relative;
+				background: #fff;
+				width: 100%;
+				height: 200px;
+
+				img{
+					position: relative;
+					top: -65px;
+					left: -50.2%;
+				}
+
+				.text-cliente{
+					position: relative;
+					width: 160px;
+					height: 70px;
+					background: #00A19A;
+					padding-top: 25px;
+					top: 70px;
+					left: -160px;
+
+					p{
+						position: relative;
+						left: -5px;
+						font-family: $font-type;
+						color: #fff;
+					}
+				}
+
+				.text-body{
+					position: relative;
+					padding-left: 10px;
+					padding-top: 5px;
+					width: 280px;
+					height: 70px;
+					background: #fff;
+					top: 0px;
+					border-top: 2px solid #00A19A;
+					border-bottom: 2px solid #00A19A;
+					border-right: 2px solid #00A19A;
+
+					p{
+						padding-left: 10px;
+						font-family: $font-type;
+						font-size: 13px;
+					}
+				}
+			}
+
+			.container-testimonios{
+				position: relative;
+				background: #fff;
+				width: 100%;
+				height: 200px;
+				margin-top: 30px;
+
+				img{
+					position: relative;
+					top: -65px;
+					left: -50.2%;
+				}
+
+				.text-testimonios{
+					position: relative;
+					width: 160px;
+					height: 70px;
+					background: #00A19A;
+					padding-top: 25px;
+					top: 70px;
+					left: -160px;
+
+					p{
+						position: relative;
+						left: -10px;
+						font-family: $font-type;
+						color: #fff;	
+					}
+				}
+
+				.text-body{
+					position: relative;
+					padding-left: 10px;
+					padding-top: 10px;
+					width: 260px;
+					height: 70px;
+					background: #fff;
+					top: 0px;
+					border-top: 2px solid #00A19A;
+					border-bottom: 2px solid #00A19A;
+					border-right: 2px solid #00A19A;
+
+					p{
+						font-family: $font-type;
+						font-size: 13px;
+					}
+				}
+			}
+		}
+
+		.container-banner-motivador{
+			width: 100%;
+			height: 225px;
+			background: image-url("frontend/Banner_MasQunMotivador.jpg") no-repeat;
+			background-size: 100%;
+		}
+	}
+}
+
+
+
+@media #{$phone} {
+	#customers{
+		.container-customers{
+			position: relative;
+			background: #DBDADF;
+			width: 100%;
+			padding: 170px 20px 80px 20px;
+
+
+			.container-clientes{
+				position: relative;
+				background: #fff;
+				width: 100%;
+				height: 200px;
+
+				img{
+					position: relative;
+					top: -133px;
+					left: -50.2%;
+				}
+
+				.text-cliente{
+					position: relative;
+					width: 100%;
+					height: 70px;
+					background: #00A19A;
+					padding-top: 25px;
+					top: -70px;
+					
+
+					p{
+						position: relative;
+						left: -5px;
+						font-family: $font-type;
+						color: #fff;
+					}
+				}
+
+				.text-body{
+					position: relative;
+					padding-left: 10px;
+					padding-top: 5px;
+					width: 280px;
+					height: 70px;
+					background: #fff;
+					top: -70px;
+					border-top: 2px solid #00A19A;
+					border-bottom: 2px solid #00A19A;
+					border-right: 2px solid #00A19A;
+
+					p{
+						padding-left: 10px;
+						font-family: $font-type;
+						font-size: 13px;
+					}
+				}
+			}
+
+			.container-testimonios{
+				position: relative;
+				background: #fff;
+				width: 100%;
+				height: 200px;
+				margin-top: 90px;
+
+				img{
+					position: relative;
+					top: -65px;
+					left: -50.2%;
+				}
+
+				.text-testimonios{
+					position: relative;
+					width: 100%;
+
+					height: 70px;
+					background: #00A19A;
+					padding-top: 25px;
+					top: -70px;
+					
+
+					p{
+						position: relative;
+						left: -10px;
+						font-family: $font-type;
+						color: #fff;	
+					}
+				}
+
+				.text-body{
+					position: relative;
+					padding-left: 10px;
+					padding-top: 10px;
+					width: 100%;
+					height: 70px;
+					background: #fff;
+					top: 200px;
+					border-top: 2px solid #00A19A;
+					border-bottom: 2px solid #00A19A;
+					border-right: 2px solid #00A19A;
+
+					p{
+						font-family: $font-type;
+						font-size: 13px;
+					}
+				}
+			}
+		}
+
+		.container-banner-motivador{
+			width: 100%;
+			height: 150px;
+			background: image-url("frontend/Banner_MasQunMotivador.jpg") no-repeat;
+			background-size: 140% 100%;
+		}
+	}
+}
+
+
+
+
+@media #{$phone-landscape} {
+	#customers{
+		.container-customers{
+			position: relative;
+			background: #DBDADF;
+			width: 100%;
+			padding: 170px 20px 80px 20px;
+
+
+			.container-clientes{
+				position: relative;
+				background: #fff;
+				width: 100%;
+				height: 200px;
+
+				img{
+					position: relative;
+					top: -133px;
+					left: -50.2%;
+				}
+
+				.text-cliente{
+					position: relative;
+					width: 100%;
+					height: 70px;
+					background: #00A19A;
+					padding-top: 25px;
+					top: -70px;
+					
+
+					p{
+						position: relative;
+						left: -5px;
+						font-family: $font-type;
+						color: #fff;
+					}
+				}
+
+				.text-body{
+					position: relative;
+					padding-left: 10px;
+					padding-top: 5px;
+					width: 280px;
+					height: 70px;
+					background: #fff;
+					top: -70px;
+					border-top: 2px solid #00A19A;
+					border-bottom: 2px solid #00A19A;
+					border-right: 2px solid #00A19A;
+
+					p{
+						padding-left: 10px;
+						font-family: $font-type;
+						font-size: 13px;
+					}
+				}
+			}
+
+			.container-testimonios{
+				position: relative;
+				background: #fff;
+				width: 100%;
+				height: 200px;
+				margin-top: 90px;
+
+				img{
+					position: relative;
+					top: -65px;
+					left: -50.2%;
+				}
+
+				.text-testimonios{
+					position: relative;
+					width: 100%;
+
+					height: 70px;
+					background: #00A19A;
+					padding-top: 25px;
+					top: -70px;
+					
+
+					p{
+						position: relative;
+						left: -10px;
+						font-family: $font-type;
+						color: #fff;	
+					}
+				}
+
+				.text-body{
+					position: relative;
+					padding-left: 10px;
+					padding-top: 10px;
+					width: 100%;
+					height: 70px;
+					background: #fff;
+					top: 200px;
+					border-top: 2px solid #00A19A;
+					border-bottom: 2px solid #00A19A;
+					border-right: 2px solid #00A19A;
+
+					p{
+						font-family: $font-type;
+						font-size: 13px;
+					}
+				}
+			}
+		}
+
+		.container-banner-motivador{
+			width: 100%;
+			height: 150px;
+			background: image-url("frontend/Banner_MasQunMotivador.jpg") no-repeat;
+			background-size: 120% 100%;
+		}
+	}
+}

@@ -1,4 +1,21 @@
 GIT
+  remote: https://github.com/inyxtech/keppler_blog.git
+  revision: 9d48eda12e3d6b58f72e48e0883b4416e6d3bcce
+  specs:
+    keppler_blog (0.0.1)
+      acts-as-taggable-on (~> 3.4)
+      bootstrap-tagsinput-rails
+      cancancan
+      carrierwave
+      ckeditor
+      cocoon
+      haml_rails
+      mini_magick
+      rails (~> 4.2.0)
+      simple_form
+      social-share-button
+
+GIT
   remote: https://github.com/inyxtech/keppler_ga_dashboard.git
   revision: c25c774173945e498acbcb590d43beddcbf323ab
   specs:
@@ -43,6 +60,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    acts-as-taggable-on (3.5.0)
+      activerecord (>= 3.2, < 5)
     addressable (2.3.8)
     angularjs-rails (1.4.3)
     arel (6.0.2)
@@ -63,10 +82,17 @@ GEM
     bootstrap-sass (3.3.5.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.3.0)
+    bootstrap-tagsinput-rails (0.4.2.1)
+      railties (>= 3.1)
     builder (3.2.2)
     byebug (5.0.0)
       columnize (= 0.9.0)
     cancancan (1.12.0)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     ckeditor (4.1.2)
       cocaine
       orm_adapter (~> 0.5.0)
@@ -74,6 +100,7 @@ GEM
       activesupport (>= 3.0)
     cocaine (0.5.7)
       climate_control (>= 0.0.3, < 1.0)
+    cocoon (1.2.6)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -166,6 +193,7 @@ GEM
       haml (>= 4.0.6, < 5.0)
       html2haml (>= 1.0.1)
       railties (>= 4.0.1)
+    haml_rails (0.1.0)
     hashie (3.4.2)
     html2haml (2.0.0)
       erubis (~> 2.7.0)
@@ -213,6 +241,7 @@ GEM
     memoist (0.12.0)
     method_source (0.8.2)
     mime-types (2.6.1)
+    mini_magick (4.2.7)
     mini_portile (0.6.2)
     minitest (5.7.0)
     multi_json (1.11.0)
@@ -297,6 +326,9 @@ GEM
     sitemap_generator (5.1.0)
       builder
     slop (3.6.0)
+    social-share-button (0.1.8)
+      coffee-rails
+      sass-rails
     spring (1.3.6)
     sprockets (3.2.0)
       rack (~> 1.0)
@@ -330,12 +362,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on (~> 3.4)
   angularjs-rails
   better_errors
   bootstrap-sass
   byebug
   cancancan
+  carrierwave
   ckeditor
+  cocoon
   coffee-rails (~> 4.0.0)
   commands
   devise
@@ -353,6 +388,7 @@ DEPENDENCIES
   jquery-turbolinks
   kaminari
   kaminari-i18n
+  keppler_blog!
   keppler_ga_dashboard!
   material_icons
   materialize-sass
@@ -366,12 +402,10 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   simple_form
   sitemap_generator
+  social-share-button
   spring
   table_print
   therubyracer (~> 0.11.4)
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
-
-BUNDLED WITH
-   1.10.5

@@ -95,3 +95,9 @@ gem 'keppler_ga_dashboard', git: 'https://github.com/inyxtech/keppler_ga_dashboa
 gem 'google-api-client'
 
 
+#----blog-------
+gem 'keppler_blog', git: 'https://github.com/inyxtech/keppler_blog.git'
+gem 'cocoon'
+gem 'acts-as-taggable-on', '~> 3.4'
+gem 'carrierwave'
+gem 'social-share-button'

@@ -26,5 +26,8 @@ Rails.application.routes.draw do
   #dashboard
   mount KepplerGaDashboard::Engine, :at => '/', as: 'dashboard'
 
+  #blog
+  mount KepplerBlog::Engine, :at => '/', as: 'blog'
+
 
 end

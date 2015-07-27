@@ -84,3 +84,34 @@ img {
 
 }
 */
+
+.banner-blog{
+  background: image-url("frontend/Blog/Untitled-1.jpg") no-repeat;
+  width: 100%;
+  height: 350px;
+  background-size: 100%;
+}
+
+#keppler-blog{
+  margin-top: 10px;
+
+    h4{
+      font-family: $font-type;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+}
+
+#navbar-categories {
+  background: #00A09C !important;
+}
+
+.blog .posts-wrapper .post-attributes ul li i {
+  color: #00A09C !important;
+}
+
+.blog .posts-wrapper .post-body .read-more a {
+  border-color: #00A09C !important;
+  color: #00A09C !important;
+
+}

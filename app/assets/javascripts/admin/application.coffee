@@ -10,6 +10,8 @@
 #= require nprogress
 #= require nprogress-turbolinks
 #= require ckeditor/init
+#= require cocoon
+#= require keppler_blog/admin/application
 #= require turbolinks
 #= require_tree .
 		

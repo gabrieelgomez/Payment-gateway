@@ -1,9 +1,10 @@
 //Responsive design
 $desktop-large: "(min-width:1600px)";
 $desktop: "(min-width:992px)";
-$tablet: "(min-width:768px)";
-$tablet-landscape: "(min-width:768px) and (orientation : landscape)";
+$tablet: "(min-width: 801px) and (max-width: 1280px) and (orientation: landscape)";
+$tablet-portrait: "(min-width: 768px) and (max-width: 800px) and (orientation: portrait)";
 $phone: "(max-width: 767px) and (orientation : portrait)";
+$phone-small: "(max-width: 467px)";
 $phone-landscape: "(max-width: 767px) and (orientation : landscape)";
 
 //fuentes
@@ -11,6 +12,16 @@ $font-type: 'Lato', sans-serif;
 
 //colores
 $red-color: #F44336;
+
+@mixin phone-all {
+  @media #{$phone} {
+    @content
+  }
+
+  @media #{$phone-landscape} {
+     @content
+  }
+}
 
 // make all images responsive by default
 img {
@@ -90,10 +101,72 @@ img {
   width: 100%;
   height: 350px;
   background-size: 100%;
+  padding: 15% 42%;
+  padding-bottom: 0px;
+  margin-top: 60px;
+
+  @media #{$phone} {
+    height: 250px;
+    margin-top: 50px;
+    background-size: cover;
+    background-position: -400px;
+    padding: 35% 20%;
+  }
+
+  @media #{$phone-landscape} {
+    height: 200px;
+    background-size: cover;
+    padding: 15% 20%;
+    background-position: -100px;
+  }
+
+  @media #{$tablet-portrait} {
+    height: 150px;
+    margin-top: 60px;
+    background-size: cover;
+    background-position: -300px;
+    padding: 20% 30%;
+  }
+
+  @media #{$tablet} {
+    height: 150px;
+    margin-top: 60px;
+    background-size: cover;
+    background-position: -450px;
+    padding: 20% 30%;
+  }
+
+
+  .text-banner{
+    border-top: 3px solid #0073B5;
+    border-bottom: 3px solid #0073B5;
+    color: #0073B5;
+    margin-top: 0px;
+    line-height: 25px;
+    padding: 15px 0;
+    font-family: $font-type;
+
+    @media #{$tablet-portrait} {
+      margin-top: 40px;
+    }
+
+    @media #{$tablet} {
+      margin-top: 80px;
+    }
+  }
+}
+
+.blog{
+  margin-top: 0px !important;
 }
 
 #keppler-blog{
-  margin-top: 10px;
+
+  padding: 20px 60px;
+
+   @media #{$phone} {
+     padding: 20px;
+   }
 
     h4{
       font-family: $font-type;

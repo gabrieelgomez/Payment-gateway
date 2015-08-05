@@ -1,851 +1,191 @@
-@media #{$desktop} {
-	#ventajas{
 
-		.container-cuadro-text{
-			padding: 50px 29.5%;
+#ventajas{
 
-
-			.text-border{
-				border: 2px solid #00A19A;
-				padding: 20px;
-				z-index: 1000;
-				position: relative;
-				background: #fff;
+	.container-cuadro-text{
+		padding: 50px 29.5%;
 
 
-				p{
-					text-align: center;
-					font-family: $font-type;
-				}
-			}
+		@include phone-all{
+			padding: 50px 30px;
 		}
 
-		.panel-title{
-			width: 100%;
-			height: 50px;
-			background: #00A19A;
+		@media #{$tablet-portrait} {
+			padding: 50px 10%;
+		}
+
+		@media #{$tablet} {
+			padding: 50px 10%;
+		}
+
+
+		.text-border{
+			border: 2px solid #00A19A;
+			padding: 20px;
+			z-index: 1000;
 			position: relative;
-			z-index: 2;
+			background: #fff;
+
 
 			p{
+				text-align: center;
 				font-family: $font-type;
-				padding: 15px 0 15px 0;
-				font-size: 16px;
-				color: #fff;
-
 			}
 		}
+	}
 
-		.body-curriculun{
-			background: #DADADA;
-			padding-left: 25%;
-			padding-right: 25%;
-			padding-bottom: 50px;
+	.panel-title{
+		width: 100%;
+		height: 50px;
+		background: #00A19A;
+		position: relative;
+		z-index: 2;
 
-			.bar{
-				width: 5px;
-				height: 1180px;
+
+		p{
+			font-family: $font-type;
+			padding: 15px 0 15px 0;
+			font-size: 16px;
+			color: #fff;
+
+		}
+	}
+
+	.body-curriculun{
+		background: #DADADA;
+		padding: 0px 25% 50px 25%;
+		overflow: hidden;
+
+		@include phone-all{
+			padding: 0px 10% 50px 10%;
+		}
+
+		@media #{$tablet-portrait} {
+			padding: 0px 10% 50px 10%;
+		}
+
+		.bar{
+			width: 5px;
+			height: 1050px;
+			background: #00A19A;
+			position: absolute;
+			left: 49.5%;
+			z-index: 1;
+		}
+
+		.panel{
+			position: relative;
+			margin-top: 50px;
+			z-index: 200;
+			
+			.title{
+				height: 40px;
 				background: #00A19A;
-				position: absolute;
-				left: 49.5%;
-				z-index: 1;
-			}
-			.panelone{
-				position: relative;
-				padding-top: 70px;
-				z-index: 200;
-				
-				.title{
-					height: 40px;
-					background: #00A19A;
 
-					.icon{
-						background: #67BCA2;
-						width: 60px;
-						height: 60px;
-						border-radius: 50%;
-						position: relative;
-						left: 45%;
-						top: -25px;
+				.icon{
+					background: #67BCA2;
+					width: 60px;
+					height: 60px;
+					border-radius: 50%;
+					position: relative;
+					left: -4px;
+					top: -25px;
 
-						img{
-							padding-top: 10px;
+					@media #{$desktop-large} {
+						left: -7px;
+					}
 
+					@media #{$phone} {
+						left: 0px;
+					}
+
+					@media #{$phone-landscape} {
+						left: 0px;
+					}
+
+					img{
+						padding-top: 10px;
+
+						@media #{$phone} {
+							position: relative;
+							padding-top: 12px;
+							left: 0px;
 						}
 					}
-				}		
-				.body{
-					background: #fff;
-					padding: 15px 30px;
-
-					p{
-						font-family: $font-type;
-						text-align: center;
-					}
 				}
-			}
-
-			.paneltwo{
-				position: relative;
-				padding-top: 50px;
-				z-index: 200;
-				
-				.title{
-					height: 40px;
-					background: #00A19A;
-
-					.icon{
-						background: #67BCA2;
-						width: 60px;
-						height: 60px;
-						border-radius: 50%;
-						position: relative;
-						left: 45%;
-						top: -25px;
-
-						img{
-							padding-top: 10px;
-						}
-					}
-				}		
-				.body{
-					background: #fff;
-					padding: 15px 30px;
-
-
-					p{
-						text-align: center;
-						font-family: $font-type;
-					}
-				}
-			}
-
-			.panelthree{
-				position: relative;
-				padding-top: 50px;
-				z-index: 200;
-				
-				.title{
-					height: 40px;
-					background: #00A19A;
-
-					.icon{
-						background: #67BCA2;
-						width: 60px;
-						height: 60px;
-						border-radius: 50%;
-						position: relative;
-						left: 45%;
-						top: -25px;
-
-						img{
-							padding-top: 10px;
-						}
-					}
-				}		
-				.body{
-					padding: 15px 30px;
-					background: #fff;
-
-					p{
-						text-align: center;
-						font-family: $font-type;
-					}
-				}
-			}
-
-			.panelfour{
-				padding-top: 50px;
-				position: relative;
-				z-index: 200;
-
-				.title{
-					height: 40px;
-					background: #00A19A;
-
-					.icon{
-						background: #67BCA2;
-						width: 60px;
-						height: 60px;
-						border-radius: 50%;
-						position: relative;
-						left: 45%;
-						top: -25px;
-
-						img{
-							padding-top: 10px;
-						}
-					}
-				}		
-				.body{
-					background: #fff;
-					padding: 15px 30px;
-
-					p{
-						text-align: center;
-						font-family: $font-type;
-					}
-				}
-			}
-
-			.panelfive{
-				padding-top: 50px;
-				position: relative;
-				z-index: 200;
-				
-				.title{
-					height: 40px;
-					background: #00A19A;
-
-					.icon{
-						background: #67BCA2;
-						width: 60px;
-						height: 60px;
-						border-radius: 50%;
-						position: relative;
-						left: 45%;
-						top: -25px;
-
-						img{
-							padding-top: 10px;
-						}
-					}
-				}		
-				.body{
-					background: #fff;
-					padding: 15px 30px;
-
-					p{
-						text-align:center;
-						font-family: $font-type;
-					}
-				}
-			}
-
-			.panelsix{
-				padding-top: 50px;
-				position: relative;
-				z-index: 200;
-
-				.title{
-					height: 40px;
-					background: #00A19A;
-
-					.icon{
-						background: #67BCA2;
-						width: 60px;
-						height: 60px;
-						border-radius: 50%;
-						position: relative;
-						left: 45%;
-						top: -25px;
-
-						img{
-							padding-top: 10px;
-						}
-					}
-				}		
-				.body{
-					padding: 15px 30px;
-					background: #fff;
-
-					p{
-						text-align: center;
-						font-family: $font-type;
-					}
-				}
-			}
-		}
-
-		.banner{
-			width: 100%;
-			height: 250px;
-			background: image-url("frontend/Banner_Historia.jpg") no-repeat;
-			background-size: 100% 100%;
-
-			.text-banner{
-				position: relative;
-				top: 125px;
+			}		
+			.body{
+				background: #fff;
+				padding: 15px 30px;
 
 				p{
-					color: #00A19A;
-					line-height: 12px;
-					font-size: 20px;
-					font-family: $font-type;				
-				}
-
-				#bold{
-					font-weight: bold;
+					font-family: $font-type;
+					text-align: center;
 				}
 			}
 		}
 	}
-}
 
-@media #{$phone} {
-	#ventajas{
+	.banner{
+		width: 100%;
+		height: 250px;
+		background: image-url("frontend/Banner_Historia.jpg") no-repeat;
+		background-size: cover;
 
-		.container-cuadro-text{
-			padding: 50px 25px;
 
-
-			.text-border{
-				border: 2px solid #00A19A;
-				padding: 20px;
-				z-index: 1000;
-				position: relative;
-				background: #fff;
-
-
-				p{
-					text-align: center;
-					font-family: $font-type;
-				}
-			}
-		}
-
-		.panel-title{
-			width: 100%;
-			height: 50px;
-			background: #00A19A;
-			position: relative;
-			z-index: 2;
-
-			p{
-				font-family: $font-type;
-				padding: 15px 0 15px 0;
-				font-size: 16px;
-				color: #fff;
-
-			}
-		}
-
-		.body-curriculun{
-			background: #DADADA;
-			padding-left: 5%;
-			padding-right: 5%;
-			padding-bottom: 50px;
-
-			.bar{
-				width: 5px;
-				height: 1580px;
-				background: #00A19A;
-				position: absolute;
-				left: 49.5%;
-				z-index: 1;
-			}
-			.panelone{
-				position: relative;
-				padding-top: 70px;
-				z-index: 200;
-				
-				.title{
-					height: 40px;
-					background: #00A19A;
-
-					.icon{
-						background: #67BCA2;
-						width: 60px;
-						height: 60px;
-						border-radius: 50%;
-						position: relative;
-						left: 42%;
-						top: -25px;
-
-						img{
-							padding-top: 10px;
-
-						}
-					}
-				}		
-				.body{
-					background: #fff;
-					padding: 15px 30px;
-
-					p{
-						font-family: $font-type;
-						text-align: center;
-					}
-				}
-			}
-
-			.paneltwo{
-				position: relative;
-				padding-top: 50px;
-				z-index: 200;
-				
-				.title{
-					height: 40px;
-					background: #00A19A;
-
-					.icon{
-						background: #67BCA2;
-						width: 60px;
-						height: 60px;
-						border-radius: 50%;
-						position: relative;
-						left: 42%;
-						top: -25px;
-
-						img{
-							padding-top: 10px;
-						}
-					}
-				}		
-				.body{
-					background: #fff;
-					padding: 15px 30px;
-
-
-					p{
-						text-align: center;
-						font-family: $font-type;
-					}
-				}
-			}
-
-			.panelthree{
-				position: relative;
-				padding-top: 50px;
-				z-index: 200;
-				
-				.title{
-					height: 40px;
-					background: #00A19A;
-
-					.icon{
-						background: #67BCA2;
-						width: 60px;
-						height: 60px;
-						border-radius: 50%;
-						position: relative;
-						left: 42%;
-						top: -25px;
-
-						img{
-							padding-top: 10px;
-						}
-					}
-				}		
-				.body{
-					padding: 15px 30px;
-					background: #fff;
-
-					p{
-						text-align: center;
-						font-family: $font-type;
-					}
-				}
-			}
-
-			.panelfour{
-				padding-top: 50px;
-				position: relative;
-				z-index: 200;
-
-				.title{
-					height: 40px;
-					background: #00A19A;
-
-					.icon{
-						background: #67BCA2;
-						width: 60px;
-						height: 60px;
-						border-radius: 50%;
-						position: relative;
-						left: 42%;
-						top: -25px;
-
-						img{
-							padding-top: 10px;
-						}
-					}
-				}		
-				.body{
-					background: #fff;
-					padding: 15px 30px;
-
-					p{
-						text-align: center;
-						font-family: $font-type;
-					}
-				}
-			}
-
-			.panelfive{
-				padding-top: 50px;
-				position: relative;
-				z-index: 200;
-				
-				.title{
-					height: 40px;
-					background: #00A19A;
-
-					.icon{
-						background: #67BCA2;
-						width: 60px;
-						height: 60px;
-						border-radius: 50%;
-						position: relative;
-						left: 42%;
-						top: -25px;
-
-						img{
-							padding-top: 10px;
-						}
-					}
-				}		
-				.body{
-					background: #fff;
-					padding: 15px 30px;
-
-					p{
-						text-align:center;
-						font-family: $font-type;
-					}
-				}
-			}
-
-			.panelsix{
-				padding-top: 50px;
-				position: relative;
-				z-index: 200;
-
-				.title{
-					height: 40px;
-					background: #00A19A;
-
-					.icon{
-						background: #67BCA2;
-						width: 60px;
-						height: 60px;
-						border-radius: 50%;
-						position: relative;
-						left: 42%;
-						top: -25px;
-
-						img{
-							padding-top: 10px;
-						}
-					}
-				}		
-				.body{
-					padding: 15px 30px;
-					background: #fff;
-
-					p{
-						text-align: center;
-						font-family: $font-type;
-					}
-				}
-			}
-		}
-
-		.banner{
-			width: 100%;
-			height: 150px;
-			background: image-url("frontend/Banner_Historia.jpg") no-repeat;
-			background-size: 130% 100%;
-
-			.text-banner{
-				position: relative;
-				top: 75px;
-
-				p{
-					color: #00A19A;
-					line-height: 6px;
-					font-size: 14px;
-					font-family: $font-type;				
-				}
-
-				#bold{
-					font-weight: bold;
-				}
-			}
-		}
-	}
-}
-
-@media #{$phone-landscape} {
-	#ventajas{
-
-		.container-cuadro-text{
-			padding: 50px 25px;
-
-
-			.text-border{
-				border: 2px solid #00A19A;
-				padding: 20px;
-				z-index: 1000;
-				position: relative;
-				background: #fff;
-
-
-				p{
-					text-align: center;
-					font-family: $font-type;
-				}
-			}
-		}
-
-		.panel-title{
-			width: 100%;
-			height: 50px;
-			background: #00A19A;
-			position: relative;
-			z-index: 2;
-
-			p{
-				font-family: $font-type;
-				padding: 15px 0 15px 0;
-				font-size: 16px;
-				color: #fff;
-
-			}
-		}
-
-		.body-curriculun{
-			background: #DADADA;
-			padding-left: 5%;
-			padding-right: 5%;
-			padding-bottom: 50px;
-
-			.bar{
-				width: 5px;
-				height: 1180px;
-				background: #00A19A;
-				position: absolute;
-				left: 49.5%;
-				z-index: 1;
-			}
-			.panelone{
-				position: relative;
-				padding-top: 70px;
-				z-index: 200;
-				
-				.title{
-					height: 40px;
-					background: #00A19A;
-
-					.icon{
-						background: #67BCA2;
-						width: 60px;
-						height: 60px;
-						border-radius: 50%;
-						position: relative;
-						left: 45%;
-						top: -25px;
-
-						img{
-							padding-top: 10px;
-
-						}
-					}
-				}		
-				.body{
-					background: #fff;
-					padding: 15px 30px;
-
-					p{
-						font-family: $font-type;
-						text-align: center;
-					}
-				}
-			}
-
-			.paneltwo{
-				position: relative;
-				padding-top: 50px;
-				z-index: 200;
-				
-				.title{
-					height: 40px;
-					background: #00A19A;
-
-					.icon{
-						background: #67BCA2;
-						width: 60px;
-						height: 60px;
-						border-radius: 50%;
-						position: relative;
-						left: 45%;
-						top: -25px;
-
-						img{
-							padding-top: 10px;
-						}
-					}
-				}		
-				.body{
-					background: #fff;
-					padding: 15px 30px;
-
-
-					p{
-						text-align: center;
-						font-family: $font-type;
-					}
-				}
-			}
-
-			.panelthree{
-				position: relative;
-				padding-top: 50px;
-				z-index: 200;
-				
-				.title{
-					height: 40px;
-					background: #00A19A;
-
-					.icon{
-						background: #67BCA2;
-						width: 60px;
-						height: 60px;
-						border-radius: 50%;
-						position: relative;
-						left: 45%;
-						top: -25px;
-
-						img{
-							padding-top: 10px;
-						}
-					}
-				}		
-				.body{
-					padding: 15px 30px;
-					background: #fff;
-
-					p{
-						text-align: center;
-						font-family: $font-type;
-					}
-				}
-			}
-
-			.panelfour{
-				padding-top: 50px;
-				position: relative;
-				z-index: 200;
-
-				.title{
-					height: 40px;
-					background: #00A19A;
-
-					.icon{
-						background: #67BCA2;
-						width: 60px;
-						height: 60px;
-						border-radius: 50%;
-						position: relative;
-						left: 45%;
-						top: -25px;
-
-						img{
-							padding-top: 10px;
-						}
-					}
-				}		
-				.body{
-					background: #fff;
-					padding: 15px 30px;
-
-					p{
-						text-align: center;
-						font-family: $font-type;
-					}
-				}
-			}
-
-			.panelfive{
-				padding-top: 50px;
-				position: relative;
-				z-index: 200;
-				
-				.title{
-					height: 40px;
-					background: #00A19A;
-
-					.icon{
-						background: #67BCA2;
-						width: 60px;
-						height: 60px;
-						border-radius: 50%;
-						position: relative;
-						left: 45%;
-						top: -25px;
-
-						img{
-							padding-top: 10px;
-						}
-					}
-				}		
-				.body{
-					background: #fff;
-					padding: 15px 30px;
-
-					p{
-						text-align:center;
-						font-family: $font-type;
-					}
-				}
-			}
-
-			.panelsix{
-				padding-top: 50px;
-				position: relative;
-				z-index: 200;
-
-				.title{
-					height: 40px;
-					background: #00A19A;
-
-					.icon{
-						background: #67BCA2;
-						width: 60px;
-						height: 60px;
-						border-radius: 50%;
-						position: relative;
-						left: 45%;
-						top: -25px;
-
-						img{
-							padding-top: 10px;
-						}
-					}
-				}		
-				.body{
-					padding: 15px 30px;
-					background: #fff;
-
-					p{
-						text-align: center;
-						font-family: $font-type;
-					}
-				}
-			}
-		}
-
-		.banner{
-			width: 100%;
+		@media #{$phone-small}{
 			height: 200px;
-			background: image-url("frontend/Banner_Historia.jpg") no-repeat;
+			background-position: -500px !important;
+		}
+
+		@media #{$phone} {
+			height: 200px;
+			background-position: -300px;	
+		}
+
+		@media #{$phone-landscape} {
+			height: 200px;
+			background-position: -300px;	
+		}
+
+		@media #{$tablet-portrait} {
+			background-position: -300px !important;
+		}
+
+		@media #{$tablet} {
+			background-position: -150px;
+		}
+
+		@media #{$desktop} {
 			background-size: 100% 100%;
+			background-position: 0px;
+		}
 
-			.text-banner{
-				position: relative;
+
+
+		.text-banner{
+			position: relative;
+			top: 125px;
+
+			@media #{$phone-small}{
+				left: -20px !important;
+			}
+
+			@include phone-all{
 				top: 100px;
+				left: 0px;
+			}
 
-				p{
-					color: #00A19A;
-					line-height: 12px;
-					font-size: 20px;
-					font-family: $font-type;				
-				}
+			p{
+				color: #00A19A;
+				line-height: 12px;
+				font-size: 20px;
+				font-family: $font-type;				
+			}
 
-				#bold{
-					font-weight: bold;
-				}
+			#bold{
+				font-weight: bold;
 			}
 		}
 	}
 }
+

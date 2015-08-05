@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   after_commit on: [:update] do
-    puts __elasticsearch__.index_document
+    __elasticsearch__.index_document
   end
 
   def rol

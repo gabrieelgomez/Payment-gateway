@@ -22,6 +22,12 @@ class Ability
       can :manage, KepplerBlog::Post, :user_id => user.id
     elsif user.has_role? :editor
       can [:index, :update, :edit, :show]
-    end  
+
+
+    end 
+
+    can :manage, KepplerCatalogs::Catalog
+    can :manage, KepplerCatalogs::Category
+    can :manage, KepplerCatalogs::Attachment 
   end
 end

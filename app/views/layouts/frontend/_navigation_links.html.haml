@@ -1,11 +1,21 @@
+-if action_name == "index" and controller_name != "blog"
+	%li= link_to '<div class="icon1" title= "Home"></div>'.html_safe, "#home"
+	%li= link_to '<div class="icon2"></div>'.html_safe, "#about"
+	%li= link_to '<div class="icon3"></div>'.html_safe, "#video-full"
+	%li= link_to '<div class="icon4"></div>'.html_safe, "#ventajas"
+	%li= link_to '<div class="icon6"></div>'.html_safe, "/gallery/imagenes", class: "external"	
+	%li= link_to '<div class="icon5"></div>'.html_safe, "/blog", class: "external"
+	%li= link_to '<div class="icon7"></div>'.html_safe, "#contacs"
 
-%li= link_to '<div class="icon1"></div>'.html_safe, "#home"
-%li= link_to '<div class="icon2"></div>'.html_safe, "#about"
-%li= link_to '<div class="icon3"></div>'.html_safe, "#video-full"
-%li= link_to '<div class="icon4"></div>'.html_safe, "#ventajas"
-%li= link_to '<div class="icon6"></div>'.html_safe, "#conferences"
-%li= link_to '<div class="icon5"></div>'.html_safe, "#customers"
-%li= link_to '<div class="icon7"></div>'.html_safe, "#contacs"
+- else
+	%li= link_to '<div class="icon1"></div>'.html_safe, main_app.root_path(anchor: "home"), class: "external"
+	%li= link_to '<div class="icon2"></div>'.html_safe, main_app.root_path(anchor: "about"), class: "external"
+	%li= link_to '<div class="icon3"></div>'.html_safe, main_app.root_path(anchor: "video-full"), class: "external"
+	%li= link_to '<div class="icon4"></div>'.html_safe, main_app.root_path(anchor: "ventajas"), class: "external"
+	%li{ class: "#{'current' if action_name == 'gallery'}" }
+		= link_to '<div class="icon6"></div>'.html_safe, "/gallery/imagenes", class: "external"
 
-
-
+	%li{ class: "#{'current' if controller_name == 'blog'}" }
+		= link_to '<div class="icon5"></div>'.html_safe, "/blog", class: "external"
+		
+	%li= link_to '<div class="icon7"></div>'.html_safe, main_app.root_path(anchor: "customers"), class: "external"

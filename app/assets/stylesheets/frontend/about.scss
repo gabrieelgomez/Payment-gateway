@@ -1,104 +1,79 @@
-@media #{$desktop} {
-	#about{
-		.container-about{
-			.text-left{
-				margin-top: 7%;
-				margin-bottom: 12%;
-				p{
-					font-size: 22px;
-					font-family: $font-type;
-					line-height: 16px;
-					text-align: center;
-				}
-			}
-			#negrita{
-				font-weight: bold;
-				
+#about{
+	.container-about{
+		.text-left{
+			margin-top: 7%;
+			margin-bottom: 12%;
+
+			@media #{$phone} {
+				margin-top: 0%;	
 			}
 
-			.text-right{
-				margin-top: 1%;
+			@media #{$phone-landscape} {
+				margin-top: 0%;
 				margin-bottom: 8%;
-				padding: 0 120px 0 120px;
+			}
 
-				p{
-					font-size: 15px;
-					font-family: $font-type;
-					line-height: 16px;
-					text-align: left;
+			@media #{$tablet-portrait} {
+				margin-top: 0%;
+				margin-bottom: 8%;
+			}
 
-				}
+
+			p{
+				font-size: 22px;
+				font-family: $font-type;
+				line-height: 16px;
+				text-align: center;
 			}
 		}
-	}
-}
 
-@media #{$phone} {
-	#about{
-		.container-about{
-			.text-left{
-				margin-top: 1%;
-				margin-bottom: 12%;
-
-				p{
-					font-size: 20px;
-					font-family: $font-type;
-					line-height: 12px;
-					text-align: center;
-				}
-			}
-
-			#negrita{
-				font-weight: bold;
-				
-			}
-
-			.text-right{
-				margin-top: 8%;
-				margin-bottom: 15%;
-				padding: 0 40px 0 40px;
-
-				p{
-					font-size: 16px;
-					font-family: $font-type;
-					line-height: 18px;
-					text-align: center;
-				}
-			}
+		#negrita{
+			font-weight: bold;	
 		}
-	}
-}
 
-@media #{$phone-landscape} {
-	#about{
-		.container-about{
-			.text-left{
-				margin-top: 1%;
-				margin-bottom: 10%;
+		.text-right{
+			margin-top: 1%;
+			margin-bottom: 8%;
+			padding: 0 120px 0 120px;
 
-				p{
-					font-size: 20px;
-					font-family: $font-type;
-					line-height: 12px;
-					text-align: center;
-				}
+			@media #{$desktop-large} {
+				margin-top: 4%;
+				margin-bottom: 0%;
+				padding: 0 25%;
 			}
 
-			#negrita{
-				font-weight: bold;
+			@media #{$phone} {
+				padding: 0 30px 0 30px;
+			}
+
+			@media #{$phone-landscape} {
+				margin-top: 0%;
+				margin-bottom: 2%;
+				padding: 0 30px 0 30px;
+			}
+
+			@media #{$tablet} {
+				padding: 0 10%;
 				
 			}
 
-			.text-right{
-				margin-top: 0px;
-				margin-bottom: 8%;
-				padding: 0 40px 0 40px;
 
-				p{
+			p{
+				font-size: 15px;
+				font-family: $font-type;
+				line-height: 16px;
+				text-align: left;
+
+				@media #{$phone} {
 					text-align: justify;
-					font-size: 16px;
-					font-family: $font-type;
-					line-height: 16px;
+				}
+
+				@media #{$tablet-portrait} {
+					text-align: justify;
+				}
+
+				@media #{$tablet} {
+					text-align: justify;
 				}
 			}
 		}

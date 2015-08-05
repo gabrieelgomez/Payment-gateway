@@ -101,3 +101,9 @@ gem 'cocoon'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'carrierwave'
 gem 'social-share-button'
+
+#---Catalog-----
+gem 'keppler_catalogs', git: "https://github.com/inyxtech/keppler_catalogs.git"
+
+#---- Carrusel frontend-----
+gem "jquery-slick-rails"

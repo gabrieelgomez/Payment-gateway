@@ -12,6 +12,7 @@
 #= require ckeditor/init
 #= require cocoon
 #= require keppler_blog/admin/application
+#= require keppler_catalogs/application
 #= require turbolinks
 #= require_tree .
 		

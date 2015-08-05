@@ -1,228 +1,140 @@
-@media #{$desktop} {
-	#home{
-		height: 100%;
+#home{
+	height: 100%;
 
-		.container-video{
+	.container-video{
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		overflow: hidden;
+		z-index: -100;
+
+		video {
 			position: absolute;
 			top: 0;
-			right: 0;
-			bottom: 0;
 			left: 0;
-			overflow: hidden;
-			z-index: -100;
+			min-width: 100%;
+			min-height: 100%;
+			background: image-url("frontend/ImagenCartelera.jpg") no-repeat;
+			background-size: cover;
 
-			video {
-				position: absolute;
-				top: 0;
-				left: 0;
-				min-width: 100%;
-				min-height: 100%;
-				background: image-url("frontend/ImagenCartelera.jpg") no-repeat;
-				background-size: cover;
-			}
-		}
-
-		.container-logo-henao{
-			img{
-				margin-top: 0px;
-			}
-		}
-
-
-		.container-text{
-			padding-top: 1%;
-			text-align: center;
-
-			h3{
-				border-top: 2px solid #fff;
-				border-bottom: 2px solid #fff;
-				padding-top: 10px;
-				padding-bottom: 10px;
-				margin: 0 35%;
-				color: #FFF;
-				font-weight: bold;
-			}
-		}
-
-		.container-social{
-			padding-top: 20%;
-
-
-			.red{
-				width: 51px;
-				height: 51px;
-				background-position: center;
-				display: inline-block;
+			@media #{$phone-small}{
+				background-position: -700px !important;
 			}
 
-			.social1{
-				background: image-url("frontend/RedesSociales_Carteleras_Twitter.png") no-repeat;
+			@media #{$phone} {
+				background-position: -1050px;
 			}
 
-			.social2{
-				background: image-url("frontend/RedesSociales_Cartelera_facebook.png") no-repeat;
+			@media #{$phone-landscape} {
+				background-size: 100% 100%;
 			}
 
-			.social3{
-				background: image-url("frontend/RedesSociales_Carteleras-Instagram.png") no-repeat;
-			}
-
-			.social4{
-				background: image-url("frontend/RedesSociales_Carteleras-Youtube.png") no-repeat;
+			@media #{$tablet-portrait} {
+				background-position: -700px;
 			}
 		}
 	}
-}
 
-@media #{$phone} {
-	#home{
-		height: 100%;
+	.container-logo-henao{
+		img{
+			margin-top: 0px;
 
-		.container-video{
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			overflow: hidden;
-			z-index: -100;
-
-			video {
-				position: absolute;
-				top: 0;
-				left: 0;
-				min-width: 100%;
-				min-height: 100%;
-				background: image-url("frontend/ImagenCartelera.jpg") no-repeat;
-				background-size: cover;
-			}
-		}
-
-		.container-logo-henao{
-			img{
-				margin-top: 0px;
-			}
-		}
-
-		.container-text{
-			padding-top: 5%;
-			text-align: center;
-
-			h3{
-				border-top: 2px solid #fff;
-				border-bottom: 2px solid #fff;
-				padding-top: 10px;
-				padding-bottom: 10px;
-				margin: 0 20%;
-				color: #FFF;
-				font-weight: bold;
-			}
-		}
-
-		.container-social{
-			padding-top: 50%;
-
-
-			.red{
-				width: 51px;
-				height: 51px;
-				background-position: center;
-				display: inline-block;
-			}
-
-			.social1{
-				background: image-url("frontend/RedesSociales_Carteleras_Twitter.png") no-repeat;
-			}
-
-			.social2{
-				background: image-url("frontend/RedesSociales_Cartelera_facebook.png") no-repeat;
-			}
-
-			.social3{
-				background: image-url("frontend/RedesSociales_Carteleras-Instagram.png") no-repeat;
-			}
-
-			.social4{
-				background: image-url("frontend/RedesSociales_Carteleras-Youtube.png") no-repeat;
-			}
-		}
-	}
-}
-
-@media #{$phone-landscape} {
-	#home{
-		height: 100%;
-
-		.container-video{
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			overflow: hidden;
-			z-index: -100;
-
-			video {
-				position: absolute;
-				top: 0;
-				left: 0;
-				min-width: 100%;
-				min-height: 100%;
-				background: image-url("frontend/ImagenCartelera.jpg") no-repeat;
-				background-size: cover;
-			}
-		}
-
-		.container-logo-henao{
-			img{
+			@media #{$phone-landscape} {
 				width: 50%;
 				margin-top: -30px;
 			}
-		}
 
-
-		.container-text{
-			padding-top: 2%;
-			text-align: center;
-
-			h3{
-				border-top: 2px solid #fff;
-				border-bottom: 2px solid #fff;
-				padding-top: 10px;
-				padding-bottom: 10px;
-				margin: 0 30%;
-				font-size: 15px;
-				color: #FFF;
-				font-weight: bold;
-			}
-		}
-
-		.container-social{
-			padding-top: 3%;
-
-
-			.red{
-				width: 51px;
-				height: 51px;
-				background-position: center;
-				display: inline-block;
+			@media #{$tablet-portrait} {
+				margin-top: 80px;
 			}
 
-			.social1{
-				background: image-url("frontend/RedesSociales_Carteleras_Twitter.png") no-repeat;
-			}
-
-			.social2{
-				background: image-url("frontend/RedesSociales_Cartelera_facebook.png") no-repeat;
-			}
-
-			.social3{
-				background: image-url("frontend/RedesSociales_Carteleras-Instagram.png") no-repeat;
-			}
-
-			.social4{
-				background: image-url("frontend/RedesSociales_Carteleras-Youtube.png") no-repeat;
+			@media #{$tablet} {
+				margin-top: 0px;
 			}
 		}
 	}
+
+
+	.container-text{
+		padding-top: 1%;
+		text-align: center;
+
+		@media #{$phone} {
+			padding-top: 5%;
+		}
+
+		@media #{$phone-landscape} {
+			padding-top: 2%;
+		}
+
+		@media #{$tablet-portrait} {
+			padding-top: 10%;
+		}
+
+		@media #{$tablet} {
+			padding-top: 2%;
+		}
+
+		h3{
+			border-top: 2px solid #fff;
+			border-bottom: 2px solid #fff;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			margin: 0 35%;
+			color: #FFF;
+			font-weight: bold;
+
+			@media #{$phone} {
+				margin: 0 20%;
+			}
+
+			@media #{$phone-landscape} {
+				margin: 0 30%;
+				font-size: 15px;
+			}
+
+			@media #{$tablet-portrait} {
+				margin: 0 25%;
+			}
+		}
+	}
+
+	.container-social{
+		padding-top: 20%;
+
+		@media #{$phone} {
+			padding-top: 40%;
+		}
+
+		@media #{$phone-landscape} {
+			padding-top: 3%;
+		}
+
+		@media #{$tablet-portrait} {
+			padding-top: 40%;
+		}
+
+		@media #{$tablet} {
+			padding-top: 5%;
+		}
+
+
+		.red{
+			width: 51px;
+			height: 51px;
+			background-position: center;
+			display: inline-block;
+		}
+
+		@each $redsocial in twitter, facebook, instagram, youtube {
+		  .#{$redsocial}-icon {
+		    background-image: url("RedesSociales-#{$redsocial}.png");
+		  }
+		}
+	}
 }
+
+
+

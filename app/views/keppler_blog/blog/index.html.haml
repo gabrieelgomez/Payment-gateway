@@ -1,7 +1,9 @@
-= title "Keppler Blog"
-= meta_description "Bienvenidos al blog de keppler admin, aquí podras encontrar excelentes articulos sobre ruby on rails."
-
+= title ""
+= meta_description ""
+= render 'layouts/frontend/navigation'
 .banner-blog
+	%center
+		%h4.text-banner CONTENIDO DE VALOR PARA TU INSPIRACIÓN
 .container.blog#keppler-blog
 	
 	%center
@@ -12,33 +14,36 @@
 	.visible-xs
 		= render 'search'
 	.row
-		.col-lg-10.col-xs-12
+		.col-lg-12.col-xs-12
 			.posts-wrapper
 				- unless @posts.empty?
-					- @posts.each do |post|
-						.post
-							%h2.post-title
-								= link_to post.title, blog_show_post_path(post.permalink)
-							.post-attributes
-								%ul
-									%li
-										%span
-											%i.fa.fa-calendar
-											= post.created_at.strftime("%d %b. %Y")
-									%li
-										%i.fa.fa-user
-										= link_to post.user.name, filter_path('autor', post.user.permalink)
-									%li
-										%i.fa.fa-tags
-										= link_to post.category.name, filter_path('category', post.category.permalink)
-							.post-image
-								= link_to blog_show_post_path(post.permalink) do
-									= image_tag post.image
-							.post-body
-								= sanitize(post.body, tags: []).truncate(300)
-								.read-more
-									= link_to "Leer más", blog_show_post_path(post.permalink), class: "btn btn-xs"
-						%hr.hr-half
+					.row
+						- @posts.each do |post|
+
+							.col-lg-4.col-md-4
+								.post
+									.post-image
+										= link_to blog_show_post_path(post.permalink) do
+											= image_tag post.image
+									.post-body
+										= sanitize(post.body, tags: []).truncate(150)
+									.post-attributes
+										%ul
+											%li
+												%span
+													%i.fa.fa-calendar
+													= post.created_at.strftime("%d %b. %Y")
+											%li
+												%i.fa.fa-user
+												= link_to post.user.name, filter_path('autor', post.user.permalink)
+											%li
+												%i.fa.fa-tags
+												= link_to post.category.name, filter_path('category', post.category.permalink)
+									
+										.read-more
+											%center
+												= link_to "Leer más", blog_show_post_path(post.permalink), class: "btn btn-primary", style:"background-color: #00A09C; width: 100%; border-color #00A09C;"
+								%hr.hr-half
 				- else
 					%center
 						No se encontraron resultados.
@@ -46,4 +51,7 @@
 
 				= paginate @posts, :views_prefix => 'templates'
 
-		= render "sidebar"
+#contacs{style:"background: #DADADA"}
+	= render 'frontend/contacts'
+#footer
+	= render 'frontend/footer'

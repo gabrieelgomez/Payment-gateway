@@ -6,15 +6,64 @@
 		.text-body.hidden-xs
 			%center
 				%p Nuestra mejor carta de presentación es la satisfaccion y superacion de nuestros clientes.
-		= image_tag "frontend/Icono_Cliente-02.png", class: "hidden-xs"
+		= image_tag "frontend/Icono_Cliente-02.png", class: "hidden-xs btn-clientes"
+
+		.multiple-items
+			- @attachments_clientes.each do |logos|
+
+				%img{:src => "#{logos.image}"}
 
 	.container-testimonios
+		
 		.text-testimonios
 			%center
 				%p TESTIMONIOS
 		.text-body.hidden-xs
 			%center
 				%p Trabajamos para llevar experiencias y conferencias dignas de contar.
-		= image_tag "frontend/Icono_Cliente-03.png", class: "hidden-xs"
+		= image_tag "frontend/Icono_Cliente-03.png", class: "hidden-xs btn-testimonios"
+
+		.carrusel-testimonios
+			- @attachments_testimonios.each do |testimonios|
+				.container-testimonios
+					.row
+						.col-lg-4
+							%img{:src => "#{testimonios.image}"}
+						.col-lg-8
+							%p
+								= testimonios.description.html_safe
 		
 .container-banner-motivador
+	%center
+		%p.text-motivador Más que un motivador
+		%p.text-motivador#bold es un INSPIRADOR...
+		%p.text-motivador ¡No has visto nada igual!
+		
+
+:javascript
+	$(document).ready(function(){
+		$('.multiple-items').slick({
+			autoplay: true,
+			arrows: false,
+			autoplaySpeed: 2000,
+			speed: 300,
+			cssEase: 'linear',
+			adaptiveHeight: true,
+			slidesToScroll: 1,
+			slidesToShow: 3,
+
+		});
+	});
+
+:javascript
+	$(document).ready(function(){
+		$('.carrusel-testimonios').slick({
+			arrows: false,
+			autoplay: true,
+			fade: true,
+			autoplaySpeed: 5000
+		});
+	});
+
+
+

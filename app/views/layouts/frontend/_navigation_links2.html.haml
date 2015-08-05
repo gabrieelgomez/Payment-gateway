@@ -1,0 +1,22 @@
+-if action_name == "index" and controller_name != "blog"
+	%li= link_to "HOME", "#home"
+	%li= link_to "HOME", "#about"
+	%li= link_to "HOME", "#video-full"
+	%li= link_to "HOME", "#ventajas"
+	%li= link_to "HOME", "/gallery/imagenes", class: "external"	
+	%li= link_to "HOME", "/blog", class: "external"
+	%li= link_to "HOME", "#contacs"
+
+- else
+	%li= link_to "HOME", main_app.root_path(anchor: "home"), class: "external"
+	%li= link_to "HOME", main_app.root_path(anchor: "about"), class: "external"
+	%li= link_to "HOME", main_app.root_path(anchor: "video-full"), class: "external"
+	%li= link_to "HOME", main_app.root_path(anchor: "ventajas"), class: "external"
+	
+	%li{ class: "#{'current' if action_name == 'gallery'}" }
+		= link_to "HOME", "/gallery/imagenes", class: "external"
+
+	%li{ class: "#{'current' if controller_name == 'blog'}" }
+		= link_to "HOME", "/blog", class: "external"
+		
+	%li= link_to "HOME", main_app.root_path(anchor: "customers"), class: "external"

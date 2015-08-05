@@ -10,18 +10,30 @@
 /*el siguiente id centra los iconos*/
 	.center{
 		margin: 0em 29%;
+
+		@media #{$tablet-portrait} {
+			margin: 0em 18%;
+		}
+
+		@media #{$tablet} {
+			margin: 0em 26%;
+		}
 	}
 
 	.navbar-nav{
 		li{
 			a{
+				/*
 				border-left: 1px solid grey;
 				border-right: 1px solid grey;
+				*/
 			}
 		}
 
 		li:hover{
 			background-color: #66BAA3;
+
+
 
 			.icon1{
 				background: image-url("frontend/NavBar/NavBar_Iconos_Home_Hover.png") no-repeat;
@@ -50,61 +62,21 @@
 			.icon7{
 				background: image-url("frontend/NavBar/NavBar_Iconos_Contacto_Hover.png") no-repeat;
 			}
-
 		}
 	}
-	
-/*Mas adelante reduzco estas clases a un padre y sus hijos*/
-	.icon1{
-		width: 31px;
-		height: 31px;
-		background: image-url("frontend/NavBar/NavBar_Iconos_Home.png") no-repeat;
-		background-position: center;
+
+	@each $iconos in icon1, icon2, icon3, icon4, icon5, icon6, icon7 {
+		.#{$iconos}{
+			width: 31px;
+			height: 31px;
+			background-position: center;
+			background: image-url("frontend/NavBar/NavBar_Iconos_#{$iconos}.png") no-repeat;
+		}
 	}
 
-
-	.icon2{
-		width: 31px;
-		height: 31px;
-		background: image-url("frontend/NavBar/NavBar_Iconos_QuienEs.png") no-repeat;
-		background-position: center;
+	.current {
+		border-bottom: 4px solid rgb(101, 190, 164);
 	}
-
-	.icon3{
-		width: 31px;
-		height: 31px;
-		background: image-url("frontend/NavBar/NavBar_Iconos_Conferencias.png") no-repeat;
-		background-position: center center;
-	}
-
-	.icon4{
-		width: 31px;
-		height: 31px;
-		background: image-url("frontend/NavBar/NavBar_Iconos_Clientes.png") no-repeat;
-		background-position: center center;
-	}
-
-	.icon5{
-		width: 31px;
-		height: 31px;
-		background: image-url("frontend/NavBar/NavBar_Iconos_Blog.png") no-repeat;
-		background-position: center center;
-	}
-
-	.icon6{
-		width: 31px;
-		height: 31px;
-		background: image-url("frontend/NavBar/NavBar_Iconos_Galeria.png") no-repeat;
-		background-position: center center;
-	}
-
-	.icon7{
-		width: 31px;
-		height: 31px;
-		background: image-url("frontend/NavBar/NavBar_Iconos_Contacto.png") no-repeat;
-		background-position: center center;
-	}
-
 }
 
 @media #{$phone} {
@@ -115,7 +87,7 @@
 		}
 		.navbar-nav{
 			li{
-				display: inline-block;
+				
 				a{
 					border: 0px
 				}
@@ -132,7 +104,6 @@
 		}
 		.navbar-nav{
 			li{
-				display: inline-block;
 				a{
 					border: 0px
 				}

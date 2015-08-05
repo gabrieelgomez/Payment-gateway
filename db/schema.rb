@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150725160651) do
+ActiveRecord::Schema.define(version: 20150730205046) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",    limit: 255, null: false
@@ -57,6 +57,39 @@ ActiveRecord::Schema.define(version: 20150725160651) do
     t.integer  "category_id", limit: 4
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+  end
+
+  create_table "keppler_catalogs_attachments", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.string   "upload",      limit: 255
+    t.text     "description", limit: 65535
+    t.string   "image",       limit: 255
+    t.text     "url",         limit: 65535
+    t.text     "target",      limit: 65535
+    t.boolean  "public",      limit: 1
+    t.string   "permalink",   limit: 255
+    t.integer  "catalog_id",  limit: 4
+    t.integer  "category_id", limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "keppler_catalogs_catalogs", force: :cascade do |t|
+    t.string   "cover",       limit: 255
+    t.string   "name",        limit: 255
+    t.text     "description", limit: 65535
+    t.string   "section",     limit: 255
+    t.boolean  "public",      limit: 1
+    t.string   "permalink",   limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "keppler_catalogs_categories", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "permalink",  limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "roles", force: :cascade do |t|

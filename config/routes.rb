@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root to: 'frontend#index'
+  get 'gallery/:category_permalink', to: 'frontend#gallery', as: "gallery"
 
   devise_for :users, skip: KepplerConfiguration.skip_module_devise
 
@@ -11,8 +12,7 @@ Rails.application.routes.draw do
   	resources :users do 
       get '(page/:page)', action: :index, on: :collection, as: ''
       delete '/destroy_multiple', action: :destroy_multiple, on: :collection, as: :destroy_multiple
-    end
-    
+    end  
   end
 
 
@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
   #blog
   mount KepplerBlog::Engine, :at => '/', as: 'blog'
+
+  mount KepplerCatalogs::Engine, :at => '/', as: 'catalogs'
 
 
 end

@@ -10,8 +10,10 @@
 				%span.icon-bar
 			
 			= link_to main_app.root_path do
-				= image_tag "frontend/LogoGustavoHenao-01.png", width: "130px", style: "margin-top:10px;margin-bottom: 10px;margin-right:20px; padding-left: 10px;" , class: "pull-left hidden-lg hidden-md"
+				= image_tag "frontend/LogoGustavoHenao-01.png", width: "130px", style: "margin-top:10px;margin-bottom: 10px;margin-right:20px; padding-left: 10px;" , class: "pull-left hidden-lg hidden-md hidden-sm"
 		%center
 			.collapse.navbar-collapse.center#front-navbar
-				%ul.nav.navbar-nav.top-nav        
+				%ul.nav.navbar-nav.top-nav.hidden-xs
 					= render 'layouts/frontend/navigation_links'
+				%ul.nav.navbar-nav.top-nav.hidden-lg.hidden-md.hidden-sm    
+					= render 'layouts/frontend/navigation_links2'

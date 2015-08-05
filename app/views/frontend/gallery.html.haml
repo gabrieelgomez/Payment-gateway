@@ -1,0 +1,33 @@
+= render 'layouts/frontend/navigation'
+
+.banner-gallery
+	%p.pull-right ¡VIVE LA INSPIRACIÓN!
+.container-textos#anchor 
+	%center
+		%h4#bold GALERIAS
+		%h4 SIGUE DE CERCA NUESTRA LABOR
+
+= render 'navgallery'
+
+.container-images
+	.row{style:"width: 100%; margin: 0px;"}
+		- @attachments.each do |attachment|
+			.container-video
+				.col-lg-4.col-md-6.col-sm-12.col-xs-12{style:"padding: 0px;"}
+					%a{"data-target" => "#modal-#{attachment.id}", "data-toggle" => "modal", :type => "button"}
+						= render "keppler_catalogs/attachments/mediaframe", attachment: attachment, style:""
+
+			- if attachment.upload=='1'
+
+				.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1", id: "modal-#{attachment.id}"}
+					.modal-dialog.modal-lg
+						.modal-content
+							= image_tag attachment.image
+
+	%center
+		= paginate @attachments, :views_prefix => 'templates'
+
+#contacs{style:"background: #DADADA"}
+	= render 'frontend/contacts'
+#footer
+	= render 'frontend/footer'

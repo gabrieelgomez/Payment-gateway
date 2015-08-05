@@ -1,139 +1,64 @@
-@media #{$desktop} {
-	.container-contacts{
-		padding: 80px 0px 40px 0px;
 
-		h4{
-			margin-bottom: 20px;
+.container-contacts{
+	padding: 40px 0px 70px 0px;
+
+	@media #{$phone} {
+		padding: 40px 0px;
+	}
+
+	@media #{$phone-landscape} {
+		padding: 15px 0px 70px 0px;
+	}
+
+	@media #{$tablet-portrait} {
+		padding: 20px 0px 70px 0px;
+	}
+
+	@media #{$tablet} {
+		padding: 10px 0px 70px 0px;
+	}
+
+	p{
+		display: inline-block;
+		background: #015DA7;
+		color: #fff;
+		padding: 10px;
+		cursor: pointer;
+	}
+
+	i{
+		position: relative;
+		top: 2px;
+		padding: 10px;
+		
+		display: inline-block;
+		color: #FFF;
+		font-size: 20px;
+		margin-right: 10px;
+		cursor: pointer;
+
+		@media #{$phone} {
+			margin-bottom: 15px;
 		}
 
-		p{
-			display: inline-block;
-			background: #015DA7;
-			color: #fff;
-			padding: 10px;
-			cursor: pointer;
-		}
 
-		i{
-			position: relative;
-			top: 2px;
-			padding: 10px;
-			margin-bottom: 0px;
-			display: inline-block;
-			color: #FFF;
-			font-size: 20px;
-			margin-right: 10px;
-			cursor: pointer;
-		}
+	}
 
-		#twitter{
-			margin-left: 10px;
-			background: #00ADE4;
+	#twitter{
+		margin-left: 10px;
+		background: #00ADE4;
 
-		}
+	}
 
-		#instagram{
-			background: #0081A9;
-		}
+	#instagram{
+		background: #0081A9;
+	}
 
-		#facebook{
-			padding-left: 13px;
-			padding-right: 13px;
-			background: #005AA3;
-		}
+	#facebook{
+		padding-left: 13px;
+		padding-right: 13px;
+		background: #005AA3;
 	}
 }
 
-@media #{$phone} {
-	.container-contacts{
-		padding: 40px 0px 40px 0px;
 
-		h4{
-			margin-bottom: 20px;
-		}
-
-		p{
-			display: inline-block;
-			background: #015DA7;
-			color: #fff;
-			width: 100%;
-			padding: 10px;
-			cursor: pointer;
-		}
-
-		i{
-			position: relative;
-			top: 2px;
-			padding: 10px;
-			margin-bottom: 10px;
-			display: inline-block;
-			color: #FFF;
-			font-size: 35px;
-			margin-right: 10px;
-			cursor: pointer;
-		}
-
-		#twitter{
-			margin-left: 10px;
-			background: #00ADE4;
-
-		}
-
-		#instagram{
-			background: #0081A9;
-		}
-
-		#facebook{
-			padding-left: 15px;
-			padding-right: 15px;
-			background: #005AA3;
-		}
-	}
-}
-
-@media #{$phone-landscape} {
-	.container-contacts{
-		padding: 40px 0px 40px 0px;
-
-		h4{
-			margin-bottom: 20px;
-		}
-
-		p{
-			display: inline-block;
-			background: #015DA7;
-			color: #fff;
-			width: 70%;
-			padding: 10px;
-			cursor: pointer;
-		}
-
-		i{
-			position: relative;
-			top: 2px;
-			padding: 10px;
-			margin-bottom: 10px;
-			display: inline-block;
-			color: #FFF;
-			font-size: 35px;
-			margin-right: 10px;
-			cursor: pointer;
-		}
-
-		#twitter{
-			margin-left: 10px;
-			background: #00ADE4;
-
-		}
-
-		#instagram{
-			background: #0081A9;
-		}
-
-		#facebook{
-			padding-left: 15px;
-			padding-right: 15px;
-			background: #005AA3;
-		}
-	}
-}

@@ -104,6 +104,8 @@ gem 'social-share-button'
 
 #---Catalog-----
 gem 'keppler_catalogs', git: "https://github.com/inyxtech/keppler_catalogs.git"
+gem 'soundcloud'
 
 #---- Carrusel frontend-----
 gem "jquery-slick-rails"
+ 

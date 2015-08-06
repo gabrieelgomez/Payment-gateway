@@ -25,48 +25,44 @@
 		}
 
 		.btn-play{
-			
-			i{
-			  bottom: 0;
-			  cursor: pointer;
-			  display: inline-block;
-			  font-size: 100px;
-			  height: 100px;
-			  left: 50%;
-			  color: #fff;
-			  position: relative;
-			  right: 0;
-			  top: 40%;
-			  width: 100px;
+			cursor: pointer;
+			display: inline-block;
+			font-size: 40px;
+			border: 0px outset buttonface;
+			height: 80px;
+			border-radius: 5px;
+			border-color: #fff;
+			background: rgba(255, 255, 255, 0.60);
+			position: relative;
+			margin-top: 180px;
+			width: 100px;
 
-				@media #{$phone} {
+			@media #{$phone} {
+				width: 70px;
+				height: 50px;
+				font-size: 30px;
+				margin-top: 20%;
+			}
 
-					font-size: 60px;
-					left: 45%;
-					top: 35%;
-				}
+			@media #{$phone-landscape} {
+				width: 80px;
+				height: 60px;
+				font-size: 30px;
+				margin-top: 11%;
+			}
 
-				@media #{$phone-landscape} {
+			@media #{$tablet-portrait} {
+				height: 120px;
+				font-size: 120px;
+				left: 43% !important;
+				margin-top: 38%;
+			}
 
-					height: 70px;
-					font-size: 70px;
-					left: 47%;
-					top: 35%;
-				}
-
-				@media #{$tablet-portrait} {
-					height: 120px;
-					font-size: 120px;
-					left: 43% !important;
-					top: 38%;
-				}
-
-				@media #{$tablet} {
-					height: 120px;
-					font-size: 120px;
-					left: 47%;
-					top: 39%;
-				}
+			@media #{$tablet} {
+				height: 120px;
+				font-size: 120px;
+				left: 47%;
+				margin-top: 39%;
 			}
 		}
 	}

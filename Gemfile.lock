@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: https://github.com/inyxtech/keppler_catalogs.git
-  revision: 9895a7c0d15e00f629569314dfef186d330b21da
+  revision: 7f706f43e420669ba0a526975596caffa82ee518
   specs:
     keppler_catalogs (0.0.1)
       carrierwave
@@ -76,7 +76,7 @@ GEM
       activerecord (>= 3.2, < 5)
     addressable (2.3.8)
     angularjs-rails (1.4.3)
-    arel (6.0.2)
+    arel (6.0.3)
     autoparse (0.3.3)
       addressable (>= 2.3.1)
       extlib (>= 0.9.15)
@@ -159,7 +159,7 @@ GEM
     font-awesome-sass (4.3.2.1)
       sass (~> 3.2)
     formatador (0.2.5)
-    globalid (0.3.5)
+    globalid (0.3.6)
       activesupport (>= 4.1.0)
     google-api-client (0.8.6)
       activesupport (>= 3.2)
@@ -322,7 +322,7 @@ GEM
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     retriable (1.4.1)
-    rolify (4.0.0)
+    rolify (4.1.0)
     ruby_parser (3.7.0)
       sexp_processor (~> 4.1)
     sass (3.4.16)
@@ -431,6 +431,7 @@ DEPENDENCIES
   simple_form
   sitemap_generator
   social-share-button
+  soundcloud
   spring
   table_print
   therubyracer (~> 0.11.4)

@@ -31,11 +31,11 @@
 
 	.container-text{
 		
-		padding: 40px 10%; 
+		padding: 40px 6%; 
 		
 
 		@media #{$phone-landscape} {
-			padding: 40px 15%;
+			padding: 40px 12%;
 		}
 
 		@media #{$tablet-portrait} {
@@ -254,7 +254,7 @@
 			color: white;
 			margin-left: 43%;
 			top: 20px;
-			padding: 10px 70px;
+			padding: 10px 19.5%;
 			background: #0069AF;
 
 			@media #{$phone-small}{
@@ -269,7 +269,7 @@
 
 			@media #{$phone-landscape} {
 				top: 30px;
-				margin-left: 35%;
+				margin-left: 26%;
 			}
 
 			@media #{$tablet-portrait} {

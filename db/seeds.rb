@@ -15,3 +15,14 @@ end
 
 User.create name: "Admin", email: "admin@inyxtech.com", password: "12345678", password_confirmation: "12345678", role_ids: "1"
 puts "admin@inyxtech.com ha sido creado"
+
+
+["Clientes", "Testimonios", "Conferencias", "Galeria"].each do |section|
+	KepplerCatalogs::Catalog.create name: section, description: "", section: section,  public: true
+	puts "Catalogo #{section} ha sido creado"
+end
+
+["Audios", "Imagenes", "Videos"].each do |category|
+	KepplerCatalogs::Category.create name: category
+	puts "Categoria #{category} ha sido creado"
+end

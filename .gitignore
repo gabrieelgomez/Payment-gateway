@@ -32,7 +32,6 @@ db/*.sqlite3
 /config/application.yml
 /config/secrets.yml
 /config/secrets.yml.example
-/config/gaAuth
 /coverage.data
 /coverage/
 /db/*.javadb/

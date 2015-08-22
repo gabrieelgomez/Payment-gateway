@@ -21,19 +21,9 @@
 	}
 
 	.navbar-nav{
-		li{
-			a{
-				/*
-				border-left: 1px solid grey;
-				border-right: 1px solid grey;
-				*/
-			}
-		}
 
 		li:hover{
 			background-color: #66BAA3;
-
-
 
 			.icon1{
 				background: image-url("frontend/NavBar/NavBar_Iconos_Home_Hover.png") no-repeat;
@@ -75,7 +65,19 @@
 	}
 
 	.current {
-		border-bottom: 4px solid rgb(101, 190, 164);
+
+		@media #{$tablet-portrait} {
+			border-bottom: 3px solid rgb(101, 190, 164);
+		}
+
+		@media #{$desktop-large} {
+			border-bottom: 3px solid rgb(101, 190, 164);
+		}
+
+		@media #{$desktop} {
+			border-bottom: 3px solid rgb(101, 190, 164);
+		}
+		
 	}
 }
 

@@ -16,7 +16,7 @@ $( document ).ready(function() {
 
     },
     end: function() {
-      $('#front-navbar').removeClass('in');
+      $('.navbar-collapse').removeClass('in');
 
       
 

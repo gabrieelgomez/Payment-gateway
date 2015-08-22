@@ -82,7 +82,8 @@
 				width: 30%;
 
 				@include phone-all {
-					padding-top: 20px;	
+					padding-top: 20px;
+					transform: skew(-5deg);	
 				}
 
 				@media #{$tablet-portrait} {
@@ -102,6 +103,7 @@
 				font-family: $font-type;
 				font-size: 18px;
 				line-height: 8px;
+				transform: skew(-5deg);	
 				
 			}
 
@@ -110,8 +112,7 @@
 				margin-top: 30px;
 			}
 
-			.btn-footer{
-				
+			.btn-footer{	
 				position: relative;
 				text-decoration: none;
 				color: black;
@@ -175,6 +176,7 @@
 
 				@include phone-all {
 					padding-top: 20px;
+					transform: skew(-5deg);	
 				}
 
 				@media #{$tablet-portrait} {
@@ -194,6 +196,7 @@
 				font-family: $font-type;
 				font-size: 18px;
 				line-height: 8px;
+				transform: skew(-5deg);	
 			}
 
 			#bold{

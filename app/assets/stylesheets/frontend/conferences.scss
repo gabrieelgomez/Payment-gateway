@@ -254,11 +254,12 @@
 			color: white;
 			margin-left: 43%;
 			top: 20px;
-			padding: 10px 19.5%;
+			padding: 10px 5.3%;
 			background: #0069AF;
 
 			@media #{$phone-small}{
 				top: 15px;
+				padding: 10px 20.3%;
 				margin-left: 23% !important;
 			}
 
@@ -269,7 +270,8 @@
 
 			@media #{$phone-landscape} {
 				top: 30px;
-				margin-left: 26%;
+				padding: 10px 18%;
+				margin-left: 28%;
 			}
 
 			@media #{$tablet-portrait} {

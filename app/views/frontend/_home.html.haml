@@ -1,8 +1,7 @@
 = render 'layouts/frontend/navigation'
 .container-video
-	%video#bgvid{:autoplay => "", :loop => "", :poster => "frontend/ImagenCartelera.jpg"}
-		%source{:src => "//demosthenes.info/assets/videos/polina.webm", :type => "video/webm"}
-			%source{:src => "//demosthenes.info/assets/videos/polina.mp4", :type => "video/mp4"}
+	%video#bgvid{:autoplay => "autoplay", :loop => "", :poster => "frontend/ImagenCartelera.jpg"}
+		%source{:src => "assets/frontend/video_henao.mp4", :type => "video/mp4"}
 
 .container-logo-henao
 	=image_tag "frontend/LogoGustavoHenao-01.png"

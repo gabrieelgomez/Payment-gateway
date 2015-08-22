@@ -37,11 +37,18 @@
 			margin-top: 180px;
 			width: 100px;
 
+			@media #{$phone-small}{
+				width: 70px;
+				height: 50px;
+				font-size: 30px;
+				margin-top: 20% !important;
+			}
+
 			@media #{$phone} {
 				width: 70px;
 				height: 50px;
 				font-size: 30px;
-				margin-top: 20%;
+				margin-top: 15%;
 			}
 
 			@media #{$phone-landscape} {

@@ -79,24 +79,20 @@
 			
 			img{
 				position: relative;
-				transform:skew(5deg);
 				width: 30%;
 
 				@include phone-all {
-					padding-top: 20px;
-					transform:skew(0deg);
+					padding-top: 20px;	
 				}
 
 				@media #{$tablet-portrait} {
 					width: 30%;
-					padding-top: 20px;
-					transform:skew(0deg);	
+					padding-top: 20px;		
 				}
 
 				@media #{$tablet} {
 					width: 40%;
-					padding-top: 40px;
-					transform:skew(0deg);	
+					padding-top: 40px;	
 				}
 			}
 
@@ -106,11 +102,7 @@
 				font-family: $font-type;
 				font-size: 18px;
 				line-height: 8px;
-				transform:skew(5deg);
-
-				@include phone-all {
-					transform:skew(0deg);
-				}
+				
 			}
 
 			#bold{
@@ -119,7 +111,7 @@
 			}
 
 			.btn-footer{
-				transform:skew(5deg);
+				
 				position: relative;
 				text-decoration: none;
 				color: black;
@@ -178,38 +170,30 @@
 
 			img{
 				position: relative;
-				transform:skew(5deg);
+				
 				width: 30%;
 
 				@include phone-all {
 					padding-top: 20px;
-					transform:skew(0deg);
 				}
 
 				@media #{$tablet-portrait} {
 					width: 30%;
-					padding-top: 20px;
-					transform:skew(0deg);	
+					padding-top: 20px;	
 				}
 
 				@media #{$tablet} {
 					width: 40%;
-					padding-top: 40px;
-					transform:skew(0deg);	
+					padding-top: 40px;	
 				}
 			}
 
 			p{
-				position: relative;
-				transform:skew(5deg);
+				position: relative;	
 				color: #FFF;
 				font-family: $font-type;
 				font-size: 18px;
 				line-height: 8px;
-
-				@include phone-all {
-					transform:skew(0deg);
-				}
 			}
 
 			#bold{
@@ -218,7 +202,7 @@
 			}
 
 			.btn-footer{
-				transform:skew(5deg);
+				
 				position: relative;
 				text-decoration: none;
 				color: black;
@@ -226,10 +210,6 @@
 				background: #fff;
 				font-family: $font-type;
 				top: 30px;
-
-				@include phone-all {
-					transform:skew(0deg);
-				}
 			}
 		}
 	}

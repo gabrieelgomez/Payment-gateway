@@ -26,8 +26,8 @@ class Ability
 
     end 
 
-    can :manage, KepplerCatalogs::Catalog
-    can :manage, KepplerCatalogs::Category
+    can [:index, :show], KepplerCatalogs::Catalog
+    can [:index, :show], KepplerCatalogs::Category
     can :manage, KepplerCatalogs::Attachment 
   end
 end

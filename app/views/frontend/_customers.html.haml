@@ -10,9 +10,10 @@
 
 		.multiple-items
 			- @attachments_clientes.each do |logos|
-
-				%img{:src => "#{logos.image}"}
-
+				- if logos.image?
+					%img{:src => "#{logos.image}"}
+				- if logos.url?
+					%img{:src => "#{logos.url}"}
 	.container-testimonios
 		
 		.text-testimonios

@@ -3,10 +3,13 @@
 
 		%h4 Estamos para ti ¡CONTACTANOS!
 		
-		%p SOLICITA TU CONFERENCIA AQUÍ
+		= link_to "SOLICITA TU CONFERENCIA AQUÍ", "/contacts/new", id: "link-form"
 		.col-xs-12
-			%i.fa.fa-twitter#twitter
-			%i.fa.fa-instagram#instagram
-			%i.fa.fa-facebook#facebook
-	
+			= link_to "http://twitter.com/gustavohenaoS", target:"_blank" do
+				%i.fa.fa-twitter#twitter
+			= link_to "https://instagram.com/gustavohenao", target:"_blank" do
+				%i.fa.fa-instagram#instagram
+			= link_to "https://www.facebook.com/speaker.gustavohenao?ref=ts&fref=ts", target:"_blank" do
+				%i.fa.fa-facebook#facebook
+		
 		%p contacto@gustavohenao.com

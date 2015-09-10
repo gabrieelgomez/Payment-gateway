@@ -13,6 +13,21 @@ $font-type: 'Lato', sans-serif;
 //colores
 $red-color: #F44336;
 
+.input-inyx{
+  margin-bottom: 10px;
+}
+
+.btn-contact{
+  width: 100%;
+  background: #65BEA4;
+  color: #fff;
+}
+
+.help-inline{
+  color: red;
+}
+
+
 @mixin phone-all {
   @media #{$phone} {
     @content

@@ -26,6 +26,23 @@
 		cursor: pointer;
 	}
 
+	#link-form{
+		background: #015DA7;
+	}
+
+	a{
+		display: inline-block;
+		
+		color: #fff;
+		padding: 10px;
+		cursor: pointer;
+		text-decoration: none;
+		
+		@media #{$phone-small}{
+			margin-bottom: 10px;
+		}	
+	}
+
 	i{
 		position: relative;
 		top: 2px;

@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
     if devise_controller? 
       "admin/application"
     else
-      "application"
+      "frontend/application"
     end
   end
 

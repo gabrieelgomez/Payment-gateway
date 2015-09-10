@@ -24,6 +24,11 @@
 						.modal-content
 							= image_tag attachment.image
 
+.modal.fade.bs-example-modal-lg2#myModal{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1"}
+	.modal-dialog.modal-sm
+		.modal-content
+			%script{"data-dojo-config" => "usePlainJson: true, isDebug: false", :src => "//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js", :type => "text/javascript"}
+
 	%center
 		= paginate @attachments, :views_prefix => 'templates'
 
@@ -31,3 +36,11 @@
 	= render 'frontend/contacts'
 #footer
 	= render 'frontend/footer'
+
+:javascript
+	$(window).load(function(){
+		$('#myModal').modal('show');
+	});
+	
+:javascript
+	require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us10.list-manage.com","uuid":"5279f81c1a3718e085d82eaf1","lid":"1fdbee0679"}) })

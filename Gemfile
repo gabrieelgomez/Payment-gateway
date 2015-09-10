@@ -34,6 +34,8 @@ gem 'sitemap_generator'
 
 #forms
 gem 'simple_form'
+gem 'bootstrap-datepicker-rails'
+gem 'jquery-datetimepicker-rails'
 #gem 'cocoon'
 
 #desgin

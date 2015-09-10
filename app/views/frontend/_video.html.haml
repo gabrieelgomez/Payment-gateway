@@ -1,10 +1,7 @@
 .container-video-bg
 	%center
 		%button.fa.fa-play.btn-play#boton-play
-%video#video-henao{:controls => "",:autoplay => "", :loop => "", :width => "1px"}
-	%source{:src => "//demosthenes.info/assets/videos/polina.webm", :type => "video/webm"}
-	%source{:src => "//demosthenes.info/assets/videos/polina.mp4", :type => "video/mp4"}
-
+%iframe#video-henao{:height => "1", :src => "http://www.youtube.com/embed/BHMZqliWXXU", :width => "1"}
 
 :javascript
 	var elem = document.getElementById("video-henao");

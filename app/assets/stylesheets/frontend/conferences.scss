@@ -285,4 +285,163 @@
 	}
 }
 
+.bs-example-modal-lg{
+	.modal-base{
+		background: image-url("frontend/Fondo_Inspiramgrama.jpg") no-repeat;
+		width: 100%;
+		height: 600px;
+		background-size: cover;
+	}
+
+	.title-modal{
+		width: 140%;
+		font-family: $font-type;
+		font-size: 25px;
+		margin-top: 90%;
+	}
+
+	.text-modal{
+		width: 140%;
+		border-top: 3px solid #00A19A;
+		border-bottom: 3px solid #00A19A;
+		font-family: $font-type;
+		font-size: 14px;
+		padding: 10px 0;
+	}
+
+	.cuarto-circulo1{
+		width: 220px; 
+		height: 220px; 
+		-moz-border-radius: 0 100% 0 0;
+		-webkit-border-radius: 0 100% 0 0;
+		border-radius: 0 100% 0 0;
+		overflow: hidden;
+
+		.img{
+			background: image-url("frontend/Foto_Trabajadores.jpg") no-repeat;
+			background-size: cover;
+			height: 220px;
+
+			.box-conferencia{
+				background: #E7E8E9;
+				position: relative;
+				right: -220px;
+				height: 190px;
+			}
+		}
+	}
+
+	.cuarto-circulo1:hover{
+		overflow: initial;
+		
+		.img{
+			height: 190px;
+			position: relative;
+			top: 30px;
+		}
+	}
+
+	.cuarto-circulo2{
+		width: 220px; 
+		height: 220px;
+		-moz-border-radius: 0 100% 0 0;
+		-webkit-border-radius: 0 100% 0 0;
+		border-radius: 0 0 100% 0;
+		overflow: hidden;
+
+		.img{
+			background: image-url("frontend/Foto_Pareja.jpg") no-repeat;
+			background-size: cover;
+			height: 220px;
+
+			.box-conferencia{
+				background: #E7E8E9;
+				position: relative;
+				right: -220px;
+				height: 190px;
+			}
+		}
+	}
+
+	.cuarto-circulo2:hover{
+		overflow: initial;
+
+		.img{
+			height: 190px;
+			position: relative;	
+		}
+	}
+
+	.cuarto-circulo3{
+		width: 220px; 
+		height: 220px;
+		-moz-border-radius: 0 100% 0 0;
+		-webkit-border-radius: 0 100% 0 0;
+		border-radius: 0 0 0 100%;
+		position: relative;
+		top: -220px;
+		right: 220px;
+		overflow: hidden;
+
+		.img{
+			background: image-url("frontend/image-ni.jpg") no-repeat;
+			background-size: cover;
+			height: 220px;
+
+			.box-conferencia{
+				background: #E7E8E9;
+				position: relative;
+				right: 220px;
+				height: 190px;
+			}
+		}
+	}
+
+	.cuarto-circulo3:hover{
+		overflow: initial;
+
+		.img{
+			height: 190px;
+			position: relative;	
+		}
+	}
+
+	.cuarto-circulo4{
+		width: 220px; 
+		height: 220px;
+		-moz-border-radius: 0 100% 0 0;
+		-webkit-border-radius: 0 100% 0 0;
+		border-radius: 100% 0 0 0;
+		position: relative;
+		top: -660px;
+		right: 220px;
+		overflow: hidden;	
+
+		.img{
+
+			background: image-url("frontend/Foto_Gerentes.jpg") no-repeat;
+			background-size: cover;
+			height: 220px;
+
+			.box-conferencia{
+				background: #E7E8E9;
+				position: relative;
+				right: 220px;
+				height: 190px;
+			}
+		}
+	}
+
+	.cuarto-circulo4:hover{
+		overflow: initial;
+
+		.img{
+			height: 190px;
+			position: relative;	
+			top: 30px;
+		}
+	}
+}
+
+
 

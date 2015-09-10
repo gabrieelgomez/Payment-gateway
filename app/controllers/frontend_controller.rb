@@ -17,4 +17,5 @@
     @category = KepplerCatalogs::Category.find_by_permalink(params[:category_permalink])
     @attachments = @catalog.attachments.where(category_id: @category.id, public: true).page(@current_page).per(6)
   end
+
 end

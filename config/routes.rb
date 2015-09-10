@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :contacts
+
   root to: 'frontend#index'
   get 'gallery/:category_permalink', to: 'frontend#gallery', as: "gallery"
 
@@ -22,6 +24,7 @@ Rails.application.routes.draw do
   match '/422', to: 'errors#unprocessable', via: :all
   match '/500', to: 'errors#internal_server_error', via: :all
 
+  post '/send_mailer', to: 'frontend#send_mailer'
 
   #dashboard
   mount KepplerGaDashboard::Engine, :at => '/', as: 'dashboard'

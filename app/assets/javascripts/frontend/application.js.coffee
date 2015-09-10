@@ -2,5 +2,8 @@
 #= require jquery_ujs
 #= require bootstrap
 #= require jquery.slick
+#= require bootstrap
+#= require bootstrap-datepicker
+#= require jquery.datetimepicker
 #= require keppler_blog/frontend/application
 #= require_tree .

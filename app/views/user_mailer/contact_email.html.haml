@@ -1,0 +1,55 @@
+%center
+	%h1 Nueva solicitud de conferencia
+	%h2= "#{@contact.names} a realizado una nueva solicitud de conferencia"
+
+	%ul.list-group 
+		%li.list-group-item
+			%strong Conferencia:
+			= @contact.conferences
+		%li.list-group-item
+			%strong Nombres y Apellidos:
+			= @contact.names
+
+		%li.list-group-item
+			%strong Empresa:
+			= @contact.company
+
+		%li.list-group-item
+			%strong Fecha Estimada del Evento:
+			= @contact.estimated_date
+
+		%li.list-group-item
+			%strong Tipo de Reunión:
+			= @contact.type_meeting
+
+		%li.list-group-item
+			%strong Tema:
+			= @contact.theme
+
+		%li.list-group-item
+			%strong Hora de Inicio:
+			= @contact.start_time
+
+		%li.list-group-item
+			%strong Hora de Finalización:
+			= @contact.end_time
+
+		%li.list-group-item
+			%strong Cuidad:
+			= @contact.city
+
+		%li.list-group-item
+			%strong Asistentes:
+			= @contact.assistants
+
+		%li.list-group-item
+			%strong Teléfono:
+			= @contact.phone
+
+		%li.list-group-item
+			%strong E-mail:
+			= @contact.email
+
+		%li.list-group-item
+			%strong Mensaje:
+			= @contact.message

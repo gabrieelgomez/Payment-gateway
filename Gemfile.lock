@@ -91,6 +91,8 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-datepicker-rails (1.4.0)
+      railties (>= 3.0)
     bootstrap-sass (3.3.5.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.3.0)
@@ -222,6 +224,7 @@ GEM
     jbuilder (2.3.1)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
+    jquery-datetimepicker-rails (2.4.1.0)
     jquery-rails (4.0.4)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -389,6 +392,7 @@ DEPENDENCIES
   acts-as-taggable-on (~> 3.4)
   angularjs-rails
   better_errors
+  bootstrap-datepicker-rails
   bootstrap-sass
   byebug
   cancancan
@@ -408,6 +412,7 @@ DEPENDENCIES
   guard-livereload
   haml-rails
   jbuilder (~> 2.0)
+  jquery-datetimepicker-rails
   jquery-rails
   jquery-slick-rails
   jquery-turbolinks

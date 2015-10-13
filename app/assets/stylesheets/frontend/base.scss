@@ -13,6 +13,68 @@ $font-type: 'Lato', sans-serif;
 //colores
 $red-color: #F44336;
 
+.banner-contact{
+  width: 100%;
+  height: 350px;
+  background: image-url("frontend/Cartelera_Galeria.jpg") no-repeat;
+  background-size: cover;
+  margin-top: 60px;
+  padding-top: 130px;
+  padding-right: 25%;
+
+  @media #{$phone-small}{
+    height: 200px;
+    margin-top: 50px;
+    background-position: -200px;
+    padding-top: 60px;
+    padding-right: 5%;
+  }
+
+  @media #{$phone-landscape} {
+    height: 200px;
+    margin-top: 50px;
+    background-position: -100px;
+    padding-top: 60px;
+    padding-right: 15%; 
+  }
+
+  @media #{$tablet-portrait} {
+    height: 250px;
+    margin-top: 60px;
+    background-position: -100px;
+    padding-top: 80px;
+    padding-right: 15%;   
+  }
+
+  @media #{$tablet} {
+    height: 250px;
+    margin-top: 60px;
+    padding-top: 80px;
+    padding-right: 15%;   
+  }   
+
+  p{
+    color: #fff;
+    padding: 10px;
+    font-size: 30px;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    font-family: $font-type;
+
+    @media #{$phone-small}{
+      font-size: 15px;
+    }
+
+    @media #{$phone-landscape} {
+      font-size: 22px;
+    }
+
+    @media #{$tablet-portrait} {
+      font-size: 25px;
+    }
+  }
+}
+
 .input-inyx{
   margin-bottom: 10px;
 }

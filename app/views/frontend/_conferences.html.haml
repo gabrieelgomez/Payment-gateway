@@ -4,25 +4,30 @@
 	.container-text
 		%center
 			.row{style:"width: 100%; margin: 0px;"}
-				- @attachments_conferencias.each do |imageconferencias|
-					.container-image
-						.col-lg-4.col-md-6.col-sm-12.col-xs-12{style:"padding: 0px;"}
-							%img.portada{:src => "#{imageconferencias.image}"}
-							.mask
-								%center
-									%p.text-mask #{imageconferencias.name}
-								
-									
-										
-			
+				- @attachments_conferencias.each do |imageconferencias|	
+					.col-lg-4.col-md-6.col-sm-12.col-xs-12{style:"padding: 0px;"}
+						.container-image
+							%a{"data-target" => "#modal-#{imageconferencias.id}", "data-toggle" => "modal", :type => "button"}
+								%img.portada{:src => "#{imageconferencias.image}"}
+								.mask.hidden-xs
+									%center
+										%p.text-mask #{imageconferencias.name}
 
+					.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1", id: "modal-#{imageconferencias.id}"}
+						.modal-dialog.modal-md
+							.modal-content
+								%img.portada{:src => "#{imageconferencias.image_banner}"}
+								%p #{imageconferencias.description.html_safe}
+
+
+		
 .container-banner-inspiragrama
 	.text
 		%p CONOCER EL INSPIRAGRAMA
-		= link_to "Ver más", "#", class: "btn-conferences", "data-target" => ".bs-example-modal-lg", "data-toggle" => "modal"
+		= link_to "Ver más", "#", class: "btn-conferences hidden-xs", "data-target" => ".bs-example-modal-lg", "data-toggle" => "modal"
 
 .modal.fade.bs-example-modal-lg{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1"}
-	.modal-dialog.modal-lg{style:"width: 1400px;"}
+	.modal-dialog.modal-lg{style:"width: 1400px; z-index: 100;"}
 		.modal-content
 			.modal-base	
 				.row
@@ -36,37 +41,21 @@
 							.cuarto-circulo1
 								.img
 									.box-conferencia
-										.title-conferencia
-											Lorem ipsum dolor sit amet
 										.text-conferencia
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+											Conferencias dirigidas a los trabajadores de la organización
 							.cuarto-circulo2
 								.img
 									.box-conferencia
-										.title-conferencia
-											Lorem ipsum dolor sit amet
 										.text-conferencia
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+											Conferencias dirigidas a los trabajadores y sus esposas
 							.cuarto-circulo3
 								.img
 									.box-conferencia
-										.title-conferencia
-											Lorem ipsum dolor sit amet
 										.text-conferencia
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+											Conferencias dirigidas a los hijos de los trabajadores de la organización
 							.cuarto-circulo4
 								.img
 									.box-conferencia
-										.title-conferencia
-											Lorem ipsum dolor sit amet
 										.text-conferencia
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+											Conferencias dirigidas a los gerentes lideres de la organización
 					

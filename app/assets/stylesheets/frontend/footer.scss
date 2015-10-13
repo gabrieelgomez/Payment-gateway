@@ -32,16 +32,14 @@
 			background: image-url("frontend/Fondo_Impacto.jpg") no-repeat;
 			background-size: 100%;
 			padding-top: 60px;
-			transform:skew(-5deg) scale(1.1);
 			z-index: 10;
-			left: -32px;
+
 
 			@media #{$phone-small}{
 				height: 220px !important;
 				background-size: 100% 100%;
 				padding-top: 0px;
 				left: 0px;
-				transform:skew(0deg) scale(1.0);
 			}
 
 			@media #{$phone} {
@@ -49,7 +47,6 @@
 				background-size: 100% 100%;
 				padding-top: 0px;
 				left: 0px;
-				transform:skew(0deg) scale(1.0);
 			}
 
 
@@ -58,7 +55,6 @@
 				background-size: 100% 100%;
 				padding-top: 0px;
 				left: 0px;
-				transform:skew(0deg) scale(1.0);
 			} 
 
 			@media #{$tablet-portrait} {
@@ -66,14 +62,12 @@
 				background-size: cover;
 				padding-top: 0px;
 				left: 0px;
-				transform:skew(0deg) scale(1.0);
 			}
 
 			@media #{$tablet} {
 				background-size: cover;
 				padding-top: 0px;
 				left: 0px;
-				transform:skew(0deg) scale(1.0);
 			}
 
 			
@@ -82,18 +76,17 @@
 				width: 30%;
 
 				@include phone-all {
-					padding-top: 20px;
-					transform: skew(-5deg);	
+					padding-top: 20px;	
 				}
 
 				@media #{$tablet-portrait} {
 					width: 30%;
-					padding-top: 20px;		
+					padding-top: 20px;			
 				}
 
 				@media #{$tablet} {
 					width: 40%;
-					padding-top: 40px;	
+					padding-top: 40px;		
 				}
 			}
 
@@ -103,7 +96,7 @@
 				font-family: $font-type;
 				font-size: 18px;
 				line-height: 8px;
-				transform: skew(-5deg);	
+	
 				
 			}
 
@@ -121,7 +114,19 @@
 				font-family: $font-type;
 				top: 30px;
 			}
+
+			.btn-footer:hover{
+				background: #00A19A;
+				color: #fff;
+				-webkit-transition-duration: 0.3s;
+				-webkit-transition-property: all;
+				-webkit-transition-timing-function: ease-in-out;
+				transition-duration: 0.3s;
+				transition-property: all;
+				transition-timing-function: ease-in-out;
+			}	
 		}
+
 
 		.speaker{
 			position: relative;
@@ -130,28 +135,24 @@
 			height: 335px;
 			background: image-url("frontend/Fondo_Speaker.jpg") no-repeat;
 			background-size: 100%;
-			transform:skew(-5deg) scale(1.1);
 			padding-top: 60px;
 
 			@media #{$phone-small}{
 				height: 220px !important;
 				padding-top: 0px;
 				background-size: 100% 100%;
-				transform:skew(0deg) scale(1.0);
 			}
 
 			@media #{$phone} {
 				height: 250px;
 				padding-top: 0px;
 				background-size: 100% 100%;
-				transform:skew(0deg) scale(1.0);
 			}
 
 			@media #{$phone-landscape} {
 				height: 260px;
 				padding-top: 0px;
 				background-size: 100% 100%;
-				transform:skew(0deg) scale(1.0);
 			}
 
 			@media #{$tablet-portrait} {
@@ -159,24 +160,20 @@
 				background-size: cover;
 				padding-top: 0px;
 				left: 0px;
-				transform:skew(0deg) scale(1.0);
 			}
 
 			@media #{$tablet} {
 				background-size: cover;
 				padding-top: 0px;
 				left: 0px;
-				transform:skew(0deg) scale(1.0);
 			}
 
 			img{
 				position: relative;
-				
 				width: 30%;
 
 				@include phone-all {
-					padding-top: 20px;
-					transform: skew(-5deg);	
+					padding-top: 20px;	
 				}
 
 				@media #{$tablet-portrait} {
@@ -196,7 +193,7 @@
 				font-family: $font-type;
 				font-size: 18px;
 				line-height: 8px;
-				transform: skew(-5deg);	
+				
 			}
 
 			#bold{
@@ -213,6 +210,17 @@
 				background: #fff;
 				font-family: $font-type;
 				top: 30px;
+			}
+
+			.btn-footer:hover{
+				background: #00A19A;
+				color: #fff;
+				-webkit-transition-duration: 0.3s;
+				-webkit-transition-property: all;
+				-webkit-transition-timing-function: ease-in-out;
+				transition-duration: 0.3s;
+				transition-property: all;
+				transition-timing-function: ease-in-out;
 			}
 		}
 	}

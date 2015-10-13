@@ -78,18 +78,19 @@ ActiveRecord::Schema.define(version: 20150908015544) do
   end
 
   create_table "keppler_catalogs_attachments", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.string   "upload",      limit: 255
-    t.text     "description", limit: 65535
-    t.string   "image",       limit: 255
-    t.text     "url",         limit: 65535
-    t.text     "target",      limit: 65535
-    t.boolean  "public",      limit: 1
-    t.string   "permalink",   limit: 255
-    t.integer  "catalog_id",  limit: 4
-    t.integer  "category_id", limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "name",         limit: 255
+    t.string   "upload",       limit: 255
+    t.text     "description",  limit: 65535
+    t.string   "image",        limit: 255
+    t.string   "image_banner", limit: 255
+    t.text     "url",          limit: 65535
+    t.text     "target",       limit: 65535
+    t.boolean  "public",       limit: 1
+    t.string   "permalink",    limit: 255
+    t.integer  "catalog_id",   limit: 4
+    t.integer  "category_id",  limit: 4
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "keppler_catalogs_catalogs", force: :cascade do |t|

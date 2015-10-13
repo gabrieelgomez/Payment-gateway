@@ -1,9 +1,9 @@
 
 .container-contacts{
-	padding: 40px 0px 70px 0px;
+	padding: 10px 0px 70px 0px;
 
-	@media #{$phone} {
-		padding: 40px 0px;
+	@media #{$phone-small} {
+		padding: 10px 0px;
 	}
 
 	@media #{$phone-landscape} {

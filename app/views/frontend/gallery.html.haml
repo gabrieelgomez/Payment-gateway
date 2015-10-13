@@ -1,3 +1,12 @@
+.modal.fade.bs-example-modal-mail#mymodal{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1"}
+	.modal-dialog.modal-lg
+		.modal-content
+			.modal-base	
+				%script{"data-dojo-config" => "usePlainJson: true, isDebug: true", :src => "//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js", :type => "text/javascript"}
+				require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us10.list-manage.com","uuid":"5279f81c1a3718e085d82eaf1","lid":"1fdbee0679"}) })
+				
+
+
 = render 'layouts/frontend/navigation'
 
 .banner-gallery
@@ -13,34 +22,22 @@
 	.row{style:"width: 100%; margin: 0px;"}
 		- @attachments.each do |attachment|
 			.container-video
-				.col-lg-4.col-md-6.col-sm-12.col-xs-12{style:"padding: 0px;"}
+				.col-lg-4.col-md-6.col-sm-12.col-xs-12.hidden-xs.hidden-sm{style:"padding: 0px;"}
+					%a{"data-target" => "#modal-#{attachment.id}", "data-toggle" => "modal", :type => "button"}
+						= render "keppler_catalogs/attachments/mediaframe", attachment: attachment, style:" max-width: 300px;"
+				.col-lg-4.col-md-6.col-sm-12.col-xs-12.hidden-lg.hidden-md{style:"padding: 0px;"}
 					%a{"data-target" => "#modal-#{attachment.id}", "data-toggle" => "modal", :type => "button"}
 						= render "keppler_catalogs/attachments/mediaframe", attachment: attachment, style:""
 
-			- if attachment.upload=='1'
 
-				.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1", id: "modal-#{attachment.id}"}
-					.modal-dialog.modal-lg
-						.modal-content
-							= image_tag attachment.image
-
-.modal.fade.bs-example-modal-lg2#myModal{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1"}
-	.modal-dialog.modal-sm
-		.modal-content
-			%script{"data-dojo-config" => "usePlainJson: true, isDebug: false", :src => "//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js", :type => "text/javascript"}
 
 	%center
 		= paginate @attachments, :views_prefix => 'templates'
 
-#contacs{style:"background: #DADADA"}
+#contacs{style:"background: #dadada"}
 	= render 'frontend/contacts'
 #footer
 	= render 'frontend/footer'
 
-:javascript
-	$(window).load(function(){
-		$('#myModal').modal('show');
-	});
-	
-:javascript
-	require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us10.list-manage.com","uuid":"5279f81c1a3718e085d82eaf1","lid":"1fdbee0679"}) })
+
+

@@ -1,7 +1,7 @@
 .container-video-bg
 	%center
 		%button.fa.fa-play.btn-play#boton-play
-%iframe#video-henao{:height => "1", :src => "http://www.youtube.com/embed/BHMZqliWXXU", :width => "1"}
+%iframe#video-henao.videopopup{:height => "1", :src => "http://www.youtube.com/embed/BHMZqliWXXU", :width => "1"}
 
 :javascript
 	var elem = document.getElementById("video-henao");
@@ -16,5 +16,3 @@
 			elem.webkitRequestFullscreen();
 		}		
 	});
-
-

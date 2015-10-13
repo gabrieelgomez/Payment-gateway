@@ -49,9 +49,8 @@
 		.container-image{
 
 			.portada{
-				width: 100%;
-				height: 200px;
 				z-index: -10;
+				
 
 				@media #{$phone-small}{
 					height: 160px !important;
@@ -75,13 +74,13 @@
 			}
 
 			.mask{
-				background: rgba(128, 128, 128, 0.46);
+				  background: rgba(0, 0, 0, 0.5);
 				position: absolute;
-				height: 200px;
 				width: 100%;
+				height: 100%;
 				top: 0px;
 				opacity: 0;
-				z-index: 10000000000000000;
+				z-index: 10;
 				-webkit-transition-duration: 0.3s;
 				-webkit-transition-property: all;
 				-webkit-transition-timing-function: ease-in-out;
@@ -279,7 +278,8 @@
 			}
 
 			@media #{$tablet} {
-				margin-left: 41%;
+				padding: 10px 10%;
+				margin-left: 37.5%;
 			}
 		}
 	}
@@ -317,16 +317,25 @@
 		border-radius: 0 100% 0 0;
 		overflow: hidden;
 
+
 		.img{
 			background: image-url("frontend/Foto_Trabajadores.jpg") no-repeat;
 			background-size: cover;
 			height: 220px;
+			-webkit-transition: 3s; /* For Safari 3.1 to 6.0 */
+	    	transition: 0.1s;
 
 			.box-conferencia{
 				background: #E7E8E9;
 				position: relative;
 				right: -220px;
 				height: 190px;
+
+				.text-conferencia{
+					font-family: $font-type;
+					font-size: 18px;
+					padding: 55px 5px;
+				}
 			}
 		}
 	}
@@ -348,22 +357,33 @@
 		-webkit-border-radius: 0 100% 0 0;
 		border-radius: 0 0 100% 0;
 		overflow: hidden;
+		
 
 		.img{
 			background: image-url("frontend/Foto_Pareja.jpg") no-repeat;
 			background-size: cover;
 			height: 220px;
+			-webkit-transition: 0.1s; /* For Safari 3.1 to 6.0 */
+	    	transition: 0.1s;
+
 
 			.box-conferencia{
 				background: #E7E8E9;
 				position: relative;
 				right: -220px;
 				height: 190px;
+
+				.text-conferencia{
+					font-family: $font-type;
+					font-size: 18px;
+					padding: 55px 5px;
+				}
 			}
 		}
 	}
 
 	.cuarto-circulo2:hover{
+
 		overflow: initial;
 
 		.img{
@@ -387,12 +407,21 @@
 			background: image-url("frontend/image-ni.jpg") no-repeat;
 			background-size: cover;
 			height: 220px;
+			-webkit-transition: 0.1s; /* For Safari 3.1 to 6.0 */
+	    	transition: 0.1s;
+
 
 			.box-conferencia{
 				background: #E7E8E9;
 				position: relative;
 				right: 220px;
 				height: 190px;
+
+				.text-conferencia{
+					font-family: $font-type;
+					font-size: 18px;
+					padding: 47px 5px;
+				}
 			}
 		}
 	}
@@ -422,12 +451,21 @@
 			background: image-url("frontend/Foto_Gerentes.jpg") no-repeat;
 			background-size: cover;
 			height: 220px;
+			-webkit-transition: 0.1s; /* For Safari 3.1 to 6.0 */
+	    	transition: 0.1s;
+
 
 			.box-conferencia{
 				background: #E7E8E9;
 				position: relative;
 				right: 220px;
 				height: 190px;
+
+				.text-conferencia{
+					font-family: $font-type;
+					font-size: 18px;
+					padding: 55px 5px;
+				}
 			}
 		}
 	}

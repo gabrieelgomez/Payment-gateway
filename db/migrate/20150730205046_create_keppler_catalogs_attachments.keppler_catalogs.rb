@@ -6,6 +6,7 @@ class CreateKepplerCatalogsAttachments < ActiveRecord::Migration
       t.string :upload
       t.text :description
       t.string :image
+      t.string :image_banner
       t.text :url
       t.text :target
       t.boolean :public

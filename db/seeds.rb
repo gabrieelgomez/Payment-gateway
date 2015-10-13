@@ -22,7 +22,7 @@ puts "admin@inyxtech.com ha sido creado"
 	puts "Catalogo #{section} ha sido creado"
 end
 
-["Audios", "Imagenes", "Videos"].each do |category|
+["Audios", "Imagenes", "Videos", "Conferencias", "Clientes"].each do |category|
 	KepplerCatalogs::Category.create name: category
 	puts "Categoria #{category} ha sido creado"
 end

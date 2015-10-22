@@ -17,7 +17,7 @@
 						.modal-dialog.modal-md
 							.modal-content
 								%img.portada{:src => "#{imageconferencias.image_banner}"}
-								%p #{imageconferencias.description.html_safe}
+								%p{style:"padding: 10px;"} #{imageconferencias.description.html_safe}
 
 
 		
@@ -29,10 +29,11 @@
 .modal.fade.bs-example-modal-lg{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1"}
 	.modal-dialog.modal-lg{style:"width: 1400px; z-index: 100;"}
 		.modal-content
-			.modal-base	
+			.modal-base
 				.row
 					.col-lg-2{style:"left: 70px;"}
 						%center
+							%button.close.boton-inspi{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button",} &times;
 							%p.title-modal INSPIRAGRAMA
 							%p.text-modal Conoce nuestro proceso integral de motivación y atrevete a formar familias solidas para lograr empresas exitosas
 

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
+  #post 'newsletter/create', as: "newsletters"
+  resources :newsletters
   resources :contacts
+ 
 
   root to: 'frontend#index'
   get 'gallery/:category_permalink', to: 'frontend#gallery', as: "gallery"

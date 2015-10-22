@@ -1,5 +1,5 @@
 - (action_name == "new" or action_name == "create") ? action="create" : action="update"
-.wrapper
+.wrapper 
 	.wrapper-body.container
 		.actions
 			= link_to catalog_attachments_path, class: "btn-floating btn-flat tooltipped", "data-position" => "bottom", "data-tooltip" => "Volver" do
@@ -20,11 +20,13 @@
 						#image
 							= f.input :image,label: t("model.#{controller_name.singularize}.attributes.image"), :as => :file_material, label: false, wrapper_html: { class: "file-field" }
 
-							= f.input :image_banner,label: t("model.#{controller_name.singularize}.attributes.image_banner"), :as => :file_material, label: false, wrapper_html: { class: "file-field" }
+							- if @catalog.name == "Conferencias"
+
+								= f.input :image_banner,label: t("model.#{controller_name.singularize}.attributes.image_banner"), :as => :file_material, label: false, wrapper_html: { class: "file-field" }
 						#url
 							= f.input :url, input_html: {class: "materialize-textarea"}
 
-						- if @catalog.name != "Clientes"
+						- if @catalog.name != "Clientes" and @catalog.name != "Galeria"
 
 							= f.input :description, :as => :ckeditor, label: false, input_html: { :ckeditor => { :toolbar => 'short'} }					
 						

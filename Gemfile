@@ -110,4 +110,6 @@ gem 'soundcloud'
 
 #---- Carrusel frontend-----
 gem "jquery-slick-rails"
+
+gem "gibbon", git: 'git://github.com/amro/gibbon.git'
  

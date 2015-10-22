@@ -1,3 +1,4 @@
+
 //= require_self
 
 @import "bootstrap-sprockets";
@@ -20,3 +21,6 @@
 @import "galery";
 @import "bootstrap-datepicker3";
 @import "jquery.datetimepicker";
+
+//= require_tree .
+//= require_self

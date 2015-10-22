@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150908015544) do
+ActiveRecord::Schema.define(version: 20151022040913) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",    limit: 255, null: false
@@ -107,6 +107,12 @@ ActiveRecord::Schema.define(version: 20150908015544) do
   create_table "keppler_catalogs_categories", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "permalink",  limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "newsletters", force: :cascade do |t|
+    t.string   "email",      limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end

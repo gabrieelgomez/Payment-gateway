@@ -1,12 +1,9 @@
-.modal.fade.bs-example-modal-mail#mymodal{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1"}
-	.modal-dialog.modal-lg
-		.modal-content
-			.modal-base	
-				%script{"data-dojo-config" => "usePlainJson: true, isDebug: true", :src => "//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js", :type => "text/javascript"}
-				require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us10.list-manage.com","uuid":"5279f81c1a3718e085d82eaf1","lid":"1fdbee0679"}) })
-				
-
-
+%center
+	- flash.each do |name, msg|
+		- if msg.is_a?(String)
+			%div.hidden-xs{:class => "alert alert-#{name.to_s == 'notice' ? 'success' : 'danger'}", id:"message_alerts"}
+				%button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} &times;
+				= content_tag :div, msg, :id => "flash_#{name}"
 = render 'layouts/frontend/navigation'
 
 .banner-gallery
@@ -25,6 +22,7 @@
 				.col-lg-4.col-md-6.col-sm-12.col-xs-12.hidden-xs.hidden-sm{style:"padding: 0px;"}
 					%a{"data-target" => "#modal-#{attachment.id}", "data-toggle" => "modal", :type => "button"}
 						= render "keppler_catalogs/attachments/mediaframe", attachment: attachment, style:" max-width: 300px;"
+				
 				.col-lg-4.col-md-6.col-sm-12.col-xs-12.hidden-lg.hidden-md{style:"padding: 0px;"}
 					%a{"data-target" => "#modal-#{attachment.id}", "data-toggle" => "modal", :type => "button"}
 						= render "keppler_catalogs/attachments/mediaframe", attachment: attachment, style:""
@@ -38,6 +36,26 @@
 	= render 'frontend/contacts'
 #footer
 	= render 'frontend/footer'
+
+- if params[:category_permalink] == "audios"
+	#mailchip
+		= link_to 'Suscribirse <i class="fa fa-envelope"></i>'.html_safe, "#", class: "flotante btn-conferences", "data-target" => ".bs-example-modal-lg32", "data-toggle" => "modal"
+	
+
+.modal.fade.bs-example-modal-lg32{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1"}
+	.modal-dialog.modal-lg
+		.modal-content
+			.modal-base	
+				= simple_form_for Newsletter.new do |f|
+					%center
+						= f.input :email, label: false, input_html: { class: "string required form-control" }, placeholder: "Introduce tu correo electronico"
+					%span.input-group-btn
+						.form-actions.right
+							%center
+								= f.button :button, id:"btn-mail" do
+									%i.fa.fa-envelope
+									Suscribirse
+
 
 
 

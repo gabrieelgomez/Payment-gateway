@@ -1,3 +1,10 @@
+.alert{
+	width: 30%;
+	top: 90px;
+  right: 35%;
+  position: absolute;
+}
+
 .banner-gallery{
 	width: 100%;
 	height: 350px;
@@ -155,4 +162,35 @@
 			}
 		}
 	}
+}
+
+#mailchip{
+	.flotante {
+		width: 120px;
+		height: 30px;
+		padding-top: 5px;
+		border-radius: 5px 5px 0px 0px;
+		text-decoration: none;
+		text-align: center;
+		color: #fff;
+		font-size: 16px;
+		background: rgb(101, 190, 164);
+		display:scroll;
+		position:fixed;
+		bottom: 0px;
+		right:0px;
+	}
+}
+
+#btn-mail{
+	background: rgb(101, 190, 164);
+	color: #fff;
+	width: 40%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#newsletter_email{
+	width: 70%;
+	margin-top: 10px;
 }

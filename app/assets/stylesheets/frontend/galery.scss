@@ -80,7 +80,7 @@
 
 #dash-nav{
 	margin-top: 50px;
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 	padding-left: 20%;
 	padding-right: 20%;
 
@@ -135,6 +135,7 @@
 		img{
 			padding-right: 10px;
 			margin-bottom: 10px;
+			cursor: pointer;
 
 			@media #{$phone-small}{
 				padding-right: 0px;

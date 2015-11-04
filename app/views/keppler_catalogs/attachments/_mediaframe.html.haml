@@ -1,8 +1,7 @@
 - if attachment.image?
-	= image_tag attachment.image, style:"#{style}"
 	.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1", id: "modal-#{attachment.id}"}
 		.modal-dialog.modal-md
-			.modal-content
+			.modal-content{style:"background: transparent; box-shadow:none; border:none;"}
 				= image_tag attachment.image
 - elsif attachment.url? and attachment.upload.to_i == 2
 	= image_tag attachment.url, style:"#{style}"

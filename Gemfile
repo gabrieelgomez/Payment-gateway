@@ -111,5 +111,11 @@ gem 'soundcloud'
 #---- Carrusel frontend-----
 gem "jquery-slick-rails"
 
+
+# ----- gem mailchip--------
 gem "gibbon", git: 'git://github.com/amro/gibbon.git'
+ 
+
+ #---- gem mask imput------
+ gem 'jquery-inputmask-rails'
  

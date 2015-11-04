@@ -1,21 +1,25 @@
 #about{
 	.container-about{
 		.text-left{
-			margin-top: 7%;
+			margin-top: 11%;
 			margin-bottom: 12%;
+			margin-left: 17%;
 
 			@media #{$phone} {
-				margin-top: 0%;	
+				margin-top: 0%;
+				margin-left: 0%;	
 			}
 
 			@media #{$phone-landscape} {
 				margin-top: 0%;
 				margin-bottom: 8%;
+				margin-left: 0%;
 			}
 
 			@media #{$tablet-portrait} {
 				margin-top: 0%;
 				margin-bottom: 8%;
+				margin-left: 0%;
 			}
 
 
@@ -62,7 +66,7 @@
 				font-size: 15px;
 				font-family: $font-type;
 				line-height: 16px;
-				text-align: left;
+				text-align: center;
 
 				@media #{$phone} {
 					text-align: justify;

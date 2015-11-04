@@ -1,55 +1,45 @@
-%center
-	%h1 Nueva solicitud de conferencia
-	%h2= "#{@contact.names} a realizado una nueva solicitud de conferencia"
-
-	%ul.list-group 
-		%li.list-group-item
-			%strong Conferencia:
-			= @contact.conferences
-		%li.list-group-item
-			%strong Nombres y Apellidos:
-			= @contact.names
-
-		%li.list-group-item
-			%strong Empresa:
-			= @contact.company
-
-		%li.list-group-item
-			%strong Fecha Estimada del Evento:
-			= @contact.estimated_date
-
-		%li.list-group-item
-			%strong Tipo de Reunión:
-			= @contact.type_meeting
-
-		%li.list-group-item
-			%strong Tema:
-			= @contact.theme
-
-		%li.list-group-item
-			%strong Hora de Inicio:
-			= @contact.start_time
-
-		%li.list-group-item
-			%strong Hora de Finalización:
-			= @contact.end_time
-
-		%li.list-group-item
-			%strong Cuidad:
-			= @contact.city
-
-		%li.list-group-item
-			%strong Asistentes:
-			= @contact.assistants
-
-		%li.list-group-item
-			%strong Teléfono:
-			= @contact.phone
-
-		%li.list-group-item
-			%strong E-mail:
-			= @contact.email
-
-		%li.list-group-item
-			%strong Mensaje:
-			= @contact.message
+!!!
+%html{lang: "en"}
+  %head
+    %meta{charset: "UTF-8"}/
+    %title Document
+  %body
+    %div{style: "font-family: \"Open Sans\", sans-serif;"}
+      %div{style: "background:rgb(85, 196, 234);padding:10px;font-family: 'Open Sans', sans-serif;"}
+        %h1{style: "color:white;text-align:center;"} Solicitud de conferencia
+      %div{style: "background:#e7e7e7;padding:5px;padding-left:10px;"}
+        %h2{style: "color:rgb(85, 196, 234);"} #{@contact.conferences}
+      %div
+        %table{border: "1", style: "width:100%;border:1px solid black;border-collapse:collapse;"}
+          %tr{style: "background:#E6E6E6;"}
+            %th Nombre
+            %th Empresa
+            %th Fecha estimada del evento
+            %th Cuidad
+            %th Telefono
+            %th Email
+          %tr
+            %td= @contact.names
+            %td= @contact.company
+            %td= @contact.estimated_date
+            %td= @contact.city
+            %td= @contact.phone
+            %td= @contact.email
+          %tr{style: "background:#E6E6E6;"}
+            %th{colspan: "3"} Tipo de reunion
+            %th{colspan: "3"} Tema
+          %tr
+            %td{colspan: "3"}= @contact.type_meeting
+            %td{colspan: "3"}= @contact.theme
+          %tr{style: "background:#E6E6E6;"}
+            %th{colspan: "2"} N° de asistentes
+            %th{colspan: "2"} Hora de Inicio
+            %th{colspan: "2"} Hora de Culminación
+          %tr
+            %td{colspan: "2"}= @contact.assistants
+            %td{colspan: "2"}= @contact.start_time
+            %td{colspan: "2"}= @contact.end_time
+          %tr{style: "background:#E6E6E6;"}
+            %th{colspan: "6"} Mensaje
+          %tr
+            %td{colspan: "6"}= @contact.message

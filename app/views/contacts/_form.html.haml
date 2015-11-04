@@ -1,12 +1,19 @@
 = title("Contacto - Conferencia")
 = render 'layouts/frontend/navigation'
+%center
+	- flash.each do |name, msg|
+		- if msg.is_a?(String)
+			%div.hidden-xs{:class => "alert alert-#{name.to_s == 'notice' ? 'success' : 'danger'}", id:"message_alerts"}
+				%button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} &times;
+				= content_tag :div, msg, :id => "flash_#{name}"
 .banner-contact
 	%p.pull-right ¡SOLICITA TU CONFERENCIA!
 
+
 = simple_form_for @contact do |f|
-	.row{style:"width:100%; margin-left: 0px; margin-right: 0px; margin-top: 20px;"}
+	.row{style:"width:100%; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-top:70px;"}
 		.col-lg-4
-			= f.input :conferences, collection: [('De la Superación a la Super-acción'), ('Tú ACTITUD determina tú ALTITUD')], label: false, include_blank:"- Seleccione la Conferencia -", input_html: { class: 'form-control input-inyx'}
+			= f.input :conferences, :collection => @conferencias_contact, :label_method => :name, :value_method => :name, :label => false, include_blank:"- Seleccione la Conferencia -", input_html: { class: 'form-control input-inyx'}
 		.col-lg-4
 			= f.input :names, label: false, input_html: { class: 'form-control input-inyx', placeholder: "Nombre y Apellido"}
 		.col-lg-4
@@ -18,9 +25,9 @@
 		.col-lg-4
 			= f.input :theme, label: false, input_html: { class: 'form-control input-inyx disabled_true',  placeholder: "Tema"}
 		.col-lg-4
-			= f.input :start_time, label: false, input_html: { class: 'form-control input-inyx datetimepicker', placeholder: "Hora de Inicio"}
+			= f.input :start_time, label: false, input_html: { class: 'form-control input-inyx', placeholder: "Hora de Inicio (HH:MM AM O PM)"}	
 		.col-lg-4
-			= f.input :end_time, label: false, input_html: { class: 'form-control input-inyx datetimepicker', placeholder: "Hora de Finalización"}
+			= f.input :end_time, label: false, id: "horafinal", data: { mask: '(999) 999-9999'}, input_html: { class: 'form-control input-inyx', placeholder: "Hora de Finalización (HH:MM AM O PM)"}
 		.col-lg-4
 			= f.input :city, label: false, input_html: { class: 'form-control input-inyx', placeholder: "Ciudad"}
 		.col-lg-4
@@ -33,20 +40,18 @@
 			= f.input :message, label: false, as: :text, input_html: { class: 'form-control input-inyx',  placeholder: "Tu mensaje"}
 		.col-lg-12
 			.form-actions.right
-				= f.button :submit, "Enviar Solicitud", class: "btn-contact" do
-					%i.fa.fa-paper-plane-o
+				= f.button :button, class: "btn-contact" do
+					%i.fa.fa-envelope
+					Enviar solicitud
+
+
+
 
 :javascript
-
+	
 	$('.datepicker').datepicker({
 		format: 'dd-mm-yyyy',
 		autoclose: true,
-		language: 'es'
-	})
-
-	$('.datetimepicker').datetimepicker({
-		datepicker:false,
-		format:'H:i',
 		language: 'es'
 	})
 
@@ -54,4 +59,10 @@
 		$('form').submit(function(){
 			$(':submit').attr('disabled', 'disabled');
 		})
+	});
+
+	$(document).ready(function(){
+		$("#contact_start_time").inputmask("99:99 AA");
+		$("#contact_end_time").inputmask("99:99 AA");
+
 	});

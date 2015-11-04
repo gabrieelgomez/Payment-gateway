@@ -5,6 +5,7 @@ class ContactsController < ApplicationController
   # GET /contacts.json
   def index
     @contacts = Contact.all
+   
   end
 
   # GET /contacts/1
@@ -15,10 +16,13 @@ class ContactsController < ApplicationController
   # GET /contacts/new
   def new
     @contact = Contact.new
+    @catalog_conferencias_contact = KepplerCatalogs::Catalog.find_by_section("Conferencias")
+    @conferencias_contact = @catalog_conferencias_contact.attachments 
   end
 
   # GET /contacts/1/edit
   def edit
+
   end
 
   # POST /contacts
@@ -29,9 +33,11 @@ class ContactsController < ApplicationController
     respond_to do |format|
       if @contact.save
         UserMailer.contact_email(@contact).deliver_now
-        format.html { redirect_to root_path, notice: 'Contact was successfully created.' }
+        format.html { redirect_to new_contact_path, notice: 'Hemos recibido su solicitud, en breve nos pondremos en contacto.' }
         format.json { render :show, status: :created, location: @contact }
       else
+        @catalog_conferencias_contact = KepplerCatalogs::Catalog.find_by_section("Conferencias")
+        @conferencias_contact = @catalog_conferencias_contact.attachments 
         format.html { render :new }
         format.json { render json: @contact.errors, status: :unprocessable_entity }
       end

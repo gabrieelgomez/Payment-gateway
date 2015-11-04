@@ -1,4 +1,4 @@
 require 'gibbon'
 
-@@gibbon = Gibbon::Request.new(api_key: "83e6a66e4221b5c9ef24efffa23e2f05-us10") 
+@@gibbon = Gibbon::Request.new(api_key: "fb34b3afca84525b56079e2abacdc45f-us12") 
 @@gibbon.timeout = 10

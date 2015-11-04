@@ -27,7 +27,7 @@ class NewslettersController < ApplicationController
 
     respond_to do |format|
       if @newsletter.save
-        @@gibbon.lists("a676eddbcd").members.create(body:{email_address: @newsletter.email, status: "subscribed"})
+        @@gibbon.lists("86f169fb8e").members.create(body:{email_address: @newsletter.email, status: "subscribed"})
         format.html { redirect_to gallery_path("audios"), notice: 'Se ha suscrito correctamente' }
       else
         format.html { redirect_to gallery_path("audios"), notice: 'Ya te encuentras registrado' }

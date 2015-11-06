@@ -118,6 +118,11 @@
 					padding-top: 60px;
 					font-family: $font-type;
 
+					@media #{$desktop} {
+						padding-left: 10px;
+					}
+					
+
 					@media #{$phone} {
 						padding: 30px 15px 0px 15px;
 						font-size: 22px;	

@@ -2,6 +2,38 @@
 .container-conferences{
 	overflow: hidden;
 
+	#btn-i{
+		margin-top: 20px;
+		color: #65bea4;
+		background: #fff;
+		border: 2px solid #65bea4;
+		font-size: 15px;
+	}
+
+	#btn-d{
+		margin-top: 20px;
+		color: #65bea4;
+		background: #fff;
+		border: 2px solid #65bea4;
+		font-size: 15px;
+		padding: 0.7% 29px;
+	}
+
+	.active{
+		color: #fff !important;
+		background: #65bea4 !important;
+	}
+
+	#btn-i:hover{
+		color: #fff;
+		background: #65bea4;
+	}
+
+	#btn-d:hover{
+		color: #fff;
+		background: #65bea4;
+	}
+
 	.title-section{
 			border-top: 3px solid #00A19A;
 			border-bottom: 3px solid #00A19A;
@@ -30,6 +62,15 @@
 		}
 
 	.container-text{
+		
+		.ocultar{
+		overflow-y: hidden;
+         height: 0
+		}
+
+		.visible{
+			display: block;
+		}
 		
 		padding: 40px 6%; 
 		

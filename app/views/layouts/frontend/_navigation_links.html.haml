@@ -19,14 +19,3 @@
 		= link_to '<div class="icon5" data-placement="bottom" title= "Blog"></div>'.html_safe, "/blog", class: "external"
 		
 	%li= link_to '<div class="icon7" data-placement="bottom" title= "Contacto"></div>'.html_safe, main_app.root_path(anchor: "contacs"), class: "external"
-
-:javascript
-	$(function () {
-		$('[class="icon1"').tooltip();
-		$('[class="icon2"').tooltip();
-		$('[class="icon3"').tooltip();
-		$('[class="icon4"').tooltip();
-		$('[class="icon5"').tooltip();
-		$('[class="icon6"').tooltip();
-		$('[class="icon7"').tooltip();
-	})

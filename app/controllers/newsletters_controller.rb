@@ -5,7 +5,6 @@ class NewslettersController < ApplicationController
   def index
     #@newsletters = Newsletter.all
   end
-
   # GET /newsletters/1
   # GET /newsletters/1.json
   def show
@@ -20,6 +19,14 @@ class NewslettersController < ApplicationController
   def edit
   end
 
+  def download
+    @filename ="#{Rails.root}/app/assets/images/frontend/Llamados_para_triunfar_GUSTAVO_HENAO.mp3"
+    send_file(@filename,
+      :type => 'audio/mp3',
+      :disposition => 'attachment',
+      :x_sendfile => true)
+  end
+
   # POST /newsletters
   # POST /newsletters.json
   def create
@@ -27,10 +34,10 @@ class NewslettersController < ApplicationController
 
     respond_to do |format|
       if @newsletter.save
-        @@gibbon.lists("86f169fb8e").members.create(body:{email_address: @newsletter.email, status: "subscribed"})
-        format.html { redirect_to gallery_path("audios"), notice: 'Se ha suscrito correctamente' }
+        @@gibbon.lists("86f169fb8e").members.create(body:{email_address: @newsletter.email, status: "subscribed"})   
+        format.html { redirect_to downloader_path, notice: 'Se ha suscrito correctamente'}
       else
-        format.html { redirect_to gallery_path("audios"), notice: 'Ya te encuentras registrado' }
+        format.html { redirect_to gallery_path("audios"), notice: 'Ya te encuentras registrado o ocurrio un error' }
         format.json { render json: @newsletter.errors, status: :unprocessable_entity }
       end
     end

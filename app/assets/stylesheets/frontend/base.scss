@@ -13,6 +13,16 @@ $font-type: 'Lato', sans-serif;
 //colores
 $red-color: #F44336;
 
+
+.slick-next{
+  right: 10px;
+}
+
+.slick-prev {
+  left: 10px;
+  z-index: 100;
+}
+
 .banner-contact{
   width: 100%;
   height: 350px;

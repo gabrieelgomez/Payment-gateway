@@ -1,23 +1,41 @@
 .container-conferences
 	%center
 		%p.title-section CONFERENCIAS
+		.btn.btn-primary.btn-lg#btn-i{:href => "#", :role => "button"} Conferencias Individuales
+		.a.btn.btn-primary.btn-lg#btn-d{:href => "#", :role => "button"} Conferencias Duales
 	.container-text
 		%center
-			.row{style:"width: 100%; margin: 0px;"}
-				- @attachments_conferencias.each do |imageconferencias|	
+			.row.ghd.conferencias-i{style:"width: 100%; margin: 0px;"}
+				- @attachments_conferencias_i.each do |imageconferencias|	
 					.col-lg-4.col-md-6.col-sm-12.col-xs-12{style:"padding: 0px;"}
 						.container-image
 							%a{"data-target" => "#modal-#{imageconferencias.id}", "data-toggle" => "modal", :type => "button"}
 								%img.portada{:src => "#{imageconferencias.image}"}
-								.mask.hidden-xs
-									%center
-										%p.text-mask #{imageconferencias.name}
+								.mask.hidden-xs{style:"cursor: pointer;"}
+									
 
-					.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1", id: "modal-#{imageconferencias.id}"}
-						.modal-dialog.modal-md
-							.modal-content
-								%img.portada{:src => "#{imageconferencias.image_banner}"}
+			- @attachments_conferencias_i.each do |imageconferencias|	
+				.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1", id: "modal-#{imageconferencias.id}"}
+					.modal-dialog.modal-md
+						.modal-content
+							%img.portada{:src => "#{imageconferencias.image_banner}"}
 								%p{style:"padding: 10px;"} #{imageconferencias.description.html_safe}
+
+			.row.ghd.conferencias-d{style:"width: 100%; margin: 0px;"}
+				- @attachments_conferencias_d.each do |imageconferencias_d|	
+					.col-lg-4.col-md-6.col-sm-12.col-xs-12{style:"padding: 0px;"}
+						.container-image
+							%a{"data-target" => "#modal-#{imageconferencias_d.id}", "data-toggle" => "modal", :type => "button"}
+								%img.portada{:src => "#{imageconferencias_d.image}"}
+								.mask.hidden-xs{style:"cursor: pointer;"}
+									
+
+			- @attachments_conferencias_d.each do |imageconferencias_d|	
+				.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1", id: "modal-#{imageconferencias_d.id}"}
+					.modal-dialog.modal-md
+						.modal-content
+							%img.portada{:src => "#{imageconferencias_d.image_banner}"}
+								%p{style:"padding: 10px;"} #{imageconferencias_d.description.html_safe}
 		
 .container-banner-inspiragrama
 	.text
@@ -64,4 +82,62 @@
 									.box-conferencia
 										.text-conferencia
 											Conferencias dirigidas a los gerentes lideres de la organización
-					
+
+
+:javascript
+
+	$( window ).load(function() {
+		$( ".conferencias-d" ).css( "overflow-y", "hidden");
+		$( ".conferencias-d" ).css( "height", "0");
+	});
+
+	$("#btn-i").click(function(){
+		$("#btn-d").removeClass('active');
+		$("#btn-i").addClass('active');
+		$( ".conferencias-i" ).show();
+		$( ".conferencias-d" ).hide();
+	});
+
+	$("#btn-d").click(function() {
+		$("#btn-i").removeClass('active');
+		$("#btn-d").addClass('active');
+		$( ".conferencias-d" ).css( "overflow-y", "");
+		$( ".conferencias-d" ).css( "height", "");
+		$( ".conferencias-d" ).show();
+		$( ".conferencias-i" ).hide();
+	});
+
+	$(document).ready(function(){
+		$('.ghd').slick({
+			autoplay: false,
+			dots: false,
+			arrow: true,
+			infinite: true,
+			speed: 300,
+			cssEase: 'linear',
+			adaptiveHeight: false,
+			slidesToScroll: 1,
+			slidesToShow: 3,
+			responsive: [
+				{
+					breakpoint: 768,
+					settings: {
+						arrows: false,
+						centerMode: true,
+						centerPadding: '40px',
+						slidesToShow: 1
+					}
+				},
+				{
+					breakpoint: 480,
+					settings: {
+						arrows: false,
+						centerMode: false,
+						adaptiveHeight: true,
+						centerPadding: '40px',
+						slidesToShow: 1
+					}
+				}
+			]
+		});
+	});	

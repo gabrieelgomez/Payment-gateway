@@ -1,9 +1,11 @@
 %center
+
 	- flash.each do |name, msg|
 		- if msg.is_a?(String)
 			%div.hidden-xs{:class => "alert alert-#{name.to_s == 'notice' ? 'success' : 'danger'}", id:"message_alerts"}
 				%button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} &times;
 				= content_tag :div, msg, :id => "flash_#{name}"
+
 = render 'layouts/frontend/navigation'
 
 .banner-gallery
@@ -49,26 +51,33 @@
 
 - if params[:category_permalink] == "audios" and flash.blank? 
 	.modal.fade.bs-example-modal-lg32{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1"}
-		.modal-dialog.modal-lg
+		.modal-dialog.modal-md
 			.modal-content
 				%center
-					%h5.panel.panel-success{style:"background: #65bea4; color: #fff; margin: 0px; border: 0px;  padding: 7px; font-family: 'Lato', sans-serif; font-size: 17px;"} Recibe material inspirador
+					= image_tag "frontend/Icono-Archivo-de-Audio.png", style:"margin-top:30px; margin-bottom: 20px;"
+					.h5{style:"color: rgba(128, 128, 128, 0.8); font-weight: bold;"} DESCARGA EL AUDIO
+					.h5{style:"font-weight: bold;"} "LLAMADOS PARA TRIUNFAR"
 				.modal-base	
 					= simple_form_for Newsletter.new do |f|
 						%center
-							= f.input :email, label: false, input_html: { class: "string required form-control" }, placeholder: "Introduce tu correo electronico"
+							= f.input :email, label: false, input_html: { class: "string required form-control" }, placeholder: "Correo electronico"
 						%span.input-group-btn
 							.form-actions.right
 								%center
 									= f.button :button, id:"btn-mail" do
-										%i.fa.fa-envelope
-										Suscribirse
+										DESCARGAR AUDIO
 
 
 
 	:javascript
-		$( window ).load(function() {
+		$(document).on('ready page:load', function () {
 			$('.bs-example-modal-lg32').modal('show');
 		});
+
+
+		$('#btn-mail').click(function(){
+			$('.bs-example-modal-lg32').modal('hide');
+		});
+
 
 

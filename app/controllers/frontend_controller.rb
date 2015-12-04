@@ -9,7 +9,10 @@
   	@attachments_testimonios = @catalog_testimonios.attachments.where(public: true)
 
   	@catalog_conferencias = KepplerCatalogs::Catalog.find_by_section("Conferencias")
-  	@attachments_conferencias = @catalog_conferencias.attachments.where(public: true)		
+    @category_conferencias = KepplerCatalogs::Category.find_by_permalink("conferencias-individuales")
+    @category_conferencias_d = KepplerCatalogs::Category.find_by_permalink("conferencias-duales")
+    @attachments_conferencias_i = @catalog_conferencias.attachments.where(category_id: @category_conferencias.id, public: true)
+    @attachments_conferencias_d = @catalog_conferencias.attachments.where(category_id: @category_conferencias_d.id, public: true)
   end
 
   def gallery
@@ -17,5 +20,4 @@
     @category = KepplerCatalogs::Category.find_by_permalink(params[:category_permalink])
     @attachments = @catalog.attachments.where(category_id: @category.id, public: true).page(@current_page).per(6)
   end
-
 end

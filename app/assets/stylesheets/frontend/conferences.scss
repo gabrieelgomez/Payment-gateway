@@ -8,6 +8,7 @@
 		background: #fff;
 		border: 2px solid #65bea4;
 		font-size: 15px;
+		padding: 0.7% 29px;
 	}
 
 	#btn-d{
@@ -62,6 +63,24 @@
 		}
 
 	.container-text{
+
+		.modal{
+			.modal-dialog{
+				.modal-content{
+					.boton-modal{
+						position: absolute;
+						right: 7px;
+						font-size: 38px;
+						color: #fff;
+						opacity: 1;
+					}
+					.modal-conferencia-description{
+						padding: 10px 6%;
+		    			line-height: 1.6;
+					}
+				}
+			}
+		}
 		
 		.ocultar{
 		overflow-y: hidden;
@@ -111,8 +130,10 @@
 
 				@media #{$tablet} {
 					height: 200px;
+					width: 100%;
 				}
 			}
+
 
 			.mask{
 				  background: rgba(0, 0, 0, 0.5);
@@ -253,6 +274,10 @@
 			left: -120px;
 		}
 
+		@media #{$tablet} {
+			padding-top: 30px;
+		}
+
 		p{
 			
 			border-top: 3px solid #fff;
@@ -326,6 +351,7 @@
 			@media #{$tablet} {
 				padding: 10px 10%;
 				margin-left: 37.5%;
+				display: none;
 			}
 		}
 	}

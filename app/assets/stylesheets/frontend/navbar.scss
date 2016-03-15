@@ -16,11 +16,31 @@
 		}
 
 		@media #{$tablet} {
-			margin: 0em 26%;
+			margin: 0;
 		}
 	}
 
 	.navbar-nav{
+		width: 100%;
+
+		@media #{$desktop} {
+			position: relative;
+			top: 8px;
+		}
+
+		@media #{$tablet} {
+			position: relative;
+		}
+
+		li{
+			display: inline-block;
+			margin-right: 25px;
+			padding-bottom: 4px;
+
+			a{
+				margin-left: 0;
+			}
+		}
 
 		li:hover{
 			background-color: #66BAA3;
@@ -91,7 +111,25 @@
 			li{
 				
 				a{
-					border: 0px
+					border: 0px;
+				}
+			}
+		}	
+	}
+}
+
+@media #{$tablet-portrait} {
+	#front-navbar{ 
+		margin: 0px !important;
+		#center{
+			margin: 0px;
+		}
+		.navbar-nav{
+			li{
+				
+				a{
+					border: 0px;
+					color: #fff;
 				}
 			}
 		}	

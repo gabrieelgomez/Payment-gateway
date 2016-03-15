@@ -11,8 +11,8 @@
   	@catalog_conferencias = KepplerCatalogs::Catalog.find_by_section("Conferencias")
     @category_conferencias = KepplerCatalogs::Category.find_by_permalink("conferencias-individuales")
     @category_conferencias_d = KepplerCatalogs::Category.find_by_permalink("conferencias-duales")
-    @attachments_conferencias_i = @catalog_conferencias.attachments.where(category_id: @category_conferencias.id, public: true)
-    @attachments_conferencias_d = @catalog_conferencias.attachments.where(category_id: @category_conferencias_d.id, public: true)
+    @attachments_conferencias_i = @catalog_conferencias.attachments.where(category_id: @category_conferencias.id, public: true).order(id: :desc)
+    @attachments_conferencias_d = @catalog_conferencias.attachments.where(category_id: @category_conferencias_d.id, public: true).order(id: :desc)
   end
 
   def gallery

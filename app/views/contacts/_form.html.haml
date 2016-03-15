@@ -13,7 +13,7 @@
 = simple_form_for @contact do |f|
 	.row{style:"width:100%; margin-left: 0px; margin-right: 0px; margin-top: 0px; padding-top:70px;"}
 		.col-lg-4
-			= f.input :conferences, :collection => @conferencias_contact, :label_method => :name, :value_method => :name, :label => false, include_blank:"- Seleccione la Conferencia -", input_html: { class: 'form-control input-inyx'}
+			= f.input :conferences, label: false,  input_html: { class: 'form-control input-inyx', placeholder: "Describa una Conferencia"}
 		.col-lg-4
 			= f.input :names, label: false, input_html: { class: 'form-control input-inyx', placeholder: "Nombre y Apellido"}
 		.col-lg-4

@@ -16,11 +16,19 @@ $red-color: #F44336;
 
 .slick-next{
   right: 10px;
+
+  @media #{$phone}{
+    right: 30px;
+  }
 }
 
 .slick-prev {
   left: 10px;
   z-index: 100;
+
+    @media #{$phone}{
+      left: 30px;
+    }
 }
 
 .banner-contact{

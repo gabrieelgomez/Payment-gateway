@@ -332,6 +332,11 @@
 			background-position: -200px;
 		}
 
+		@media #{$tablet} {
+			background-size: cover;
+			background-position-x: 50%;
+		}
+
 		.text-motivador{
 			position: relative;
 			color: #fff;

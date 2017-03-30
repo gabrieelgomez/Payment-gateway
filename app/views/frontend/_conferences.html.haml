@@ -1,52 +1,4 @@
-.container-conferences
-	%center
-		%p.title-section CONFERENCIAS
-		.btn.btn-primary.btn-lg#btn-i{:href => "#", :role => "button"} Conferencias Individuales
-		.a.btn.btn-primary.btn-lg#btn-d{:href => "#", :role => "button"} Conferencias Duales
-	.container-text
-		%center
-			.row.ghd.conferencias-i{style:"width: 100%; margin: 0px;"}
-				- @attachments_conferencias_i.each do |imageconferencias|	
-					.col-lg-4.col-md-6.col-sm-12.col-xs-12{style:"padding: 0px;"}
-						.container-image
-							%a{"data-target" => "#modal-#{imageconferencias.id}", "data-toggle" => "modal", :type => "button"}
-								%img.portada{:src => "#{imageconferencias.image}"}
-								.mask.hidden-xs{style:"cursor: pointer;"}
-									
 
-			- @attachments_conferencias_i.each do |imageconferencias|	
-				.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1", id: "modal-#{imageconferencias.id}"}
-					.modal-dialog.modal-md
-						.modal-content
-							%button.close.boton-modal{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button",} &times;
-							%img.portada{:src => "#{imageconferencias.image_banner}"}
-								%p{style:"padding: 10px;"}
-								.modal-conferencia-description 
-									#{imageconferencias.description.html_safe}
-
-			.row.ghd.conferencias-d{style:"width: 100%; margin: 0px;"}
-				- @attachments_conferencias_d.each do |imageconferencias_d|	
-					.col-lg-4.col-md-6.col-sm-12.col-xs-12{style:"padding: 0px;"}
-						.container-image
-							%a{"data-target" => "#modal-#{imageconferencias_d.id}", "data-toggle" => "modal", :type => "button"}
-								%img.portada{:src => "#{imageconferencias_d.image}"}
-								.mask.hidden-xs{style:"cursor: pointer;"}
-									
-
-			- @attachments_conferencias_d.each do |imageconferencias_d|	
-				.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1", id: "modal-#{imageconferencias_d.id}"}
-					.modal-dialog.modal-md
-						.modal-content
-							%button.close.boton-modal{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button",} &times;
-							%img.portada{:src => "#{imageconferencias_d.image_banner}"}
-								%p{style:"padding: 10px;"} 
-								.modal-conferencia-description 
-									#{imageconferencias_d.description.html_safe}
-		
-.container-banner-inspiragrama
-	.text
-		%p SI DESEAS UN PROGRAMA DE INSPIRACIÓN INTEGRAL PARA TU EMPRESA EL “INSPIRAGRAMA” ES PARA TI
-		= link_to "Ver más", "#", class: "btn-conferences hidden-xs", "data-target" => ".bs-example-modal-lg", "data-toggle" => "modal"
 
 .modal.fade.bs-example-modal-lg{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1"}
 	.modal-dialog.modal-lg{style:"width: 1400px; z-index: 100;"}
@@ -117,46 +69,39 @@
 	});
 
 	$(document).ready(function(){
-		$('.ghd').slick({
-			autoplay: false,
-			dots: false,
-			arrow: true,
-			infinite: true,
-			speed: 300,
-			cssEase: 'linear',
-			adaptiveHeight: false,
+		$('.slider-for').slick({
+			slidesToShow: 1,
 			slidesToScroll: 1,
-			slidesToShow: 3,
+			arrows: false,
+			fade: true,
+			asNavFor: '.slider-nav'
+		});
+
+		$('.slider-nav').slick({
+			slidesToShow: 5,
+			slidesToScroll: 1,
+			asNavFor: '.slider-for',
+			dots: false,
+			centerMode: false,
+			focusOnSelect: true,
 			responsive: [
-				{
-					breakpoint: 1024,
-					settings: {
-						arrows: false,
-						centerMode: true,
-						centerPadding: '40px',
-						slidesToShow: 2
-					}
-				},
-				{
-					breakpoint: 768,
-					settings: {
-						arrows: true,
-						centerMode: true,
-						centerPadding: '40px',
-						slidesToShow: 1
-					}
-				},
-				{
-					breakpoint: 480,
-					settings: {
-						arrows: true,
-						centerMode: false,
-						adaptiveHeight: true,
-						centerPadding: '40px',
-						slidesToShow: 1
-					}
+			{
+				breakpoint: 767,
+				settings: {
+					arrows: true,
+					centerMode: true,
+					slidesToShow: 3
 				}
-			]
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					arrows: true,
+					centerMode: true,
+					slidesToShow: 2
+				}
+			}
+		]
 		});
 	});	
 

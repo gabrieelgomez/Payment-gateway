@@ -1,4 +1,23 @@
 
+	.link-form-2{
+		background: #00A19A;
+		color: white;
+		padding: 10px 15px;
+		border-radius: 5px;
+		margin-top: 10px;
+		position: relative;
+		top: 20px;
+	}
+
+		.link-form-2:hover{
+		background: #00A19A;
+		color: white;
+		padding: 10px 15px;
+		border-radius: 5px;
+		margin-top: 10px;
+	}
+
+
 .container-contacts{
 	padding: 10px 0px 70px 0px;
 
@@ -29,6 +48,8 @@
 	#link-form{
 		background: #015DA7;
 	}
+
+
 
 	a{
 		display: inline-block;

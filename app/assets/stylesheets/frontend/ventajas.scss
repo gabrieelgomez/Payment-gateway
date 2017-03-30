@@ -40,7 +40,10 @@
 		position: relative;
 		z-index: 2;
 
-
+		@media #{$phone} {
+			height: 100px;
+		}
+		
 		p{
 			font-family: $font-type;
 			font-weight: bold;

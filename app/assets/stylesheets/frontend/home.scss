@@ -105,11 +105,11 @@
 		padding-top: 20%;
 
 		@media #{$phone} {
-			padding-top: 40%;
+			padding-top: 35%;
 		}
 
 		@media #{$phone-landscape} {
-			padding-top: 2%;
+			padding-top: 1%;
 		}
 
 		@media #{$tablet-portrait} {

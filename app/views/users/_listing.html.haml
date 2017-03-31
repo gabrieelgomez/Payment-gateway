@@ -7,15 +7,14 @@
 	%td.hide-on-small-and-down{style:"width: 30%"}
 		= link_to "", user_path(user, search: @query), remote: true, class: "show-row"
 		%span
-			= user										
+			= user.name									
 	%td{style:"width: 35%"}
 		= link_to "", user_path(user, search: @query), remote: true, class: "show-row"
 		%span
-			= user			 
+			= user.email			 
 	%td.hide-on-small-and-down{style:"width: 20%"}
-		= link_to "", user_path(user, search: @query), remote: true, class: "show-row"
-		%span
-			= user
+		
+			
 	%td{style:"width: 5%"}		
 		= link_to user_path(user), class: "btn-floating waves-effect btn-flat" do
 			= material_icon.md_24.more_horiz.css_class("md-dark")

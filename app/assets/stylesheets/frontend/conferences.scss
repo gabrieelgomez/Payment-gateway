@@ -171,25 +171,33 @@
 				transition-property: all;
 				transition-timing-function: ease-in-out;
 
-					@media  (min-width: 200px) and (max-width: 767px) {
+					@media  (min-width: 200px) and (max-width: 1023px) {
 						height: 100%;
+						width: 100%;
+    					padding: 15px 0;
 					}
 
 					@media #{$tablet-portrait} {
-						height: 280px !important;
+						height: 100%;
+						width: 500px;
 					}
 
 					@media #{$tablet} {
-						height: 200px;
+						height: 100%;
+						width: 500px;
 					}
 
 				p {
-					color: white;
+					color: white !important;
 				}
 
 				.bold {
 					font-weight: bold;
 					font-size: 25px;
+
+					@media  (min-width: 200px) and (max-width: 1023px) {
+						font-size: 20px;
+					}
 				}
 				
 				.text-mask{

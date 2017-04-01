@@ -27,7 +27,8 @@
 										%img.portada{:src => "#{imageconferencias.image}"}
 										.mask{style:"cursor: pointer;"}
 											%p.bold #{imageconferencias.name.upcase}
-											%p #{imageconferencias.description.html_safe}
+											%div.hidden-xs.hidden-sm
+												#{imageconferencias.description.html_safe}
 											= link_to "Solicitar Conferencia", "/contacts/new", class: "link-form-2"	
 											
 						.row.slider-nav.conferencias-i{style:"width: 100%; margin: 0px;"}

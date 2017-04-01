@@ -26,7 +26,8 @@
 									.container-image
 										%img.portada{:src => "#{imageconferencias.image}"}
 										.mask{style:"cursor: pointer;"}
-											#{imageconferencias.description.html_safe}
+											%p.bold #{imageconferencias.name.upcase}
+											%p #{imageconferencias.description.html_safe}
 											= link_to "Solicitar Conferencia", "/contacts/new", class: "link-form-2"	
 											
 						.row.slider-nav.conferencias-i{style:"width: 100%; margin: 0px;"}
@@ -34,7 +35,7 @@
 								.col-lg-4.col-md-6.col-sm-12.col-xs-12{style:"padding: 0px;"}
 									.container-image
 										%a{"data-target" => "#modal-#{imageconferencias.id}", "data-toggle" => "modal", :type => "button"}
-											%img.portada{:src => "#{imageconferencias.image}"}
+											%img.portada2{:src => "#{imageconferencias.image}"}
 											
 
 .container-banner-inspiragrama.visible-lg

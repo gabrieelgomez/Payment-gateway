@@ -1,0 +1,269 @@
+
+#footer{
+
+	.container-footer{
+		width: 100%;
+		overflow: hidden;
+
+		.separador{
+			position: absolute;
+			left: 45.8%;
+			width: 140px;
+			z-index: 15;
+
+			@include phone-all {
+				display: none;
+			}
+
+			@media #{$tablet-portrait} {
+				display: none;
+			}
+
+			@media #{$tablet} {
+				display: none;
+			}  	
+		}
+
+
+		.impacto{
+			position: relative;
+			width: 100%;
+			height: 335px;
+			background: image-url("frontend/Fondo_Impacto.jpg") no-repeat;
+			background-size: 100% 100%;
+			padding-top: 60px;
+			z-index: 10;
+
+
+			@media #{$phone-small}{
+				height: 220px !important;
+				background-size: 100% 100%;
+				padding-top: 0px;
+				left: 0px;
+			}
+
+			@media #{$phone} {
+				height: 250px;
+				background-size: 100% 100%;
+				padding-top: 0px;
+				left: 0px;
+			}
+
+
+			@media #{$phone-landscape} {
+				height: 260px;
+				background-size: 100% 100%;
+				padding-top: 0px;
+				left: 0px;
+			} 
+
+			@media #{$tablet-portrait} {
+				height: 320px;
+				background-size: cover;
+				padding-top: 0px;
+				left: 0px;
+			}
+
+			@media #{$tablet} {
+				background-size: cover;
+				padding-top: 0px;
+				left: 0px;
+				height: 375px;
+			}
+
+			
+			img{
+				position: relative;
+				width: 30%;
+
+				@include phone-all {
+					padding-top: 20px;	
+				}
+
+				@media #{$tablet-portrait} {
+					width: 30%;
+					padding-top: 20px;			
+				}
+
+				@media #{$tablet} {
+					width: 40%;
+					padding-top: 40px;		
+				}
+			}
+
+			p{	
+				position: relative;
+				color: #FFF;
+				font-family: $font-type;
+				font-size: 18px;
+				line-height: 8px;
+	
+				
+			}
+
+			#bold{
+				font-weight: bold;
+				margin-top: 30px;
+			}
+
+			.btn-footer{	
+				position: relative;
+				text-decoration: none;
+				color: black;
+				padding: 10px;
+				background: #fff;
+				font-family: $font-type;
+				top: 30px;
+			}
+
+			.btn-footer:hover{
+				background: #00A19A;
+				color: #fff;
+				-webkit-transition-duration: 0.3s;
+				-webkit-transition-property: all;
+				-webkit-transition-timing-function: ease-in-out;
+				transition-duration: 0.3s;
+				transition-property: all;
+				transition-timing-function: ease-in-out;
+			}	
+		}
+
+
+		.speaker{
+			position: relative;
+			z-index: 5;
+			width: 100%;
+			height: 335px;
+			background: image-url("frontend/Fondo_Speaker.jpg") no-repeat;
+			background-size: 100% 100%;
+			padding-top: 60px;
+
+			@media #{$phone-small}{
+				height: 220px !important;
+				padding-top: 0px;
+				background-size: 100% 100%;
+			}
+
+			@media #{$phone} {
+				height: 250px;
+				padding-top: 0px;
+				background-size: 100% 100%;
+			}
+
+			@media #{$phone-landscape} {
+				height: 260px;
+				padding-top: 0px;
+				background-size: 100% 100%;
+			}
+
+			@media #{$tablet-portrait} {
+				height: 320px;
+				background-size: cover;
+				padding-top: 0px;
+				left: 0px;
+			}
+
+			@media #{$tablet} {
+				background-size: cover;
+				padding-top: 0px;
+				left: 0px;
+				height: 375px;
+			}
+
+			img{
+				position: relative;
+				width: 30%;
+
+				@include phone-all {
+					padding-top: 20px;	
+				}
+
+				@media #{$tablet-portrait} {
+					width: 30%;
+					padding-top: 20px;	
+				}
+
+				@media #{$tablet} {
+					width: 40%;
+					padding-top: 40px;	
+				}
+			}
+
+			p{
+				position: relative;	
+				color: #FFF;
+				font-family: $font-type;
+				font-size: 18px;
+				line-height: 8px;
+				
+			}
+
+			#bold{
+				font-weight: bold;
+				margin-top: 20px;				
+			}
+
+			.btn-footer{
+				
+				position: relative;
+				text-decoration: none;
+				color: black;
+				padding: 10px;
+				background: #fff;
+				font-family: $font-type;
+				top: 30px;
+			}
+
+			.btn-footer:hover{
+				background: #00A19A;
+				color: #fff;
+				-webkit-transition-duration: 0.3s;
+				-webkit-transition-property: all;
+				-webkit-transition-timing-function: ease-in-out;
+				transition-duration: 0.3s;
+				transition-property: all;
+				transition-timing-function: ease-in-out;
+			}
+		}
+	}
+}
+
+.footer-description{
+	background: #00A19A;
+
+	p{
+		color: #fff;
+		font-family: $font-type;
+		margin: 0px;
+		font-size: 18px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+
+		@include phone-all {
+			font-size: 15px;
+		}
+	}
+}
+
+.footer-description-slice{
+
+	padding: 8px 0px;
+
+	p{
+		color: #000;
+		font-family: $font-type;
+		margin: 0px;
+		display: inline;
+		font-size: 14px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+	img{
+		width: 70px;
+		display: inline-block;
+  		padding-left: 5px;
+	}
+}
+
+

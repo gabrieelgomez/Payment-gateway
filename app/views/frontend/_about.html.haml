@@ -1,0 +1,45 @@
+.container-about
+	.row{style:"width: 100%; margin: 0px;"}
+		.col-lg-5.container-about-padding
+			.col-lg-12.col-md-6.col-sm-12.col-xs-12{style: "padding:0px;"}
+				.text-left
+					%p#negrita Gustavo Henao
+					%p no es un lector de teorías,
+					%p#negrita  es un TRANSFORMADOR
+					%P del potencial humano
+			.col-lg-12.col-md-6.col-sm-12.col-xs-12{style: "padding:0px;"}
+				%center
+					%p{style: "text-align: justify !important;"} Su inspiradora historia de superación personal es ÚNICA. Nació con labio leporino bilateral y paladar hendido, a pesar de la burlas, el rechazo y el impedimento físico para comunicarse,logró convertir su debilidad en su mayor fortaleza. Su propia vida ha sido su mejor entrenamiento en autoestima, liderazgo, confianza y Resilencia. Durante su recuperación (más de 20 procesos quirúrgicos), encontró y formuló estrategias de crecimiento personal que hoy comparte con miles de personas alrededor del mundo.
+					%br
+					%p{style: "text-align: justify !important;"} El gran éxito de Gustavo Henao como speaker es que no es un lector de teorías, es un TRANSFORMADOR del potencial humano. Tiene la capacidad de hacerse UNO más en las organizaciones, creando un ambiente de INSPIRACIÓN con temas que tienen implicación en nuestras vidas diarias y lo hace de una manera muy particular: con humor, reflexión y entusiasmo.
+
+					= link_to "Solicitar Conferencia", "/contacts/new", class: "link-form-2"	
+		.col-lg-7.col-xs-12
+			.container-conferences
+				%center
+					%p.title-section CONFERENCIAS
+				.container-text
+					%center
+						.row.slider-for.conferencias-i{style:"width: 100%; margin: 0px;"}
+							- @attachments_conferencias_i.each do |imageconferencias|	
+								.col-lg-4.col-md-6.col-sm-12.col-xs-12{style:"padding: 0px;"}
+									.container-image
+										%img.portada{:src => "#{imageconferencias.image}"}
+										.mask{style:"cursor: pointer;"}
+											%p.bold #{imageconferencias.name.upcase}
+											%div.hidden-xs.hidden-sm
+												#{imageconferencias.description.html_safe}
+											= link_to "Solicitar Conferencia", "/contacts/new", class: "link-form-2"	
+											
+						.row.slider-nav.conferencias-i{style:"width: 100%; margin: 0px;"}
+							- @attachments_conferencias_i.each do |imageconferencias|	
+								.col-lg-4.col-md-6.col-sm-12.col-xs-12{style:"padding: 0px;"}
+									.container-image
+										%a{"data-target" => "#modal-#{imageconferencias.id}", "data-toggle" => "modal", :type => "button"}
+											%img.portada2{:src => "#{imageconferencias.image}"}
+											
+
+.container-banner-inspiragrama.visible-lg
+	.text
+		%p SI DESEAS UN PROGRAMA DE INSPIRACIÓN INTEGRAL PARA TU EMPRESA EL “INSPIRAGRAMA” ES PARA TI
+		= link_to "Ver más", "#", class: "btn-conferences hidden-xs", "data-target" => ".bs-example-modal-lg", "data-toggle" => "modal"

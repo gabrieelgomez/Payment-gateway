@@ -1,0 +1,109 @@
+
+
+.modal.fade.bs-example-modal-lg{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1"}
+	.modal-dialog.modal-lg{style:"width: 1400px; z-index: 100;"}
+		.modal-content
+			.modal-base
+				.row
+					.col-lg-2{style:"left: 70px;"}
+						%center
+							%button.close.boton-inspi{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button",} &times;
+							%p.title-modal INSPIRAGRAMA
+							%p.text-modal Gustavo Henao ha inspirado y capacitado a decenas de empresas durante más de 8 años. En cada una de ellas descubrió que la “motivación” de los individuos que hacen vida dentro de la empresa está directamente relacionada con su ambiente familiar y seguridad emocional. De allí postuló la siguiente frase “Si tenemos familias solidas, lograremos empresas exitosas”. Dicho postulado se convirtió en el principio del “INSPIRAGRAMA” el cual es un diagrama de inspiración integral que busca mediante un ciclo de 4 conferencias tocar los pilares fundamentales de los trabajadores.
+
+					.col-lg-10{style:"margin-top: 80px; left: 135px;"}
+						
+						
+						
+						%center
+							.cuarto-circulo1
+								.flecha1.glyphicon.glyphicon-share-alt
+								.img
+									.box-conferencia
+										.text-conferencia
+											Conferencias dirigidas a los trabajadores y sus esposas
+											
+
+							.cuarto-circulo2
+								.flecha2.glyphicon.glyphicon-share-alt
+								.img
+									.box-conferencia
+										.text-conferencia
+											Conferencias dirigidas a los hijos de los trabajadores de la organización
+											
+							.cuarto-circulo3
+								.flecha3.glyphicon.glyphicon-share-alt
+								.img
+									.box-conferencia
+										.text-conferencia
+											Conferencias dirigidas a los gerentes lideres de la organización
+							.cuarto-circulo4
+								.flecha4.glyphicon.glyphicon-share-alt
+								.img
+									.box-conferencia
+										.text-conferencia
+											Conferencias dirigidas a los trabajadores de la organización
+											
+
+:javascript
+
+	$( window ).load(function() {
+		$( ".conferencias-d" ).css( "overflow-y", "hidden");
+		$( ".conferencias-d" ).css( "height", "0");
+	});
+
+	$("#btn-i").click(function(){
+		$("#btn-d").removeClass('active');
+		$("#btn-i").addClass('active');
+		$( ".conferencias-i" ).show();
+		$( ".conferencias-d" ).hide();
+	});
+
+	$("#btn-d").click(function() {
+		$("#btn-i").removeClass('active');
+		$("#btn-d").addClass('active');
+		$( ".conferencias-d" ).css( "overflow-y", "");
+		$( ".conferencias-d" ).css( "height", "");
+		$( ".conferencias-d" ).show();
+		$( ".conferencias-i" ).hide();
+	});
+
+	$(document).ready(function(){
+		$('.slider-for').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			arrows: false,
+			fade: true,
+			asNavFor: '.slider-nav'
+		});
+
+		$('.slider-nav').slick({
+			slidesToShow: 5,
+			slidesToScroll: 1,
+			asNavFor: '.slider-for',
+			dots: false,
+			centerMode: false,
+			focusOnSelect: true,
+			responsive: [
+			{
+				breakpoint: 767,
+				settings: {
+					arrows: true,
+					centerMode: true,
+					slidesToShow: 3
+				}
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					arrows: true,
+					centerMode: true,
+					slidesToShow: 2
+				}
+			}
+		]
+		});
+	});	
+
+
+ 

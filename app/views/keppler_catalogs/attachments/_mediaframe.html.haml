@@ -1,0 +1,9 @@
+- if attachment.image?
+	.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myLargeModalLabel", :role => "dialog", :tabindex => "-1", id: "modal-#{attachment.id}"}
+		.modal-dialog.modal-md
+			.modal-content{style:"background: transparent; box-shadow:none; border:none;"}
+				= image_tag attachment.image
+- elsif attachment.url? and attachment.upload.to_i == 2
+	= image_tag attachment.url, style:"#{style}"
+- elsif attachment.url? and attachment.upload.to_i == 3
+	%iframe.video-player.img-responsive{:allowfullscreen => "", :frameborder => "0",:src =>"#{attachment.url}", style:"#{style}"}

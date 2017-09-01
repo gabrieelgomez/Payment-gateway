@@ -1,0 +1,23 @@
+!!!
+%html
+	= render "layouts/admin/head"
+	%body{ 'ng-controller'=>'MainCtrl' }
+		#waiting 
+			= preloader
+
+		- if loggedin?
+			= render 'layouts/admin/navigation'
+			= render 'layouts/admin/header'
+			= render 'layouts/admin/sidebar' 
+			= render 'layouts/admin/messages'
+			%main.row#admin{ role: 'main', "ng-click" => "sidebarClose()" }
+				= yield
+				= #console
+		- else
+			%main#devise
+				= yield	
+		 
+
+		
+	
+

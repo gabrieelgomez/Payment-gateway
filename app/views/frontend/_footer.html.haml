@@ -1,0 +1,33 @@
+- if controller_name != "blog" && action_name != "gallery" && controller_name != "contacts" 
+	.container-footer
+		.row{style:"width: 100%; margin: 0px;"}
+			.col-lg-6.col-md-6.col-sm-12.col-xs-12{style:"padding: 0px;"}
+				.impacto1
+					.impacto
+						%center
+							= image_tag "frontend/Logo_Impacto-01.png"
+							%p#bold Gustavo Henao
+							%p y su fundacion
+							= link_to "Ver más", "https://fundaimpacto.com", class: "btn-footer", target:"_blank"
+
+			
+
+			.col-lg-6.col-md-6.col-sm-12.col-xs-12{style:"padding: 0px;"}
+				.speaker
+					%center
+						= image_tag "frontend/Logo_Speaker-01.png"
+						%p#bold Certificate como
+						%p conferencista Internacional
+						= link_to "Ver más", "https://soyspeaker.com", class: "btn-footer", target:"_blank"
+
+			
+
+
+.footer-description
+	%center
+		%p Todos los derechos reservado - Gustavo Henao Speaker Internacional
+.footer-description-slice
+	%center
+		%p POWERED BY
+		= link_to "http://www.slicegroup.xyz" do
+			= image_tag "frontend/logo-slice.png"

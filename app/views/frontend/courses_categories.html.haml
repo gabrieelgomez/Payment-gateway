@@ -1,0 +1,416 @@
+= render 'frontend/navbar_courses'
+%br
+%br
+#show-content
+  .col-lg-12.col-sm-12
+  .card.hovercard
+    .card-background{:style => "background-image: url(#{@course.banner})"}
+    .card-info
+      %span.card-title
+        %h1
+          = @course.course_name
+  .btn-pref.btn-group.btn-group-justified.btn-group-lg{"aria-label" => "...", :role => "group"}
+    .btn-group{:role => "group"}
+      %button#stars.btn.btn-color-active{"data-toggle" => "tab", :href => "#tab1", :type => "button"}
+        %i.fa.fa-info
+        .hidden-xs.tab-title Detalles
+    -# .btn-group{:role => "group"}
+    -#   %button#favorites.btn.btn-default{"data-toggle" => "tab", :href => "#tab2", :type => "button"}
+    -#     %i.fa.fa-unlock-alt
+    -#     .hidden-xs.tab-title Cupos
+    .btn-group{:role => "group"}
+      %button#following.btn.btn-default{"data-toggle" => "tab", :href => "#tab2", :type => "button"}
+        %i.fa.fa-credit-card
+        .hidden-xs.tab-title Precio
+  .well
+    .tab-content
+      #tab1.tab-pane.fade.in.active
+        .container{:style => "width: 100%; padding: 0;"}
+          .row.row-quota
+            .col-lg-3.col-md-3.col-sm-12.col-xs-12{:style => "text-align: center;"}
+              %a.fig
+                = @course.quota
+                %span{:style => "font-size: 14px;"}
+                  %br>/
+                  CUPOS TOTALES
+            .col-lg-3.col-md-3.col-sm-12.col-xs-12{:style => "text-align: center;"}
+              %a.fig.available
+                = @course.quota_count
+                %span{:style => "font-size: 14px;"}
+                  %br>/
+                  CUPOS DISPONIBLES
+        %p
+          = raw @course.description
+
+      #tab2.tab-pane.fade.in
+        %section#plans
+          .container
+            .row
+              -if @course.validate_subscribers
+                %h1 No hay cupos disponibles
+              -else
+                .col-md-4.text-center
+                  .panel.panel-pricing
+                    .panel-heading
+                      %img{:src => "https://www.mercadopago.com/org-img/Manual/ManualMP/imgs/isologoHorizontal.png"}
+                      %h3 Bs.F
+                    .panel-body.text-center
+                      %strong
+                        = number_to_currency(@course.price_bs, precision: 2)
+                    .panel-footer
+                      %button.btn.btn-lg.btn-block.btn-bsf{"data-target" => "#product_view", "data-toggle" => "modal", :type => "button", :style=>"background-color:#65bea4;color:#fff;"} COMPRAR!
+
+                .col-md-4.text-center
+                  .panel.panel-pricing
+                    .panel-heading#dolar
+                      %img{:src => "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/2000px-PayPal.svg.png"}
+                      %h3 Dólares
+                    .panel-body.text-center
+                      %h1.price
+                        $
+                        = @course.price_dolars
+                    .panel-footer
+                      %button.btn.btn-lg.btn-block.btn-dolars{"data-target" => "#product_view", "data-toggle" => "modal", :type => "button", :style=>"background-color:#65bea4;color:#fff;"} COMPRAR!
+
+
+#modal-content-show
+  = render 'frontend/modal_courses'
+
+%pre= JSON.pretty_generate(@preference)
+
+-# %a{:class => "lightblue-M-Ov", :href => "https://sandbox.mercadopago.com/mlv/checkout/pay?pref_id=148728814-e8999e44-f861-4a44-b0b1-be5fe9403b47", "mp-mode" => "modal", :name => "MP-Checkout"} Pagar
+-#   %img{src: "https://www.atlanticadigital.net/images/articulos/mercadopago.png"}
+/ Pega este código antes de cerrar la etiqueta </body>
+:javascript
+  (function(){function $MPC_load(){window.$MPC_loaded !== true && (function(){var s = document.createElement("script");s.type = "text/javascript";s.async = true;s.src = document.location.protocol+"//secure.mlstatic.com/mptools/render.js";var x = document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);window.$MPC_loaded = true;})();}window.$MPC_loaded !== true ? (window.attachEvent ?window.attachEvent('onload', $MPC_load) : window.addEventListener('load', $MPC_load, false)) : null;})();
+
+
+
+%i.fa.fa-arrow-circle-left{:style => "margin:15px 30px;"}
+  = link_to "Regresar", courses_front_path
+
+= render 'footer'
+
+
+:javascript
+  $(document).ready(function() {
+    $(".btn-pref .btn").click(function () {
+        $(".btn-pref .btn").removeClass("btn-color-active").addClass("btn-default");
+        // $(".tab").addClass("active"); // instead of this do the below
+        $(this).removeClass("btn-default").addClass("btn-color-active");
+    });
+
+
+
+
+  });
+
+
+:scss
+
+    .price{
+      font-size: 50px;
+      font-weight: bold;
+    }
+
+
+    #plans .panel-heading img {object-fit: scale-down;}
+
+    .fig {
+      color: #000;
+      font-family: 'Lato', Arial;
+      font-weight: 400;
+      font-size: 2em;
+      text-align: center;
+      border-radius: 40px;
+      display: inline-block;
+      padding: 15px;
+      width: 200px;
+      border-left: 1px solid #65bea4;
+      border-right: 1px solid #65bea4;
+      -webkit-transition: all 1s ease;
+      transition: all 1s ease;
+    }
+
+    .fig:hover {
+      border-radius: 5px;
+      color: #fff;
+      background: #65bea4;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+  #show-content{
+    padding: 5% 10%;
+    font-family: "Lato", sans-serif;
+  }
+  .card {
+    padding: 30px;
+    background-color: rgba(214, 224, 226, 0.2);
+    -webkit-border-top-left-radius:5px;
+    -moz-border-top-left-radius:5px;
+    border-top-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    -moz-border-top-right-radius:5px;
+    border-top-right-radius:5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .card.hovercard {
+    position: relative;
+    padding-top: 0;
+    overflow: hidden;
+    text-align: center;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .card.hovercard .card-background {
+    height: 250px;
+    background-position: center;
+    background-size: cover;
+  }
+  .card-background img {
+    margin-left: -100px;
+    margin-top: -200px;
+  }
+  .card.hovercard .card-info {
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+    right: 0;
+    margin-bottom: 100px;
+  }
+  .card.hovercard .card-info .card-title {
+    padding:0 5px;
+    font-size: 20px;
+    line-height: 1;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .card.hovercard .card-info .card-title h1{
+    /*text-shadow: 3px 2px #000;*/
+    width: 50%;
+    margin: 0 25%;
+    color: #fff;
+    padding: 10px;
+    font-size: 30px;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    font-family: "Lato", sans-serif;
+  }
+  .card.hovercard .card-info {
+    overflow: hidden;
+    line-height: 20px;
+    text-overflow: ellipsis;
+  }
+  .card.hovercard .bottom {
+    padding: 0 20px;
+    margin-bottom: 17px;
+  }
+  .btn-color-active{
+    background-color: #c0c0c0;
+  }
+  .btn-pref .btn {
+    -webkit-border-radius:0 !important;
+  }
+  .tab-pane{
+    max-height: 700px;
+    padding: 0 5%;
+    p{
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      padding: 2% 5%;
+      text-align: justify;
+    }
+    @media (max-width: 767px) and (orientation : portrait){
+      max-height: 2000px;
+    }
+  }
+  .tab-title{
+    font-size: 2rem;
+  }
+  .row-quota{
+    margin: 60px 0;
+    text-align: center;
+    padding:0 20%;
+
+    @media (max-width: 767px) and (orientation : portrait){
+      padding: 0;
+    }
+    @media (min-width: 768px) and (max-width: 800px) and (orientation: portrait) {
+      padding: 0;
+    }
+  }
+  .available{
+    margin-left:200px;
+    @media (max-width: 767px) and (orientation : portrait){
+      margin-left: 0;
+    }
+    @media (min-width: 768px) and (max-width: 800px) and (orientation: portrait) {
+      margin-left: 0;
+    }
+  }
+  #plans{
+    .text-center{
+      margin: 10px 40px;
+      @media (max-width: 767px) and (orientation : portrait){
+        margin: 0;
+      }
+      strong{
+        @media (max-width: 767px) and (orientation : portrait){
+          font-size: 2.7rem;
+        }
+      }
+    }
+    .panel-heading img{
+      width: 200px;
+      filter: grayscale(100%);
+      transition: all ease-in-out .5s;
+      height: 97px;
+    }
+    #dolar img{
+      height:68px;
+      @media (max-width: 767px) and (orientation : portrait){
+        height: auto;
+      }
+    }
+    .panel-pricing:hover img{
+      filter: none;
+      transition: all ease-in-out .5s;
+    }
+    .panel-pricing {
+      -moz-transition: all .3s ease;
+      -o-transition: all .3s ease;
+      -webkit-transition: all .3s ease;
+    }
+    .panel-pricing:hover {
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+    }
+    .panel-pricing .panel-heading {
+      padding: 20px 10px;
+    }
+    .panel-pricing .panel-heading .fa {
+      margin-top: 10px;
+      font-size: 58px;
+    }
+    .panel-pricing .list-group-item {
+      color: #777777;
+      border-bottom: 1px solid rgba(250, 250, 250, 0.5);
+    }
+    .panel-pricing .list-group-item:last-child {
+      border-bottom-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+    }
+    .panel-pricing .list-group-item:first-child {
+      border-top-right-radius: 0px;
+      border-top-left-radius: 0px;
+    }
+    .panel-pricing .panel-body {
+      background-color: #f0f0f0;
+      font-size: 40px;
+      color: #777777;
+      padding: 20px;
+      margin: 0px;
+    }
+
+  }
+
+    .none-mp, .none-paypal{
+        display: none;
+    }
+
+        .display-mp, .display-paypal{
+        display: block;
+    }
+
+    .none-input{
+        display: none;
+    }
+
+  .center-f {
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: -webkit-box !important;
+    display: -moz-box !important;
+    display: -ms-flexbox !important;
+    display: -webkit-flex !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  #modal-content-show{
+    .modal-dialog {
+    width: 1000px!important;
+    margin: 30px auto;
+    }
+
+    .modal-content {
+    width: 1000px!important;
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    padding-bottom: 20px!important;
+    }
+
+    h1.title {
+    font-size: 50px;
+    font-family: 'Passion One', cursive;
+    font-weight: 400;
+    }
+
+    hr{
+    width: 10%;
+    color: #fff;
+    }
+
+    .form-group{
+    margin-bottom: 15px;
+    }
+
+    label{
+    margin-top: 20px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    }
+
+    .separator-row{
+    margin-top: -25px;
+    }
+
+    input,
+    input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
+    }
+
+    .main-login{
+    background-color: #fff;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+    }
+
+    .main-center{
+    margin-top: 30px;
+    margin: 0 auto;
+    max-width: 330px;
+    padding: 40px 40px;
+
+    }
+
+    .login-button{
+    margin-top: 5px;
+    }
+
+    .login-register{
+    font-size: 11px;
+    text-align: center;
+    }
+
+  }

@@ -1,27 +1,64 @@
 Rails.application.routes.draw do
 
+  #get 'checkouts/checkout'
+
   #post 'newsletter/create', as: "newsletters"
   resources :newsletters
   resources :contacts
   get "downloader", to: 'newsletters#download'
- 
+  post '/checkout', to: 'frontend#checkout', as: "checkout"
+  get '/checkout/:id', to: 'frontend#checkout_id', as: "checkout_id"
+  #resources :checkouts,  only: [:new, :create, :show]
 
   root to: 'frontend#index'
   get 'gallery/:category_permalink', to: 'frontend#gallery', as: "gallery"
   get 'index/:category_permalink', to: 'frontend#index', as: "conferencia"
+
+  get 'cursos', to: 'frontend#courses_front', as: "courses_front"
+  get 'cursos/:id', to: 'frontend#courses_categories', as: "app_courses"
+  post '/', to: 'frontend#create', as: "app_create_subscriber"
 
   devise_for :users, skip: KepplerConfiguration.skip_module_devise
 
   resources :admin, only: :index
 
   scope :admin do
-   
-  	resources :users do 
+
+  	resources :users do
       get '(page/:page)', action: :index, on: :collection, as: ''
       delete '/destroy_multiple', action: :destroy_multiple, on: :collection, as: :destroy_multiple
-    end  
+    end
   end
 
+  scope :admin do
+    resources :categories do
+      get '(page/:page)', action: :index, on: :collection, as: ''
+      get '/clone', action: 'clone'
+      delete(
+        action: :destroy_multiple,
+        on: :collection,
+        as: :destroy_multiple
+      )
+        resources :courses do
+          get '(page/:page)', action: :index, on: :collection, as: ''
+          get '/clone', action: 'clone'
+          delete(
+            action: :destroy_multiple,
+            on: :collection,
+            as: :destroy_multiple
+          )
+            resources :subscribers do
+              get '(page/:page)', action: :index, on: :collection, as: ''
+              get '/clone', action: 'clone'
+              delete(
+                action: :destroy_multiple,
+                on: :collection,
+                as: :destroy_multiple
+              )
+            end
+        end
+    end
+  end
 
   #errors
   match '/403', to: 'errors#not_authorized', via: :all, as: :not_authorized

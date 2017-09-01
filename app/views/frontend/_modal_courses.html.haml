@@ -1,0 +1,158 @@
+%script{:src => "https://www.paypalobjects.com/api/checkout.js"}
+#product_view.modal.fade.product_view
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %a.class.pull-right{"data-dismiss" => "modal", :href => "#"}
+          %span.glyphicon.glyphicon-remove
+        %h3.modal-title= @course.course_name
+      .modal-b
+        .row
+          .col-md-10.col-md-offset-1
+
+            = simple_form_for @subscriber, :url => url_for(:action => 'checkout', :controller => 'frontend'), :method => 'post' do |f|
+
+              .row
+                .col-lg-6.left-side
+                  %legend Datos Personales
+                  /%legend= @course.quota_count
+                  .row.separator-row
+                    .col-lg-6
+                      %label.cols-sm-6.control-label{:for => "name"} Nombre
+                      .cols-sm-1234
+                        .input-group
+                          %span.input-group-addon
+                            %i.fa.fa-user.fa{"aria-hidden" => "true"}
+                          = f.input :name, label: false, input_html: {"aria-invalid": "true", class:"form-control", :placeholder => "Introduce tu nombre", :type => "text", required: "required"}
+                    .col-lg-6
+                      %label.cols-sm-2.control-label{:for => "lastname"} Apellido
+                      .cols-sm-6
+                        .input-group
+                          %span.input-group-addon
+                            %i.fa.fa-search{"aria-hidden" => "true"}
+                          = f.input :lastname, label: false, input_html: {"aria-invalid": "true", class:"form-control", :placeholder => "Introduce tu apellido", :type => "text", required: "required"}
+                  .row
+                    .col-lg-6
+                      %label.cols-sm-6.control-label{:for => "document_id"} Identidad
+                      .cols-sm-1234
+                        .input-group
+                          %span.input-group-addon
+                            %i.fa.fa-user.fa{"aria-hidden" => "true"}
+                          = f.input :document_id, label: false, input_html: {"aria-invalid": "true", class:"form-control", :placeholder => "Introduce tu identidad", :type => "text", required: "required"}
+                    .col-lg-6
+                      %label.cols-sm-2.control-label{:for => "email"} Email
+                      .cols-sm-6
+                        .input-group
+                          %span.input-group-addon
+                            %i.fa.fa-search{"aria-hidden" => "true"}
+                          = f.input :email, label: false, input_html: {"aria-invalid": "true", class:"form-control", :placeholder => "Introduce tu email", :type => "email", required: "required"}
+                  .row
+                    .col-lg-6
+                      %label.cols-sm-2.control-label{:for => "phone_one"} Telefono Personal
+                      .cols-sm-6
+                        .input-group
+                          %span.input-group-addon
+                            %i.fa.fa-envelope.fa{"aria-hidden" => "true"}
+                          = f.input :phone_one, label: false, input_html: {"aria-invalid": "true", class:"form-control", :placeholder => "Introduce tu telefono personal", :type => "text", required: "required"}
+                    .col-lg-6
+                      %label.cols-sm-2.control-label{:for => "phone_two"} Telefono Opcional
+                      .cols-sm-6
+                        .input-group
+                          %span.input-group-addon
+                            %i.fa.fa-envelope.fa{"aria-hidden" => "true"}
+                          = f.input :phone_two, label: false, input_html: {class:"form-control", :placeholder => "Introduce tu telefono de oficina", :type => "text", required: "required"}
+
+                  .row
+                    .col-lg-12
+                      %label.cols-sm-2.control-label{:for => "address"} Direccion
+                      .cols-sm-10
+                        .input-group
+                          %span.input-group-addon
+                            %i.fa.fa-envelope.fa{"aria-hidden" => "true"}
+                          = f.input :address, as: :text, label: false, input_html: {"aria-invalid": "true", class:"form-control", :placeholder => "Introduce tu direccion", :type => "text", required: "required"}
+                  = f.input :course_id, label: false, :input_html => {class:"none-input", :value => "#{@course.id}" }
+                  = f.input :buyout, label: false, :input_html => {class:"none-input", :value => "00.00" }
+                  .row
+                    .col-offset-2.col-lg-4
+                      %button.btn.btn-primary.btn-lg.btn-block.login-button.btn-validates{:type => "button"} Validate
+                .col-lg-6.right-side
+                  %legend Detalles de Pago
+                  .row
+                    .col-offset-2.col-lg-4
+                      /%a{:class => "lightblue-M-Ov-VeOn", :href => "https://sandbox.mercadopago.com/mlv/checkout/pay?pref_id=148728814-e8999e44-f861-4a44-b0b1-be5fe9403b47", "mp-mode" => "modal", :name => "MP-Checkout"} Pagar
+                      %a{id:"btn-mp",:class => "lightblue-M-Ov none-mp", :href => "https://sandbox.mercadopago.com/mlv/checkout/pay?pref_id=148728814-e8999e44-f861-4a44-b0b1-be5fe9403b47", "mp-mode" => "popup", :name => "MP-Checkout"} Pagar
+                      %img{id:"btn-mp", class:"none-mp", src: "https://www.atlanticadigital.net/images/articulos/mercadopago.png"}
+                      = f.input :payment, label: false, input_html: {:value => "mercadopago", :id=>"btn-mp", class:"none-input none-mp", :type => "text", required: "required"}
+                  .row#btn-paypal.none-paypal
+                    .col-offset-2.col-lg-6
+                      #payment-form
+                      = f.input :payment, label: false, input_html: {:value => "paypal", class:"none-input none-paypal", :type => "text", required: "required"}
+                      %button.btn.btn-primary.btn-lg.btn-block.login-button#checkout-btn{:type => "submit"} Comprar
+                    %script{:src => "https://js.braintreegateway.com/js/braintree-2.20.0.min.js"}
+
+
+%script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"}
+%script{:src => "/assets/frontend/jquery-validate-2.js"}
+
+:javascript
+  $(document).ready(function(){
+    $("#mensaje").hide();
+
+    $('.btn-bsf').click(function(){
+      $("#btn-mp").addClass("display-mp");
+      $("#btn-paypal").removeClass("display-paypal");
+    });
+
+    $('.btn-dolars').click(function(){
+      $("#btn-paypal").removeClass("display-paypal");
+      $("#btn-mp").removeClass("display-mp");
+    });
+
+    $(".btn-validates").click(function(){
+      if (
+        $("#subscriber_name").attr("aria-invalid")=="false" &&
+        $("#subscriber_lastname").attr("aria-invalid")=="false" &&
+        $("#subscriber_document_id").attr("aria-invalid")=="false" &&
+        $("#subscriber_email").attr("aria-invalid")=="false" &&
+        $("#subscriber_phone_one").attr("aria-invalid")=="false" &&
+        $("#subscriber_address").attr("aria-invalid")=="false"
+      ){
+        $("#btn-paypal").addClass("display-paypal");
+      }
+    });
+
+
+     validations = $("#new_subscriber").validate({
+      event: "blur",
+      rules: {
+        'subscriber[name]': { required: true},
+        'subscriber[lastname]': { required: true },
+        'subscriber[document_id]': { required: true, minlength: 6, maxlength: 15 },
+        'subscriber[email]': { required: true, email: true },
+        'subscriber[phone_one]': { required: true, minlength: 7, maxlength: 15 },
+        'subscriber[address]': { required: true },
+        'braintree-dropin-frame': {required: true},
+        },
+
+      messages: {
+        'subscriber[name]': "Indica tu nombre",
+        'subscriber[lastname]': "Indica tu apellido",
+        'subscriber[document_id]': "Tu identidad personal (C.I)",
+        'subscriber[email]': "Introduce un email válido",
+        'subscriber[phone_one]': "Introduce un teléfono entre 7 y 15 caracteres",
+        'subscriber[address]': "Indica tu dirección",
+        },
+      debug: true,errorElement: "label",
+      submitHandler: function(form){
+        form.submit();
+      }
+    });
+  });
+
+
+
+  var clientToken = "#{@token}";
+
+  braintree.setup(clientToken, "dropin", {
+    container: "payment-form"
+  });

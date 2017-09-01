@@ -1,0 +1,161 @@
+.container.pdfprint
+  .row
+    .col-xs-12
+      .invoice-title
+        %h2 Comprobante de pago
+        %h3.pull-right
+          Order #
+          = @subscriber.bill
+      %hr/
+      .row
+        .col-xs-6
+          %address
+            %strong Facturado a:
+            %br/
+            = @subscriber.name
+            = @subscriber.lastname
+            %br/
+            = @subscriber.document_id
+            %br/
+            = @subscriber.email
+            %br/
+            = @subscriber.phone_one
+            -if !@subscriber.phone_two.nil?
+              %br/
+              = @subscriber.phone_two
+        .col-xs-6.text-right
+          %address
+            %strong Curso comprado:
+            - course = Course.where(id: @subscriber.course_id).first
+            %br/
+            Categoria:
+            = Category.where(id: course.id).first.name
+            %br/
+            = course.course_name
+            %br/
+            $
+            = @subscriber.buyout
+
+      .row
+        .col-xs-6
+          %address
+            %strong Método de pago:
+            %br/
+            = @subscriber.payment
+            %br/
+            = @subscriber.email
+        .col-xs-6.text-right
+          %address
+            %strong Order Date:
+            %br/
+            = Time.now.strftime("%d/%m/%Y %H:%M:%S")
+            %br/
+            %br/
+  .row
+    .col-md-12
+      .panel.panel-default
+        .panel-heading
+          %h3.panel-title
+            %strong Order summary
+        .panel-body
+          .table-responsive
+            %table.table.table-condensed
+              %thead
+                %tr
+                  %td
+                    %strong Item
+                  %td.text-center
+                    %strong Precio
+                  %td.text-center
+                    %strong Order
+                  %td.text-right
+                    %strong Totals
+              %tbody
+                / foreach ($order->lineItems as $line) or some such thing here
+                %tr
+                  %td= course.course_name
+                  %td.text-center
+                    $
+                    = @subscriber.buyout
+                  %td.text-center= @subscriber.bill
+                  %td.text-right
+                    $
+                    =  @subscriber.buyout
+                %tr
+                  %td.thick-line
+                  %td.thick-line
+                  %td.thick-line.text-center
+                    %strong Total
+                  %td.thick-line.text-right
+                    $
+                    = @subscriber.buyout
+  .row.no-print.classone
+    .col-xs-12
+      %a.btn.btn-default{:onclick => "window.print()", :type => "button", :value => "Print this page"}
+        %i.fa.fa-print
+        Imprimir
+      %a.btn.btn-success.pull-right{:href => "/cursos"}
+        %i.fa.fa-credit-card
+        Cursos
+      %button#create_pdf.btn.btn-primary.pull-right{:style => "margin-right: 5px;"}
+        %i.fa.fa-download
+        Descargar PDF
+
+%script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"}
+%script{:src => "//cdn.rawgit.com/MrRio/jsPDF/master/dist/jspdf.min.js", :type => "text/javascript"}
+%script{:src => "//cdn.rawgit.com/niklasvh/html2canvas/0.5.0-alpha2/dist/html2canvas.min.js", :type => "text/javascript"}
+
+:javascript
+
+  (function() {
+  var
+  pdfprint = $('.pdfprint'),
+  cache_width = pdfprint.width(),
+  a4 = [595.28, 841.89]; // for a4 size paper width and height
+
+  $('#create_pdf').on('click', function() {
+  $('body').scrollTop(0);
+  createPDF();
+  });
+  //create pdf
+  function createPDF() {
+  getCanvas().then(function(canvas) {
+  var
+  img = canvas.toDataURL("image/png"),
+  doc = new jsPDF({
+  unit: 'px',
+  format: 'a4'
+  });
+  doc.addImage(img, 'JPEG', 20, 20);
+  doc.save('gustavo-henao-comprobante-pago.pdf');
+  pdfprint.width(cache_width);
+  });
+  }
+
+  // create canvas object
+  function getCanvas() {
+  pdfprint.width((a4[0] * 1.33333) - 80).css('max-width', 'none');
+  return html2canvas(pdfprint, {
+  imageTimeout: 2000,
+  removeContainer: true
+  });
+  }
+
+  }());
+
+:scss
+  .invoice-title h2, .invoice-title h3 {
+      display: inline-block;
+  }
+
+  .table > tbody > tr > .no-line {
+      border-top: none;
+  }
+
+  .table > thead > tr > .no-line {
+      border-bottom: none;
+  }
+
+  .table > tbody > tr > .thick-line {
+      border-top: 2px solid;
+  }

@@ -11,8 +11,8 @@ class PaymentsController < ApplicationController
                     {
                         "title": "testCreate",
                         "quantity": 1,
-                        "unit_price": 10.2,
-                        "currency_id": "ARS"
+                        "unit_price": 1200,
+                        "currency_id": "VEF"
                     }
                 ]
             }

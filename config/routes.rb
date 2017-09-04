@@ -6,17 +6,19 @@ Rails.application.routes.draw do
   resources :newsletters
   resources :contacts
   get "downloader", to: 'newsletters#download'
-  post '/checkout', to: 'frontend#checkout', as: "checkout"
-  get '/checkout/:id', to: 'frontend#checkout_id', as: "checkout_id"
+
   #resources :checkouts,  only: [:new, :create, :show]
 
   root to: 'frontend#index'
   get 'gallery/:category_permalink', to: 'frontend#gallery', as: "gallery"
   get 'index/:category_permalink', to: 'frontend#index', as: "conferencia"
 
-  get 'cursos', to: 'frontend#courses_front', as: "courses_front"
-  get 'cursos/:id', to: 'frontend#courses_categories', as: "app_courses"
-  post '/', to: 'frontend#create', as: "app_create_subscriber"
+  get 'cursos', to: 'payments#categories', as: "courses_front"
+  get 'cursos/:id', to: 'payments#courses_categories', as: "app_courses"
+  post '/', to: 'payments#create', as: "app_create_subscriber"
+  post '/checkout', to: 'payments#checkout', as: "checkout"
+  get '/checkout/:id', to: 'payments#checkout_id', as: "checkout_id"
+  get 'payments/:id/:method', to:'payments#payments', as:"payments"
 
   devise_for :users, skip: KepplerConfiguration.skip_module_devise
 

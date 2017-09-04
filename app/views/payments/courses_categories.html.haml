@@ -1,4 +1,4 @@
-= render 'frontend/navbar_courses'
+= render 'payments/navbar_courses'
 %br
 %br
 #show-content
@@ -58,7 +58,7 @@
                       %strong
                         = number_to_currency(@course.price_bs, precision: 2)
                     .panel-footer
-                      %button.btn.btn-lg.btn-block.btn-bsf{"data-target" => "#product_view", "data-toggle" => "modal", :type => "button", :style=>"background-color:#65bea4;color:#fff;"} COMPRAR!
+                      %a.btn.btn-lg.btn-block.btn-bsf{ href: "/payments/#{@course.id}/mercadopago", :style=>"background-color:#65bea4;color:#fff;"} COMPRAR!
 
                 .col-md-4.text-center
                   .panel.panel-pricing
@@ -70,11 +70,11 @@
                         $
                         = @course.price_dolars
                     .panel-footer
-                      %button.btn.btn-lg.btn-block.btn-dolars{"data-target" => "#product_view", "data-toggle" => "modal", :type => "button", :style=>"background-color:#65bea4;color:#fff;"} COMPRAR!
+                      %a.btn.btn-lg.btn-block.btn-dolars{ href: "/payments/#{@course.id}/paypal", :style=>"background-color:#65bea4;color:#fff;"} COMPRAR!
 
 
 #modal-content-show
-  = render 'frontend/modal_courses'
+  = render 'payments/modal_courses'
 
 %pre= JSON.pretty_generate(@preference)
 

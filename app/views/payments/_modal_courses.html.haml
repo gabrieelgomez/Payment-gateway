@@ -10,7 +10,7 @@
         .row
           .col-md-10.col-md-offset-1
 
-            = simple_form_for @subscriber, :url => url_for(:action => 'checkout', :controller => 'frontend'), :method => 'post' do |f|
+            = simple_form_for @subscriber, :url => url_for(:action => 'checkout', :controller => 'payments'), :method => 'post' do |f|
 
               .row
                 .col-lg-6.left-side
@@ -74,7 +74,7 @@
                   = f.input :buyout, label: false, :input_html => {class:"none-input", :value => "00.00" }
                   .row
                     .col-offset-2.col-lg-4
-                      %button.btn.btn-primary.btn-lg.btn-block.login-button.btn-validates{:type => "button"} Validate
+                      %button.btn.btn-primary.btn-lg.btn-block.login-button.validate-paypal{:type => "button"} Validate
                 .col-lg-6.right-side
                   %legend Detalles de Pago
                   .row
@@ -108,7 +108,7 @@
       $("#btn-mp").removeClass("display-mp");
     });
 
-    $(".btn-validates").click(function(){
+    $(".validate-paypal").click(function(){
       if (
         $("#subscriber_name").attr("aria-invalid")=="false" &&
         $("#subscriber_lastname").attr("aria-invalid")=="false" &&

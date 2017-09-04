@@ -81,10 +81,6 @@
 -# %a{:class => "lightblue-M-Ov", :href => "https://sandbox.mercadopago.com/mlv/checkout/pay?pref_id=148728814-e8999e44-f861-4a44-b0b1-be5fe9403b47", "mp-mode" => "modal", :name => "MP-Checkout"} Pagar
 -#   %img{src: "https://www.atlanticadigital.net/images/articulos/mercadopago.png"}
 / Pega este código antes de cerrar la etiqueta </body>
-:javascript
-  (function(){function $MPC_load(){window.$MPC_loaded !== true && (function(){var s = document.createElement("script");s.type = "text/javascript";s.async = true;s.src = document.location.protocol+"//secure.mlstatic.com/mptools/render.js";var x = document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);window.$MPC_loaded = true;})();}window.$MPC_loaded !== true ? (window.attachEvent ?window.attachEvent('onload', $MPC_load) : window.addEventListener('load', $MPC_load, false)) : null;})();
-
-
 
 %i.fa.fa-arrow-circle-left{:style => "margin:15px 30px;"}
   = link_to "Regresar", courses_front_path

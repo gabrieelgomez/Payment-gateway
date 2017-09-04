@@ -82,11 +82,14 @@
             .center-f
               #payment-form
               %button.btn.btn-primary{:type => "submit"} Pagar
+              = f.input :payment, label: false, input_html: {:value => "paypal", class:"none-input none-paypal", :type => "text", required: "required"}
               %script{:src => "https://js.braintreegateway.com/js/braintree-2.20.0.min.js"}
         -else
           .center-f
-            #payment-form
-            %button.btn.btn-primary{:type => "submit"} Pagar
+            /%a{:class => "lightblue-M-Ov-VeOn", :href => "https://sandbox.mercadopago.com/mlv/checkout/pay?pref_id=148728814-e8999e44-f861-4a44-b0b1-be5fe9403b47", "mp-mode" => "modal", :name => "MP-Checkout"} Pagar
+            %a{id:"btn-mp",:class => "lightblue-M-Ov none-mp", :href => "https://sandbox.mercadopago.com/mlv/checkout/pay?pref_id=148728814-e8999e44-f861-4a44-b0b1-be5fe9403b47", "mp-mode" => "popup", :name => "MP-Checkout"} Pagar
+            %img{id:"btn-mp", class:"none-mp", src: "https://www.atlanticadigital.net/images/articulos/mercadopago.png"}
+            = f.input :payment, label: false, input_html: {:value => "mercadopago", :id=>"btn-mp", class:"none-input none-mp", :type => "text", required: "required"}
 
       %ul.list-inline.pull-right
         %li
@@ -122,7 +125,7 @@
         $("#subscriber_email").attr("aria-invalid")=="false" &&
         $("#subscriber_phone_one").attr("aria-invalid")=="false" &&
         $("#subscriber_address").attr("aria-invalid")=="false" ||
-        
+
       ){
         var $active = $('.wizard .nav-tabs li.active');
         $active.next().removeClass('disabled');

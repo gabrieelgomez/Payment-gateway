@@ -1,105 +1,112 @@
 .container.pdfprint
-  .row
-    .col-xs-12
-      .invoice-title
-        %h2 Comprobante de pago
-        %h3.pull-right
-          Order #
-          = @subscriber.bill
-      %hr/
-      .row
-        .col-xs-6
-          %address
-            %strong Facturado a:
-            %br/
-            = @subscriber.name
-            = @subscriber.lastname
-            %br/
-            = @subscriber.document_id
-            %br/
-            = @subscriber.email
-            %br/
-            = @subscriber.phone_one
-            -if !@subscriber.phone_two.nil?
+  -if !params[:id].eql?("Braintree_errors")
+    .row
+      .col-xs-12
+        .invoice-title
+          %h2 Comprobante de pago
+          %h3.pull-right
+            Order #
+            = @subscriber.bill
+        %hr/
+        .row
+          .col-xs-6
+            %address
+              %strong Facturado a:
               %br/
-              = @subscriber.phone_two
-        .col-xs-6.text-right
-          %address
-            %strong Curso comprado:
-            - course = Course.where(id: @subscriber.course_id).first
-            %br/
-            Categoria:
-            = Category.where(id: course.id).first.name
-            %br/
-            = course.course_name
-            %br/
-            $
-            = @subscriber.buyout
+              = @subscriber.name
+              = @subscriber.lastname
+              %br/
+              = @subscriber.document_id
+              %br/
+              = @subscriber.email
+              %br/
+              = @subscriber.phone_one
+              -if !@subscriber.phone_two.nil?
+                %br/
+                = @subscriber.phone_two
+          .col-xs-6.text-right
+            %address
+              %strong Curso comprado:
+              - course = Course.where(id: @subscriber.course_id).first
+              %br/
+              Categoria:
+              = Category.where(id: course.id).first.name
+              %br/
+              = course.course_name
+              %br/
+              $
+              = @subscriber.buyout
 
-      .row
-        .col-xs-6
-          %address
-            %strong Método de pago:
-            %br/
-            = @subscriber.payment
-            %br/
-            = @subscriber.email
-        .col-xs-6.text-right
-          %address
-            %strong Order Date:
-            %br/
-            = Time.now.strftime("%d/%m/%Y %H:%M:%S")
-            %br/
-            %br/
-  .row
-    .col-md-12
-      .panel.panel-default
-        .panel-heading
-          %h3.panel-title
-            %strong Order summary
-        .panel-body
-          .table-responsive
-            %table.table.table-condensed
-              %thead
-                %tr
-                  %td
-                    %strong Item
-                  %td.text-center
-                    %strong Precio
-                  %td.text-center
-                    %strong Order
-                  %td.text-right
-                    %strong Totals
-              %tbody
-                / foreach ($order->lineItems as $line) or some such thing here
-                %tr
-                  %td= course.course_name
-                  %td.text-center
-                    $
-                    = @subscriber.buyout
-                  %td.text-center= @subscriber.bill
-                  %td.text-right
-                    $
-                    =  @subscriber.buyout
-                %tr
-                  %td.thick-line
-                  %td.thick-line
-                  %td.thick-line.text-center
-                    %strong Total
-                  %td.thick-line.text-right
-                    $
-                    = @subscriber.buyout
-  .row.no-print.classone
-    .col-xs-12
-      %a.btn.btn-default{:onclick => "window.print()", :type => "button", :value => "Print this page"}
-        %i.fa.fa-print
-        Imprimir
-      %a.btn.btn-success.pull-right{:href => "/cursos"}
-        %i.fa.fa-credit-card
-        Cursos
-      %button#create_pdf.btn.btn-primary.pull-right{:style => "margin-right: 5px;"}
-        %i.fa.fa-download
-        Descargar PDF
+        .row
+          .col-xs-6
+            %address
+              %strong Método de pago:
+              %br/
+              = @subscriber.payment
+              %br/
+              = @subscriber.email
+          .col-xs-6.text-right
+            %address
+              %strong Order Date:
+              %br/
+              = Time.now.strftime("%d/%m/%Y %H:%M:%S")
+              %br/
+              %br/
+    .row
+      .col-md-12
+        .panel.panel-default
+          .panel-heading
+            %h3.panel-title
+              %strong Order summary
+          .panel-body
+            .table-responsive
+              %table.table.table-condensed
+                %thead
+                  %tr
+                    %td
+                      %strong Item
+                    %td.text-center
+                      %strong Precio
+                    %td.text-center
+                      %strong Order
+                    %td.text-right
+                      %strong Totals
+                %tbody
+                  / foreach ($order->lineItems as $line) or some such thing here
+                  %tr
+                    %td= course.course_name
+                    %td.text-center
+                      $
+                      = @subscriber.buyout
+                    %td.text-center= @subscriber.bill
+                    %td.text-right
+                      $
+                      =  @subscriber.buyout
+                  %tr
+                    %td.thick-line
+                    %td.thick-line
+                    %td.thick-line.text-center
+                      %strong Total
+                    %td.thick-line.text-right
+                      $
+                      = @subscriber.buyout
+    .row.no-print.classone
+      .col-xs-12
+        %a.btn.btn-default{:onclick => "window.print()", :type => "button", :value => "Print this page"}
+          %i.fa.fa-print
+          Imprimir
+        %a.btn.btn-success.pull-right{:href => "/cursos"}
+          %i.fa.fa-credit-card
+          Cursos
+        %button#create_pdf.btn.btn-primary.pull-right{:style => "margin-right: 5px;"}
+          %i.fa.fa-download
+          Descargar PDF
+
+  -else
+    %h1 Ha ocurrido un error en el pago
+    %a.btn.btn-success.pull-right{:href => "/cursos"}
+      %i.fa.fa-credit-card
+      Cursos
 
 %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"}
 %script{:src => "//cdn.rawgit.com/MrRio/jsPDF/master/dist/jspdf.min.js", :type => "text/javascript"}

@@ -35,7 +35,9 @@ class PaymentsController < ApplicationController
     subscriber_params[:payment].eql?("paypal") ? amount = "#{@course.price_dolars}" : amount = "#{@course.price_bs}"
     @checkout = Subscriber.payment_method(params,amount,subscriber_params)
 
-    if @checkout
+
+    if !@checkout.transaction.nil?
+      @checkout = @checkout.transaction.id
       @subscriber = Subscriber.new(subscriber_params.merge(bill: @checkout, buyout: "#{amount}"))
         if @subscriber.save
           redirect_to checkout_id_path(@checkout)
@@ -44,9 +46,10 @@ class PaymentsController < ApplicationController
         end
     else
       puts"Error en el pago"
-      error_messages = result.errors.map { |error| "Error: #{error.code}: #{error.message}" }
-      #flash[:error] = error_messages
-      redirect_to root_path
+      @checkout.errors.map { |error| "Error: #{error.code}: #{error.message}" }
+      redirect_to checkout_id_path("Braintree_errors")
+      # error_messages = result.errors.map { |error| "Error: #{error.code}: #{error.message}" }
+      # #flash[:error] = error_messages
     end
 
   end

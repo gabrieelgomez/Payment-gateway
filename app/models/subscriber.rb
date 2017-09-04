@@ -34,8 +34,8 @@ class Subscriber < ActiveRecord::Base
         :submit_for_settlement => true
       }
     )
-    result.success? ? @checkout = result.transaction.id : @checkout = false
-    @checkout
+
+    @checkout = result
   end
 
   def self.searching_checkout(checkout)

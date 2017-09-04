@@ -92,10 +92,10 @@
             = f.input :payment, label: false, input_html: {:value => "mercadopago", :id=>"btn-mp", class:"none-input none-mp", :type => "text", required: "required"}
 
       %ul.list-inline.pull-right
-        %li
-          %button.btn.btn-primary.prev-step{:type => "button"} Previous
         -# %li
-        -#   %button.btn.btn-primary.next-step{:type => "button"} Save and continue
+        -#   %button.btn.btn-primary.prev-step{:type => "button"} Previous
+        %li
+          %button.btn.btn-primary.next-paypal.none-paypal#btn-next{:type => "button"} Save and continue
     #complete.tab-pane{:role => "tabpanel"}
       %h3 Complete
       %p You have successfully completed all steps.
@@ -125,18 +125,16 @@
         $("#subscriber_email").attr("aria-invalid")=="false" &&
         $("#subscriber_phone_one").attr("aria-invalid")=="false" &&
         $("#subscriber_address").attr("aria-invalid")=="false"
-
       ){
         var $active = $('.wizard .nav-tabs li.active');
         $active.next().removeClass('disabled');
         nextTab($active);
       }
     });
-    $(".prev-step").click(function (e) {
 
+    $(".prev-step").click(function (e) {
         var $active = $('.wizard .nav-tabs li.active');
         prevTab($active);
-
     });
 
 
@@ -174,6 +172,24 @@
     $(elem).prev().find('a[data-toggle="tab"]').click();
   }
 
+  var clientToken = "#{@token}";
+
+  braintree.setup(clientToken, "dropin", {
+  container: "payment-form"
+  });
+
+  $("body#braintree-paypal-button").click(function(){
+      console.log("eqeqweqweqweqeqwewqeqweqqwqeqweq");
+      $("#btn-next").removeClass("none-paypal");
+      $("#btn-next").addClass("display-paypal");
+      var $active = $('.wizard .nav-tabs li.active');
+      $active.next().removeClass('disabled');
+      nextTab($active);
+  });
+
+  $("body.inline-frame").click(function(){console.log("WERWERWERWEREWRW")});
+
+
 :scss
   .none-mp, .none-paypal{
   display: none;
@@ -202,10 +218,3 @@
 
 :javascript
   (function(){function $MPC_load(){window.$MPC_loaded !== true && (function(){var s = document.createElement("script");s.type = "text/javascript";s.async = true;s.src = document.location.protocol+"//secure.mlstatic.com/mptools/render.js";var x = document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);window.$MPC_loaded = true;})();}window.$MPC_loaded !== true ? (window.attachEvent ?window.attachEvent('onload', $MPC_load) : window.addEventListener('load', $MPC_load, false)) : null;})();
-
-:javascript
-  var clientToken = "#{@token}";
-
-  braintree.setup(clientToken, "dropin", {
-  container: "payment-form"
-  });

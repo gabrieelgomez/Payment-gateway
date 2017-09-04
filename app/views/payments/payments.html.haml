@@ -13,10 +13,6 @@
               %a{"aria-controls" => "step2", "data-toggle" => "tab", :href => "#step2", :role => "tab", :title => "Step 2"}
                 %span.round-tab
                   %i.glyphicon.glyphicon-usd
-            %li.disabled{:role => "presentation"}
-              %a{"aria-controls" => "complete", "data-toggle" => "tab", :href => "#complete", :role => "tab", :title => "Complete"}
-                %span.round-tab
-                  %i.glyphicon.glyphicon-ok
         = render 'payments/form_dates_personals'
 
 = render 'payments/particles'
@@ -89,7 +85,7 @@
   }
 
   .wizard .nav-tabs > li {
-  width: 33%;
+  width: 50%;
   }
 
   .wizard li:after {

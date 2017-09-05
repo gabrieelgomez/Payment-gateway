@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151022040913) do
+ActiveRecord::Schema.define(version: 20170812213403) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",    limit: 255, null: false
@@ -45,6 +51,19 @@ ActiveRecord::Schema.define(version: 20151022040913) do
     t.string   "message",        limit: 255
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "course_name",       limit: 255
+    t.integer  "category_id",       limit: 4
+    t.string   "banner",            limit: 255
+    t.text     "description",       limit: 65535
+    t.integer  "quota",             limit: 4
+    t.float    "price_dolars",      limit: 24
+    t.float    "price_bs",          limit: 24
+    t.integer  "subscribers_count", limit: 4,     default: 0
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
   end
 
   create_table "keppler_blog_categories", force: :cascade do |t|
@@ -127,6 +146,22 @@ ActiveRecord::Schema.define(version: 20151022040913) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
+
+  create_table "subscribers", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.string   "lastname",    limit: 255
+    t.string   "document_id", limit: 255
+    t.string   "email",       limit: 255
+    t.integer  "phone_one",   limit: 8
+    t.integer  "phone_two",   limit: 8
+    t.text     "address",     limit: 65535
+    t.integer  "course_id",   limit: 4
+    t.string   "payment",     limit: 255
+    t.float    "buyout",      limit: 24
+    t.string   "bill",        limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id",        limit: 4

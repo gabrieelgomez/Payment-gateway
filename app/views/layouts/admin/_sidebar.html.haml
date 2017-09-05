@@ -10,3 +10,10 @@
       %li
         = tab "Usuarios", "person", main_app.users_path, current_navigation?("Users")
 
+    - if can? :index, Category
+      %li
+        = tab "Cursos", "person", main_app.categories_path, current_navigation?("Users")
+
+    -# - if can? :index, Subscriber
+    -#   %li
+    -#     = tab "Subscriptores", "person", main_app.subscribers_path, current_navigation?("Users")

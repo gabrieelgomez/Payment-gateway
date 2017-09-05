@@ -80,7 +80,7 @@ group :development, :test do
   gem 'guard-coffeescript'
   gem 'guard-livereload'
   gem 'byebug'
-  gem 'web-console', '~> 2.0' 
+  gem 'web-console', '~> 2.0'
   gem 'commands'
 end
 
@@ -123,9 +123,8 @@ gem "jquery-slick-rails"
 
 
 # ----- gem mailchip--------
-gem "gibbon", git: 'git://github.com/amro/gibbon.git'
- 
+gem "gibbon", git: 'https://github.com/amro/gibbon.git'
+
 
  #---- gem mask imput------
  gem 'jquery-inputmask-rails'
- 

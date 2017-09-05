@@ -1,6 +1,6 @@
 # This migration comes from keppler_catalogs (originally 20150716201558)
 class CreateKepplerCatalogsCatalogs < ActiveRecord::Migration
-  def change
+  def self.up
     create_table :keppler_catalogs_catalogs do |t|
       t.string :cover
       t.string :name
@@ -11,5 +11,10 @@ class CreateKepplerCatalogsCatalogs < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+  end
+
+
+  def self.down
+    drop_table :keppler_catalogs_catalogs
   end
 end

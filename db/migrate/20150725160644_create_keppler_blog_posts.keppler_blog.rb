@@ -1,6 +1,6 @@
 # This migration comes from keppler_blog (originally 20150714183241)
 class CreateKepplerBlogPosts < ActiveRecord::Migration
-  def change
+  def self.up
     create_table :keppler_blog_posts do |t|
       t.string :title
       t.text :body
@@ -16,4 +16,9 @@ class CreateKepplerBlogPosts < ActiveRecord::Migration
       t.timestamps null: false
     end
   end
+
+  def self.down
+    drop_table :keppler_blog_posts
+  end
+
 end

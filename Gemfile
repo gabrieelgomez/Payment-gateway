@@ -108,7 +108,7 @@ gem 'google-api-client'
 
 
 #----blog-------
-gem 'keppler_blog', git: 'https://github.com/inyxtech/keppler_blog.git'
+gem 'keppler_blog', git: 'https://github.com/inyxtech/keppler_blog.git', tag: '1.0.0'
 gem 'cocoon'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'carrierwave'

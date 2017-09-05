@@ -1,4 +1,4 @@
-#front-navbar{ 
+#front-navbar{
 	font-weight: bold;
 	font-size: 14px;
 	background-color: #1C1C1C;
@@ -43,7 +43,7 @@
 		}
 
 		li:hover{
-			background-color: #66BAA3;
+			/*background-color: #66BAA3;*/
 
 			.icon1{
 				background: image-url("frontend/NavBar/NavBar_Iconos_Home_Hover.png") no-repeat;
@@ -72,10 +72,14 @@
 			.icon7{
 				background: image-url("frontend/NavBar/NavBar_Iconos_Contacto_Hover.png") no-repeat;
 			}
+
+			.icon8{
+				background: image-url("frontend/NavBar/NavBar_Iconos_icon8.png") no-repeat;
+			}
 		}
 	}
 
-	@each $iconos in icon1, icon2, icon3, icon4, icon5, icon6, icon7 {
+	@each $iconos in icon1, icon2, icon3, icon4, icon5, icon6, icon7, icon8 {
 		.#{$iconos}{
 			width: 31px;
 			height: 31px;
@@ -97,42 +101,42 @@
 		@media #{$desktop} {
 			border-bottom: 3px solid rgb(101, 190, 164);
 		}
-		
+
 	}
 }
 
 @media #{$phone} {
-	#front-navbar{ 
+	#front-navbar{
 		margin: 0px !important;
 		#center{
 			margin: 0px;
 		}
 		.navbar-nav{
 			li{
-				
+
 				a{
 					border: 0px;
 				}
 			}
-		}	
+		}
 	}
 }
 
 @media #{$tablet-portrait} {
-	#front-navbar{ 
+	#front-navbar{
 		margin: 0px !important;
 		#center{
 			margin: 0px;
 		}
 		.navbar-nav{
 			li{
-				
+
 				a{
 					border: 0px;
 					color: #fff;
 				}
 			}
-		}	
+		}
 	}
 }
 
@@ -148,6 +152,6 @@
 					border: 0px
 				}
 			}
-		}	
+		}
 	}
 }

@@ -106,6 +106,8 @@ GEM
       sass (>= 3.3.0)
     bootstrap-tagsinput-rails (0.4.2.1)
       railties (>= 3.1)
+    braintree (2.57.0)
+      builder (>= 2.0.0)
     builder (3.2.2)
     byebug (6.0.2)
     cancancan (1.13.1)
@@ -272,6 +274,8 @@ GEM
     materialize-sass (0.97.1)
       sass (~> 3.3)
     memoist (0.12.0)
+    mercadopago-sdk (0.3.4)
+      json
     method_source (0.8.2)
     mime-types (2.6.2)
     mimemagic (0.3.0)
@@ -405,6 +409,7 @@ DEPENDENCIES
   better_errors
   bootstrap-datepicker-rails
   bootstrap-sass
+  braintree
   byebug
   cancancan
   carrierwave
@@ -436,6 +441,7 @@ DEPENDENCIES
   keppler_ga_dashboard!
   material_icons
   materialize-sass
+  mercadopago-sdk
   mysql2 (~> 0.3.18)
   nprogress-rails
   quiet_assets
@@ -454,3 +460,6 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+
+BUNDLED WITH
+   1.15.3

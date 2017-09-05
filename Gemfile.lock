@@ -1,8 +1,8 @@
 GIT
-  remote: git://github.com/amro/gibbon.git
-  revision: b96871b15f9921e2f203f640a8c5ab080b607bb8
+  remote: https://github.com/amro/gibbon.git
+  revision: bc1fd46e5de91d257308e1524f8eeda6ba87220d
   specs:
-    gibbon (2.1.0)
+    gibbon (3.1.0)
       faraday (>= 0.9.1)
       multi_json (>= 1.11.0)
 

@@ -7,12 +7,12 @@ class PaymentsController < ApplicationController
     $mp = MercadoPago.new('7540776543610704', 'hya2kL3DVD1NnQMTs4LgLa3KLOn1c4PT')
 
     preference_data = {
-                "items": [
+                :items => [
                     {
-                        "title": "testCreate",
-                        "quantity": 1,
-                        "unit_price": 1200,
-                        "currency_id": "VEF"
+                        :title => "testCreate",
+                        :quantity => 1,
+                        :unit_price => 1200,
+                        :currency_id => "VEF"
                     }
                 ]
             }

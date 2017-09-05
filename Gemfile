@@ -12,7 +12,7 @@ gem "ckeditor"
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 #utilities
-gem 'haml-rails'
+gem 'haml-rails', '~> 0.9.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'sass-rails'
 gem 'therubyracer', '~> 0.11.4', platforms: :ruby
@@ -55,7 +55,7 @@ gem 'material_icons'
 gem 'materialize-sass'
 
 #authentication and authorization
-gem 'devise'
+gem 'devise', '~> 4.0.1'
 gem 'devise-i18n'
 gem 'cancancan'
 gem 'rolify'
@@ -104,7 +104,7 @@ end
 
 #---- keppler_ga_dashboard ----
 gem 'keppler_ga_dashboard', git: 'https://github.com/inyxtech/keppler_ga_dashboard.git', tag: '1.0.0'
-gem 'google-api-client'
+gem 'google-api-client', '~> 0.7.1'
 
 
 #----blog-------

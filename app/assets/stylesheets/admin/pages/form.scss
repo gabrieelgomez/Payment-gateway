@@ -1,0 +1,38 @@
+.wrapper{
+	.wrapper-body{
+		.actions{
+		}
+		.wrapper-inputs{
+			margin-bottom: 0px;
+			.row{
+				margin-bottom: 0px;
+			}
+			.card{
+				margin-bottom: 40px;
+			}
+			.input-field.error{
+				input{
+					border-bottom: 2px solid #F44336;
+				}
+			}
+			.help-inline{
+				color: #F44336;
+			}
+			.string{
+				.help-inline{
+					position: relative;
+					top: -15px;
+				}
+			}
+			.form-actions{
+				margin: 10px 10px;
+			}
+			label.collection_radio_buttons, label.collection_check_boxes {
+			  margin-right: 10px;
+			  vertical-align: -2px;
+			  padding-left: 28px;
+			  margin-left: 10px;
+			}
+		}
+	}
+}

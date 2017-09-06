@@ -1,0 +1,36 @@
+.header-information.hide-on-small-only{ "ng-style" => is_index? ? "{'max-width':'75%'}" : "{'min-width':'100%'}" }
+	- if (action_name == 'new' or action_name == 'index') and controller_name == 'courses'
+		.category-name
+			%h1
+				= @category_course.name
+				&nbsp > &nbsp
+	- elsif (action_name == 'new' or action_name == 'index') and controller_name == 'subscribers'
+		.category-name
+			%h1
+				= @course_subscriber.course_name
+				&nbsp > &nbsp
+	- elsif (action_name == 'new' or action_name == 'index') and controller_path == 'admin/categories'
+		.category-name
+			%h1
+				= "Directorio"
+				&nbsp > &nbsp
+	- elsif (action_name == 'new' or action_name == 'index') and controller_path == 'admin/banners'
+		.category-name
+			%h1
+				= "Publicidad"
+				&nbsp > &nbsp
+
+	%h1.header-information-title
+		= content_for?(:header_information) ? yield(:header_information) : t("keppler.modules.#{controller_path.underscore}")
+	%small
+		= t("keppler.actions.#{action_name}")
+
+
+:sass
+	.header-information
+		&-title
+			display: inline-block
+		.category-name
+			display: inline-block
+		small
+			display: block

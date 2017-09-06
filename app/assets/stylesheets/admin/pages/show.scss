@@ -1,0 +1,40 @@
+.wrapper{
+	margin-top: 100px;
+	@media #{$small-and-down} {
+	    margin-top: 20px;
+	}
+	.actions{
+		height:30px;
+		margin-bottom: 15px;
+		a{
+			margin-left: 2px;
+		}
+		.btn-floating{
+			box-shadow: none;
+		}
+		.btn-floating:hover{
+			background: rgb(218, 218, 218);
+		}
+	}
+	.wrapper-body{
+		.card{
+			padding: 20px;
+			margin-bottom: 40px;
+			ul.list {
+				margin-top: 8px;
+				li.list-row{
+					margin-bottom: 10px;
+					.display-label{
+						color: #4C4C4C;
+						font-weight: 500;
+						font-size: 13px;
+					}
+					.display-value{
+						font-weight: 300;
+						font-size: 13px;
+					}
+				}
+			}
+		}
+	}
+}

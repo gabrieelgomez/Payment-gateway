@@ -1,0 +1,20 @@
+.wrapper
+	.wrapper-body.container
+		.actions
+			= link_to category_course_subscribers_path, class: "btn-floating btn-flat tooltipped", "data-position" => "bottom", "data-tooltip" => "Volver" do
+				= material_icon.md_18.arrow_back.css_class("md-dark")
+		.wrapper-inputs
+			.card
+				-#= simple_form_for [@category_course, @course_subscriber, @subscriber] do |f|
+				= simple_form_for @subscriber, :url => category_course_subscriber_path, :method => 'post' do |f|
+					.row
+						= f.input :name
+						= f.input :lastname
+						= f.input :email
+						= f.input :phone_one
+						= f.input :phone_two
+						= f.input :address, input_html: {class: "materialize-textarea"}
+						= f.hidden_field :course_id
+
+						.form-actions.right
+							= f.button :submit, "Guardar", class: "btn"

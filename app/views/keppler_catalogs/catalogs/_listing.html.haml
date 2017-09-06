@@ -1,0 +1,34 @@
+%tr{ id: "row-#{catalog.id}" }
+	- if can? :destroy_multiple, model
+		%td.item-check{style:"width: 10%"}
+			= link_to "", catalog_path(catalog), remote: true, class: "show-row"
+			%input{ type:"checkbox", class: "filled-in", id: "checkbox-#{catalog.id}", 'checklist-model'=>"check", 'checklist-value'=>"#{catalog.id}", "ng-click"=>"selectByCheck(#{@objects.size})"}
+			%label{ for: "checkbox-#{catalog.id}" }
+
+	%td{style:"width: 10%"}
+		= link_to "", catalog_path(catalog, search: @query), remote: true, class: "show-row"
+		%span
+			= material_icon.md_24.folder_open
+	%td{style:"width: 30%"}
+		= link_to "", catalog_path(catalog, search: @query), remote: true, class: "show-row"
+		%span
+			= catalog.name
+	%td{style:"width: 30%"}
+		= link_to "", catalog_path(catalog, search: @query), remote: true, class: "show-row"
+		%span
+			= catalog.section
+	%td{style:"width: 30%"}
+		= link_to "", catalog_path(catalog, search: @query), remote: true, class: "show-row"
+		%span= catalog.public? ? "Publicado" : "No publicado"
+								
+	%td{style:"width: 5%"}
+		= link_to "#", class: "btn-floating waves-effect waves-light btn-flat dropdown-button", "data-activates" => "catalog-options-#{catalog.id}" do
+			= material_icon.md_24.more_vert.css_class("md-dark")
+		%ul{ id: "catalog-options", class: "dropdown-content dropdow-content-listing", id: "catalog-options-#{catalog.id}"}
+			%li
+				= link_to 'Ver detallado', catalog_path(catalog)
+			%li
+				= link_to 'Ir a archivos', catalog_attachments_path(catalog)
+					
+					
+		

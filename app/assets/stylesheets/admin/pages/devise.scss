@@ -1,0 +1,68 @@
+main#devise{
+	background-image: url(profile-menu.png);
+	background-position: center;
+	background-size: cover;
+	height: 100%;
+	.devise{
+		height: 100%;
+		.container{
+			height: 100%;
+		}
+		.devise-horizontal{
+			display: flex;
+			justify-content: center;
+			height: 100%;
+			.devise-vertical{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+		}
+		.devise-box{
+			width: 100%;
+			@media #{$small-and-down} {
+				width:100%;
+			}
+			.devise-box-header{
+				background: #F44336;
+				padding-top: 80px;
+				padding-left: 15px;
+				color: white;
+				.title-app{
+					font-family: 'Patua One', cursive;
+					font-size: 30px;
+					padding-bottom: 10px;
+				}
+			}
+			.devise-box-body{
+				padding: 15px;	
+				margin-bottom: 0px;
+				h5{
+					margin: 0px;
+				}	
+				p{
+					font-weight: 300;
+				}
+				.input-errors{
+					color: #F44336;
+					margin-top: -15px;
+				}
+				.devise-errors{
+					color: #F44336;
+				}
+			}
+			.devise-box-footer{
+				padding: 0px 15px 15px 15px;
+				margin-bottom: 0px;
+				.recoverable{
+					position: relative;
+					top: 7px;
+				}
+				img{
+					max-width: 150px;
+					margin-top: 15px;
+				}
+			}
+		}
+	}
+}

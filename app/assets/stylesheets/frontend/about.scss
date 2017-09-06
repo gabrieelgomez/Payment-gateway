@@ -1,0 +1,96 @@
+#about{
+	.container-about{
+		.text-left{
+			margin-top: 11%;
+			margin-bottom: 12%;
+
+			@media #{$phone} {
+				margin-top: 0%;
+				margin-left: 0%;	
+			}
+
+			@media #{$phone-landscape} {
+				margin-top: 0%;
+				margin-bottom: 8%;
+				margin-left: 0%;
+			}
+
+			@media #{$tablet-portrait} {
+				margin-top: 0%;
+				margin-bottom: 8%;
+				margin-left: 0%;
+			}
+
+
+			p{
+				font-size: 22px;
+				font-family: $font-type;
+				line-height: 16px;
+				text-align: center;
+			}
+		}
+
+		.container-about-padding {
+			padding-left: 50px;
+
+			@media #{$phone} {
+				padding-left: 15px;	
+			}
+
+			@media #{$phone-landscape} {
+				padding-left: 15px;				
+				}
+		}
+
+		#negrita{
+			font-weight: bold;	
+		}
+
+		.text-right{
+			margin-top: 1%;
+			margin-bottom: 8%;
+			padding: 0 120px 0 120px;
+
+			@media #{$desktop-large} {
+				margin-top: 4%;
+				margin-bottom: 0%;
+				padding: 0 25%;
+			}
+
+			@media #{$phone} {
+				padding: 0 30px 0 30px;
+			}
+
+			@media #{$phone-landscape} {
+				margin-top: 0%;
+				margin-bottom: 2%;
+				padding: 0 30px 0 30px;
+			}
+
+			@media #{$tablet} {
+				padding: 0 10%;
+				
+			}
+
+
+			p{
+				font-size: 15px;
+				font-family: $font-type;
+				line-height: 16px;
+				text-align: center;
+
+				@media #{$phone} {
+					text-align: justify;
+				}
+
+				@media #{$tablet-portrait} {
+					text-align: justify;
+				}
+
+				@media #{$tablet} {
+					text-align: justify;
+				}
+			}
+		}
+	}
+}

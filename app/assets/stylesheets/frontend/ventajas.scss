@@ -1,0 +1,204 @@
+
+#ventajas{
+
+	.container-cuadro-text{
+		padding: 70px 29.5%;
+
+
+		@include phone-all{
+			padding: 60px 20px 50px 20px;
+		}
+
+		@media #{$tablet-portrait} {
+			padding: 50px 10%;
+		}
+
+		@media #{$tablet} {
+			padding: 50px 10%;
+		}
+
+
+		.text-border{
+			border: 2px solid #00A19A;
+			padding: 20px;
+			z-index: 1000;
+			position: relative;
+			background: #fff;
+
+
+			p{
+				text-align: center;
+				font-family: $font-type;
+			}
+		}
+	}
+
+	.panel-title{
+		width: 100%;
+		height: 90px;
+		background: #00A19A;
+		position: relative;
+		z-index: 2;
+
+		@media #{$phone} {
+			height: 100px;
+		}
+		
+		p{
+			font-family: $font-type;
+			font-weight: bold;
+			text-decoration: underline;
+			padding: 15px 0 15px 0;
+			font-size: 16px;
+			color: #fff;
+
+			@media #{$phone} {
+				padding: 6px 0 5px 0;
+			}
+
+			@media #{$phone-landscape} {
+				padding: 6px 0 15px 0;
+			}
+		}
+	}
+
+	.body-curriculun{
+		background: #DADADA;
+		padding: 0px 25% 50px 25%;
+		overflow: hidden;
+
+		@include phone-all{
+			padding: 0px 10% 50px 10%;
+		}
+
+		@media #{$tablet-portrait} {
+			padding: 0px 10% 50px 10%;
+		}
+
+		.bar{
+			width: 5px;
+			height: 860px;
+			background: #00A19A;
+			position: absolute;
+			left: 49.5%;
+			z-index: 1;
+		}
+
+		.panel{
+			position: relative;
+			margin-top: 50px;
+			background-color: transparent;
+			z-index: 200;
+			
+			.title{
+				height: 40px;
+				background: #00A19A;
+
+				.icon{
+					background: #67BCA2;
+					width: 60px;
+					height: 60px;
+					border-radius: 50%;
+					position: relative;
+					left: -4px;
+					top: -25px;
+
+					@media #{$desktop-large} {
+						left: -7px;
+					}
+
+					@media #{$phone} {
+						left: 0px;
+					}
+
+					@media #{$phone-landscape} {
+						left: 0px;
+					}
+
+					img{
+						padding-top: 10px;
+
+						@media #{$phone} {
+							position: relative;
+							padding-top: 12px;
+							left: 0px;
+						}
+					}
+				}
+			}		
+			.body{
+				background: #fff;
+				padding: 15px 30px;
+
+				p{
+					font-family: $font-type;
+					text-align: center;
+				}
+			}
+		}
+	}
+
+	.banner{
+		width: 100%;
+		height: 250px;
+		background: image-url("frontend/Banner_Historia.jpg") no-repeat;
+		background-size: cover;
+
+
+		@media #{$phone-small}{
+			height: 200px;
+			background-position: -530px !important;
+		}
+
+		@media #{$phone} {
+			height: 200px;
+			background-position: -300px;	
+		}
+
+		@media #{$phone-landscape} {
+			height: 200px;
+			background-position: -300px;	
+		}
+
+		@media #{$tablet-portrait} {
+			background-position: -300px !important;
+		}
+
+		@media #{$tablet} {
+			background-position: -150px;
+		}
+
+		@media #{$desktop} {
+			background-size: 100% 100%;
+			background-position: 0px;
+		}
+
+
+
+		.text-banner{
+			position: relative;
+			top: 125px;
+
+			@media #{$phone-small}{
+				left: -45px !important;
+			}
+
+			@include phone-all{
+				top: 100px;
+				left: 0px;
+			}
+
+			p{
+				color: #00A19A;
+				line-height: 12px;
+				font-size: 20px;
+				font-family: $font-type;				
+			}
+
+			#bold{
+				font-weight: bold;
+			}
+		}
+	}
+}
+

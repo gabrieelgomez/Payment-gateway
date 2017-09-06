@@ -1,8 +1,0 @@
-%ul.nav.nav-pills.nav-justified#dash-nav
-	%li{ class: "#{'active' if @category.permalink == 'imagenes'}"}
-		= link_to "Imagenes", gallery_path("imagenes", anchor: 'anchor')
-	%li{ class: "#{'active' if @category.permalink == 'videos'}"}
-		= link_to "Videos", gallery_path("videos", anchor: 'anchor')
-
-	%li{ class: "#{'active' if @category.permalink == 'audios'}"}
-		= link_to "Audio", gallery_path("audios", anchor: 'anchor')

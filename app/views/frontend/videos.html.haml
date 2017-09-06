@@ -1,8 +1,0 @@
-= render 'layouts/frontend/navigation'
-= render 'navgallery'
-.container-image{style:"padding: 50px 17%;"}
-	.row{style:"width: 100%;"}
-		- @attachments_videos.each do |catalog|
-			.container-video
-				.col-lg-4{style:"padding: 0px;"}
-					%iframe.video-player{:allowfullscreen => "", :frameborder => "0",:src =>"#{catalog.url}"}

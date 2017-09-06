@@ -30,7 +30,7 @@
               - course = Course.where(id: @subscriber.course_id).first
               %br/
               Categoria:
-              = Category.where(id: course.id).first.name
+              = Category.where(id: course.category_id).first.name
               %br/
               = course.course_name
               %br/

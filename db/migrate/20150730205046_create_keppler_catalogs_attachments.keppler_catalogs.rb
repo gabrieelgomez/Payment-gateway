@@ -1,6 +1,6 @@
 # This migration comes from keppler_catalogs (originally 20150717162921)
 class CreateKepplerCatalogsAttachments < ActiveRecord::Migration
-  def change
+  def self.up
     create_table :keppler_catalogs_attachments do |t|
       t.string :name
       t.string :upload
@@ -17,4 +17,9 @@ class CreateKepplerCatalogsAttachments < ActiveRecord::Migration
       t.timestamps null: false
     end
   end
+
+  def self.down
+    drop_table :keppler_catalogs_attachments
+  end
+
 end

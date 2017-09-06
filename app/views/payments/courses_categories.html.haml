@@ -4,6 +4,7 @@
 #show-content
   .col-lg-12.col-sm-12
   .card.hovercard
+    .cover
     .card-background{:style => "background-image: url(#{@course.banner})"}
     .card-info
       %span.card-title
@@ -103,7 +104,15 @@
 
 
 :scss
-
+    .cover {
+      background: rgba(0, 0, 0, 0.67);
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      width: 94.5%;
+      height: 250px;
+      position:absolute;
+    }
     .price{
       font-size: 50px;
       font-weight: bold;

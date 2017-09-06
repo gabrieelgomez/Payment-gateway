@@ -1,14 +1,15 @@
 GIT
-  remote: git://github.com/amro/gibbon.git
-  revision: b96871b15f9921e2f203f640a8c5ab080b607bb8
+  remote: https://github.com/amro/gibbon.git
+  revision: bc1fd46e5de91d257308e1524f8eeda6ba87220d
   specs:
-    gibbon (2.1.0)
+    gibbon (3.1.0)
       faraday (>= 0.9.1)
       multi_json (>= 1.11.0)
 
 GIT
   remote: https://github.com/inyxtech/keppler_blog.git
   revision: 1a8136cc1b76c12c9e6053cb8b78efb2a9d599d4
+  tag: 1.0.0
   specs:
     keppler_blog (0.0.1)
       acts-as-taggable-on (~> 3.4)
@@ -38,6 +39,7 @@ GIT
 GIT
   remote: https://github.com/inyxtech/keppler_ga_dashboard.git
   revision: 302b4c68408327b336d2476155c670f6b7089765
+  tag: 1.0.0
   specs:
     keppler_ga_dashboard (0.0.1)
       rails (~> 4.2.0)
@@ -93,7 +95,7 @@ GEM
       execjs
       json
     bcrypt (3.1.10)
-    better_errors (2.1.1)
+    better_errors (2.2.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
@@ -279,7 +281,7 @@ GEM
     method_source (0.8.2)
     mime-types (2.6.2)
     mimemagic (0.3.0)
-    mini_magick (4.3.6)
+    mini_magick (4.8.0)
     mini_portile (0.6.2)
     minitest (5.8.1)
     multi_json (1.11.2)
@@ -406,7 +408,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on (~> 3.4)
   angularjs-rails
-  better_errors
+  better_errors (= 2.2.0)
   bootstrap-datepicker-rails
   bootstrap-sass
   braintree

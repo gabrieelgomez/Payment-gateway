@@ -70,7 +70,7 @@ gem 'kaminari'
 
 #development
 group :development, :test do
-  gem 'better_errors'
+  gem 'better_errors', '2.2.0'
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'table_print'
@@ -103,12 +103,12 @@ end
 #gem "recaptcha"
 
 #---- keppler_ga_dashboard ----
-gem 'keppler_ga_dashboard', git: 'https://github.com/inyxtech/keppler_ga_dashboard.git'
+gem 'keppler_ga_dashboard', git: 'https://github.com/inyxtech/keppler_ga_dashboard.git', tag: '1.0.0'
 gem 'google-api-client'
 
 
 #----blog-------
-gem 'keppler_blog', git: 'https://github.com/inyxtech/keppler_blog.git'
+gem 'keppler_blog', git: 'https://github.com/inyxtech/keppler_blog.git', tag: '1.0.0'
 gem 'cocoon'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'carrierwave'
@@ -121,6 +121,10 @@ gem 'soundcloud'
 #---- Carrusel frontend-----
 gem "jquery-slick-rails"
 
+#Comentario de test
+#Comentario de test
+#Comentario de test
+#Comentario de test
 
 # ----- gem mailchip--------
 gem "gibbon", git: 'https://github.com/amro/gibbon.git'

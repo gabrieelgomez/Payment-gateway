@@ -121,6 +121,10 @@ gem 'soundcloud'
 #---- Carrusel frontend-----
 gem "jquery-slick-rails"
 
+#Comentario de test
+#Comentario de test
+#Comentario de test
+#Comentario de test
 
 # ----- gem mailchip--------
 gem "gibbon", git: 'https://github.com/amro/gibbon.git'

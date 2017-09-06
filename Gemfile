@@ -124,7 +124,7 @@ gem "jquery-slick-rails"
 #Comentario de test
 #Comentario de test
 #Comentario de test
-#Comentario de test
+#Comentario de testasdasdasd kashdkjas kashjdkjas kjdhjkas ajkahsdkjas 
 
 # ----- gem mailchip--------
 gem "gibbon", git: 'https://github.com/amro/gibbon.git'

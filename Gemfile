@@ -70,7 +70,7 @@ gem 'kaminari'
 
 #development
 group :development, :test do
-  gem 'better_errors'
+  gem 'better_errors', '2.2.0'
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'table_print'

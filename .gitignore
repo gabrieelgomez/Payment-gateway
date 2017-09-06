@@ -24,7 +24,6 @@ db/*.sqlite3
 # various artifacts
 **.war
 *.rbc
-Gemfile.lock
 *.sassc
 .redcar/
 .sass-cache

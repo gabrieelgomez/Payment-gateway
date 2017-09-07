@@ -104,7 +104,7 @@ end
 
 #---- keppler_ga_dashboard ----
 gem 'keppler_ga_dashboard', git: 'https://github.com/inyxtech/keppler_ga_dashboard.git', tag: '1.0.0'
-gem 'google-api-client', '0.8.6'
+gem 'google-api-client'
 
 
 #----blog-------

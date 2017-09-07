@@ -105,7 +105,7 @@ end
 #---- keppler_ga_dashboard ----
 gem 'keppler_ga_dashboard', git: 'https://github.com/inyxtech/keppler_ga_dashboard.git', tag: '1.0.0'
 gem 'google-api-client'
-
+gem 'public_suffix', '2.0.5'
 
 #----blog-------
 gem 'keppler_blog', git: 'https://github.com/inyxtech/keppler_blog.git', tag: '1.0.0'

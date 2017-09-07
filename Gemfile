@@ -65,8 +65,8 @@ gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 
 #pagination
-gem 'kaminari-i18n'
-gem 'kaminari'
+gem 'kaminari-i18n', '0.3.2'
+gem 'kaminari', '0.16.3'
 
 #development
 group :development, :test do
@@ -104,8 +104,8 @@ end
 
 #---- keppler_ga_dashboard ----
 gem 'keppler_ga_dashboard', git: 'https://github.com/inyxtech/keppler_ga_dashboard.git', tag: '1.0.0'
-gem 'google-api-client'
-gem 'public_suffix', '2.0.5'
+gem 'google-api-client', '0.8.6'
+
 
 #----blog-------
 gem 'keppler_blog', git: 'https://github.com/inyxtech/keppler_blog.git', tag: '1.0.0'
@@ -121,10 +121,6 @@ gem 'soundcloud'
 #---- Carrusel frontend-----
 gem "jquery-slick-rails"
 
-#Comentario de test
-#Comentario de test
-#Comentario de test
-#Comentario de testasdasdasd kashdkjas kashjdkjas kjdhjkas ajkahsdkjas
 
 # ----- gem mailchip--------
 gem "gibbon", git: 'https://github.com/amro/gibbon.git'
@@ -132,3 +128,4 @@ gem "gibbon", git: 'https://github.com/amro/gibbon.git'
 
  #---- gem mask imput------
  gem 'jquery-inputmask-rails'
+

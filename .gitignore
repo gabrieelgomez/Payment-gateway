@@ -21,6 +21,7 @@ db/*.sqlite3
 /log/*
 /tmp/*
 Gemfile.lock
+Gemfile
 # various artifacts
 **.war
 *.rbc

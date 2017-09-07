@@ -103,8 +103,8 @@ end
 #gem "recaptcha"
 
 #---- keppler_ga_dashboard ----
-gem 'keppler_ga_dashboard', git: 'https://github.com/inyxtech/keppler_ga_dashboard.git', tag: '1.0.0'
-gem 'google-api-client'
+gem 'keppler_ga_dashboard', git: 'https://github.com/inyxtech/keppler_ga_dashboard.git'
+gem 'google-api-client', '0.8.6'
 
 
 #----blog-------
@@ -124,7 +124,7 @@ gem "jquery-slick-rails"
 #Comentario de test
 #Comentario de test
 #Comentario de test
-#Comentario de testasdasdasd kashdkjas kashjdkjas kjdhjkas ajkahsdkjas 
+#Comentario de testasdasdasd kashdkjas kashjdkjas kjdhjkas ajkahsdkjas
 
 # ----- gem mailchip--------
 gem "gibbon", git: 'https://github.com/amro/gibbon.git'

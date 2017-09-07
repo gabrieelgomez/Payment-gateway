@@ -174,23 +174,15 @@ GEM
     formatador (0.2.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
-    google-api-client (0.8.6)
+    google-api-client (0.8.1)
       activesupport (>= 3.2)
       addressable (~> 2.3)
       autoparse (~> 0.3)
       extlib (~> 0.9)
       faraday (~> 0.9)
-      googleauth (~> 0.3)
       launchy (~> 2.4)
       multi_json (~> 1.10)
       retriable (~> 1.4)
-      signet (~> 0.6)
-    googleauth (0.4.2)
-      faraday (~> 0.9)
-      jwt (~> 1.4)
-      logging (~> 2.0)
-      memoist (~> 0.12)
-      multi_json (~> 1.11)
       signet (~> 0.6)
     guard (2.13.0)
       formatador (>= 0.2.4)
@@ -263,10 +255,6 @@ GEM
     listen (3.0.3)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
-    little-plugger (1.1.4)
-    logging (2.2.2)
-      little-plugger (~> 1.1)
-      multi_json (~> 1.10)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     lumberjack (1.0.9)
@@ -276,7 +264,6 @@ GEM
       railties (>= 3.2, <= 4.2)
     materialize-sass (0.97.1)
       sass (~> 3.3)
-    memoist (0.16.0)
     mercadopago-sdk (0.3.4)
       json
     method_source (0.8.2)
@@ -426,7 +413,7 @@ DEPENDENCIES
   elasticsearch-rails
   font-awesome-sass (~> 4.3.0)
   gibbon!
-  google-api-client (= 0.8.6)
+  google-api-client
   guard
   guard-coffeescript
   guard-livereload

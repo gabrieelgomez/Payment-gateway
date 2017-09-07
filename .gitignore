@@ -20,8 +20,9 @@ db/*.sqlite3
 /db/*.sqlite3-journal
 /log/*
 /tmp/*
-/Gemfile.lock
-/Gemfile
+/.Gemfile.lock
+/.Gemfile
+/test/test_helper.rb
 # various artifacts
 **.war
 *.rbc

@@ -10,48 +10,48 @@
             %p{:align => "right"}
               %stong Nombre (*)
           .col-lg-4
-            = f.input :name, label: false, input_html: {"aria-invalid": "true", :autocomplete => "off", class:"dropselectsec", :placeholder => "Introduce tu nombre", :type => "text", required: "required"}
+            = f.input :name, label: false, input_html: {"aria-invalid": "true", :autocomplete => "off", :class => "dropselectsec", :placeholder => "Introduce tu nombre", :type => "text", :required => "required"}
 
           .col-lg-2
             %p{:align => "right"}
               %stong E-mail (*)
           .col-lg-4
-            = f.input :email, label: false, input_html: {"aria-invalid": "true", :autocomplete => "off", class:"dropselectsec", :placeholder => "Introduce tu email", :type => "email", required: "required"}
+            = f.input :email, label: false, input_html: {"aria-invalid": "true", :autocomplete => "off", :class => "dropselectsec", :placeholder => "Introduce tu email", :type => "email", :required => "required"}
 
         .row.mar_ned
           .col-lg-2
             %p{:align => "right"}
               %stong Apellido (*)
           .col-lg-4
-            = f.input :lastname, label: false, input_html: {"aria-invalid": "true", :autocomplete => "off", class:"dropselectsec", :placeholder => "Introduce tu apellido", :type => "text", required: "required"}
+            = f.input :lastname, label: false, input_html: {"aria-invalid": "true", :autocomplete => "off", :class => "dropselectsec", :placeholder => "Introduce tu apellido", :type => "text", :required => "required"}
 
           .col-lg-2
             %p{:align => "right"}
               %stong Identidad (*)
           .col-lg-4
-            = f.input :document_id, label: false, input_html: {"aria-invalid": "true", :autocomplete => "off", class:"dropselectsec", :placeholder => "Introduce tu identidad", :type => "text", required: "required"}
+            = f.input :document_id, label: false, input_html: {"aria-invalid": "true", :autocomplete => "off", :class => "dropselectsec", :placeholder => "Introduce tu identidad", :type => "text", :required => "required"}
 
         .row.mar_ned
           .col-lg-2
             %p{:align => "right"}
               %stong Telefono Personal (*)
           .col-lg-4
-            = f.input :phone_one, label: false, input_html: {"aria-invalid": "true", class:"dropselectsec", :placeholder => "Introduce tu telefono personal", :type => "text", required: "required"}
+            = f.input :phone_one, label: false, input_html: {"aria-invalid": "true", :class => "dropselectsec", :placeholder => "Introduce tu telefono personal", :type => "text", :required => "required"}
 
           .col-lg-2
             %p{:align => "right"}
               %stong Telefono Opcional
           .col-lg-4
-            = f.input :phone_two, label: false, input_html: {class:"dropselectsec", :placeholder => "Introduce tu telefono de oficina", :type => "text", required: "required"}
+            = f.input :phone_two, label: false, input_html: {:class => "dropselectsec", :placeholder => "Introduce tu telefono de oficina", :type => "text", :required => "required"}
 
         .row.mar_ned
           .col-lg-2
             %p{:align => "right"}
               %stong Direccion (*)
           .col-lg-3
-            = f.input :address, as: :text, label: false, input_html: {"aria-invalid": "true", class:"form-control", :placeholder => "Introduce tu direccion", :type => "text", required: "required"}
-            = f.input :course_id, label: false, :input_html => {class:"none-input", :value => "#{@course.id}" }
-            = f.input :buyout, label: false, :input_html => {class:"none-input", :value => "#{@course.price_dolars}" }
+            = f.input :address, as: :text, label: false, input_html: {"aria-invalid": "true", :class => "form-control", :placeholder => "Introduce tu direccion", :type => "text", :required => "required"}
+            = f.input :course_id, label: false, :input_html => {:class => "none-input", :value => "#{@course.id}" }
+            = f.input :buyout, label: false, :input_html => {:class => "none-input", :value => "#{@course.price_dolars}" }
         .row.mar_ned
       %ul.list-inline.pull-right
         -# %li
@@ -82,14 +82,14 @@
             .center-f
               #payment-form
               %button.btn.btn-primary{:type => "submit"} Pagar
-              = f.input :payment, label: false, input_html: {:value => "paypal", class:"none-input none-paypal", :type => "text", required: "required"}
+              = f.input :payment, label: false, input_html: {:value => "paypal", :class => "none-input none-paypal", :type => "text", :required => "required"}
               %script{:src => "https://js.braintreegateway.com/js/braintree-2.20.0.min.js"}
         -else
           %h4 MercadoPago
           .center-f
             /%a{:class => "lightblue-M-Ov-VeOn", :href => "https://sandbox.mercadopago.com/mlv/checkout/pay?pref_id=148728814-e8999e44-f861-4a44-b0b1-be5fe9403b47", "mp-mode" => "modal", :name => "MP-Checkout"} Pagar
             %a{id:"",:class => "lightblue-M-Ov", :href => "https://sandbox.mercadopago.com/mlv/checkout/pay?pref_id=148728814-e8999e44-f861-4a44-b0b1-be5fe9403b47", "mp-mode" => "modal", :name => "MP-Checkout"} Pagar
-            = f.input :payment, label: false, input_html: {:value => "mercadopago", :id=>"btn-mp", class:"none-input none-mp", :type => "text", required: "required"}
+            = f.input :payment, label: false, input_html: {:value => "mercadopago", :id=>"btn-mp", :class => "none-input none-mp", :type => "text", :required => "required"}
 
       %ul.list-inline.pull-right
         -# %li
@@ -179,16 +179,12 @@
   });
 
   $("body#braintree-paypal-button").click(function(){
-      console.log("eqeqweqweqweqeqwewqeqweqqwqeqweq");
       $("#btn-next").removeClass("none-paypal");
       $("#btn-next").addClass("display-paypal");
       var $active = $('.wizard .nav-tabs li.active');
       $active.next().removeClass('disabled');
       nextTab($active);
   });
-
-  $("body.inline-frame").click(function(){console.log("WERWERWERWEREWRW")});
-
 
 :scss
   .none-mp, .none-paypal{

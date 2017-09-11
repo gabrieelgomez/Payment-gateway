@@ -10,33 +10,33 @@
             %p{:align => "right"}
               %stong Nombre (*)
           .col-lg-4
-            = f.input :name, :label => false, :input_html =>  {"aria-invalid": "true", :autocomplete => "off", :class => "dropselectsec", :placeholder => "Introduce tu nombre", :type => "text", :required => "required"}
+            = f.input :name, :label => false, :input_html =>  {:autocomplete => "off", :class => "dropselectsec", :placeholder => "Introduce tu nombre", :type => "text", :required => "required"}
 
           .col-lg-2
             %p{:align => "right"}
               %stong E-mail (*)
           .col-lg-4
-            = f.input :email, :label => false, :input_html =>  {"aria-invalid": "true", :autocomplete => "off", :class => "dropselectsec", :placeholder => "Introduce tu email", :type => "email", :required => "required"}
+            = f.input :email, :label => false, :input_html =>  {:autocomplete => "off", :class => "dropselectsec", :placeholder => "Introduce tu email", :type => "email", :required => "required"}
 
         .row.mar_ned
           .col-lg-2
             %p{:align => "right"}
               %stong Apellido (*)
           .col-lg-4
-            = f.input :lastname, :label => false, :input_html =>  {"aria-invalid": "true", :autocomplete => "off", :class => "dropselectsec", :placeholder => "Introduce tu apellido", :type => "text", :required => "required"}
+            = f.input :lastname, :label => false, :input_html =>  {:autocomplete => "off", :class => "dropselectsec", :placeholder => "Introduce tu apellido", :type => "text", :required => "required"}
 
           .col-lg-2
             %p{:align => "right"}
               %stong Identidad (*)
           .col-lg-4
-            = f.input :document_id, :label => false, :input_html =>  {"aria-invalid": "true", :autocomplete => "off", :class => "dropselectsec", :placeholder => "Introduce tu identidad", :type => "text", :required => "required"}
+            = f.input :document_id, :label => false, :input_html =>  {:autocomplete => "off", :class => "dropselectsec", :placeholder => "Introduce tu identidad", :type => "text", :required => "required"}
 
         .row.mar_ned
           .col-lg-2
             %p{:align => "right"}
               %stong Telefono Personal (*)
           .col-lg-4
-            = f.input :phone_one, :label => false, :input_html =>  {"aria-invalid": "true", :class => "dropselectsec", :placeholder => "Introduce tu telefono personal", :type => "text", :required => "required"}
+            = f.input :phone_one, :label => false, :input_html =>  {:class => "dropselectsec", :placeholder => "Introduce tu telefono personal", :type => "text", :required => "required"}
 
           .col-lg-2
             %p{:align => "right"}
@@ -49,7 +49,7 @@
             %p{:align => "right"}
               %stong Direccion (*)
           .col-lg-3
-            = f.input :address, as: :text, :label => false, :input_html =>  {"aria-invalid": "true", :class => "form-control", :placeholder => "Introduce tu direccion", :type => "text", :required => "required"}
+            = f.input :address, as: :text, :label => false, :input_html =>  {:class => "form-control", :placeholder => "Introduce tu direccion", :type => "text", :required => "required"}
             = f.input :course_id, :label => false, :input_html => {:class => "none-input", :value => "#{@course.id}" }
             = f.input :buyout, :label => false, :input_html => {:class => "none-input", :value => "#{@course.price_dolars}" }
         .row.mar_ned
@@ -104,6 +104,9 @@
 
 :javascript
   $(document).ready(function () {
+
+    $(".form-control").prop("aria-invalid","true");
+
     //Initialize tooltips
     $('.nav-tabs > li a[title]').tooltip();
 

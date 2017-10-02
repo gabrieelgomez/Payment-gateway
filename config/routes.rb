@@ -1,13 +1,8 @@
 Rails.application.routes.draw do
 
-  #get 'checkouts/checkout'
-
-  #post 'newsletter/create', as: "newsletters"
   resources :newsletters
   resources :contacts
   get "downloader", to: 'newsletters#download'
-
-  #resources :checkouts,  only: [:new, :create, :show]
 
   root to: 'frontend#index'
   get 'gallery/:category_permalink', to: 'frontend#gallery', as: "gallery"
@@ -20,9 +15,6 @@ Rails.application.routes.draw do
   get '/mercadopago/:id', to: 'payments#checkout_mercadopago', as: "checkout_mercadopago"
   get '/checkout/:id', to: 'payments#checkout_id', as: "checkout_id"
   get 'payments/:id/:method', to:'payments#payments', as:"payments"
-
-  #post "/subscribers/:id" => "subscriber#show"
-  post "/hook", to: "subscriber#hook", as: "hook"
 
   devise_for :users, skip: KepplerConfiguration.skip_module_devise
 

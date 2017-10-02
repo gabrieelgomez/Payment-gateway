@@ -17,8 +17,12 @@ Rails.application.routes.draw do
   get 'cursos/:id', to: 'payments#courses_categories', as: "app_courses"
   post '/', to: 'payments#create', as: "app_create_subscriber"
   post '/checkout', to: 'payments#checkout', as: "checkout"
+  get '/mercadopago/:id', to: 'payments#checkout_mercadopago', as: "checkout_mercadopago"
   get '/checkout/:id', to: 'payments#checkout_id', as: "checkout_id"
   get 'payments/:id/:method', to:'payments#payments', as:"payments"
+
+  #post "/subscribers/:id" => "subscriber#show"
+  post "/hook", to: "subscriber#hook", as: "hook"
 
   devise_for :users, skip: KepplerConfiguration.skip_module_devise
 

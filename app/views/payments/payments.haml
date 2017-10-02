@@ -1,0 +1,134 @@
+!!!
+%html.no-js{:lang => "es"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "UTF-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %link{:href => "/assets/frontend/Formscreen/normalize.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/frontend/Formscreen/demo.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/frontend/Formscreen/component.css", :rel => "stylesheet", :type => "text/css"}/
+  %body
+    .container
+      %section.content
+        %h2
+          Gustavo Henao -
+          = @course.course_name
+        = simple_form_for @subscriber, :url => url_for(:action => 'checkout', :controller => 'payments'), :method => 'post' do |f|
+          %span.input.input--hoshi
+            %input#input-1.input__field.input__field--hoshi{:name => "subscriber[name]", :type => "text"}/
+            %label.input__label.input__label--hoshi.input__label--hoshi-color-2{:for => "input-1"}
+              %span.input__label-content.input__label-content--hoshi Nombre
+          %span.input.input--hoshi
+            %input#input-2.input__field.input__field--hoshi{:name => "subscriber[lastname]", :type => "text"}/
+            %label.input__label.input__label--hoshi.input__label--hoshi-color-2{:for => "input-2"}
+              %span.input__label-content.input__label-content--hoshi Apellido
+          %span.input.input--hoshi
+            %input#input-3.input__field.input__field--hoshi{:name => "subscriber[email]", :type => "email"}/
+            %label.input__label.input__label--hoshi.input__label--hoshi-color-2{:for => "input-3"}
+              %span.input__label-content.input__label-content--hoshi E-mail
+          %span.input.input--hoshi
+            %input#input-4.input__field.input__field--hoshi{:name => "subscriber[document_id]", :type => "text"}/
+            %label.input__label.input__label--hoshi.input__label--hoshi-color-2{:for => "input-4"}
+              %span.input__label-content.input__label-content--hoshi Cédula
+          %span.input.input--hoshi
+            %input#input-5.input__field.input__field--hoshi{:name => "subscriber[phone_one]", :type => "text"}/
+            %label.input__label.input__label--hoshi.input__label--hoshi-color-2{:for => "input-5"}
+              %span.input__label-content.input__label-content--hoshi Teléfono Personal
+          %span.input.input--hoshi
+            %input#input-6.input__field.input__field--hoshi{:name => "subscriber[phone_two]", :type => "text"}/
+            %label.input__label.input__label--hoshi.input__label--hoshi-color-2{:for => "input-6"}
+              %span.input__label-content.input__label-content--hoshi Teléfono Opcional
+          %span.input.input--hoshi
+            %input#input-7.input__field.input__field--hoshi{:name => "subscriber[address]", :type => "text"}/
+            %label.input__label.input__label--hoshi.input__label--hoshi-color-2{:for => "input-7"}
+              %span.input__label-content.input__label-content--hoshi Dirección
+          = f.input :course_id, :label => false, :input_html => {:class => "none-input", :value => "#{@course.id}" }
+          = f.input :bill, :label => false, :input_html => {:class => "none-input", :value => "sin_factura" }
+          %p
+            -# Inspired by Andrej Radisic's
+            -# %a{:href => "https://dribbble.com/shots/1785176-Jawbreaker-input-field"} Jawbreaker input field
+            .box.bg-2
+              -if params[:method].eql?("paypal")
+                = f.input :buyout, :label => false, :input_html => {:class => "none-input", :value => "#{@course.price_dolars}" }
+                = f.input :payment, :label => false, :input_html => {:value => "paypal", :class => "none-input none-paypal", :type => "text", :required => "required"}
+                %button{:type => "submit"} PayPal
+              -else
+                %button#btn-validate{:type => "text"} ¡Paga Mercadopago!
+                %center
+                  = f.input :buyout, :label => false, :input_html => {:class => "none-input", :value => "#{@course.price_bs}" }
+                  = f.input :bill, :label => false, :input_html => {:class => "none-input", :value => "#{params[:collection_id]}"}
+                  = f.input :payment, :label => false, :input_html =>  {:value => "mercadopago", :id=>"btn-mp", :class => "none-input none-mp", :type => "text", :required => "required"}
+
+    %script{:src => "/assets/frontend/Formscreen/classie.js"}
+    %script{:src => "/assets/frontend/Formscreen/selectFx.js"}
+
+
+:javascript
+  $(document).ready(function () {
+
+   validations = $("#new_subscriber").validate({
+    event: "blur",
+    rules: {
+      'subscriber[name]': { required: true},
+      'subscriber[lastname]': { required: true },
+      'subscriber[document_id]': { required: true, digits: true, minlength: 6, maxlength: 15 },
+      'subscriber[email]': { required: true, email: true },
+      'subscriber[phone_one]': { required: true,  digits: true, minlength: 7, maxlength: 15 },
+      'subscriber[address]': { required: true },
+      },
+
+    messages: {
+      'subscriber[name]': "Indica tu nombre",
+      'subscriber[lastname]': "Indica tu apellido",
+      'subscriber[document_id]': "Tu identidad personal (C.I)",
+      'subscriber[email]': "Introduce un email válido",
+      'subscriber[phone_one]': "Introduce un teléfono entre 7 y 15 caracteres",
+      'subscriber[address]': "Indica tu dirección",
+      },
+    debug: true,errorElement: "label",
+    submitHandler: function(form){
+      form.submit();
+    }
+  });
+  });
+:scss
+  .error{position:relative; top:8px;font-size: 13px;font-weight: normal!important;}
+  .none-input{
+  display: none;
+  }
+
+:javascript
+  (function() {
+  // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+  if (!String.prototype.trim) {
+  (function() {
+  // Make sure we trim BOM and NBSP
+  var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+  String.prototype.trim = function() {
+  return this.replace(rtrim, '');
+  };
+  })();
+  }
+
+  [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+  // in case the input is already filled..
+  if( inputEl.value.trim() !== '' ) {
+  classie.add( inputEl.parentNode, 'input--filled' );
+  }
+
+  // events:
+  inputEl.addEventListener( 'focus', onInputFocus );
+  inputEl.addEventListener( 'blur', onInputBlur );
+  } );
+
+  function onInputFocus( ev ) {
+  classie.add( ev.target.parentNode, 'input--filled' );
+  }
+
+  function onInputBlur( ev ) {
+  if( ev.target.value.trim() === '' ) {
+  classie.remove( ev.target.parentNode, 'input--filled' );
+  }
+  }
+  })();

@@ -6,6 +6,12 @@
 	= entries(@total, @objects)
 	%table.bordered
 		%tbody
+			- unless @objects.blank?
+				%tr{style:"background: #fff;"}
+					%th
+					%th.center Nombre
+					%th
+					%th{ colspan: 2}
 			- @objects.each do |category|
 				= render 'listing', category: category
 			- if @objects.size.zero?

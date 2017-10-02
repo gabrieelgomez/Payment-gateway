@@ -4,39 +4,88 @@ class Subscriber < ActiveRecord::Base
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
   belongs_to :course, counter_cache: true
+  validates :bill, uniqueness: true
+  require 'mercadopago.rb'
 
   after_commit on: [:update] do
     puts __elasticsearch__.index_document
   end
 
-  TRANSACTION_SUCCESS_STATUSES = [
-    Braintree::Transaction::Status::Authorizing,
-    Braintree::Transaction::Status::Authorized,
-    Braintree::Transaction::Status::Settled,
-    Braintree::Transaction::Status::SettlementConfirmed,
-    Braintree::Transaction::Status::SettlementPending,
-    Braintree::Transaction::Status::Settling,
-    Braintree::Transaction::Status::SubmittedForSettlement,
-  ]
 
-  Braintree::Configuration.environment = :sandbox
-  Braintree::Configuration.merchant_id = 'hpk7pj9sx4fkg5df'
-  Braintree::Configuration.public_key = 'mbf2j8k2kn9md6dr'
-  Braintree::Configuration.private_key = '4ec74eab16cea191d4002387fa81ec1c'
+  def self.buy_mercadopago(params)
+    $mp = MercadoPago.new('7540776543610704', 'hya2kL3DVD1NnQMTs4LgLa3KLOn1c4PT')
 
-  def self.payment_method(params, amount, subscriber_params)
-
-    nonce = params["payment_method_nonce"]
-    result = Braintree::Transaction.sale(
-      amount: amount,
-      payment_method_nonce: nonce,
-      :options => {
-        :submit_for_settlement => true
+    preference_data = {
+      :items => [
+          {
+          :id => "#{Course.find(params[:id]).subscribers_count}",
+          :title => "#{Course.find(params[:id]).course_name}",
+          :quantity => 1,
+          :unit_price => Course.find(params[:id]).price_bs,
+          :currency_id => "VEF"
+          }
+        ],
+      :back_urls => {
+        :success => "localhost:3000/payments/#{params[:id]}/mercadopago",
+        :failure => "localhost:3000/checkout/Braintree_errors"
+      },
+      :auto_return => "approved",
+      :payment_methods => {
+          # :excluded_payment_methods => [
+          #   {
+          #   :id => "amex"
+          #   }
+          # ],
+          :excluded_payment_types => [
+              {
+              :id => "ticket"
+              },
+              {
+              :id => "bank_transfer"
+              },
+              {
+              :id => "discount"
+              }
+            ],
+          },
+          # :notification_url => "localhost:3000/checkout/asd99",
       }
-    )
 
-    @checkout = result
+    @preference = $mp.create_preference(preference_data)
   end
+
+	serialize :notification_params, Hash
+  def paypal_url(return_path)
+    values = {
+        business: "gagg1707_vendedor_seller@gmail.com",
+        cmd: "_xclick",
+        upload: 1,
+        return: "#{Rails.application.secrets.app_host}#{return_path}",
+        invoice: 909090909090909209090,
+        amount: 12,
+        item_name: "teste de snowden",
+        item_number: 902909099012323,
+        quantity: '1',
+				notify_url: "#{Rails.application.secrets.app_host}/hook"
+    }
+    redirect_to  "#{Rails.application.secrets.paypal_host}/cgi-bin/webscr?" + values.to_query
+  end
+
+#  def paypal_url(return_path)
+#    values = {
+#        business: "merchant@gotealeaf.com",
+#        cmd: "_xclick",
+#        upload: 1,
+#        return: "#{Rails.application.secrets.app_host}#{return_path}",
+#        invoice: id,
+#        amount: course.price,
+#        item_name: course.name,
+#        item_number: course.id,
+#        quantity: '1',
+#        notify_url: "#{Rails.application.secrets.app_host}/hook"
+#    }
+#    "#{Rails.application.secrets.paypal.fetch(:host)}#{values.to_query}"
+#  end
 
   def self.searching_checkout(checkout)
     Subscriber.all.where(bill: "#{checkout}").first

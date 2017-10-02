@@ -1,5 +1,5 @@
 #Generado con Keppler.
-class CoursesController < ApplicationController  
+class CoursesController < ApplicationController
   before_filter :authenticate_user!
   layout 'admin/application'
   load_and_authorize_resource
@@ -11,7 +11,7 @@ class CoursesController < ApplicationController
     #@course = Course.find(params[:id])
     courses = Course.searching(@query).where(category_id: @category_course.id)
     @objects, @total = courses.page(@current_page), courses.size
-    redirect_to courses_path(page: @current_page.to_i.pred, search: @query) if !@objects.first_page? and @objects.size.zero?
+    redirect_to category_courses_path(page: @current_page.to_i.pred, search: @query) if !@objects.first_page? and @objects.size.zero?
   end
 
   # GET /courses/1
@@ -50,12 +50,12 @@ class CoursesController < ApplicationController
   # DELETE /courses/1
   def destroy
     @course.destroy
-    redirect_to courses_url, notice: 'Course was successfully destroyed.'
+    redirect_to category_courses_path, notice: 'Course was successfully destroyed.'
   end
 
   def destroy_multiple
     Course.destroy redefine_ids(params[:multiple_ids])
-    redirect_to courses_path(page: @current_page, search: @query), notice: "Usuarios eliminados satisfactoriamente" 
+    redirect_to category_courses_path(page: @current_page, search: @query), notice: "Usuarios eliminados satisfactoriamente"
   end
 
   private
@@ -68,7 +68,6 @@ class CoursesController < ApplicationController
       @category_course = Category.find(params[:category_id])
     end
 
-    # Only allow a trusted parameter "white list" through.
     def course_params
       params.require(:course).permit(:course_name, :category_id, :banner, :description, :quota, :price_dolars, :price_bs)
     end

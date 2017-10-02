@@ -18,8 +18,11 @@ gem 'sass-rails'
 gem 'therubyracer', '~> 0.11.4', platforms: :ruby
 gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.0'
-gem 'turbolinks'
+gem 'turbolinks', '2.5.3'
 gem 'jquery-turbolinks'
+
+#Vue Js
+gem 'vuejs-rails'
 
 #database
 gem 'mysql2', '~> 0.3.18'
@@ -55,7 +58,7 @@ gem 'material_icons'
 gem 'materialize-sass'
 
 #authentication and authorization
-gem 'devise'
+gem 'devise', '3.5.6'
 gem 'devise-i18n'
 gem 'cancancan'
 gem 'rolify'
@@ -128,4 +131,3 @@ gem "gibbon", git: 'https://github.com/amro/gibbon.git'
 
  #---- gem mask imput------
  gem 'jquery-inputmask-rails'
-

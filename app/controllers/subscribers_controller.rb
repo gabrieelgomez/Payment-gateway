@@ -19,7 +19,7 @@ class SubscribersController < ApplicationController
 
   # GET /subscribers/new
   def new
-    @subscriber = Subscriber.new(category_id: params[:category_id])
+    @subscriber = Subscriber.new(course_id: params[:course_id])
   end
 
   # GET /subscribers/1/edit
@@ -31,7 +31,7 @@ class SubscribersController < ApplicationController
     @subscriber = Subscriber.new(subscriber_params)
 
     if @subscriber.save
-      redirect_to category_course_subscribers_path, notice: 'Subscriber was successfully created.'
+      redirect_to @subscriber.paypal_url(registration_path(@subscriber))
     else
       render :new
     end
@@ -54,7 +54,7 @@ class SubscribersController < ApplicationController
 
   def destroy_multiple
     Subscriber.destroy redefine_ids(params[:multiple_ids])
-    redirect_to subscribers_path(page: @current_page, search: @query), notice: "Usuarios eliminados satisfactoriamente"
+    redirect_to category_course_subscribers_path(page: @current_page, search: @query), notice: "Usuarios eliminados satisfactoriamente"
   end
 
   private

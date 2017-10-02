@@ -7,12 +7,12 @@
 
 		%td{style:"width: 30%"}
 			= link_to "", category_path(category, search: @query), remote: true, class: "show-row"
-			%span
+			%center
 				= category.name
 
 	%td{style:"width: 5%"}
 		= link_to category_courses_path(category), class: "btn-floating waves-effect btn-flat" do
-			= material_icon.md_24.add_circle.css_class("md-dark")
+			= material_icon.md_24.school.css_class("md-dark")
 
 	%td{style:"width: 5%"}
 		= link_to category_path(category), class: "btn-floating waves-effect btn-flat" do

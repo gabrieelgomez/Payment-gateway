@@ -1,0 +1,53 @@
+-preference = JSON.pretty_generate(@preference)
+-preference.to_json
+-sandbox = JSON.parse(preference)
+-link = sandbox["response"]["sandbox_init_point"]
+!!!
+%html.no-js{:lang => "es"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "UTF-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %link{:href => "/assets/frontend/Formscreen/mercadopago.css", :rel => "stylesheet", :type => "text/css"}/
+  %body
+    .cover
+    .center-f{:style=> "transform: translateY(-15vh)"}
+      .container-mp
+        %h3 Mercado Pago WebApp SDK
+        %h4 Para continuar con la transacción, por favor accede a nuestra plataforma y emite tu pago.
+        %h4 La manera más rápida de cobrar en una app con la mejor experiencia.
+        .center-f{:style=> "transform: translateY(15vh)"}
+          = link_to "#{link}", :id=> "btn-mercado", "mp-mode" => "modal", :onreturn =>"execute_my_onreturn", :name => "MP-Checkout" do
+            .btn-mp.center-f
+              %img.resize-img{:src => "http://www.shaiyaimperial.com/images/guias/grandes/mercadopago.png"}
+          /%a{} MercadoPago
+
+/%pre= preference
+
+
+:javascript
+  function execute_my_onreturn (json) {
+      if (json.collection_status=='approved'){
+        alert ('Pago acreditado ja weno');
+        alert (json.back_url); //null
+        alert (json.collection_id); //6510079
+        //alert (json.collection_status);  //apptoved
+        //alert (json.external_reference); //null
+        //alert (json.preference_id); //148728814-7b37a171-d78e-4a32-bcfb-15775c45f9e6
+        var bill = $("#subscriber_bill").attr("value",`${json.collection_id}`);
+        alert (bill);
+        alert ("FIN");
+      } else if(json.collection_status=='pending'){
+          alert ('El usuario no completó el pago');
+      } else if(json.collection_status=='in_process'){
+          alert ('El pago está siendo revisado');
+      } else if(json.collection_status=='rejected'){
+          alert ('El pago fué rechazado, el usuario puede intentar nuevamente el pago');
+      } else if(json.collection_status==null){
+          alert ('El usuario no completó el proceso de pago, no se ha generado ningún pago');
+      }
+  }
+
+:javascript
+  (function(){function $MPC_load(){window.$MPC_loaded !== true && (function(){var s = document.createElement("script");s.type = "text/javascript";s.async = true;s.src = document.location.protocol+"//secure.mlstatic.com/mptools/render.js";var x = document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);window.$MPC_loaded = true;})();}window.$MPC_loaded !== true ? (window.attachEvent ?window.attachEvent('onload', $MPC_load) : window.addEventListener('load', $MPC_load, false)) : null;})();

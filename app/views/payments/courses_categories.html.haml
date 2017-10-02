@@ -59,7 +59,7 @@
                       %strong
                         = number_to_currency(@course.price_bs, precision: 2)
                     .panel-footer
-                      %a.btn.btn-lg.btn-block.btn-bsf{ href: "/payments/#{@course.id}/mercadopago", :style=>"background-color:#65bea4;color:#fff;"} COMPRAR!
+                      %a.btn.btn-lg.btn-block.btn-bsf{ href: "/mercadopago/#{@course.id}", :style=>"background-color:#65bea4;color:#fff;"} COMPRAR!
 
                 .col-md-4.text-center
                   .panel.panel-pricing

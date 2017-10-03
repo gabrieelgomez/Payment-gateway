@@ -24,6 +24,8 @@ gem 'jquery-turbolinks'
 #Vue Js
 gem 'vuejs-rails'
 
+gem 'public_suffix', '~> 2.0.0'
+
 #database
 gem 'mysql2', '~> 0.3.18'
 

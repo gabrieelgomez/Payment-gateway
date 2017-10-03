@@ -3,6 +3,7 @@ class PaymentsController < ApplicationController
 
 
   def payments
+    byebug
     @subscriber = Subscriber.new
     @values = {
         business: "gagg1707_vendedor_seller@gmail.com",
@@ -51,11 +52,11 @@ class PaymentsController < ApplicationController
 					business: "gagg1707_vendedor_seller@gmail.com",
 					cmd: "_xclick",
 					upload: 1,
-					return: "localhost:300/payments/1/paypal",
-					invoice: 909011,
+					return: "http:/localhost:3000/cursos",
+					invoice: 90930,
 					amount: 12,
 					item_name: "teste de snowden",
-					item_number: 9029011,
+					item_number: 90930,
 					quantity: '1',
           notify_url: "localhost:300/payments/1/paypal"
 			}

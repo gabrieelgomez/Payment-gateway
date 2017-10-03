@@ -60,7 +60,7 @@ class Subscriber < ActiveRecord::Base
         business: "gagg1707_vendedor_seller@gmail.com",
         cmd: "_xclick",
         upload: 1,
-        return: "#{Rails.application.secrets.app_host}#{return_path}",
+        return: "localhost:3000/payments/1/mercadopago",
         invoice: 909090909090909209090,
         amount: 12,
         item_name: "teste de snowden",

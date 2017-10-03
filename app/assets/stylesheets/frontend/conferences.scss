@@ -80,7 +80,7 @@
 				}
 			}
 		}
-		
+
 		.ocultar{
 		overflow-y: hidden;
          height: 0
@@ -89,9 +89,9 @@
 		.visible{
 			display: block;
 		}
-		
-		padding: 40px 6%; 
-		
+
+		padding: 40px 6%;
+
 
 		@media #{$phone-landscape} {
 			padding: 40px 12%;
@@ -110,14 +110,14 @@
 			.portada{
 				z-index: -10;
 				width: 500px;
-				
+
 
 				@media  (min-width: 200px) and (max-width: 767px) {
 					width: 100%;
 				}
 
 				@media #{$tablet-portrait} {
-					
+
 					width: auto;
 				}
 
@@ -131,14 +131,14 @@
 				width: 500px;
 				cursor: pointer;
 				opacity: 0.8;
-				
+
 
 				@media  (min-width: 200px) and (max-width: 767px) {
 					width: 100%;
 				}
 
 				@media #{$tablet-portrait} {
-					
+
 					width: auto;
 				}
 
@@ -199,9 +199,9 @@
 						font-size: 20px;
 					}
 				}
-				
+
 				.text-mask{
-					
+
 					z-index: 1000000000000000;
 					top: 0px;
 					font-weight: bold;
@@ -213,14 +213,14 @@
 					@media #{$desktop} {
 						padding-left: 10px;
 					}
-					
+
 
 					@media #{$phone} {
 						padding: 30px 15px 0px 15px;
-						font-size: 22px;	
+						font-size: 22px;
 					}
 
-					@media #{$phone-landscape} { 
+					@media #{$phone-landscape} {
 						padding: 60px 25px 0px 25px;
 					}
 
@@ -255,11 +255,12 @@
 }
 
 .container-banner-inspiragrama{
+	margin-top: 60px;
 	width: 100%;
 	height: 225px;
 	background: image-url("frontend/Banner_Inspiragrama.jpg") no-repeat;
 	background-size: 100%;
-	
+
 
 	@media #{$phone-small}{
 		height: 150px ;
@@ -309,7 +310,7 @@
 		}
 
 		p{
-			
+
 			border-top: 3px solid #fff;
 			border-bottom: 3px solid #fff;
 			margin: 0 40% 0 19%;
@@ -339,7 +340,7 @@
 				margin: 0 30%;
 				padding-top: 8px;
 				padding-bottom: 8px;
-				font-size: 23px;	
+				font-size: 23px;
 			}
 
 			@media #{$tablet} {
@@ -419,11 +420,11 @@
 		padding: 10px 0;
 	}
 
-	
+
 
 	.cuarto-circulo1{
-		width: 220px; 
-		height: 220px; 
+		width: 220px;
+		height: 220px;
 		-moz-border-radius: 0 100% 0 0;
 		-webkit-border-radius: 0 100% 0 0;
 		border-radius: 0 100% 0 0;
@@ -447,7 +448,7 @@
 
 		.img{
 			background: image-url("frontend/Foto_Pareja.jpg") no-repeat;
-			
+
 			background-size: cover;
 			height: 220px;
 			-webkit-transition: 3s; /* For Safari 3.1 to 6.0 */
@@ -480,10 +481,10 @@
 				transition-duration: 0.3s;
 				transition-property: all;
 				transition-timing-function: ease-in-out;
-		   
-		   
+
+
 		}
-		
+
 		.img{
 			height: 190px;
 			position: relative;
@@ -492,7 +493,7 @@
 	}
 
 	.cuarto-circulo2{
-		width: 220px; 
+		width: 220px;
 		height: 220px;
 		-moz-border-radius: 0 100% 0 0;
 		-webkit-border-radius: 0 100% 0 0;
@@ -507,7 +508,7 @@
 		    position: absolute;
 		    transform: rotate(165deg);
 		}
-		
+
 
 		.img{
 						background: image-url("frontend/image-ni.jpg") no-repeat;
@@ -537,17 +538,17 @@
 		overflow: initial;
 
 		.flecha2{
-		    display: block;  
+		    display: block;
 		}
 
 		.img{
 			height: 190px;
-			position: relative;	
+			position: relative;
 		}
 	}
 
 	.cuarto-circulo3{
-		width: 220px; 
+		width: 220px;
 		height: 220px;
 		-moz-border-radius: 0 100% 0 0;
 		-webkit-border-radius: 0 100% 0 0;
@@ -599,12 +600,12 @@
 
 		.img{
 			height: 190px;
-			position: relative;	
+			position: relative;
 		}
 	}
 
 	.cuarto-circulo4{
-		width: 220px; 
+		width: 220px;
 		height: 220px;
 		-moz-border-radius: 0 100% 0 0;
 		-webkit-border-radius: 0 100% 0 0;
@@ -616,7 +617,7 @@
 
 		.flecha4{
 			position: absolute;
-		}	
+		}
 
 		.img{
 
@@ -656,11 +657,8 @@
 
 		.img{
 			height: 190px;
-			position: relative;	
+			position: relative;
 			top: 30px;
 		}
 	}
 }
-
-
-

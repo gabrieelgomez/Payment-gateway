@@ -26,7 +26,7 @@ class Subscriber < ActiveRecord::Base
           }
         ],
       :back_urls => {
-        :success => "localhost:3000/payments/#{params[:id]}/mercadopago",
+        :success => "http://portal.gustavohenao.com/payments/#{params[:id]}/mercadopago",
         :failure => "localhost:3000/checkout/Braintree_errors"
       },
       :auto_return => "approved",

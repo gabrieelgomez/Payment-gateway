@@ -33,14 +33,7 @@ gem 'mysql2', '~> 0.3.18'
 gem 'sitemap_generator'
 
 #Payments
-gem 'braintree'
 gem 'mercadopago-sdk'
-#gem 'dotenv-rails'
-#gem 'paypal-sdk-rest'
-#gem 'mercadopago'
-#gem "stripe"
-#gem "paypal-recurring"
-#gem 'paypal-subscribe', :git => "git@github.com:dsci/paypal-subscribe.git"
 
 #websocket
 #gem 'faye'

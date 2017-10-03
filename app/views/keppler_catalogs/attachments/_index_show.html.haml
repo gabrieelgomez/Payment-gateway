@@ -4,9 +4,11 @@
 			= link_to edit_catalog_attachment_path(params[:catalog_id], @attachment), class: "btn-floating waves-effect waves-light btn-flat tooltipped", "data-position" => "bottom", "data-tooltip" => "Editar", "data-no-turbolink" => true do
 				= material_icon.md_24.create
 	%h5
-		= material_icon.md_24.perm_media.css_class("md-light") 
+		= material_icon.md_24.perm_media.css_class("md-light")
 		= t("model.singular.#{controller_name.singularize}")
 .listing-show-body.card{ resize: true , style: "height: {{windowHeight}}px;" }
+	%h6= @attachment.inspect
+	%h6= @attachment.image
 	- if @attachment.image?
 		= image_tag @attachment.image
 	- elsif @attachment.url? and @attachment.upload.to_i == 2
@@ -29,7 +31,7 @@
 				.display-value= @attachment.target
 		%li.list-row
 			.display-label= t("model.#{controller_name.singularize}.attributes.public")
-			.display-value= @attachment.public? ? "Si" : "No"	
+			.display-value= @attachment.public? ? "Si" : "No"
 
 :javascript
 	$('.tooltipped').tooltip({delay: 1});

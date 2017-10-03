@@ -5,7 +5,7 @@ gem 'rails', '4.2.0'
 #javascript
 gem 'jquery-rails', '4.0.5'
 gem 'angularjs-rails', '1.4.7'
-gem 'nprogress-rails'
+gem 'nprogress-rails', '0.1.6.7'
 gem "ckeditor", '4.1.4'
 
 #documentation
@@ -108,14 +108,14 @@ gem 'google-api-client', '0.8.6'
 
 #----blog-------
 gem 'keppler_blog', git: 'https://github.com/inyxtech/keppler_blog.git', tag: '1.0.0'
-gem 'cocoon'
+gem 'cocoon', '1.2.6'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'carrierwave', '0.10.0'
-gem 'social-share-button'
+gem 'social-share-button', '0.1.8'
 
 #---Catalog-----
 gem 'keppler_catalogs', git: "https://github.com/inyxtech/keppler_catalogs.git"
-gem 'soundcloud'
+gem 'soundcloud', '0.3.2'
 
 #---- Carrusel frontend-----
 gem "jquery-slick-rails", '1.5.8.1'

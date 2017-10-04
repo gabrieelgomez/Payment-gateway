@@ -60,8 +60,8 @@ gem 'cancancan'
 gem 'rolify'
 
 #elasticsearch
-gem 'elasticsearch-model', '0.1.8'
-gem 'elasticsearch-rails', '0.1.8'
+gem 'elasticsearch-model'#, '0.1.8'
+gem 'elasticsearch-rails'#, '0.1.8'
 
 #pagination
 gem 'kaminari-i18n', '0.3.2'
@@ -115,7 +115,7 @@ gem 'social-share-button', '0.1.8'
 
 #---Catalog-----
 gem 'keppler_catalogs', git: "https://github.com/inyxtech/keppler_catalogs.git"
-gem 'soundcloud', '0.3.2'
+gem 'soundcloud'#, '0.3.2'
 
 #---- Carrusel frontend-----
 gem "jquery-slick-rails", '1.5.8.1'

@@ -1,24 +1,6 @@
 class PaymentsController < ApplicationController
   before_action :set_category, only: [:payments, :courses_categories]
 
-
-  def payments
-    byebug
-    @subscriber = Subscriber.new
-    @values = {
-        business: "gagg1707_vendedor_seller@gmail.com",
-        cmd: "_xclick",
-        upload: 1,
-        return: "localhost:3000/payments/1/mercadopago",
-        invoice: 909011,
-        amount: 12,
-        item_name: "teste de snowden",
-        item_number: 9029011,
-        quantity: '1',
-        notify_url: "#{Rails.application.secrets.app_host}/hook"
-    }
-  end
-
   def categories
     @categories = Category.all.reverse
     @courses = Course.all.reverse
@@ -27,49 +9,58 @@ class PaymentsController < ApplicationController
   def courses_categories
   end
 
-  def checkout_mercadopago
+  def front_paypal
+    @order = Order.new
+    @token = Order.token
+  end
+
+  def transaction_paypal
+    @order = Order.new(order_params)
+    @order.save
+    @paypal = Subscriber.paypal_payment(order_params)
+    redirect_to  "#{Rails.application.secrets.paypal_host}/cgi-bin/webscr?" + @paypal.to_query
+  end
+
+  def checkout_paypal
+    @order = Order.where(name:params[:id]).first
+    if @order.paid?
+      redirect_to checkout_id_path("Braintree_errors", @order)
+    else
+      @course = Course.find(@order.course_id)
+      @subscriber = Subscriber.new
+    end
+
+  end
+
+  def front_mercadopago
     @preference = Subscriber.buy_mercadopago(params)
+  end
+
+  def checkout_mercadopago
+    @course = Course.find(params[:id])
+    @subscriber = Subscriber.new
   end
 
   def checkout
     @course = Course.find(subscriber_params[:course_id])
-
-    if subscriber_params[:payment].eql?("mercadopago")
-
-      amount = "#{@course.price_bs}"
-      @subscriber = Subscriber.new(subscriber_params.merge(buyout: "#{amount}"))
-
-      if @subscriber.save
-        redirect_to checkout_id_path(@subscriber.bill.to_i)
-      else
-        redirect_to checkout_id_path("Braintree_errors")
-      end
-
+    @amount = Subscriber.amount(subscriber_params, @course)
+    @subscriber = Subscriber.new(subscriber_params.merge(buyout: "#{@amount}"))
+    if @subscriber.save
+      @orders = Order.where(name: "#{@subscriber.bill}")
+          @orders.each do |order|
+            order.update(paid: true)
+          end
+      redirect_to checkout_id_path(@subscriber.bill)
     else
-      #@checkout = Subscriber.payment_method(params,amount,subscriber_params)
-      # if @subscriber.save
-			values = {
-					business: "gagg1707_vendedor_seller@gmail.com",
-					cmd: "_xclick",
-					upload: 1,
-					return: "http:/localhost:3000/cursos",
-					invoice: 90930,
-					amount: 12,
-					item_name: "teste de snowden",
-					item_number: 90930,
-					quantity: '1',
-          notify_url: "localhost:300/payments/1/paypal"
-			}
-			redirect_to  "#{Rails.application.secrets.paypal_host}/cgi-bin/webscr?" + values.to_query
-      # else
-      #   render :new
-      # end
+      redirect_to checkout_id_path("Braintree_errors")
     end
   end
 
   def checkout_id
     @subscriber = Subscriber.searching_checkout(params[:id])
   end
+
+  private
 
   def set_category
     @course = Course.find(params[:id])
@@ -79,5 +70,8 @@ class PaymentsController < ApplicationController
     params.require(:subscriber).permit(:name, :lastname, :document_id, :email, :phone_one, :phone_two, :address, :course_id, :bill, :buyout, :payment)
   end
 
+  def order_params
+    params.require(:order).permit(:name, :course_id, :paid)
+  end
 
 end

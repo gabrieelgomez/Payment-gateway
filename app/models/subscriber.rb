@@ -54,38 +54,30 @@ class Subscriber < ActiveRecord::Base
     @preference = $mp.create_preference(preference_data)
   end
 
-	serialize :notification_params, Hash
-  def paypal_url(return_path)
+  def self.paypal_payment(order_params)
     values = {
         business: "gagg1707_vendedor_seller@gmail.com",
         cmd: "_xclick",
         upload: 1,
-        return: "localhost:3000/payments/1/mercadopago",
-        invoice: 909090909090909209090,
-        amount: 12,
-        item_name: "teste de snowden",
-        item_number: 902909099012323,
+        invoice: order_params[:name],
+        return: "http:/localhost:3000/payments/#{order_params[:course_id]}/paypal/#{order_params[:name]}",
+        amount: Course.find(order_params[:course_id]).price_dolars,
+        item_name: "#{Course.find(order_params[:course_id]).course_name}",
+        item_number: Course.find(order_params[:course_id]).id,
         quantity: '1',
-				notify_url: "#{Rails.application.secrets.app_host}/hook"
+        notify_url: "http:/localhost:3000"
     }
-    redirect_to  "#{Rails.application.secrets.paypal_host}/cgi-bin/webscr?" + values.to_query
   end
 
-#  def paypal_url(return_path)
-#    values = {
-#        business: "merchant@gotealeaf.com",
-#        cmd: "_xclick",
-#        upload: 1,
-#        return: "#{Rails.application.secrets.app_host}#{return_path}",
-#        invoice: id,
-#        amount: course.price,
-#        item_name: course.name,
-#        item_number: course.id,
-#        quantity: '1',
-#        notify_url: "#{Rails.application.secrets.app_host}/hook"
-#    }
-#    "#{Rails.application.secrets.paypal.fetch(:host)}#{values.to_query}"
-#  end
+  def self.amount(subscriber_params, course)
+
+    if subscriber_params[:payment].eql?("mercadopago")
+      amount = "#{course.price_bs}"
+    else
+      amount = "#{course.price_dolars}"
+    end
+
+  end
 
   def self.searching_checkout(checkout)
     Subscriber.all.where(bill: "#{checkout}").first

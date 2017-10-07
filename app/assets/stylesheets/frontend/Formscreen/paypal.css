@@ -1,0 +1,6 @@
+body{
+height: 100vh;
+width: 100%;
+/*background-image: radial-gradient(circle farthest-side at center bottom,#009cde,#003087 125%);*/
+background-size: cover;
+}

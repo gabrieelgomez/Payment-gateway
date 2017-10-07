@@ -44,22 +44,14 @@
             %label.input__label.input__label--hoshi.input__label--hoshi-color-2{:for => "input-7"}
               %span.input__label-content.input__label-content--hoshi Dirección
           = f.input :course_id, :label => false, :input_html => {:class => "none-input", :value => "#{@course.id}" }
-          = f.input :bill, :label => false, :input_html => {:class => "none-input", :value => "sin_factura" }
+          = f.input :bill, :label => false, :input_html => {:class => "none-input", :value => "#{@order.name}" }
           %p
             -# Inspired by Andrej Radisic's
             -# %a{:href => "https://dribbble.com/shots/1785176-Jawbreaker-input-field"} Jawbreaker input field
             .box.bg-2
-              -if params[:method].eql?("paypal")
-                = f.input :buyout, :label => false, :input_html => {:class => "none-input", :value => "#{@course.price_dolars}" }
-                = f.input :payment, :label => false, :input_html => {:value => "paypal", :class => "none-input none-paypal", :type => "text", :required => "required"}
-                %button{:type => "submit"} PayPal
-              -else
-                %button#btn-validate{:type => "text"} ¡Paga Mercadopago!
-                %center
-                  = f.input :buyout, :label => false, :input_html => {:class => "none-input", :value => "#{@course.price_bs}" }
-                  = f.input :bill, :label => false, :input_html => {:class => "none-input", :value => "#{params[:collection_id]}"}
-                  = f.input :payment, :label => false, :input_html =>  {:value => "mercadopago", :id=>"btn-mp", :class => "none-input none-mp", :type => "text", :required => "required"}
-
+              = f.input :buyout, :label => false, :input_html => {:class => "none-input", :value => "#{@course.price_dolars}" }
+              = f.input :payment, :label => false, :input_html => {:value => "paypal", :class => "none-input none-paypal", :type => "text", :required => "required"}
+              %button{:type => "submit"} PayPal
     %script{:src => "/assets/frontend/Formscreen/classie.js"}
     %script{:src => "/assets/frontend/Formscreen/selectFx.js"}
 

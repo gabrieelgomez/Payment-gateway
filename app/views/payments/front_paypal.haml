@@ -1,0 +1,26 @@
+
+%html.no-js{:lang => "es"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "UTF-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %link{:href => "/assets/frontend/Formscreen/paypal.css", :rel => "stylesheet", :type => "text/css"}/
+  %body
+    %h1 Bienvenido/a a nuestra plataforma de pagos PayPal
+
+    %h3 Para continuar con su transaccion por favor haga click en el boton de paypal
+
+    = simple_form_for @order, :url => url_for(:action => 'transaction_paypal', :controller => 'payments'), :method => 'post' do |f|
+      = f.input :name, :label => false, :input_html => {:class => "none-input", :value => "#{@token}"}
+      = f.input :course_id, :label => false, :input_html => {:class => "none-input", :value => "#{params[:id]}"}
+      = f.input :paid, :label => false, :input_html => {:class => "none-input"}
+      %button{:type => "submit"} Paypal
+
+
+
+
+:scss
+  .none-input{
+  display: none;
+  }

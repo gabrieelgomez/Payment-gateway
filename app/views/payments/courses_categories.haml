@@ -71,7 +71,8 @@
                         $
                         = @course.price_dolars
                     .panel-footer
-                      %a.btn.btn-lg.btn-block.btn-dolars{ href: "/payments/#{@course.id}/paypal", :style=>"background-color:#65bea4;color:#fff;"} COMPRAR!
+                      %a.btn.btn-lg.btn-block.btn-dolars{ href: "/paypal/#{@course.id}", :style=>"background-color:#65bea4;color:#fff;"} COMPRAR!
+                      /%a.btn.btn-lg.btn-block.btn-dolars{ href: "/payments/#{@course.id}/paypal", :style=>"background-color:#65bea4;color:#fff;"} COMPRAR!
 
 
 -# #modal-content-show

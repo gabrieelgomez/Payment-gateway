@@ -8,13 +8,27 @@ Rails.application.routes.draw do
   get 'gallery/:category_permalink', to: 'frontend#gallery', as: "gallery"
   get 'index/:category_permalink', to: 'frontend#index', as: "conferencia"
 
-  get 'cursos', to: 'payments#categories', as: "courses_front"
-  get 'cursos/:id', to: 'payments#courses_categories', as: "app_courses"
-  post '/', to: 'payments#create', as: "app_create_subscriber"
+  get 'cursos', to: 'payments#categories', as: 'courses_front'
+  get 'cursos/:id', to: 'payments#courses_categories', as: 'app_courses'
+
+  get '/mercadopago/:id', to: 'payments#front_mercadopago', as: "front_mercadopago"
+  get 'payments/:id/:method', to:'payments#checkout_mercadopago', as:"payment_mercadopago"
+
+  get 'paypal/:id', to: 'payments#front_paypal', as: 'front_paypal'
+  post '/', to: 'payments#transaction_paypal', as: "checkout_paypal"
+  get 'payments/:id/paypal/:id', to:'payments#checkout_paypal', as:"payment_paypal"
+
   post '/checkout', to: 'payments#checkout', as: "checkout"
-  get '/mercadopago/:id', to: 'payments#checkout_mercadopago', as: "checkout_mercadopago"
   get '/checkout/:id', to: 'payments#checkout_id', as: "checkout_id"
-  get 'payments/:id/:method', to:'payments#payments', as:"payments"
+
+  # post '/', to: 'payments#create', as: "app_create_subscriber"
+
+  #
+  # # get 'payments/:id/:method', to:'payments#payments', as:"payments"
+  #
+  #
+
+  # #
 
   devise_for :users, skip: KepplerConfiguration.skip_module_devise
 

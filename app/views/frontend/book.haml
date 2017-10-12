@@ -1,0 +1,287 @@
+%link{:href => "/assets/frontend/Formscreen/animate.css", :rel => "stylesheet", :type => "text/css"}/
+= render 'layouts/frontend/navigation'
+
+.container{:style => "margin:30px auto 100px auto;"}
+  .row
+    .col-lg-6
+      #carousel.carousel.slide.carousel-fade{"data-animation"=>"animated zoomInLeft", "data-ride" => "carousel"}
+        %ol.carousel-indicators
+          %li.active{"data-slide-to" => "0", "data-target" => "#carousel"}
+          %li{"data-slide-to" => "1", "data-target" => "#carousel"}
+          %li{"data-slide-to" => "2", "data-target" => "#carousel"}
+        / Carousel items
+        .carousel-inner.carousel-zoom
+          .active.item
+            =image_tag "frontend/cicatrices.jpg", :class => "img-responsive", :style => "height: 420px"
+            -# .carousel-caption
+            -#   %h2 Title
+            -#   %p Description
+          .item
+            =image_tag "frontend/cicatrices.jpg", :class => "img-responsive", :style => "height: 420px"
+            -# .carousel-caption
+            -#   %h2 Title
+            -#   %p Description
+          .item
+            =image_tag "frontend/cicatrices.jpg", :class => "img-responsive", :style => "height: 420px"
+            -# .carousel-caption
+            -#   %h2 Title
+            -#   %p Description
+    .col-lg-6
+      %h3 Titulo del libro
+      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      %p Puntos de ventas del libro
+      %ul
+        %li BDV
+        %li HGT
+        %li URT
+        %li OPL
+        %li WER
+      .col-lg-5
+        %button.btn.btn-contact Comprar
+
+
+
+.container.text-center{:class => "[ ]"}
+  .row{:class => "[ ]"}
+    .col-xs-12.col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3{:class => "[ ]", :role => "tabpanel"}
+      .col-xs-4.col-sm-12{:class => "[ ]"}
+        / Nav tabs
+        %ul#nav-tabs.nav.nav-justified{:class => "[ ]", :role => "tablist"}
+          %li{:role => "presentation"}
+            %a{"aria-controls" => "dustin", "data-toggle" => "tab", :href => "#dustin", :role => "tab"}
+              %img.img-circle{:src => "https://pbs.twimg.com/profile_images/593094525146521600/kmxB3noN_400x400.png"}/
+              %span.quote
+                %i.fa.fa-quote-left
+          %li.active{:role => "presentation"}
+            %a{"aria-controls" => "barbara", "data-toggle" => "tab", :href => "#barbara", :role => "tab"}
+              %img.img-circle{:src => "http://enbogam.com/wp-content/uploads/2015/04/barbara-palacios.jpg"}/
+              %span.quote
+                %i.fa.fa-quote-left
+          %li{:role => "presentation"}
+            %a{"aria-controls" => "wafer", "data-toggle" => "tab", :href => "#wafer", :role => "tab"}
+              %img.img-circle{:src => "https://pbs.twimg.com/profile_images/1281791033/luvq_eduardorodriguez_fmt_400x400.jpg"}/
+              %span.quote
+                %i.fa.fa-quote-left
+      .col-xs-8.col-sm-12{:class => "[ ]"}
+        / Tab panes
+        #tabs-collapse.tab-content
+          #dustin.tab-pane.fade{:role => "tabpanel"}
+            .tab-inner
+              %p.lead Gustavo atesora la transparencia como base de su identidad. Su autenticidad se revela, sin desvíos, en el paralelismo de su palabra y de sus actos. Basta conocerlo para comprobar que la coherencia es su gran fuerza. El éxito es la merecida consecuencia de su pasión por comunicar y hacer el bien a través del mensaje sincero.
+              %hr/
+              %p
+                %strong.text-uppercase Nelson Bustamante
+              %p
+                %em.text-capitalize Presentador, Ganador de 4 Premios Emmy.
+                -# at
+                -# %a{:href => "#"} Apple
+          #barbara.tab-pane.fade.in.active{:role => "tabpanel"}
+            .tab-inner
+              %p.lead Gustavo es ejemplo de resilencia. Su historia nos motiva a ser mejores y su fortaleza nos nutre como seres humanos.
+              %hr/
+              %p
+                %strong.text-uppercase Barbara Palacios
+              %p
+                %em.text-capitalize Miss Universo, Empresaria y Conferencista.
+                /at
+                /%a{:href => "#"} Google
+          #wafer.tab-pane.fade{:role => "tabpanel"}
+            .tab-inner
+              %p.lead Al escuchar a Gustavo Henao por primera vez, quedé profundamente impresionado y bendecido. Su forma peculiar, brillante, exuberante de comunicar sus convicciones de una forma tan natural, pueden ser entendidas de por un erudito o por una simple persona del campo. ¡Qué formidable profesional es Gustavo!
+              %hr/
+              %p
+                %strong.text-uppercase Eduardo Rodriguez Giolitti
+              %p
+                %em.text-capitalize Periodista, Abogado, Conferencista.
+                -# at
+                -# %a{:href => "#"} Microsoft
+.footer-description
+  %center
+    %p Todos los derechos reservado - Gustavo Henao Speaker Internacional
+.footer-description-slice
+  %center
+    %p POWERED BY
+    = link_to "http://www.slicegroup.xyz" do
+      = image_tag "frontend/logo-slice.png"
+
+
+:javascript
+  $(document).ready(function(){
+  });
+
+
+:scss
+  body{
+    background-color: #F5F5F5;
+  }
+  .lead{
+    font-size: 15px;
+  }
+
+  button {
+  margin-bottom: 12px;
+  width: 100%;
+  }
+
+  .btn.btn-lg {
+  font-size: 20px;
+  height: 52px;
+  }
+
+  .btn {
+  font-size: 18px;
+  text-transform: uppercase;
+  height: 40px;
+  }
+
+  .btn-lg {
+  padding: .75rem 1.25rem;
+  font-size: 1.25rem;
+  line-height: 1.33333;
+  border-radius: .3rem;
+  }
+
+  .btn-primary {
+  color: #fff;
+  background-color: #f50;
+  border-color: #f50;
+  }
+
+  .btn {
+  display: inline-block;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 8px 8px;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  }
+
+
+
+
+
+  .impacto {
+  position: relative;
+  width: 100%;
+  height: 335px;
+  background: url(/assets/frontend/Fondo_Impacto-a4cf66d….jpg) no-repeat;
+  background-size: 100% 100%;
+  padding-top: 60px;
+  z-index: 10;
+  }
+
+  @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css);
+  body { padding-top: 60px; }
+  .nav.nav-justified > li > a { position: relative; }
+  .nav.nav-justified > li > a:hover,
+  .nav.nav-justified > li > a:focus { background-color: transparent; }
+  .nav.nav-justified > li > a > .quote {
+  position: absolute;
+  left: 0px;
+  top: 0;
+  opacity: 0;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  background-color: #13c0ba;
+  border-radius: 15px;
+  color: #fff;
+  }
+  .nav.nav-justified > li.active > a > .quote { opacity: 1; }
+  .nav.nav-justified > li > a > img { box-shadow: 0 0 0 5px #13c0ba; }
+  .nav.nav-justified > li > a > img {
+  max-width: 100%;
+  opacity: .3;
+  // -webkit-transform: scale(.8,.8);
+  // transform: scale(.8,.8);
+  -webkit-transition: all 0.3s 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.3s 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .nav.nav-justified > li.active > a > img,
+  .nav.nav-justified > li:hover > a > img,
+  .nav.nav-justified > li:focus > a > img {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+  -webkit-transition: all 0.3s 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.3s 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .tab-pane .tab-inner { padding: 30px 0 20px; }
+
+  @media (min-width: 768px) {
+  .nav.nav-justified > li > a > .quote {
+  left: auto;
+  top: auto;
+  right: 20px;
+  bottom: 0px;
+  }
+  }
+
+  /*
+  inspired from http://codepen.io/Rowno/pen/Afykb
+  & https://jsfiddle.net/q0rgL8ws/
+  */
+  .carousel-fade .carousel-inner .item {
+  opacity: 0;
+  transition-property: opacity;
+  overflow:hidden;
+  }
+  .item.active img {
+  transition: transform 5000ms linear 0s;
+  /* This should be based on your carousel setting. For bs, it should be 5second*/
+  // transform: scale(1.05, 1.05);
+  }
+  .carousel-fade .carousel-inner .active {
+  opacity: 1;
+  }
+
+  .carousel-fade .carousel-inner .active.left,
+  .carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+  }
+
+  .carousel-fade .carousel-inner .next.left,
+  .carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+  }
+
+  .carousel-fade .carousel-control {
+  z-index: 2;
+  }
+
+  /*
+  WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
+  now override the 3.3 new styles for modern browsers & apply opacity
+  */
+  @media all and (transform-3d), (-webkit-transform-3d) {
+  .carousel-fade .carousel-inner > .item.next,
+  .carousel-fade .carousel-inner > .item.active.right {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  }
+  .carousel-fade .carousel-inner > .item.prev,
+  .carousel-fade .carousel-inner > .item.active.left {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  }
+  .carousel-fade .carousel-inner > .item.next.left,
+  .carousel-fade .carousel-inner > .item.prev.right,
+  .carousel-fade .carousel-inner > .item.active {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  }
+  }

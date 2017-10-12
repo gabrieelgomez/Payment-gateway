@@ -1,0 +1,32 @@
+%button.btn.btn-info.btn-lg{:id => "super", "data-target" => "#myModal", "data-toggle" => "modal", :type => "button", :style => "display:none"} Open Modal
+/ Modal
+#myModal.modal.fade{:role => "dialog"}
+  .modal-dialog
+    %button.close.btn-close-modal{"data-dismiss" => "modal", :type => "button"} ×
+    %a{:href => "/promotionbook"}
+      =image_tag "frontend/cicatrices.jpg", :style => "height: 580px"
+
+    / Modal content
+    -# .modal-content
+    -#   .modal-header
+    -#   .modal-body
+    -#     =image_tag "frontend/cicatrices.jpg"
+    -#   -# .modal-footer
+    -#   -#   %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+
+:javascript
+  $( document ).ready(function() {
+    $("#super").click();
+  });
+
+
+:scss
+  .btn-close-modal{
+    font-size: 35px;
+    transform: translate(-120px,-4px);
+    opacity: 0.9!important;
+    color: rgba(255, 0, 0, 0);
+  }
+  .close:hover{
+    color: rgba(255, 0, 0, 0)!important;
+  }

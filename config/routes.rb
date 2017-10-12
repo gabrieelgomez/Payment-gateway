@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get 'cursos', to: 'payments#categories', as: 'courses_front'
   get 'cursos/:id', to: 'payments#courses_categories', as: 'app_courses'
+  get 'promotionbook', to: 'frontend#book', as: 'promotion_book'
 
   get '/mercadopago/:id', to: 'payments#front_mercadopago', as: "front_mercadopago"
   get 'payments/:id/:method', to:'payments#checkout_mercadopago', as:"payment_mercadopago"

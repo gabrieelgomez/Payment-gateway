@@ -27,18 +27,17 @@
             -#   %h2 Title
             -#   %p Description
     .col-lg-6
-      %h3 Titulo del libro
-      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      %p Puntos de ventas del libro
-      %ul
-        %li BDV
-        %li HGT
-        %li URT
-        %li OPL
-        %li WER
-      .col-lg-5
-        %button.btn.btn-contact Comprar
-
+      %h3.title-book Cicatrices de un propósito
+      %p.body-book Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      %br
+      %strong Puntos de ventas del libro
+      %ol#lista2
+        %li Librerías Nacho, Valencia
+        %li CompuMall, Sambil
+        %li Papelería Virgen Del Fátima
+        %li Rattan Book's
+      %center
+        %a.btn.btn-contact{:href => "https://www.amazon.com/", style: "width: 35%;padding-top: 12px;"} Comprar
 
 
 .container.text-center{:style => "height: 425px;"}
@@ -111,6 +110,75 @@
 
 
 :scss
+
+  #lista2 {
+  counter-reset: li;
+  list-style: none;
+  *list-style: decimal;
+  font: 15px 'trebuchet MS', 'lucida sans';
+  padding: 0;
+  margin-bottom: 2em;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  }
+
+  #lista2 ol {
+  margin: 0 0 0 2em;
+  }
+
+  #lista2 li{
+  position: relative;
+  display: block;
+  padding: .4em .4em .4em 2em;
+  *padding: .4em;
+  margin: .5em 0;
+  background: #ddd;
+  color: #444;
+  text-decoration: none;
+  border-radius: .3em;
+  transition: all .3s ease-out;
+  }
+
+  #lista2 li:hover{
+  background: #eee;
+  }
+
+  #lista2 li:hover:before{
+  transform: rotate(360deg);
+  }
+
+  #lista2 li:before{
+  content: counter(li);
+  counter-increment: li;
+  position: absolute;
+  left: -1.3em;
+  top: 50%;
+  margin-top: -1.3em;
+  background: #87ceeb;
+  height: 2em;
+  width: 2em;
+  line-height: 2em;
+  border: .3em solid #fff;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 2em;
+  transition: all .3s ease-out;
+  }
+
+
+
+  ul{
+    list-style-type: circle;
+  }
+  .title-book{
+    font-family: "Lato", sans-serif;
+    line-height: 35px;
+  }
+
+  .body-book{
+    text-align: justify;
+    line-height: 27px;
+  }
+
   body{
     background-color: #F5F5F5;
   }

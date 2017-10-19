@@ -1,10 +1,24 @@
+%link{:href => "https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i|Raleway|Roboto", :rel => "stylesheet"}
 %button.btn.btn-info.btn-lg{:id => "super", "data-target" => "#myModal", "data-toggle" => "modal", :type => "button", :style => "display:none"} Open Modal
 / Modal
 #myModal.modal.fade{:role => "dialog"}
-  .modal-dialog
-    %button.close.btn-close-modal{"data-dismiss" => "modal", :type => "button"} ×
-    %a{:href => "/promotionbook"}
-      =image_tag "frontend/cicatrices.jpg", :style => "height: 580px"
+  .modal-dialog.content-modal
+    %button.close.btn-closed{"data-dismiss" => "modal", :type => "button"} X
+    .row
+      .col-lg-6
+        %h3.title-modal ¡Descubre tu propósito
+        %h3.title-modal{:style => "margin-top: -7px;"} de vida!
+        %h6.text-1 Con el nuevo libro de
+        %strong.text-2 Gustavo Henao
+      .col-lg-6
+        =image_tag "frontend/libro.png"
+    .row
+      .text-center
+        %a{:href => "/promotionbook"}
+          =image_tag "frontend/cta.png", :style => "height: 50px;"
+
+    -# %a{:href => "/promotionbook"}
+    -#   =image_tag "frontend/degradado.png", :style => "height: 50px;"
 
     / Modal content
     -# .modal-content
@@ -21,11 +35,62 @@
 
 
 :scss
+  .content-modal{
+    background-image: -webkit-gradient(
+    	linear,
+    	left bottom,
+    	right bottom,
+    	color-stop(0, #FFFFFF),
+    	color-stop(1, #CFCFCF)
+    );
+    background-image: -o-linear-gradient(right, #FFFFFF 0%, #CFCFCF 100%);
+    background-image: -moz-linear-gradient(right, #FFFFFF 0%, #CFCFCF 100%);
+    background-image: -webkit-linear-gradient(right, #FFFFFF 0%, #CFCFCF 100%);
+    background-image: -ms-linear-gradient(right, #FFFFFF 0%, #CFCFCF 100%);
+    background-image: linear-gradient(to right, #FFFFFF 0%, #CFCFCF 100%);
+    padding: 40px;
+    width: 50%!important;
+    padding: 25px 40px 20px 40px!important;
+    margin: 7% auto!important;
+  }
+
+  .title-modal{
+    font-family: 'Lato', sans-serif;
+    letter-spacing: -2px;
+    padding: 0px 30px 0px 5px;
+    color: #00a29b;
+    font-size: 42px;
+    font-weight: 900;
+  }
   .btn-close-modal{
     font-size: 35px;
     transform: translate(-120px,-4px);
     opacity: 0.9!important;
     color: rgba(255, 0, 0, 0);
+  }
+
+  .text-1{
+    font-size: 22px;
+    color: grey;
+    line-height: 1px;
+    margin-top: 25px;
+  }
+
+  .text-2{
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    letter-spacing: 4px;
+    color: dimgrey;
+  }
+  .btn-closed{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100!important;
+    font-size: 30px!important;
+    right: 0;
+    transform: translate(-17px,-10px);
+    position: absolute;
+    color: #fff!important;
+    opacity: 0.9!important;
   }
   .close:hover{
     color: rgba(255, 0, 0, 0)!important;

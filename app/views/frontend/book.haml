@@ -1,99 +1,128 @@
+%link{:href => "https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400", :rel => "stylesheet"}/
 %link{:href => "/assets/frontend/Formscreen/animate.css", :rel => "stylesheet", :type => "text/css"}/
 = render 'layouts/frontend/navigation'
 
-.container{:style => "margin:30px auto 100px auto;"}
+#section-book
+  .container{:style =>"margin:0 !important;padding:0 !important;width:100% !important;"}
+    .banner{:style =>"background-color:#000;height:60vh;width:100%"}
+  .container
+    .row
+      .col-lg-7{:style =>"padding:50px 80px;font-size: 19px;opacity:0.7;"}
+        %p
+          Cicatrices de un propósito no es una guía de fórmulas para "alcanzar el éxito", no es una autobiografía, tampoco es un libro de motivación, más bien es un libro de
+          %i transformación.
+          Es mi historia de vida vista desde diferentes perspectivas.
+        %br
+        %p Abriré mi corazón para contarte anécdotas que, en algún momento, fueron el motivo de mis lágrimas, pero hoy se convirtieron en mi inspiración, en el nacimiento de las enseñanzas que comparto a diario en diferentes escenarios alrededor del mundo. Cuando tengas en tus manos mi primer libro me bajaré de la tarima y me ubicaré frente a ti para inspirarte a caminar sobre tu éxito.
+      .col-lg-5
+        =image_tag "frontend/libros.png", :class => "img-responsive", :style => "height: 210px;margin-top: 9vh;"
+        .text-center.text-t Cicatrices de un propósito
+        .text-center.text-name Gustavo Henao
+        .text-center
+          %a{:href => "https://www.amazon.com/"}
+            =image_tag "frontend/btn-amazon.png", :style => "height: 35px;cursor:pointer;"
+
+
+
+
+  -# .container{:style => "margin:30px auto 100px auto;"}
+  -#   .row
+  -#     .col-lg-6
+  -#       #carousel.carousel.slide.carousel-fade{"data-animation"=>"animated zoomInLeft", "data-ride" => "carousel"}
+  -#         %ol.carousel-indicators
+  -#           %li.active{"data-slide-to" => "0", "data-target" => "#carousel"}
+  -#           %li{"data-slide-to" => "1", "data-target" => "#carousel"}
+  -#           %li{"data-slide-to" => "2", "data-target" => "#carousel"}
+  -#         / Carousel items
+  -#         .carousel-inner.carousel-zoom
+  -#           .active.item
+  -#             =image_tag "frontend/cicatrices.jpg", :class => "img-responsive", :style => "height: 420px"
+  -#             -# .carousel-caption
+  -#             -#   %h2 Title
+  -#             -#   %p Description
+  -#           .item
+  -#             =image_tag "frontend/cicatrices.jpg", :class => "img-responsive", :style => "height: 420px"
+  -#             -# .carousel-caption
+  -#             -#   %h2 Title
+  -#             -#   %p Description
+  -#           .item
+  -#             =image_tag "frontend/cicatrices.jpg", :class => "img-responsive", :style => "height: 420px"
+  -#             -# .carousel-caption
+  -#             -#   %h2 Title
+  -#             -#   %p Description
+  -#     .col-lg-6
+  -#       %h3.title-book Cicatrices de un propósito
+  -#       %p.body-book Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  -#       %br
+  -#       %strong Puntos de ventas del libro
+  -#       %ol#lista2
+  -#         %li Librerías Nacho, Valencia
+  -#         %li CompuMall, Sambil
+  -#         %li Papelería Virgen Del Fátima
+  -#         %li Rattan Book's
+  -#       %center
+  -#         %a.btn.btn-contact{:href => "https://www.amazon.com/", style: "background: #00a29b!important; width: 35%;padding-top: 7px;font-size: 16px;"} Comprar
+
+
+
+  .text-center.text-cicatrices Cicatrices de un propósito cuenta con comentarios de:
+  .container.text-center{:style => "height: 420px;"}
+    .row{:class => "[ ]"}
+      .col-xs-12.col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3{:class => "[ ]", :role => "tabpanel"}
+        .col-xs-4.col-sm-12{:class => "[ ]"}
+          / Nav tabs
+          %ul#nav-tabs.nav.nav-justified{:class => "[ ]", :role => "tablist"}
+            %li{:role => "presentation"}
+              %a{"aria-controls" => "dustin", "data-toggle" => "tab", :href => "#dustin", :role => "tab"}
+                = image_tag "frontend/nelson.jpg", class: "img-circle", :style => "object-fit: cover;height: 144px;"
+                %span.quote
+                  %i.fa.fa-quote-left
+            %li.active{:role => "presentation"}
+              %a{"aria-controls" => "barbara", "data-toggle" => "tab", :href => "#barbara", :role => "tab"}
+                %img.img-circle{:src => "http://enbogam.com/wp-content/uploads/2015/04/barbara-palacios.jpg"}/
+                %span.quote
+                  %i.fa.fa-quote-left
+            %li{:role => "presentation"}
+              %a{"aria-controls" => "wafer", "data-toggle" => "tab", :href => "#wafer", :role => "tab"}
+                = image_tag "frontend/eduardo.jpg", class: "img-circle", :style => "object-fit: cover;height: 144px;"
+                %span.quote
+                  %i.fa.fa-quote-left
+        .col-xs-8.col-sm-12{:class => "[ ]"}
+          / Tab panes
+          #tabs-collapse.tab-content
+            #dustin.tab-pane.fade{:role => "tabpanel"}
+              .tab-inner
+                %p.lead Gustavo atesora la transparencia como base de su identidad. Su autenticidad se revela, sin desvíos, en el paralelismo de su palabra y de sus actos. Basta conocerlo para comprobar que la coherencia es su gran fuerza. El éxito es la merecida consecuencia de su pasión por comunicar y hacer el bien a través del mensaje sincero.
+                %hr/
+                %p
+                  %strong.text-uppercase Nelson Bustamante
+                %p
+                  %em.text-capitalize Presentador, Ganador de 4 Premios Emmy.
+                  -# at
+                  -# %a{:href => "#"} Apple
+            #barbara.tab-pane.fade.in.active{:role => "tabpanel"}
+              .tab-inner
+                %p.lead Gustavo es ejemplo de resilencia. Su historia nos motiva a ser mejores y su fortaleza nos nutre como seres humanos.
+                %hr/
+                %p
+                  %strong.text-uppercase Barbara Palacios
+                %p
+                  %em.text-capitalize Miss Universo, Empresaria y Conferencista.
+                  /at
+                  /%a{:href => "#"} Google
+            #wafer.tab-pane.fade{:role => "tabpanel"}
+              .tab-inner
+                %p.lead Al escuchar a Gustavo Henao por primera vez, quedé profundamente impresionado y bendecido. Su forma peculiar, brillante, exuberante de comunicar sus convicciones de una forma tan natural, pueden ser entendidas de por un erudito o por una simple persona del campo. ¡Qué formidable profesional es Gustavo!
+                %hr/
+                %p
+                  %strong.text-uppercase Eduardo Rodriguez Giolitti
+                %p
+                  %em.text-capitalize Periodista, Abogado, Conferencista.
+                  -# at
+                  -# %a{:href => "#"} Microsoft
+
   .row
-    .col-lg-6
-      #carousel.carousel.slide.carousel-fade{"data-animation"=>"animated zoomInLeft", "data-ride" => "carousel"}
-        %ol.carousel-indicators
-          %li.active{"data-slide-to" => "0", "data-target" => "#carousel"}
-          %li{"data-slide-to" => "1", "data-target" => "#carousel"}
-          %li{"data-slide-to" => "2", "data-target" => "#carousel"}
-        / Carousel items
-        .carousel-inner.carousel-zoom
-          .active.item
-            =image_tag "frontend/cicatrices.jpg", :class => "img-responsive", :style => "height: 420px"
-            -# .carousel-caption
-            -#   %h2 Title
-            -#   %p Description
-          .item
-            =image_tag "frontend/cicatrices.jpg", :class => "img-responsive", :style => "height: 420px"
-            -# .carousel-caption
-            -#   %h2 Title
-            -#   %p Description
-          .item
-            =image_tag "frontend/cicatrices.jpg", :class => "img-responsive", :style => "height: 420px"
-            -# .carousel-caption
-            -#   %h2 Title
-            -#   %p Description
-    .col-lg-6
-      %h3.title-book Cicatrices de un propósito
-      %p.body-book Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      %br
-      %strong Puntos de ventas del libro
-      %ol#lista2
-        %li Librerías Nacho, Valencia
-        %li CompuMall, Sambil
-        %li Papelería Virgen Del Fátima
-        %li Rattan Book's
-      %center
-        %a.btn.btn-contact{:href => "https://www.amazon.com/", style: "width: 35%;padding-top: 12px;"} Comprar
-
-
-.container.text-center{:style => "height: 425px;"}
-  .row{:class => "[ ]"}
-    .col-xs-12.col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3{:class => "[ ]", :role => "tabpanel"}
-      .col-xs-4.col-sm-12{:class => "[ ]"}
-        / Nav tabs
-        %ul#nav-tabs.nav.nav-justified{:class => "[ ]", :role => "tablist"}
-          %li{:role => "presentation"}
-            %a{"aria-controls" => "dustin", "data-toggle" => "tab", :href => "#dustin", :role => "tab"}
-              %img.img-circle{:src => "https://pbs.twimg.com/profile_images/593094525146521600/kmxB3noN_400x400.png"}/
-              %span.quote
-                %i.fa.fa-quote-left
-          %li.active{:role => "presentation"}
-            %a{"aria-controls" => "barbara", "data-toggle" => "tab", :href => "#barbara", :role => "tab"}
-              %img.img-circle{:src => "http://enbogam.com/wp-content/uploads/2015/04/barbara-palacios.jpg"}/
-              %span.quote
-                %i.fa.fa-quote-left
-          %li{:role => "presentation"}
-            %a{"aria-controls" => "wafer", "data-toggle" => "tab", :href => "#wafer", :role => "tab"}
-              %img.img-circle{:src => "https://pbs.twimg.com/profile_images/1281791033/luvq_eduardorodriguez_fmt_400x400.jpg"}/
-              %span.quote
-                %i.fa.fa-quote-left
-      .col-xs-8.col-sm-12{:class => "[ ]"}
-        / Tab panes
-        #tabs-collapse.tab-content
-          #dustin.tab-pane.fade{:role => "tabpanel"}
-            .tab-inner
-              %p.lead Gustavo atesora la transparencia como base de su identidad. Su autenticidad se revela, sin desvíos, en el paralelismo de su palabra y de sus actos. Basta conocerlo para comprobar que la coherencia es su gran fuerza. El éxito es la merecida consecuencia de su pasión por comunicar y hacer el bien a través del mensaje sincero.
-              %hr/
-              %p
-                %strong.text-uppercase Nelson Bustamante
-              %p
-                %em.text-capitalize Presentador, Ganador de 4 Premios Emmy.
-                -# at
-                -# %a{:href => "#"} Apple
-          #barbara.tab-pane.fade.in.active{:role => "tabpanel"}
-            .tab-inner
-              %p.lead Gustavo es ejemplo de resilencia. Su historia nos motiva a ser mejores y su fortaleza nos nutre como seres humanos.
-              %hr/
-              %p
-                %strong.text-uppercase Barbara Palacios
-              %p
-                %em.text-capitalize Miss Universo, Empresaria y Conferencista.
-                /at
-                /%a{:href => "#"} Google
-          #wafer.tab-pane.fade{:role => "tabpanel"}
-            .tab-inner
-              %p.lead Al escuchar a Gustavo Henao por primera vez, quedé profundamente impresionado y bendecido. Su forma peculiar, brillante, exuberante de comunicar sus convicciones de una forma tan natural, pueden ser entendidas de por un erudito o por una simple persona del campo. ¡Qué formidable profesional es Gustavo!
-              %hr/
-              %p
-                %strong.text-uppercase Eduardo Rodriguez Giolitti
-              %p
-                %em.text-capitalize Periodista, Abogado, Conferencista.
-                -# at
-                -# %a{:href => "#"} Microsoft
+    .text-center.text-cicatrices También puedes adquirirlo en:
 
 #footer
   .container-footer
@@ -124,12 +153,45 @@
       = image_tag "frontend/logo-slice.png"
 
 
-:javascript
-  $(document).ready(function(){
-  });
-
-
 :scss
+  body{
+  font-family: 'Lato', sans-serif;
+  background-color:#fff;
+  // background-image: -webkit-gradient(
+  // linear,
+  // left bottom,
+  // right bottom,
+  // color-stop(0, #FFFFFF),
+  // color-stop(1, #CFCFCF)
+  // );
+  // background-image: -o-linear-gradient(right, #FFFFFF 0%, #CFCFCF 100%);
+  // background-image: -moz-linear-gradient(right, #FFFFFF 0%, #CFCFCF 100%);
+  // background-image: -webkit-linear-gradient(right, #FFFFFF 0%, #CFCFCF 100%);
+  // background-image: -ms-linear-gradient(right, #FFFFFF 0%, #CFCFCF 100%);
+  // background-image: linear-gradient(to right, #FFFFFF 0%, #CFCFCF 100%);
+  }
+
+  #section-book{
+  .text-t{
+    font-style: italic;
+    color: #635d5d;
+    font-size: 15px;
+  }
+
+  .text-name{
+    color: #635d5d;
+    margin-bottom: 10px;
+    font-weight: 800;
+    font-size: 10px;
+  }
+
+  .text-cicatrices{
+    margin-top: 4vh;
+    color: #00a29b;
+    margin-bottom: 4vh;
+    font-size: 21px;
+    font-weight: 900;
+  }
 
   #lista2 {
   counter-reset: li;
@@ -190,8 +252,12 @@
     list-style-type: circle;
   }
   .title-book{
-    font-family: "Lato", sans-serif;
-    line-height: 35px;
+    font-size: 26px;
+    color: #00a29b!important;
+    letter-spacing: 4px;
+    color: dimgrey;
+    // font-family: "Lato", sans-serif;
+    // line-height: 35px;
   }
 
   .body-book{
@@ -199,9 +265,9 @@
     line-height: 27px;
   }
 
-  body{
-    background-color: #F5F5F5;
-  }
+  // body{
+  //   background-color: #F5F5F5;
+  // }
   .lead{
     font-size: 15px;
   }
@@ -255,7 +321,7 @@
 
 
   // @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css);
-  body { padding-top: 60px; }
+  body { padding-top: 50px; }
   .nav.nav-justified > li > a { position: relative; }
   .nav.nav-justified > li > a:hover,
   .nav.nav-justified > li > a:focus { background-color: transparent; }
@@ -360,5 +426,5 @@
   transform: translate3d(0, 0, 0);
   }
   }
-
+  }
 = render 'css'

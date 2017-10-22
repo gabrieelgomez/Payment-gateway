@@ -1,0 +1,18 @@
+.wrapper
+	.wrapper-body.container
+		.actions
+			= link_to bookshops_path, class: "btn-floating btn-flat tooltipped", "data-position" => "bottom", "data-tooltip" => "Volver" do
+				= material_icon.md_18.arrow_back.css_class("md-dark")
+		.wrapper-inputs
+			.card
+				= simple_form_for @bookshop do |f|
+					.row
+						= f.input :name, label: "Nombre de la librería"
+						= f.input :place, label: "Lugar: Ej: Valencia, Venezuela"
+						= f.input :attendat, label: "Persona de contacto"
+						= f.input :phone, label: "Teléfono"
+						= f.input :email, label: "Correo"
+						= f.input :address, label: "Dirección"
+
+						.form-actions.right
+							= f.button :submit, "Guardar", class: "btn"

@@ -7,6 +7,7 @@ class Ability
       can :manage, Course
       can :manage, Category
       can :manage, Subscriber
+      can :manage, Bookshop
       # - user authorize -
       can [:delete, :show, :edit, :update, :create, :index, :destroy_multiple], User
       can :destroy, User do |u| !u.eql?(user) end

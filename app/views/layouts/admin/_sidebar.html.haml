@@ -12,6 +12,10 @@
     - if can? :index, Category
       %li
         = tab "Cursos", "school", main_app.categories_path, current_navigation?("Users")
+    - if can? :index, Bookshop
+      %li
+        -#store, 
+        = tab "Librerías", "local_library", main_app.bookshops_path, current_navigation?("Users")
 
     -# - if can? :index, Subscriber
     -#   %li

@@ -21,4 +21,8 @@ class FrontendController < ApplicationController
     @attachments = @catalog.attachments.where(category_id: @category.id, public: true).page(@current_page).per(6)
   end
 
+  def book
+    @bookshops = Bookshop.all
+  end
+
 end

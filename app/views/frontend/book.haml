@@ -3,11 +3,11 @@
 = render 'layouts/frontend/navigation'
 
 #section-book
-  .container{:style =>"margin:0 !important;padding:0 !important;width:100% !important;"}
-    .banner{:style =>"background-color:#000;height:60vh;width:100%"}
+  .container.content-cover
+    =# image_tag "frontend/banner-henao.png", :style => "height:60vh;width:100%;object-fit: cover;"
   .container
     .row
-      .col-lg-7{:style =>"padding:50px 80px;font-size: 19px;opacity:0.7;"}
+      .col-lg-7.description-book
         %p
           Cicatrices de un propósito no es una guía de fórmulas para "alcanzar el éxito", no es una autobiografía, tampoco es un libro de motivación, más bien es un libro de
           %i transformación.
@@ -21,52 +21,19 @@
         .text-center
           %a{:href => "https://www.amazon.com/"}
             =image_tag "frontend/btn-amazon.png", :style => "height: 35px;cursor:pointer;"
+    .text-center.quota
+      "La historia de Gustavo proyectada en este hermoso libro, es un testigo más de como el éxito, el dinero, la prosperidad y la gloria
+      son, y deben ser, el resultado de un proceso que deja cicatrices y
+      recorridos, muchas veces, dolorosos pero seguros y perdurables en
+      sus resultados."
+    .text-center{:style =>"font-size: 19px;opacity:0.7;font-weight: 900;"}
+      %span - José Bobadilla
+    .text-center{:style =>"font-size: 15px;opacity:0.7;"}
+      %span Empresario Colombiano y Embajador Corona
 
 
-
-
-  -# .container{:style => "margin:30px auto 100px auto;"}
-  -#   .row
-  -#     .col-lg-6
-  -#       #carousel.carousel.slide.carousel-fade{"data-animation"=>"animated zoomInLeft", "data-ride" => "carousel"}
-  -#         %ol.carousel-indicators
-  -#           %li.active{"data-slide-to" => "0", "data-target" => "#carousel"}
-  -#           %li{"data-slide-to" => "1", "data-target" => "#carousel"}
-  -#           %li{"data-slide-to" => "2", "data-target" => "#carousel"}
-  -#         / Carousel items
-  -#         .carousel-inner.carousel-zoom
-  -#           .active.item
-  -#             =image_tag "frontend/cicatrices.jpg", :class => "img-responsive", :style => "height: 420px"
-  -#             -# .carousel-caption
-  -#             -#   %h2 Title
-  -#             -#   %p Description
-  -#           .item
-  -#             =image_tag "frontend/cicatrices.jpg", :class => "img-responsive", :style => "height: 420px"
-  -#             -# .carousel-caption
-  -#             -#   %h2 Title
-  -#             -#   %p Description
-  -#           .item
-  -#             =image_tag "frontend/cicatrices.jpg", :class => "img-responsive", :style => "height: 420px"
-  -#             -# .carousel-caption
-  -#             -#   %h2 Title
-  -#             -#   %p Description
-  -#     .col-lg-6
-  -#       %h3.title-book Cicatrices de un propósito
-  -#       %p.body-book Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  -#       %br
-  -#       %strong Puntos de ventas del libro
-  -#       %ol#lista2
-  -#         %li Librerías Nacho, Valencia
-  -#         %li CompuMall, Sambil
-  -#         %li Papelería Virgen Del Fátima
-  -#         %li Rattan Book's
-  -#       %center
-  -#         %a.btn.btn-contact{:href => "https://www.amazon.com/", style: "background: #00a29b!important; width: 35%;padding-top: 7px;font-size: 16px;"} Comprar
-
-
-
-  .text-center.text-cicatrices Cicatrices de un propósito cuenta con comentarios de:
-  .container.text-center{:style => "height: 420px;"}
+  .container.text-center{:style => "height: 470px;"}
+    .text-center.text-cicatrices Cicatrices de un propósito cuenta con comentarios de:
     .row{:class => "[ ]"}
       .col-xs-12.col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3{:class => "[ ]", :role => "tabpanel"}
         .col-xs-4.col-sm-12{:class => "[ ]"}
@@ -74,7 +41,7 @@
           %ul#nav-tabs.nav.nav-justified{:class => "[ ]", :role => "tablist"}
             %li{:role => "presentation"}
               %a{"aria-controls" => "dustin", "data-toggle" => "tab", :href => "#dustin", :role => "tab"}
-                = image_tag "frontend/nelson.jpg", class: "img-circle", :style => "object-fit: cover;height: 144px;"
+                = image_tag "frontend/nelson.jpg", class: "img-circle img-comment", :style => "object-fit: cover;height: 144px;"
                 %span.quote
                   %i.fa.fa-quote-left
             %li.active{:role => "presentation"}
@@ -84,7 +51,7 @@
                   %i.fa.fa-quote-left
             %li{:role => "presentation"}
               %a{"aria-controls" => "wafer", "data-toggle" => "tab", :href => "#wafer", :role => "tab"}
-                = image_tag "frontend/eduardo.jpg", class: "img-circle", :style => "object-fit: cover;height: 144px;"
+                = image_tag "frontend/eduardo.jpg", class: "img-circle img-comment", :style => "object-fit: cover;height: 144px;"
                 %span.quote
                   %i.fa.fa-quote-left
         .col-xs-8.col-sm-12{:class => "[ ]"}
@@ -98,8 +65,7 @@
                   %strong.text-uppercase Nelson Bustamante
                 %p
                   %em.text-capitalize Presentador, Ganador de 4 Premios Emmy.
-                  -# at
-                  -# %a{:href => "#"} Apple
+
             #barbara.tab-pane.fade.in.active{:role => "tabpanel"}
               .tab-inner
                 %p.lead Gustavo es ejemplo de resilencia. Su historia nos motiva a ser mejores y su fortaleza nos nutre como seres humanos.
@@ -108,8 +74,7 @@
                   %strong.text-uppercase Barbara Palacios
                 %p
                   %em.text-capitalize Miss Universo, Empresaria y Conferencista.
-                  /at
-                  /%a{:href => "#"} Google
+
             #wafer.tab-pane.fade{:role => "tabpanel"}
               .tab-inner
                 %p.lead Al escuchar a Gustavo Henao por primera vez, quedé profundamente impresionado y bendecido. Su forma peculiar, brillante, exuberante de comunicar sus convicciones de una forma tan natural, pueden ser entendidas de por un erudito o por una simple persona del campo. ¡Qué formidable profesional es Gustavo!
@@ -118,13 +83,28 @@
                   %strong.text-uppercase Eduardo Rodriguez Giolitti
                 %p
                   %em.text-capitalize Periodista, Abogado, Conferencista.
-                  -# at
-                  -# %a{:href => "#"} Microsoft
 
-  .row
-    .text-center.text-cicatrices También puedes adquirirlo en:
+  .container.text-center{:style => "height: 200px;"}
+    .text-center.text-cicatrices También puedes adquirirlo en las siguientes librerías:
+    .row
+      .responsive
+        -@bookshops.each do |bookshop|
+          .item
+            .col-lg-1
+              .separator
+            .col-lg-9
+              .text-center{:style =>"font-size: 19px;opacity:0.7;font-weight: 900;"}
+                %span= bookshop.name
+              .text-center{:style =>"font-size: 12px;opacity:0.7;"}
+                %p= bookshop.place
+                %p= bookshop.attendat
+                %p= bookshop.phone
+                %p= bookshop.email
+                %p= bookshop.address
+            .col-lg-1
+              .separator
 
-#footer
+#footer{:style => "margin-top: 30vh;"}
   .container-footer
     .row{style:"width: 100%; margin: 0px;"}
       .col-lg-6.col-md-6.col-sm-12.col-xs-12{style:"padding: 0px;"}
@@ -172,6 +152,59 @@
   }
 
   #section-book{
+
+      .img-comment{
+        @media (max-width:767px){
+          height: 40px!important;
+        }
+      }
+
+    .content-cover{
+      background-image: url('https://trello-attachments.s3.amazonaws.com/569453ae24f9f3b8552ad817/59d638d80fde119361638074/e538015163729d3fa227b60b48f9992a/banner-henao.png');
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+      height: 340px;
+      background-size: cover;
+      /* background-repeat: no-repeat; */
+      background-position: center;
+      @media (max-width:767px){
+        height: 237px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+
+    .text-center{
+      p{
+        margin: 2px 5px 2px;
+      }
+    }
+
+  .separator{
+    width: 1px;
+    height: 140px;
+    margin-top: 18px;
+    background-color: #D7D7D7;
+    transform: translateX(8px);
+  }
+
+  .quota{
+    padding:20px 315px;font-size: 19px;opacity:0.7;
+    @media (max-width: 767px){
+      padding:20px 20px;
+    }
+  }
+
+  .description-book{
+    padding:50px 80px;font-size: 19px;opacity:0.7;
+    @media (max-width:767px){
+      padding: 10px 34px;
+      text-align: justify;
+    }
+  }
+
   .text-t{
     font-style: italic;
     color: #635d5d;
@@ -427,4 +460,49 @@
   }
   }
   }
+:javascript
+  $('.responsive').slick({
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 3,
+    autoplay: true,
+    centerMode: false,
+    slidesToScroll: 1,
+      responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          arrows: false,
+          slidesToShow: 4,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          slidesToShow: 3,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 481,
+        settings: {
+          arrows: false,
+          slidesToShow: 3,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
 = render 'css'

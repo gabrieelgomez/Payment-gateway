@@ -6,12 +6,12 @@
     .modal-dialog.content-modal
       %button.close.btn-closed{"data-dismiss" => "modal", :type => "button"} X
       .row{:style => "margin-right: -10px!important;"}
-        .col-lg-6
+        .col-lg-6.col-md-6
           %h3.title-modal ¡Descubre tu propósito
           %h3.title-modal{:style => "margin-top: -7px;"} de vida!
           %h6.text-1 Con el nuevo libro de
           %strong.text-2 Gustavo Henao
-        .col-lg-6
+        .col-lg-6.col-md-6
           =image_tag "frontend/libro.png"
       .row
         .text-center
@@ -217,7 +217,7 @@
       margin-top: -30px !important;
     }
     .content-mobile{
-      margin: 12vh 25px 25px 95px !important;
+      margin: 17vh 25px 25px 95px !important;
     }
   }
   @media only screen and (min-device-width :376px) and (max-device-width : 411px) {
@@ -373,23 +373,18 @@
       font-weight: 900;
       letter-spacing: 0px;
     }
-    @media (max-width : 320px) and (min-width:0){
-      padding: 0px 60px;
-      font-size: 18px;
+    @media (min-width : 1024px) and (max-width:1350px){
+      font-size: 30px;
+    }
+
+    @media (min-width: 360px) and (max-width: 450px){
+      padding: 0px 60px 0px 60px;
+      font-size: 21px;
       margin-top: 0px;
       line-height: 25px;
       font-weight: 900;
       letter-spacing: 0px;
     }
-
-    // @media (min-width: 360px) and (max-width: 450px){
-    //   padding: 0px 60px 0px 60px;
-    //   font-size: 21px;
-    //   margin-top: 0px;
-    //   line-height: 25px;
-    //   font-weight: 900;
-    //   letter-spacing: 0px;
-    // }
   }
 
   .text-1{
@@ -398,6 +393,10 @@
     color: grey;
     line-height: 1px;
     margin-top: 25px;
+
+    @media (min-width : 1024px) and (max-width:1350px){
+      font-size: 19px;
+    }
 
     @media (max-width : 375px){
       color:#656161;
@@ -421,6 +420,9 @@
     font-size: 20px;
     letter-spacing: 4px;
     color: dimgrey;
+    @media (min-width : 1024px) and (max-width:1350px){
+      font-size: 16px;
+    }
   }
 
   .btn-closed{
@@ -430,6 +432,7 @@
     right: 0;
     transform: translate(-17px,-10px);
     position: absolute;
+    z-index: 9999999;
     color: #fff!important;
     opacity: 0.9!important;
     @media (max-width : 375px){

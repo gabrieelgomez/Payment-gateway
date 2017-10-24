@@ -37,87 +37,35 @@
       %span Empresario Colombiano y Embajador Corona
 
     .text-center{style: "margin-top:40px;"}
-      %iframe.hidden-xs.hidden-sm.hidden-md{:allowfullscreen => "", :frameborder => "0", :height => "415", :src => "https://www.youtube.com/embed/BHMZqliWXXU", :width => "660"}
-      %iframe.hidden-lg{:allowfullscreen => "", :frameborder => "0", :height => "115", :src => "https://www.youtube.com/embed/BHMZqliWXXU", :width => "260"}
+      %iframe.hidden-xs{:allowfullscreen => "", :frameborder => "0", :height => "415", :src => "https://www.youtube.com/embed/BHMZqliWXXU", :width => "660"}
+      %iframe.hidden-lg.hidden-md.hidden-sm{:allowfullscreen => "", :frameborder => "0", :height => "115", :src => "https://www.youtube.com/embed/BHMZqliWXXU", :width => "260"}
 
   .container.comments-content{style: "color:#FFF;margin-top: 50px;"}
     .row
       .text-center
         %h3{style:"font-size: 30px;margin-top: 32px;font-weight: 900;padding: 0px 15px;"} Cicatrices de un propósito cuenta con comentarios de:
     .row
-      .col-lg-3.col-md-3.col-sm-12.col-xs-12.col-md-12
+      .col-lg-3.col-md-3.col-sm-3.col-xs-12
         %img.img-circle{:src => "http://enbogam.com/wp-content/uploads/2015/04/barbara-palacios.jpg", :style => "transform: scale(0.6);"}/
-        .text-center{style: "margin-top: -59px;"}
+        .text-center.text-rs{style: "margin-top: -59px;"}
           %h3 Bárbara Palacios
           %h4 Miss Universo, empresaria y conferencista
 
-      .col-lg-3.col-md-3.col-sm-12.col-xs-12.col-md-12
+      .col-lg-3.col-md-3.col-sm-3.col-xs-12
         = image_tag "frontend/nelson.jpg", class: "img-circle", :style => "object-fit: cover;height: 300px;transform: scale(0.6);"
-        .text-center{style: "margin-top: -59px;"}
+        .text-center.text-rs{style: "margin-top: -59px;"}
           %h3 Nelson Bustamante
-          %h4{style:"padding: 5px 49px;"} Presentador, Ganador de 4 Premios Emmy
-      .col-lg-3.col-md-3.col-sm-12.col-xs-12.col-md-12
+          %h4.padding-n{style:"padding: 5px 49px;"} Presentador, Ganador de 4 Premios Emmy
+      .col-lg-3.col-md-3.col-sm-3.col-xs-12
         = image_tag "frontend/motessi.jpg", class: "img-circle", :style => "object-fit: cover;height: 300px;transform: scale(0.6);"
-        .text-center{style: "margin-top: -59px;"}
+        .text-center.text-rs{style: "margin-top: -59px;"}
           %h3 Alberto Motessi
           %h4 Conferencista internacional
-      .col-lg-3.col-md-3.col-sm-12.col-xs-12.col-md-12
+      .col-lg-3.col-md-3.col-sm-3.col-xs-12
         = image_tag "frontend/eduardo.jpg", class: "img-circle", :style => "object-fit: cover;height: 300px;transform: scale(0.6);"
-        .text-center{style: "margin-top: -59px;"}
+        .text-center.text-rs{style: "margin-top: -59px;"}
           %h3 Eduardo Rodríguez Giolitti
-          %h4{style:"padding: 5px 49px;"} Periodista, abogado y conferencista
-
-  -# .container.text-center{:style => "height: 470px;"}
-  -#   .text-center.text-cicatrices Cicatrices de un propósito cuenta con comentarios de:
-  -#   .row{:class => "[ ]"}
-  -#     .col-xs-12.col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3{:class => "[ ]", :role => "tabpanel"}
-  -#       .col-xs-4.col-sm-12{:class => "[ ]"}
-  -#         / Nav tabs
-  -#         %ul#nav-tabs.nav.nav-justified{:class => "[ ]", :role => "tablist"}
-  -#           %li{:role => "presentation"}
-  -#             %a{"aria-controls" => "dustin", "data-toggle" => "tab", :href => "#dustin", :role => "tab"}
-  -#               = image_tag "frontend/nelson.jpg", class: "img-circle img-comment", :style => "object-fit: cover;height: 144px;"
-  -#               %span.quote
-  -#                 %i.fa.fa-quote-left
-  -#           %li.active{:role => "presentation"}
-  -#             %a{"aria-controls" => "barbara", "data-toggle" => "tab", :href => "#barbara", :role => "tab"}
-  -#               %img.img-circle{:src => "http://enbogam.com/wp-content/uploads/2015/04/barbara-palacios.jpg"}/
-  -#               %span.quote
-  -#                 %i.fa.fa-quote-left
-  -#           %li{:role => "presentation"}
-  -#             %a{"aria-controls" => "wafer", "data-toggle" => "tab", :href => "#wafer", :role => "tab"}
-  -#               = image_tag "frontend/eduardo.jpg", class: "img-circle img-comment", :style => "object-fit: cover;height: 144px;"
-  -#               %span.quote
-  -#                 %i.fa.fa-quote-left
-  -#       .col-xs-8.col-sm-12{:class => "[ ]"}
-  -#         / Tab panes
-  -#         #tabs-collapse.tab-content
-  -#           #dustin.tab-pane.fade{:role => "tabpanel"}
-  -#             .tab-inner
-  -#               %p.lead Gustavo atesora la transparencia como base de su identidad. Su autenticidad se revela, sin desvíos, en el paralelismo de su palabra y de sus actos. Basta conocerlo para comprobar que la coherencia es su gran fuerza. El éxito es la merecida consecuencia de su pasión por comunicar y hacer el bien a través del mensaje sincero.
-  -#               %hr/
-  -#               %p
-  -#                 %strong.text-uppercase Nelson Bustamante
-  -#               %p
-  -#                 %em.text-capitalize Presentador, Ganador de 4 Premios Emmy.
-  -#
-  -#           #barbara.tab-pane.fade.in.active{:role => "tabpanel"}
-  -#             .tab-inner
-  -#               %p.lead Gustavo es ejemplo de resilencia. Su historia nos motiva a ser mejores y su fortaleza nos nutre como seres humanos.
-  -#               %hr/
-  -#               %p
-  -#                 %strong.text-uppercase Barbara Palacios
-  -#               %p
-  -#                 %em.text-capitalize Miss Universo, Empresaria y Conferencista.
-  -#
-  -#           #wafer.tab-pane.fade{:role => "tabpanel"}
-  -#             .tab-inner
-  -#               %p.lead Al escuchar a Gustavo Henao por primera vez, quedé profundamente impresionado y bendecido. Su forma peculiar, brillante, exuberante de comunicar sus convicciones de una forma tan natural, pueden ser entendidas de por un erudito o por una simple persona del campo. ¡Qué formidable profesional es Gustavo!
-  -#               %hr/
-  -#               %p
-  -#                 %strong.text-uppercase Eduardo Rodriguez Giolitti
-  -#               %p
-  -#                 %em.text-capitalize Periodista, Abogado, Conferencista.
+          %h4.padding-n{style:"padding: 5px 49px;"} Periodista, abogado y conferencista
 
   .container.text-center{:style => "height: 200px;"}
     .text-center.text-cicatrices También puedes adquirirlo en las siguientes librerías:
@@ -175,10 +123,21 @@
   }
 
   #section-book{
-
+    @media (max-width:1100px) and (min-width:768px){
+      .img-responsive{
+        margin-top: 0!important;
+      }
+      .quota{
+        padding: 20px 100px!important;
+      }
+    }
     .mobile-t{
       @media (max-width:767px){
           margin-top: 70px;
+      }
+      @media (max-width:1100px) and (min-width:768px){
+
+          margin-top: 50px;
       }
     }
 
@@ -186,8 +145,30 @@
       width: 100%;
       height: 470px;
       background-color: #00a29b;
+      margin-bottom:30px;
       @media (max-width: 767px){
+
         height: 1600px;
+      }
+      @media (max-width: 590px) and (min-width:400px){
+        height: 1800px;
+        .img-circle{
+          height: 368px!important;
+        }
+      }
+      @media (max-width: 988px) and (min-width:768px){
+        height: 400px;
+        .text-rs{margin-top:-25px!important;}
+        .padding-n{padding:0!important;}
+        .img-circle{
+          height: 180px!important;
+        }
+      }
+      @media (max-width: 1200px) and (min-width:989px){
+        height: 420px;
+        .img-circle{
+          height: 228px!important;
+        }
       }
     }
 

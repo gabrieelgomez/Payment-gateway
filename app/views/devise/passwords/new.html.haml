@@ -1,5 +1,5 @@
 .devise
-  .container     
+  .container
     .devise-horizontal
       .devise-vertical
         .devise-box.card
@@ -13,7 +13,7 @@
               .input-field.col.s12
                 = f.email_field :email, :autofocus => true, class: "validate #{'invalid' unless resource.errors.messages.empty?}"
                 %label{for: :email} Email
-              .devise-errors.col.s12.center-align 
+              .devise-errors.col.s12.center-align
                 - resource.errors.each do |name, msg|
                   = msg.capitalize
             .devise-box-footer.row

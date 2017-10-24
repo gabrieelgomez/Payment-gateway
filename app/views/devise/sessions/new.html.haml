@@ -1,5 +1,5 @@
 .devise
-	.container     
+	.container
 		.devise-horizontal
 			.devise-vertical
 				.devise-box.card
@@ -20,8 +20,8 @@
 							.col.s9.m6.l6
 								- if devise_mapping.recoverable?
 									= link_to new_password_path(resource_name), class: "recoverable" do
-										= "¿Olvidaste tu contraseña?"             
-							.col.s3.m6.l6 
+										= "¿Olvidaste tu contraseña?"
+							.col.s3.m6.l6
 								= f.submit "Entrar", :class => 'right btn'
 							.col.s12.devise-logo.center-align.hidden-xs
-								= image_tag "admin/inyxtech.png"
+								= image_tag "admin/slice.png", style: "width: 70px;"

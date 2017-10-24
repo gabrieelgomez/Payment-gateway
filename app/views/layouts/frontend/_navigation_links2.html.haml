@@ -4,20 +4,24 @@
 		%li= link_to "QUIEN ES", "#about"
 		%li= link_to "VENTAJAS", "#ventajas"
 		%li= link_to "CONFERENCIAS", "#conferences"
-		%li= link_to "GALERIA", "/gallery/imagenes", class: "external"	
+		%li= link_to "GALERIA", "/gallery/imagenes", class: "external"
 		%li= link_to "BLOG", "/blog", class: "external"
 		%li= link_to "CONTACTO", "#contacs"
+		%li= link_to "CURSOS", "/cursos", class: "external"
+		%li= link_to "LIBROS", "/promotionbook", class: "external"
 
 	- else
 		%li= link_to "HOME", main_app.root_path(anchor: "home"), class: "external"
 		%li= link_to "QUIEN ES", main_app.root_path(anchor: "about"), class: "external"
 		%li= link_to "VENTAJAS", main_app.root_path(anchor: "ventajas"), class: "external"
 		%li= link_to "CONFERENCIAS", main_app.root_path(anchor: "conferences"), class: "external"
-		
+
 		%li{ class: "#{'current' if action_name == 'gallery'}" }
 			= link_to "GALERIA", "/gallery/imagenes", class: "external"
 
 		%li{ class: "#{'current' if controller_name == 'blog'}" }
 			= link_to "BLOG", "/blog", class: "external"
-			
+
 		%li= link_to "CONTACTO", main_app.root_path(anchor: "contacs"), class: "external"
+		%li= link_to "CURSOS", "/cursos", class: "external"
+		%li= link_to "LIBROS", "/promotionbook", class: "external"

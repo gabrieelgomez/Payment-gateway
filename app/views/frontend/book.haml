@@ -3,9 +3,14 @@
 = render 'layouts/frontend/navigation'
 
 #section-book
-  .container.content-cover
-    =# image_tag "frontend/banner-henao.png", :style => "height:60vh;width:100%;object-fit: cover;"
-  .container
+  .hidden-xs.hidden-sm.hidden-md
+    .container.content-cover{style: "color:#FFF"}
+      .center-d
+        %p.text-banner "Gracias a este libro, entendemos que muchas de estas circunstancias adversas, nos han preparado para reconocer nuestro propósito de vida"
+        %h3{style:"font-weight: 900;"} - Barbara Palacios
+        %h3 Mis Universo, empresaria y conferencista
+      =# image_tag "frontend/banner-henao.png", :style => "height:60vh;width:100%;object-fit: cover;"
+  .container.mobile-t
     .row
       .col-lg-7.description-book
         %p
@@ -20,7 +25,7 @@
         .text-center.text-name Gustavo Henao
         .text-center
           %a{:href => "https://www.amazon.com/"}
-            =image_tag "frontend/btn-amazon.png", :style => "height: 35px;cursor:pointer;"
+            =image_tag "frontend/boton.png", :style => "height: 35px;cursor:pointer;border-radius: 5px;"
     .text-center.quota
       "La historia de Gustavo proyectada en este hermoso libro, es un testigo más de como el éxito, el dinero, la prosperidad y la gloria
       son, y deben ser, el resultado de un proceso que deja cicatrices y
@@ -31,58 +36,88 @@
     .text-center{:style =>"font-size: 15px;opacity:0.7;"}
       %span Empresario Colombiano y Embajador Corona
 
+    .text-center{style: "margin-top:40px;"}
+      %iframe.hidden-xs.hidden-sm.hidden-md{:allowfullscreen => "", :frameborder => "0", :height => "415", :src => "https://www.youtube.com/embed/BHMZqliWXXU", :width => "660"}
+      %iframe.hidden-lg{:allowfullscreen => "", :frameborder => "0", :height => "115", :src => "https://www.youtube.com/embed/BHMZqliWXXU", :width => "260"}
 
-  .container.text-center{:style => "height: 470px;"}
-    .text-center.text-cicatrices Cicatrices de un propósito cuenta con comentarios de:
-    .row{:class => "[ ]"}
-      .col-xs-12.col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3{:class => "[ ]", :role => "tabpanel"}
-        .col-xs-4.col-sm-12{:class => "[ ]"}
-          / Nav tabs
-          %ul#nav-tabs.nav.nav-justified{:class => "[ ]", :role => "tablist"}
-            %li{:role => "presentation"}
-              %a{"aria-controls" => "dustin", "data-toggle" => "tab", :href => "#dustin", :role => "tab"}
-                = image_tag "frontend/nelson.jpg", class: "img-circle img-comment", :style => "object-fit: cover;height: 144px;"
-                %span.quote
-                  %i.fa.fa-quote-left
-            %li.active{:role => "presentation"}
-              %a{"aria-controls" => "barbara", "data-toggle" => "tab", :href => "#barbara", :role => "tab"}
-                %img.img-circle{:src => "http://enbogam.com/wp-content/uploads/2015/04/barbara-palacios.jpg"}/
-                %span.quote
-                  %i.fa.fa-quote-left
-            %li{:role => "presentation"}
-              %a{"aria-controls" => "wafer", "data-toggle" => "tab", :href => "#wafer", :role => "tab"}
-                = image_tag "frontend/eduardo.jpg", class: "img-circle img-comment", :style => "object-fit: cover;height: 144px;"
-                %span.quote
-                  %i.fa.fa-quote-left
-        .col-xs-8.col-sm-12{:class => "[ ]"}
-          / Tab panes
-          #tabs-collapse.tab-content
-            #dustin.tab-pane.fade{:role => "tabpanel"}
-              .tab-inner
-                %p.lead Gustavo atesora la transparencia como base de su identidad. Su autenticidad se revela, sin desvíos, en el paralelismo de su palabra y de sus actos. Basta conocerlo para comprobar que la coherencia es su gran fuerza. El éxito es la merecida consecuencia de su pasión por comunicar y hacer el bien a través del mensaje sincero.
-                %hr/
-                %p
-                  %strong.text-uppercase Nelson Bustamante
-                %p
-                  %em.text-capitalize Presentador, Ganador de 4 Premios Emmy.
+  .container.comments-content{style: "color:#FFF;margin-top: 50px;"}
+    .row
+      .text-center
+        %h3{style:"font-size: 30px;margin-top: 32px;font-weight: 900;padding: 0px 15px;"} Cicatrices de un propósito cuenta con comentarios de:
+    .row
+      .col-lg-3.col-md-3.col-sm-12.col-xs-12.col-md-12
+        %img.img-circle{:src => "http://enbogam.com/wp-content/uploads/2015/04/barbara-palacios.jpg", :style => "transform: scale(0.6);"}/
+        .text-center{style: "margin-top: -59px;"}
+          %h3 Bárbara Palacios
+          %h4 Miss Universo, empresaria y conferencista
 
-            #barbara.tab-pane.fade.in.active{:role => "tabpanel"}
-              .tab-inner
-                %p.lead Gustavo es ejemplo de resilencia. Su historia nos motiva a ser mejores y su fortaleza nos nutre como seres humanos.
-                %hr/
-                %p
-                  %strong.text-uppercase Barbara Palacios
-                %p
-                  %em.text-capitalize Miss Universo, Empresaria y Conferencista.
+      .col-lg-3.col-md-3.col-sm-12.col-xs-12.col-md-12
+        = image_tag "frontend/nelson.jpg", class: "img-circle", :style => "object-fit: cover;height: 300px;transform: scale(0.6);"
+        .text-center{style: "margin-top: -59px;"}
+          %h3 Nelson Bustamante
+          %h4{style:"padding: 5px 49px;"} Presentador, Ganador de 4 Premios Emmy
+      .col-lg-3.col-md-3.col-sm-12.col-xs-12.col-md-12
+        = image_tag "frontend/motessi.jpg", class: "img-circle", :style => "object-fit: cover;height: 300px;transform: scale(0.6);"
+        .text-center{style: "margin-top: -59px;"}
+          %h3 Alberto Motessi
+          %h4 Conferencista internacional
+      .col-lg-3.col-md-3.col-sm-12.col-xs-12.col-md-12
+        = image_tag "frontend/eduardo.jpg", class: "img-circle", :style => "object-fit: cover;height: 300px;transform: scale(0.6);"
+        .text-center{style: "margin-top: -59px;"}
+          %h3 Eduardo Rodríguez Giolitti
+          %h4{style:"padding: 5px 49px;"} Periodista, abogado y conferencista
 
-            #wafer.tab-pane.fade{:role => "tabpanel"}
-              .tab-inner
-                %p.lead Al escuchar a Gustavo Henao por primera vez, quedé profundamente impresionado y bendecido. Su forma peculiar, brillante, exuberante de comunicar sus convicciones de una forma tan natural, pueden ser entendidas de por un erudito o por una simple persona del campo. ¡Qué formidable profesional es Gustavo!
-                %hr/
-                %p
-                  %strong.text-uppercase Eduardo Rodriguez Giolitti
-                %p
-                  %em.text-capitalize Periodista, Abogado, Conferencista.
+  -# .container.text-center{:style => "height: 470px;"}
+  -#   .text-center.text-cicatrices Cicatrices de un propósito cuenta con comentarios de:
+  -#   .row{:class => "[ ]"}
+  -#     .col-xs-12.col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3{:class => "[ ]", :role => "tabpanel"}
+  -#       .col-xs-4.col-sm-12{:class => "[ ]"}
+  -#         / Nav tabs
+  -#         %ul#nav-tabs.nav.nav-justified{:class => "[ ]", :role => "tablist"}
+  -#           %li{:role => "presentation"}
+  -#             %a{"aria-controls" => "dustin", "data-toggle" => "tab", :href => "#dustin", :role => "tab"}
+  -#               = image_tag "frontend/nelson.jpg", class: "img-circle img-comment", :style => "object-fit: cover;height: 144px;"
+  -#               %span.quote
+  -#                 %i.fa.fa-quote-left
+  -#           %li.active{:role => "presentation"}
+  -#             %a{"aria-controls" => "barbara", "data-toggle" => "tab", :href => "#barbara", :role => "tab"}
+  -#               %img.img-circle{:src => "http://enbogam.com/wp-content/uploads/2015/04/barbara-palacios.jpg"}/
+  -#               %span.quote
+  -#                 %i.fa.fa-quote-left
+  -#           %li{:role => "presentation"}
+  -#             %a{"aria-controls" => "wafer", "data-toggle" => "tab", :href => "#wafer", :role => "tab"}
+  -#               = image_tag "frontend/eduardo.jpg", class: "img-circle img-comment", :style => "object-fit: cover;height: 144px;"
+  -#               %span.quote
+  -#                 %i.fa.fa-quote-left
+  -#       .col-xs-8.col-sm-12{:class => "[ ]"}
+  -#         / Tab panes
+  -#         #tabs-collapse.tab-content
+  -#           #dustin.tab-pane.fade{:role => "tabpanel"}
+  -#             .tab-inner
+  -#               %p.lead Gustavo atesora la transparencia como base de su identidad. Su autenticidad se revela, sin desvíos, en el paralelismo de su palabra y de sus actos. Basta conocerlo para comprobar que la coherencia es su gran fuerza. El éxito es la merecida consecuencia de su pasión por comunicar y hacer el bien a través del mensaje sincero.
+  -#               %hr/
+  -#               %p
+  -#                 %strong.text-uppercase Nelson Bustamante
+  -#               %p
+  -#                 %em.text-capitalize Presentador, Ganador de 4 Premios Emmy.
+  -#
+  -#           #barbara.tab-pane.fade.in.active{:role => "tabpanel"}
+  -#             .tab-inner
+  -#               %p.lead Gustavo es ejemplo de resilencia. Su historia nos motiva a ser mejores y su fortaleza nos nutre como seres humanos.
+  -#               %hr/
+  -#               %p
+  -#                 %strong.text-uppercase Barbara Palacios
+  -#               %p
+  -#                 %em.text-capitalize Miss Universo, Empresaria y Conferencista.
+  -#
+  -#           #wafer.tab-pane.fade{:role => "tabpanel"}
+  -#             .tab-inner
+  -#               %p.lead Al escuchar a Gustavo Henao por primera vez, quedé profundamente impresionado y bendecido. Su forma peculiar, brillante, exuberante de comunicar sus convicciones de una forma tan natural, pueden ser entendidas de por un erudito o por una simple persona del campo. ¡Qué formidable profesional es Gustavo!
+  -#               %hr/
+  -#               %p
+  -#                 %strong.text-uppercase Eduardo Rodriguez Giolitti
+  -#               %p
+  -#                 %em.text-capitalize Periodista, Abogado, Conferencista.
 
   .container.text-center{:style => "height: 200px;"}
     .text-center.text-cicatrices También puedes adquirirlo en las siguientes librerías:
@@ -90,7 +125,7 @@
       .responsive
         -@bookshops.each do |bookshop|
           .item
-            .col-lg-1
+            .col-lg-1.hidden-xs.hidden-sm.hidden-md
               .separator
             .col-lg-9
               .text-center{:style =>"font-size: 19px;opacity:0.7;font-weight: 900;"}
@@ -101,7 +136,7 @@
                 %p= bookshop.phone
                 %p= bookshop.email
                 %p= bookshop.address
-            .col-lg-1
+            .col-lg-1.hidden-xs.hidden-sm.hidden-md
               .separator
 
 #footer{:style => "margin-top: 30vh;"}
@@ -137,34 +172,60 @@
   body{
   font-family: 'Lato', sans-serif;
   background-color:#fff;
-  // background-image: -webkit-gradient(
-  // linear,
-  // left bottom,
-  // right bottom,
-  // color-stop(0, #FFFFFF),
-  // color-stop(1, #CFCFCF)
-  // );
-  // background-image: -o-linear-gradient(right, #FFFFFF 0%, #CFCFCF 100%);
-  // background-image: -moz-linear-gradient(right, #FFFFFF 0%, #CFCFCF 100%);
-  // background-image: -webkit-linear-gradient(right, #FFFFFF 0%, #CFCFCF 100%);
-  // background-image: -ms-linear-gradient(right, #FFFFFF 0%, #CFCFCF 100%);
-  // background-image: linear-gradient(to right, #FFFFFF 0%, #CFCFCF 100%);
   }
 
   #section-book{
 
-      .img-comment{
-        @media (max-width:767px){
-          height: 40px!important;
-        }
+    .mobile-t{
+      @media (max-width:767px){
+          margin-top: 70px;
       }
+    }
+
+    .comments-content{
+      width: 100%;
+      height: 470px;
+      background-color: #00a29b;
+      @media (max-width: 767px){
+        height: 1600px;
+      }
+    }
+
+    .text-banner{
+      color: #FFF;
+      text-align: center;
+      font-size: 46px;
+      padding: 20px 210px;
+      margin-top: 25vh;
+    }
+
+
+    .center-d{
+      height: 100%;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .center-f {
+      height: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      display: -webkit-box !important;
+      display: -moz-box !important;
+      display: -ms-flexbox !important;
+      display: -webkit-flex !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
 
     .content-cover{
       background-image: url('https://trello-attachments.s3.amazonaws.com/569453ae24f9f3b8552ad817/59d638d80fde119361638074/e538015163729d3fa227b60b48f9992a/banner-henao.png');
       margin: 0 !important;
       padding: 0 !important;
       width: 100% !important;
-      height: 340px;
+      height: 100vh;
       background-size: cover;
       /* background-repeat: no-repeat; */
       background-position: center;
@@ -226,64 +287,6 @@
     font-weight: 900;
   }
 
-  #lista2 {
-  counter-reset: li;
-  list-style: none;
-  *list-style: decimal;
-  font: 15px 'trebuchet MS', 'lucida sans';
-  padding: 0;
-  margin-bottom: 2em;
-  text-shadow: 0 1px 0 rgba(255,255,255,.5);
-  }
-
-  #lista2 ol {
-  margin: 0 0 0 2em;
-  }
-
-  #lista2 li{
-  position: relative;
-  display: block;
-  padding: .4em .4em .4em 2em;
-  *padding: .4em;
-  margin: .5em 0;
-  background: #ddd;
-  color: #444;
-  text-decoration: none;
-  border-radius: .3em;
-  transition: all .3s ease-out;
-  }
-
-  #lista2 li:hover{
-  background: #eee;
-  }
-
-  #lista2 li:hover:before{
-  transform: rotate(360deg);
-  }
-
-  #lista2 li:before{
-  content: counter(li);
-  counter-increment: li;
-  position: absolute;
-  left: -1.3em;
-  top: 50%;
-  margin-top: -1.3em;
-  background: #87ceeb;
-  height: 2em;
-  width: 2em;
-  line-height: 2em;
-  border: .3em solid #fff;
-  text-align: center;
-  font-weight: bold;
-  border-radius: 2em;
-  transition: all .3s ease-out;
-  }
-
-
-
-  ul{
-    list-style-type: circle;
-  }
   .title-book{
     font-size: 26px;
     color: #00a29b!important;
@@ -305,160 +308,7 @@
     font-size: 15px;
   }
 
-  button {
-  margin-bottom: 12px;
-  width: 100%;
-  }
 
-  .btn.btn-lg {
-  font-size: 20px;
-  height: 52px;
-  }
-
-  .btn {
-  font-size: 18px;
-  text-transform: uppercase;
-  height: 40px;
-  }
-
-  .btn-lg {
-  padding: .75rem 1.25rem;
-  font-size: 1.25rem;
-  line-height: 1.33333;
-  border-radius: .3rem;
-  }
-
-  .btn-primary {
-  color: #fff;
-  background-color: #f50;
-  border-color: #f50;
-  }
-
-  .btn {
-  display: inline-block;
-  font-weight: 700;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  border: 1px solid transparent;
-  padding: 8px 8px;
-  font-size: 1rem;
-  line-height: 1.5;
-  border-radius: .25rem;
-  }
-
-
-  // @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css);
-  body { padding-top: 50px; }
-  .nav.nav-justified > li > a { position: relative; }
-  .nav.nav-justified > li > a:hover,
-  .nav.nav-justified > li > a:focus { background-color: transparent; }
-  .nav.nav-justified > li > a > .quote {
-  position: absolute;
-  left: 0px;
-  top: 0;
-  opacity: 0;
-  width: 30px;
-  height: 30px;
-  padding: 5px;
-  background-color: #13c0ba;
-  border-radius: 15px;
-  color: #fff;
-  }
-  .nav.nav-justified > li.active > a > .quote { opacity: 1; }
-  .nav.nav-justified > li > a > img { box-shadow: 0 0 0 5px #13c0ba; }
-  .nav.nav-justified > li > a > img {
-  max-width: 100%;
-  opacity: .3;
-  // -webkit-transform: scale(.8,.8);
-  // transform: scale(.8,.8);
-  -webkit-transition: all 0.3s 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transition: all 0.3s 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-  .nav.nav-justified > li.active > a > img,
-  .nav.nav-justified > li:hover > a > img,
-  .nav.nav-justified > li:focus > a > img {
-  opacity: 1;
-  -webkit-transform: none;
-  transform: none;
-  -webkit-transition: all 0.3s 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transition: all 0.3s 0s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-  .tab-pane .tab-inner { padding: 30px 0 20px; }
-
-  @media (min-width: 768px) {
-  .nav.nav-justified > li > a > .quote {
-  left: auto;
-  top: auto;
-  right: 20px;
-  bottom: 0px;
-  }
-  }
-
-  /*
-  inspired from http://codepen.io/Rowno/pen/Afykb
-  & https://jsfiddle.net/q0rgL8ws/
-  */
-  .carousel-fade .carousel-inner .item {
-  opacity: 0;
-  transition-property: opacity;
-  overflow:hidden;
-  }
-  .item.active img {
-  transition: transform 5000ms linear 0s;
-  /* This should be based on your carousel setting. For bs, it should be 5second*/
-  // transform: scale(1.05, 1.05);
-  }
-  .carousel-fade .carousel-inner .active {
-  opacity: 1;
-  }
-
-  .carousel-fade .carousel-inner .active.left,
-  .carousel-fade .carousel-inner .active.right {
-  left: 0;
-  opacity: 0;
-  z-index: 1;
-  }
-
-  .carousel-fade .carousel-inner .next.left,
-  .carousel-fade .carousel-inner .prev.right {
-  opacity: 1;
-  }
-
-  .carousel-fade .carousel-control {
-  z-index: 2;
-  }
-
-  /*
-  WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
-  now override the 3.3 new styles for modern browsers & apply opacity
-  */
-  @media all and (transform-3d), (-webkit-transform-3d) {
-  .carousel-fade .carousel-inner > .item.next,
-  .carousel-fade .carousel-inner > .item.active.right {
-  opacity: 0;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  }
-  .carousel-fade .carousel-inner > .item.prev,
-  .carousel-fade .carousel-inner > .item.active.left {
-  opacity: 0;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  }
-  .carousel-fade .carousel-inner > .item.next.left,
-  .carousel-fade .carousel-inner > .item.prev.right,
-  .carousel-fade .carousel-inner > .item.active {
-  opacity: 1;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  }
-  }
   }
 :javascript
   $('.responsive').slick({

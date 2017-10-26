@@ -8,8 +8,8 @@
 		%li= link_to '<div class="icon5" data-placement="bottom" title= "Blog"></div>'.html_safe, "/blog", class: "external"
 		%li= link_to '<div class="icon7" data-placement="bottom" title= "Contacto"></div>'.html_safe, "#contacs"
 
-		%li= link_to '<i class="fa fa-graduation-cap course"></i>'.html_safe, "/cursos", class: "external"
-		%li= link_to '<i class="fa fa-book course"></i>'.html_safe, "/promotionbook", class: "external"
+		%li= link_to '<i class="fa fa-graduation-cap course" data-placement="bottom" title= "Cursos"></i>'.html_safe, "/cursos", class: "external"
+		%li= link_to '<i class="fa fa-book course" data-placement="bottom" title= "Libros"></i>'.html_safe, "/promotionbook", class: "external"
 
 	- else
 		%li= link_to '<div class="icon1" data-placement="bottom" title= "Home"></div>'.html_safe, main_app.root_path(anchor: "home"), class: "external"
@@ -25,10 +25,10 @@
 		%li= link_to '<div class="icon7" data-placement="bottom" title= "Contacto"></div>'.html_safe, main_app.root_path(anchor: "contacs"), class: "external"
 
 		%li{ class: "#{'current' if controller_name == 'courses'}" }
-			= link_to '<i class="fa fa-graduation-cap course"></i>'.html_safe, "/cursos", class: "external"
+			= link_to '<i class="fa fa-graduation-cap course data-placement="bottom" title= "Cursos""></i>'.html_safe, "/cursos", class: "external"
 
-		%li{ class: "#{'current' if controller_name == 'courses'}" }
-			= link_to '<i class="fa fa-book course"></i>'.html_safe, "/promotionbook", class: "external"
+		%li{ class: "#{'current' if controller_name == 'promotionbook'}" }
+			= link_to '<i class="fa fa-book course data-placement="bottom" title= "Libros""></i>'.html_safe, "/promotionbook", class: "external"
 
 
 :scss

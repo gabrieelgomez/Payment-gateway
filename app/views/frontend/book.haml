@@ -6,7 +6,9 @@
   .hidden-xs.hidden-sm.hidden-md
     .container.content-cover{style: "color:#FFF"}
       .center-d
-        %p.text-banner "Gracias a este libro, entendemos que muchas de estas circunstancias adversas, nos han preparado para reconocer nuestro propósito de vida"
+        %p.text-banner
+          "Definitivamente, Cicatrices de un Propósito nos inserta en un viaje de retrospectiva, que nos permite reflexionar sobre la situaciones difíciles que hemos enfrentado. Gracias a este libro, entendemos que muchas circustancias adversas, nos han preparado para"
+          %span reconocer nuestro propósito de vida."
         %h3{style:"font-weight: 900;"} - Barbara Palacios
         %h3 Mis Universo, empresaria y conferencista
       =# image_tag "frontend/banner-henao.png", :style => "height:60vh;width:100%;object-fit: cover;"
@@ -45,27 +47,37 @@
       .text-center
         %h3{style:"font-size: 30px;margin-top: 32px;font-weight: 900;padding: 0px 15px;"} Cicatrices de un propósito cuenta con comentarios de:
     .row
+
+
       .col-lg-3.col-md-3.col-sm-3.col-xs-12
-        %img.img-circle{:src => "http://enbogam.com/wp-content/uploads/2015/04/barbara-palacios.jpg", :style => "margin-top: -8px;transform: scale(0.6);"}/
+        = image_tag "frontend/nelson.jpg", class: "img-circle img-famouse"
+        .text-center.text-rs{style: "margin-top: -59px;"}
+          %h3 Nelson Bustamante
+          %h4 Presentador, Ganador de 4 Premios Emmy
+
+      .col-lg-3.col-md-3.col-sm-3.col-xs-12
+        = image_tag "frontend/motessi.jpg", class: "img-circle img-famouse"
+        .text-center.text-rs{style: "margin-top: -59px;"}
+          %h3 Alberto Motessi
+          %h4 Conferencista internacional
+
+      .col-lg-3.col-md-3.col-sm-3.col-xs-12
+        %img.img-circle.img-famouse{:src => "http://enbogam.com/wp-content/uploads/2015/04/barbara-palacios.jpg"}
         .text-center.text-rs{style: "margin-top: -59px;"}
           %h3 Bárbara Palacios
           %h4 Miss Universo, empresaria y conferencista
 
       .col-lg-3.col-md-3.col-sm-3.col-xs-12
-        = image_tag "frontend/nelson.jpg", class: "img-circle", :style => "object-fit: cover;height: 300px;transform: scale(0.6);"
+        = image_tag "frontend/bobadilla.png", class: "img-circle img-famouse"
         .text-center.text-rs{style: "margin-top: -59px;"}
-          %h3 Nelson Bustamante
-          %h4.padding-n{style:"padding: 5px 49px;"} Presentador, Ganador de 4 Premios Emmy
+          %h3 José Bobadilla
+          %h4 Empresario Colombiano y Embajador Corona
+
       .col-lg-3.col-md-3.col-sm-3.col-xs-12
-        = image_tag "frontend/motessi.jpg", class: "img-circle", :style => "object-fit: cover;height: 300px;transform: scale(0.6);"
+        = image_tag "frontend/eduardo.jpg", class: "img-circle img-famouse"
         .text-center.text-rs{style: "margin-top: -59px;"}
-          %h3 Alberto Motessi
-          %h4 Conferencista internacional
-      .col-lg-3.col-md-3.col-sm-3.col-xs-12
-        = image_tag "frontend/eduardo.jpg", class: "img-circle", :style => "object-fit: cover;height: 300px;transform: scale(0.6);"
-        .text-center.text-rs{style: "margin-top: -59px;"}
-          %h3 Eduardo Rodríguez Giolitti
-          %h4.padding-n{style:"padding: 5px 49px;"} Periodista, abogado y conferencista
+          %h3{style:"font-size: 20px;"} Eduardo Rodríguez Giolitti
+          %h4 Periodista, abogado y conferencista
 
   .container.text-center{:style => "height: 200px;"}
     .text-center.text-cicatrices También puedes adquirirlo en las siguientes librerías:
@@ -77,9 +89,9 @@
               .separator
             .col-lg-9
               .text-center{:style =>"font-size: 19px;opacity:0.7;font-weight: 900;"}
-                %span= bookshop.name
+                %span= bookshop.place
               .text-center{:style =>"font-size: 12px;opacity:0.7;"}
-                %p= bookshop.place
+                %p= bookshop.name
                 %p= bookshop.attendat
                 %p= bookshop.phone
                 %p= bookshop.email
@@ -123,6 +135,29 @@
   }
 
   #section-book{
+
+    .img-famouse{
+      object-fit: cover;
+      height: 232px;
+      width: 232px;
+      transform: scale(0.6);
+      @media (min-width:425px) and (max-width:531px){
+        height: 290px!important;
+        width: 290px;
+      }
+    }
+
+    @media (min-width:992px) and (max-width:2048px){
+      .col-lg-3 {width: 20%;}
+    }
+
+    @media (min-width:768px) and (max-width:991px){
+      .col-md-3 {width: 20%;}
+    }
+
+    // .col-md-3 {width: 20%;}
+    // .col-sm-3 {width: 20%;}
+
     @media (max-width:1100px) and (min-width:768px){
       .img-responsive{
         margin-top: 0!important;
@@ -142,26 +177,25 @@
     }
 
     .comments-content{
+      .padding-n{padding: 5px 49px;}
       width: 100%;
-      height: 470px;
+      height: 420px;
       background-color: #00a29b;
       margin-bottom:30px;
       @media (max-width: 767px){
 
-        height: 1600px;
+        height: 1550px;
       }
       @media (max-width: 590px) and (min-width:400px){
-        height: 1800px;
-        .img-circle{
-          height: 368px!important;
-        }
+        height: 1500px;
+
       }
       @media (max-width: 988px) and (min-width:768px){
         height: 400px;
         .text-rs{margin-top:-25px!important;}
         .padding-n{padding:0!important;}
         .img-circle{
-          height: 180px!important;
+          height: 120px!important;
         }
       }
       @media (max-width: 1200px) and (min-width:989px){
@@ -175,7 +209,7 @@
     .text-banner{
       color: #FFF;
       text-align: center;
-      font-size: 46px;
+      font-size: 35px;
       padding: 20px 210px;
       margin-top: 25vh;
     }
